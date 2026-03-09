@@ -9,7 +9,6 @@ on:
 
 permissions:
   contents: write
-  pages: write
 
 jobs:
   generate:
@@ -30,9 +29,9 @@ jobs:
           ANTHROPIC_PERSONAL_API_KEY: ${{ secrets.ANTHROPIC_PERSONAL_API_KEY }}
         run: python generate_digest.py
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
-          force_orphan: true
+      - name: Commit and push digest
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/
+          git diff --staged --quiet || git commit -m "Digest for $(date -u +%Y-%m-%d)" && git push

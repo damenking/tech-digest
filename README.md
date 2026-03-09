@@ -8,7 +8,7 @@ Pulls from curated RSS feeds and APIs, uses Claude to deduplicate, filter, and s
 
 1. Clone this repo
 2. Add your `ANTHROPIC_PERSONAL_API_KEY` as a GitHub Actions secret
-3. Enable GitHub Pages (deploy from `gh-pages` branch)
+3. Enable GitHub Pages (Settings → Pages → Source: "Deploy from a branch" → `main` → `/docs`)
 4. The digest runs nightly at 11 PM ET via GitHub Actions
 
 ## Local Development

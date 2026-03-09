@@ -13,10 +13,6 @@ sources:
       url: https://feeds.arstechnica.com/arstechnica/index
       category: tech
 
-    - name: The Verge
-      url: https://www.theverge.com/rss/index.xml
-      category: tech
-
     - name: TechCrunch
       url: https://techcrunch.com/feed/
       category: tech
@@ -33,6 +29,22 @@ sources:
       url: https://www.rss.reuters.com/rssFeed/technologyNews
       category: tech
 
+    - name: Anthropic Blog
+      url: https://www.anthropic.com/rss.xml
+      category: ai
+
+    - name: OpenAI Blog
+      url: https://openai.com/blog/rss.xml
+      category: ai
+
+    - name: Google DeepMind Blog
+      url: https://deepmind.google/blog/rss.xml
+      category: ai
+
+    - name: Simon Willison's Blog
+      url: https://simonwillison.net/atom/everything/
+      category: ai
+
   hackernews:
     enabled: true
     # Pull top N stories from HN, then let Claude pick the best ones
@@ -47,6 +59,21 @@ topics:
   - Science & Research
   - Policy & Regulation
 
+# Topics and subjects to explicitly EXCLUDE — filter these out aggressively
+exclude:
+  - Consumer car/EV reviews and automotive news
+  - Apple product reviews and Apple gadget news
+  - Consumer electronics reviews (phones, tablets, laptops) unless they have a novel technical angle
+  - Sports and entertainment
+
+# Topics to prioritize — boost these when selecting stories
+prioritize:
+  - New AI model releases, benchmarks, and capability announcements
+  - New AI product features and tool launches
+  - AI infrastructure and compute developments
+  - Open source projects and developer tools
+  - Tech industry M&A, antitrust, and regulation
+
 # Summarization prompt style
 editorial_voice: |
   You have a conversational, slightly opinionated editorial voice. You're writing
@@ -54,3 +81,9 @@ editorial_voice: |
   matters, say why in plain language. When something is overhyped, you can gently
   note that. Keep it real — no breathless "revolutionary" or "game-changing" language.
   Think of yourself as a knowledgeable friend catching someone up over coffee.
+
+# Summary length — write substantial summaries (8-12 sentences per story).
+# Give real context: what happened, why it matters, who it affects, and your take.
+# The reader wants to feel informed after reading just the digest, not like they
+# need to click through to get the real story.
+summary_length: detailed

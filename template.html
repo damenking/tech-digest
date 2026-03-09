@@ -145,6 +145,39 @@
         .topic-science { background: var(--topic-science); }
         .topic-policy { background: var(--topic-policy); }
 
+        .source-errors {
+            margin: 24px 16px;
+            padding: 12px 16px;
+            background: #f8514922;
+            border: 1px solid #f8514944;
+            border-radius: 8px;
+            font-size: 0.8rem;
+        }
+
+        .source-errors h3 {
+            color: #f85149;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .error-item {
+            color: var(--text-muted);
+            padding: 2px 0;
+        }
+
+        .previous-day {
+            padding: 20px 16px;
+            text-align: center;
+        }
+
+        .previous-day a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
         /* Mobile touch targets */
         @media (max-width: 640px) {
             .story {
@@ -190,6 +223,21 @@
         {% endfor %}
     </div>
     {% endfor %}
+
+    {% if errors %}
+    <div class="source-errors">
+        <h3>Source Issues</h3>
+        {% for error in errors %}
+        <div class="error-item">{{ error }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if previous_file %}
+    <div class="previous-day">
+        <a href="{{ previous_file }}">&larr; Previous day</a>
+    </div>
+    {% endif %}
 
     <footer>
         Generated {{ generated_at }} &middot; Tech Digest
