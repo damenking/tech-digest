@@ -1,0 +1,56 @@
+# Tech Digest Configuration
+
+# Maximum number of stories in the daily digest
+max_stories: 15
+
+# Claude model to use for summarization
+model: claude-sonnet-4-6
+
+# Sources - add/remove as you like
+sources:
+  rss:
+    - name: Ars Technica
+      url: https://feeds.arstechnica.com/arstechnica/index
+      category: tech
+
+    - name: The Verge
+      url: https://www.theverge.com/rss/index.xml
+      category: tech
+
+    - name: TechCrunch
+      url: https://techcrunch.com/feed/
+      category: tech
+
+    - name: MIT Technology Review
+      url: https://www.technologyreview.com/feed/
+      category: ai
+
+    - name: Wired
+      url: https://www.wired.com/feed/rss
+      category: tech
+
+    - name: Reuters Technology
+      url: https://www.rss.reuters.com/rssFeed/technologyNews
+      category: tech
+
+  hackernews:
+    enabled: true
+    # Pull top N stories from HN, then let Claude pick the best ones
+    top_n: 30
+
+# Topic categories for grouping (Claude will assign stories to these)
+topics:
+  - AI & Machine Learning
+  - Industry & Business
+  - Software & Dev Tools
+  - Hardware & Devices
+  - Science & Research
+  - Policy & Regulation
+
+# Summarization prompt style
+editorial_voice: |
+  You have a conversational, slightly opinionated editorial voice. You're writing
+  for a senior engineer who is smart but doesn't follow the news daily. When something
+  matters, say why in plain language. When something is overhyped, you can gently
+  note that. Keep it real — no breathless "revolutionary" or "game-changing" language.
+  Think of yourself as a knowledgeable friend catching someone up over coffee.
