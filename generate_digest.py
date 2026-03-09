@@ -117,7 +117,7 @@ Only include sections that have stories. Order sections by importance. Return ON
 
 def generate_with_claude(prompt: str, config: dict) -> dict:
     """Call Claude API to generate the digest."""
-    client = anthropic.Anthropic()
+    client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_PERSONAL_API_KEY"])
 
     message = client.messages.create(
         model=config["model"],

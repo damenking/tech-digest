@@ -7,7 +7,7 @@ Pulls from curated RSS feeds and APIs, uses Claude to deduplicate, filter, and s
 ## Setup
 
 1. Clone this repo
-2. Add your `ANTHROPIC_API_KEY` as a GitHub Actions secret
+2. Add your `ANTHROPIC_PERSONAL_API_KEY` as a GitHub Actions secret
 3. Enable GitHub Pages (deploy from `gh-pages` branch)
 4. The digest runs nightly at 11 PM ET via GitHub Actions
 
@@ -15,7 +15,7 @@ Pulls from curated RSS feeds and APIs, uses Claude to deduplicate, filter, and s
 
 ```bash
 pip install -r requirements.txt
-export ANTHROPIC_API_KEY=your-key-here
+export ANTHROPIC_PERSONAL_API_KEY=your-key-here
 python generate_digest.py
 # Output lands in docs/index.html
 ```
