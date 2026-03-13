@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Digest - Friday, March 13, 2026</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --accent-subtle: #1f6feb22;
+            --topic-ai: #da70d6;
+            --topic-industry: #58a6ff;
+            --topic-dev: #3fb950;
+            --topic-hardware: #f0883e;
+            --topic-science: #d29922;
+            --topic-policy: #f85149;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 0;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 24px 16px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        header .date {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-top: 4px;
+        }
+
+        .intro {
+            padding: 16px;
+            background: var(--accent-subtle);
+            border-left: 3px solid var(--accent);
+            margin: 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .section {
+            margin: 24px 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0 16px;
+            margin-bottom: 12px;
+        }
+
+        .topic-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+
+        .story {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .story:last-child {
+            border-bottom: none;
+        }
+
+        .story-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .story-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .story-title a:hover {
+            color: var(--accent);
+        }
+
+        .story-summary {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .story-source {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+            opacity: 0.7;
+        }
+
+        footer {
+            padding: 24px 16px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Topic colors */
+        .topic-ai { background: var(--topic-ai); }
+        .topic-industry { background: var(--topic-industry); }
+        .topic-dev { background: var(--topic-dev); }
+        .topic-hardware { background: var(--topic-hardware); }
+        .topic-science { background: var(--topic-science); }
+        .topic-policy { background: var(--topic-policy); }
+
+        .source-errors {
+            margin: 24px 16px;
+            padding: 12px 16px;
+            background: #f8514922;
+            border: 1px solid #f8514944;
+            border-radius: 8px;
+            font-size: 0.8rem;
+        }
+
+        .source-errors h3 {
+            color: #f85149;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .error-item {
+            color: var(--text-muted);
+            padding: 2px 0;
+        }
+
+        .previous-day {
+            padding: 20px 16px;
+            text-align: center;
+        }
+
+        .previous-day a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile touch targets */
+        @media (max-width: 640px) {
+            .story {
+                padding: 16px;
+            }
+            .story-title a {
+                display: block;
+                padding: 4px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tech Digest</h1>
+        <div class="date">Friday, March 13, 2026</div>
+    </header>
+
+    <div class="intro">Iran-linked hackers have crippled Stryker's Windows network in what looks like a major escalation of state-sponsored cyberattacks on critical medical infrastructure — while the AI world keeps churning with new models, layoffs-for-AI swaps, and a genuinely alarming facial recognition wrongful imprisonment case.</div>
+
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-policy"></div>
+            <h2>Policy & Regulation</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.wired.com/story/handala-hacker-group-iran-us-israel-war/" target="_blank" rel="noopener">Iran's 'Handala' hackers behind Stryker wiper attack that shut down its Windows network</a>
+            </div>
+            <div class="story-summary">A destructive wiper attack has taken down Stryker's entire Microsoft/Windows network environment, and the company has admitted it doesn't know how long restoration will take. The culprit appears to be Handala, an Iranian-linked hacktivist group that has increasingly been used as cover for state-sponsored cyberattacks against US and Israeli targets. Wiper malware is particularly nasty because it's not ransomware — there's no negotiation, no key to buy — the data is simply destroyed. Stryker is a major supplier of lifesaving medical devices including surgical equipment, implants, and emergency room hardware, which makes this attack more alarming than a typical corporate breach. The timing fits a pattern of Iranian retaliation amid ongoing US-Iran military tensions. Handala has been active since at least 2023 and has previously targeted Israeli infrastructure, but this attack represents a significant escalation in targeting a major US medical device manufacturer. The 'hacktivism' framing is widely seen as a fig leaf — analysts generally treat Handala as an instrument of Iranian state cyber operations rather than an independent group. What's unclear is how deep the compromise goes and whether operational technology — the systems that actually control device manufacturing — was affected, which would be a far more serious situation. Healthcare and medical device supply chains are notoriously under-secured compared to their criticality. This should be a wake-up call for every medical device and healthcare infrastructure company that has been slow on security modernization.</div>
+            <div class="story-source">Wired</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.wired.com/story/us-lawmakers-move-to-kill-the-fbis-warrantless-wiretap-access/" target="_blank" rel="noopener">US lawmakers move to kill the FBI's warrantless wiretap access</a>
+            </div>
+            <div class="story-summary">A bipartisan bill has been introduced that would force the FBI to obtain a warrant before reading Americans' private messages, and would ban federal agencies from purchasing commercial data on US residents as a backdoor to surveillance. The legislation arrives ahead of a critical April deadline related to Section 702 of FISA, which authorizes the government to collect communications of foreign targets but has repeatedly been used to query data about Americans without warrants. The 'commercial data purchase' loophole is particularly significant — intelligence and law enforcement agencies have been buying location data, browsing histories, and other sensitive information from data brokers, effectively bypassing Fourth Amendment protections. The bipartisan nature of this bill is notable given how rarely surveillance reform gets cross-aisle support. Privacy advocates have been pushing for this reform for years, but national security hawks have consistently blocked or watered down such efforts. The bill's chances depend heavily on whether the current administration is willing to accept limits on FBI surveillance tools. For engineers building apps and services that handle user data, this is a relevant development — a successful bill would significantly change what government agencies can demand or simply buy. Even if this specific bill fails, the fact that it has bipartisan backing signals growing political appetite for surveillance reform. The commercial data purchase ban would affect a multi-billion dollar data broker industry that has largely operated in a legal gray zone.</div>
+            <div class="story-source">Wired</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.grandforksherald.com/news/north-dakota/ai-error-jails-innocent-grandmother-for-months-in-north-dakota-fraud-case" target="_blank" rel="noopener">Innocent woman jailed after being misidentified by AI facial recognition</a>
+            </div>
+            <div class="story-summary">Yet another wrongful arrest caused by AI facial recognition has come to light — this time an innocent grandmother in North Dakota who was jailed for months in a fraud case before the error was discovered. This is part of a troubling and growing pattern: AI facial recognition systems, particularly when used on older adults and people of color, have documented high error rates that translate directly into real human harm. The case is especially striking because North Dakota is not a major urban center with a long history of deploying such technology — it signals just how broadly these tools have spread into law enforcement without adequate oversight. Facial recognition errors don't just cause brief inconveniences; wrongful jailing causes job loss, family disruption, psychological trauma, and lasting reputational damage. Several major cities have banned or restricted law enforcement use of facial recognition following previous wrongful arrest cases, but there's no federal standard governing its use. The AI systems involved in these cases are often deployed by smaller jurisdictions that lack the technical sophistication to understand their limitations or audit their outputs. What's particularly maddening is that these cases keep happening despite the documented track record — it suggests systemic failure at the policy and procurement level, not just technical failure. Courts are still catching up with how to handle AI-derived evidence, and defendants are often not even told that facial recognition was used in their case. This story deserves serious attention from anyone building or deploying biometric identification systems.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.technologyreview.com/2026/03/12/1134243/defense-official-military-use-ai-chatbots-targeting-decisions/" target="_blank" rel="noopener">US military is exploring AI chatbots for targeting decisions</a>
+            </div>
+            <div class="story-summary">A Defense Department official has disclosed that the US military is considering using generative AI systems to rank lists of potential targets and make recommendations about which to strike first — with human vetting before any action is taken. This disclosure comes amid ongoing scrutiny of the Pentagon's use of AI tools in the context of the Iran conflict. The 'human in the loop' framing is important to note, but the reality is that when AI systems are generating ranked recommendation lists, humans tend to anchor on those recommendations, a well-documented cognitive bias. The use of Claude and other commercial AI models in military contexts has already sparked significant controversy, including an ongoing legal dispute between Anthropic and the Department of Defense over the terms of use of its models. The fact that generative AI — systems that can hallucinate, confabulate, and fail in unpredictable ways — is being considered for anything adjacent to kinetic targeting decisions is genuinely alarming to many AI safety researchers. Traditional military targeting systems were purpose-built, extensively tested, and had well-understood failure modes; LLMs are none of those things. The Pentagon has been under pressure to integrate AI quickly as a competitive response to Chinese military AI development, which creates incentives to move faster than is prudent. International law around autonomous weapons systems and AI-assisted targeting is still deeply unsettled. This story is likely just the first of many disclosures about how AI is being integrated into military decision-making pipelines.</div>
+            <div class="story-source">MIT Technology Review</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/03/12/atlassian-follows-blocks-footsteps-and-cuts-staff-in-the-name-of-ai/" target="_blank" rel="noopener">Atlassian cuts 10% of workforce — around 1,600 people — in name of AI</a>
+            </div>
+            <div class="story-summary">Atlassian has laid off approximately 1,600 employees, representing about 10% of its workforce, explicitly framing the cuts as a reallocation of resources toward AI development and investment. This follows a similar move by Block, which made comparable cuts with the same stated rationale. The 'cutting for AI' framing is becoming a recognizable corporate pattern — it's partly genuine (AI automation does reduce headcount needs in certain functions), partly a convenient narrative for restructuring that would have happened anyway. Atlassian makes software development and collaboration tools like Jira, Confluence, and Trello, which means these cuts are being watched closely by the developer community that uses its products daily. The irony is not lost on observers that a company whose tools exist to help teams collaborate and ship software is reducing the humans doing that work in favor of AI systems. For the engineers affected, this is obviously devastating — but the broader question is whether AI-driven productivity gains will translate into smaller teams industry-wide or whether demand for software will simply expand to absorb the capacity. Atlassian's stock and financial performance will be scrutinized to see if this bet pays off. The 'AI investment' framing also raises the question of what exactly they're investing in — building proprietary models, integrating third-party AI APIs, or just marketing AI-adjacent features. This is unlikely to be the last such announcement from a major software company this year.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-ai"></div>
+            <h2>AI & Machine Learning</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://openai.com/index/openai-to-acquire-promptfoo" target="_blank" rel="noopener">OpenAI acquires Promptfoo, an AI security testing platform</a>
+            </div>
+            <div class="story-summary">OpenAI has announced the acquisition of Promptfoo, a startup that specializes in identifying and remediating security vulnerabilities in AI systems during development. Promptfoo built tooling that lets developers red-team their AI applications, test for prompt injection vulnerabilities, and catch safety issues before deployment — essentially a security testing framework purpose-built for the LLM era. The acquisition signals that OpenAI is taking AI application security seriously as an internal capability, not just a talking point. For the developer community, this is somewhat bittersweet — Promptfoo had become a popular open-source tool, and acquisitions by large AI labs of popular open-source security tooling have a mixed track record in terms of continued openness and community development. The move also makes strategic sense given OpenAI's parallel publication of research on prompt injection resistance (the IH-Challenge paper) and their work on designing agents to resist social engineering. As AI agents take on more autonomous tasks with access to real systems and data, the attack surface for prompt injection and adversarial manipulation grows dramatically. This acquisition suggests OpenAI is building out a more comprehensive security posture rather than treating security as an afterthought. The terms of the deal were not disclosed. Whether Promptfoo's tools remain available to the broader developer community post-acquisition is an open question worth watching.</div>
+            <div class="story-source">OpenAI Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://openai.com/index/designing-agents-to-resist-prompt-injection" target="_blank" rel="noopener">OpenAI's research on designing AI agents to resist prompt injection</a>
+            </div>
+            <div class="story-summary">OpenAI has published research detailing how ChatGPT's agentic workflows are being engineered to defend against prompt injection and social engineering attacks. The core approach involves constraining what actions agents can take based on context, limiting access to sensitive data in agent workflows, and building hierarchical instruction systems where trusted instructions take precedence over potentially malicious injected content. Prompt injection is one of the most serious practical security threats to AI agents — it's essentially a way to hijack an AI system by embedding adversarial instructions in content the agent reads or processes. As AI agents are given more capabilities (browsing the web, executing code, reading files, sending emails), the consequences of a successful injection attack grow from 'embarrassing' to 'catastrophic'. The companion paper on 'instruction hierarchy' (IH-Challenge) describes a training methodology that teaches models to prioritize instructions from trusted sources over instructions from untrusted ones — essentially giving models a sense of provenance for the commands they receive. This is hard because LLMs by design are trained to be helpful and follow instructions, which makes them naturally susceptible to convincing-sounding injected commands. The research is noteworthy because it's addressing a real, practical, currently-being-exploited vulnerability rather than speculative future AI risks. Combined with the Promptfoo acquisition, there's a coherent story here about OpenAI building serious security infrastructure for the agentic era. Anyone building production AI agents should read both papers.</div>
+            <div class="story-source">OpenAI Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.technologyreview.com/2026/03/11/1134179/china-openclaw-gold-rush/" target="_blank" rel="noopener">China's OpenClaw AI craze is minting opportunists — and it's a fascinating case study</a>
+            </div>
+            <div class="story-summary">MIT Technology Review has a deep-dive into the gold rush around OpenClaw, a popular open-source AI tool from China that can autonomously take over a device and complete tasks on behalf of users — think a computer-use agent in the vein of Anthropic's Computer Use or OpenAI's Operator. The piece follows Feng Qingyang, a 27-year-old Beijing software engineer who started building products on top of OpenClaw almost immediately after it launched in January 2026, and is now running what amounts to a one-person business riding the wave. The parallels to the early app store era are striking — a new capability platform drops, and fast movers build products on top of it before the big players can. What's interesting about OpenClaw specifically is that it's open-source and Chinese-origin, which means it's not subject to the same export controls and terms-of-service restrictions that shape what US developers can build with US models. The article notes a whole ecosystem of hustlers building courses, automation services, and niche applications on top of OpenClaw — a mix of genuine product builders and people selling shovels during a gold rush. For Western AI observers, this is a useful reminder that China's AI ecosystem is moving fast and is not simply playing catch-up to OpenAI and Anthropic — there are genuinely novel tools emerging from Chinese developers. The device-autonomy use case (agents that can actually operate your computer) is also a meaningful capability milestone worth watching regardless of where it originates.</div>
+            <div class="story-source">MIT Technology Review</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/ai/2026/03/perplexitys-personal-computer-brings-its-ai-agents-to-the-uh-personal-computer/" target="_blank" rel="noopener">Perplexity launches 'Personal Computer' — AI agents with access to your local files</a>
+            </div>
+            <div class="story-summary">Perplexity has announced a product called 'Personal Computer' that extends its AI agents to work with files and data on your actual PC, not just web search results. The company is pitching this as a way to have AI agents that can reason over your local documents, emails, and files in what they describe as a 'secure environment with clear safeguards.' The name is an obvious nod to the original Personal Computer era — Perplexity is essentially claiming that AI-native local agents represent a new computing paradigm comparable to the shift from mainframes to personal computers. The 'clear safeguards' language is doing a lot of work here and the details matter enormously — what data leaves your machine, what's processed locally, what's sent to Perplexity's servers, and under what circumstances? These are questions the announcement summary doesn't fully answer. Perplexity has been aggressive about expanding its AI assistant capabilities beyond search, and this move puts it in more direct competition with Microsoft Copilot, Apple Intelligence, and Google's Gemini integrations at the OS level. The company is in a complicated position — it's grown fast but has faced criticism over its web scraping practices and relationship with publishers. Giving an AI agent access to your local files is a significant trust ask, and how Perplexity handles the privacy and security dimensions here will be crucial. The product is interesting technically but warrants healthy skepticism until the privacy details are fully transparent.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.wired.com/story/google-nick-fox-advertising-search-ai-gemini/" target="_blank" rel="noopener">Google is not ruling out ads in Gemini — a candid admission with big implications</a>
+            </div>
+            <div class="story-summary">In an interview with WIRED, Google SVP Nick Fox explicitly declined to rule out advertising in Gemini, confirming what many had assumed: Google's AI products will eventually need to carry ads to justify their costs and protect Google's core business model. This is a significant admission because it highlights a fundamental tension in how Google approaches AI — it's both a technology leader and an advertising company whose entire financial model depends on people clicking on ads, which AI assistants actively undercut by giving direct answers. Google's Search advertising business is under real pressure from AI-native search alternatives, and Gemini itself cannibalizes the ad-laden search results page that funds everything. The question of how AI conversations get monetized is one of the most important open questions in the industry — subscription models alone probably can't cover the compute costs at scale, which pushes everyone toward ads. For users, ads in an AI assistant context are potentially more intrusive than search ads because the conversational format makes it harder to distinguish sponsored from organic recommendations. For competitors like Perplexity and OpenAI, this admission is actually useful positioning — they can market themselves as the 'no ads' alternative, at least for now. The interview also touches on how AI is changing Google's overall advertising business, which is worth reading in full if you follow the ad-tech space.</div>
+            <div class="story-source">Wired</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/03/12/facebook-marketplace-now-lets-meta-ai-respond-to-buyers-messages/" target="_blank" rel="noopener">Facebook Marketplace deploys Meta AI to auto-respond to buyer messages</a>
+            </div>
+            <div class="story-summary">Meta has rolled out a feature on Facebook Marketplace that lets sellers opt in to having Meta AI automatically draft replies to buyer inquiries, pulling information from the listing details like price, availability, description, and pickup location. This is a fairly practical application of AI — Marketplace sellers often get the same questions repeatedly, and auto-drafting responses based on existing listing data is a reasonable automation. It's opt-in, which is the right call given the trust issues involved in peer-to-peer transactions. The risk is that AI-drafted responses create a worse buyer experience if they're inaccurate or miss nuances that a human seller would catch — Marketplace already has significant trust and fraud problems that this could complicate. For Meta, this is another data point in their strategy of embedding AI across their entire product surface rather than building a standalone AI product. The feature also gives Meta valuable signal about what kinds of questions buyers ask, which feeds back into improving their AI models. It's a small feature announcement but illustrative of the direction: AI as an invisible layer across consumer internet products rather than a distinct chatbot experience. Similar features are likely coming to eBay, Craigslist alternatives, and other peer-to-peer marketplaces.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.wired.com/story/google-maps-ask-maps-gemini-powered-tool/" target="_blank" rel="noopener">Google Maps gets a Gemini-powered 'Ask Maps' conversational interface</a>
+            </div>
+            <div class="story-summary">Google has rolled out 'Ask Maps,' a Gemini-powered conversational interface within Google Maps on mobile that lets you ask natural language questions about locations and request trip planning assistance. This is essentially bringing the AI assistant experience to the one Google product where the context — your location and destination — is most immediately relevant. The feature lets you ask things like 'find me a quiet coffee shop near the museum that has good WiFi' rather than navigating filter menus, which is a genuinely more natural interaction model for complex queries. Google Maps is already the dominant navigation app globally, so adding conversational AI here means the feature will get massive distribution immediately rather than needing to build a new user base. The integration also makes strategic sense for Google because Maps queries are deeply commercial — people looking for restaurants, hotels, and services are high-intent potential ad targets, which connects back to the Gemini ads question discussed elsewhere. The technical challenge is keeping responses accurate and current given that Maps data changes constantly (businesses open and close, hours change, etc.). This feels like one of the more natural and immediately useful AI feature integrations announced recently, as opposed to AI features grafted onto products where they don't quite fit.</div>
+            <div class="story-source">Wired</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://entropicthoughts.com/no-swe-bench-improvement" target="_blank" rel="noopener">Are LLM coding benchmark improvements stalling out? New analysis suggests yes</a>
+            </div>
+            <div class="story-summary">A new analysis published under the title 'Are LLM merge rates not getting better?' looks at SWE-bench and similar coding benchmark performance and finds that recent model generations may not be showing the dramatic improvements that earlier iterations did. SWE-bench measures an AI's ability to resolve real GitHub issues, which has become one of the more respected practical benchmarks for coding ability. The plateau hypothesis, if it holds up, would be significant — the past two years of AI development have been defined by rapid benchmark climbing, and a slowdown would force a reckoning with what 'progress' actually means at the frontier. The analysis is worth treating with appropriate uncertainty — benchmarks are noisy, models are often specifically tuned on benchmark-adjacent data, and new benchmarks tend to follow when old ones saturate. But the broader question of whether we're approaching diminishing returns on current training approaches is one that serious AI researchers are actively debating. The practical implication for developers is that the coding tools you have today may not be dramatically better in six months, which changes the calculus on when to build AI-assisted workflows versus waiting for better models. This piece generated significant discussion in the developer community and is worth reading alongside the NYT Magazine piece on AI coding more broadly.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-industry"></div>
+            <h2>Industry & Business</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/tech-policy/2026/03/live-nation-director-boasted-of-gouging-ticket-buyers-robbing-them-blind/" target="_blank" rel="noopener">Live Nation director boasted in messages of 'robbing buyers blind' — emerging during DOJ settlement</a>
+            </div>
+            <div class="story-summary">Newly unsealed messages from a Live Nation director bragging about gouging ticket buyers and 'robbing them blind' have emerged at a particularly awkward moment — just as the US Department of Justice agreed to settle its antitrust case against Live Nation. The messages add significant wrinkle to the narrative around the settlement, raising questions about whether the agreed terms are tough enough given the company's internal culture around pricing. Live Nation has faced years of criticism over Ticketmaster's dynamic pricing practices, hidden fees, and the market power it exercises as both a promoter and ticketing platform. The antitrust case was one of the more high-profile efforts to break up or constrain a tech-adjacent monopoly, and critics have already argued that the settlement doesn't go far enough in actually restructuring the market. Unsealed internal messages are the kind of evidence that tends to be very damaging in follow-on civil litigation even if they don't derail the DOJ settlement itself. For consumers who have felt squeezed by concert ticket prices, these messages are infuriating but probably not surprising. The political salience of this issue is high — ticket pricing anger cuts across partisan lines — which could generate legislative pressure even if the DOJ settlement moves forward as planned. The case is also a useful example of how antitrust enforcement in platform markets is complicated by the vertical integration of promotion, venue, and ticketing.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.wired.com/story/john-solly-doge-operative-accused-social-security-data-leidos/" target="_blank" rel="noopener">DOGE operative accused of taking sensitive Social Security data on a thumb drive to new employer</a>
+            </div>
+            <div class="story-summary">A whistleblower complaint has alleged that John Solly, a DOGE operative who previously had access to highly sensitive Social Security Administration data, stored that data on a personal thumb drive and may have taken it to his new employer Leidos, a major government defense contractor. Both Solly and Leidos have strongly denied the allegations. If true, this would represent an extraordinary breach of federal data handling rules and could expose the private financial and personal data of millions of Americans who interact with the Social Security system. The allegations fit into a broader pattern of concerns about DOGE operatives accessing sensitive government data systems without adequate oversight or standard security protocols. The Social Security Administration holds some of the most sensitive personal data in government — earnings records, disability information, banking details for direct deposit — making a breach particularly severe. Leidos is deeply embedded in federal IT contracting, which makes the alleged destination of any data especially sensitive from a conflict-of-interest perspective as well. The whistleblower complaint mechanism is important here — whoever filed this took real professional risk, and the allegations should be investigated seriously regardless of political context. This story is still developing and the strong denials from both parties mean significant uncertainty remains, but it's an important one to watch.</div>
+            <div class="story-source">Wired</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/03/12/before-quantum-computing-arrives-this-startup-wants-enterprises-already-running-on-it/" target="_blank" rel="noopener">QuTwo raises to build enterprise quantum computing infrastructure — before quantum computers actually exist</a>
+            </div>
+            <div class="story-summary">Peter Sarlin, who previously sold his AI startup to AMD for $665 million, is back with QuTwo, a startup building what it describes as the infrastructure enterprises will need when quantum computing finally arrives at practical scale. The premise is essentially 'quantum-readiness as a service' — helping large enterprises audit their cryptographic infrastructure, identify where quantum computing would break their security, and begin migrating to post-quantum cryptography standards now. This is actually a more grounded pitch than it might first appear: NIST finalized its post-quantum cryptography standards in 2024, and the window for organizations to migrate is measured in years, not months. Financial institutions, healthcare companies, and defense contractors all have long-lived sensitive data that adversaries may already be harvesting for future decryption once quantum computers are capable enough — the 'harvest now, decrypt later' threat model is real. The $665M AMD exit gives Sarlin credibility and presumably personal capital to work with. The risk is that quantum computing timelines have been 'five to ten years away' for about thirty years now, and infrastructure bets made too early can be expensive and distracting. Still, the post-quantum cryptography migration work needs to happen regardless of when (or if) cryptographically relevant quantum computers arrive.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-dev"></div>
+            <h2>Software & Dev Tools</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://simonwillison.net/2026/Mar/12/coding-after-coders/#atom-everything" target="_blank" rel="noopener">The end of programming as a profession? NYT Magazine surveys 70+ developers</a>
+            </div>
+            <div class="story-summary">The New York Times Magazine has published what's being described as an epic piece on AI-assisted software development, drawing on interviews with more than 70 software engineers from Google, Amazon, Microsoft, Apple, and the wider developer community. The piece grapples with the central question of whether AI coding tools represent the end of traditional software development as a career path or just another productivity shift, similar to how IDEs, Stack Overflow, or cloud platforms changed development without eliminating developers. The 'grief and the AI split' framing — which has been circulating in developer communities this week — is directly relevant: AI coding tools appear to be exposing a divide between developers who love the craft of coding itself and those who mainly care about shipping products. The former group tends to feel threatened or alienated by AI assistants; the latter tends to embrace them enthusiastically. Historical analogies like ATMs and bank tellers are being invoked, though the article apparently treats these comparisons with appropriate nuance — the ATM analogy in particular is contested, as explored in a separate piece this week arguing the iPhone disrupted bank tellers more than ATMs did. For senior engineers, the key question isn't whether AI tools exist but how to calibrate when to use them, how to maintain craft and judgment, and what skills remain valuable in an AI-assisted development environment. This piece generated enormous discussion and is worth reading in full if you can access it.</div>
+            <div class="story-source">Simon Willison's Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://aminrj.com/posts/rag-document-poisoning/" target="_blank" rel="noopener">Document poisoning in RAG systems: a real and underappreciated attack vector</a>
+            </div>
+            <div class="story-summary">A technical writeup on document poisoning attacks against RAG (Retrieval-Augmented Generation) systems is making the rounds among developers building production AI applications. The attack involves embedding adversarial content into documents that an AI system retrieves and uses as context — essentially corrupting the AI's knowledge sources so it produces incorrect, misleading, or harmful outputs. RAG architectures are extremely common in enterprise AI deployments because they allow AI systems to work with proprietary or current data without retraining; this attack vector targets the documents in that retrieval corpus. Unlike prompt injection (which targets the model directly), document poisoning is harder to detect because the malicious content lives in what looks like a normal document in your knowledge base. The attack is relevant for any system that ingests external documents — customer support bots trained on help articles, code assistants that read documentation, research tools that index papers. The writeup presumably covers detection and mitigation strategies, which is the practically useful part. This connects directly to the OpenAI security work on prompt injection resistance and the Promptfoo acquisition — there's a whole emerging field of 'AI application security' that the industry is only beginning to take seriously. If you're building RAG systems, this is required reading.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-science"></div>
+            <h2>Science & Research</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://med.stanford.edu/news/all-news/2026/03/gut-brain-cognitive-decline.html" target="_blank" rel="noopener">Stanford researchers reverse memory loss via gut-brain communication pathway</a>
+            </div>
+            <div class="story-summary">Stanford researchers have published findings on reversing cognitive decline and memory loss by targeting the gut-brain communication axis, which is generating significant interest from both the neuroscience and longevity research communities. The gut-brain axis has been an active area of research for about a decade, but translating mechanistic understanding into actual cognitive interventions has been elusive. Memory loss and cognitive decline are among the most feared aspects of aging, and current pharmaceutical interventions (particularly for Alzheimer's) have a very poor track record in clinical trials. A gut-targeted approach would be significant because it's potentially more accessible and less invasive than direct brain interventions. The research is at an early stage — the Hacker News score (274) suggests it's generating genuine scientific interest rather than just hype — but the mechanism of action through gut-brain signaling is at least biologically plausible given what we know about the vagus nerve and microbiome-brain interactions. The key questions are whether this translates from animal models to humans, how durable the effect is, and what the intervention actually involves. Worth watching as more details emerge from peer review.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+
+    
+    <div class="source-errors">
+        <h3>Source Issues</h3>
+        
+        <div class="error-item">Couldn't connect to Reuters Technology</div>
+        
+        <div class="error-item">Couldn't connect to Anthropic Blog</div>
+        
+    </div>
+    
+
+    
+    <div class="previous-day">
+        <a href="2026-03-12.html">&larr; Previous day</a>
+    </div>
+    
+
+    <footer>
+        Generated 2026-03-13 05:14 UTC &middot; Tech Digest
+    </footer>
+</body>
+</html>
