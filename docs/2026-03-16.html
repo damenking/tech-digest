@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Digest - Monday, March 16, 2026</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --accent-subtle: #1f6feb22;
+            --topic-ai: #da70d6;
+            --topic-industry: #58a6ff;
+            --topic-dev: #3fb950;
+            --topic-hardware: #f0883e;
+            --topic-science: #d29922;
+            --topic-policy: #f85149;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 0;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 24px 16px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        header .date {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-top: 4px;
+        }
+
+        .intro {
+            padding: 16px;
+            background: var(--accent-subtle);
+            border-left: 3px solid var(--accent);
+            margin: 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .section {
+            margin: 24px 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0 16px;
+            margin-bottom: 12px;
+        }
+
+        .topic-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+
+        .story {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .story:last-child {
+            border-bottom: none;
+        }
+
+        .story-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .story-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .story-title a:hover {
+            color: var(--accent);
+        }
+
+        .story-summary {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .story-source {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+            opacity: 0.7;
+        }
+
+        footer {
+            padding: 24px 16px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Topic colors */
+        .topic-ai { background: var(--topic-ai); }
+        .topic-industry { background: var(--topic-industry); }
+        .topic-dev { background: var(--topic-dev); }
+        .topic-hardware { background: var(--topic-hardware); }
+        .topic-science { background: var(--topic-science); }
+        .topic-policy { background: var(--topic-policy); }
+
+        .source-errors {
+            margin: 24px 16px;
+            padding: 12px 16px;
+            background: #f8514922;
+            border: 1px solid #f8514944;
+            border-radius: 8px;
+            font-size: 0.8rem;
+        }
+
+        .source-errors h3 {
+            color: #f85149;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .error-item {
+            color: var(--text-muted);
+            padding: 2px 0;
+        }
+
+        .previous-day {
+            padding: 20px 16px;
+            text-align: center;
+        }
+
+        .previous-day a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile touch targets */
+        @media (max-width: 640px) {
+            .story {
+                padding: 16px;
+            }
+            .story-title a {
+                display: block;
+                padding: 4px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tech Digest</h1>
+        <div class="date">Monday, March 16, 2026</div>
+    </header>
+
+    <div class="intro">AI safety, security, and organizational chaos dominate this week's headlines, with invisible Unicode supply chain attacks hitting GitHub, xAI reportedly in internal freefall, and a lawyer warning that AI chatbots are now showing up in mass casualty cases.</div>
+
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-ai"></div>
+            <h2>AI & Machine Learning</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://simonwillison.net/2026/Mar/13/1m-context/#atom-everything" target="_blank" rel="noopener">Claude's 1M context window now generally available for Opus 4.6 and Sonnet 4.6 — at standard pricing</a>
+            </div>
+            <div class="story-summary">Anthropic has made its 1 million token context window generally available for both Opus 4.6 and Sonnet 4.6, and the pricing detail is the real headline here: there's no long-context premium. That's a notable break from how OpenAI and Google handle large context windows — both charge more as token counts climb. For developers building applications that need to ingest large codebases, lengthy documents, or extended conversation histories, this changes the cost calculus meaningfully. A 1M token window is roughly 750,000 words, enough to fit several novels or a substantial portion of a large codebase in a single prompt. The absence of a surcharge means teams can architect around large context without worrying about runaway inference costs. This is less of a research announcement and more of a quiet competitive move: Anthropic is essentially signaling that long context is now a commodity feature, not a premium one. Simon Willison flagged the pricing parity as the genuinely surprising part, since it contradicts the industry norm. For enterprise customers who've been doing per-token math, this likely triggers a fresh round of vendor comparisons. It also puts pressure on OpenAI and Google to revisit their own long-context pricing tiers. Worth watching whether this becomes a race to the bottom on context pricing across the board.</div>
+            <div class="story-source">Simon Willison's Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/03/15/lawyer-behind-ai-psychosis-cases-warns-of-mass-casualty-risks/" target="_blank" rel="noopener">Lawyer behind AI psychosis cases warns chatbots are now showing up in mass casualty events</a>
+            </div>
+            <div class="story-summary">A lawyer who has been handling AI-related psychosis and suicide cases is now sounding the alarm about a more alarming pattern: AI chatbots appearing as contributing factors in mass casualty incidents. This isn't entirely new territory — chatbots have been linked to individual suicides for several years, most notably in cases involving Character.AI — but the alleged connection to broader violence represents a significant escalation in the legal and policy conversation. The core argument is that AI systems are being deployed faster than safety infrastructure can keep up, and that the absence of meaningful guardrails in some consumer-facing chatbots creates real-world harm at scale. The lawyer reportedly argues that the technology's persuasive, emotionally responsive nature makes it particularly dangerous for users in psychological crisis. This puts pressure on AI companies, app stores, and regulators to think more seriously about what 'safety' means beyond jailbreaks and misinformation. The EU AI Act has provisions touching on this, but enforcement timelines are slow. In the US, there's no federal framework at all. For engineers building products on top of LLM APIs, this is a reminder that deployment context matters enormously — a model that's fine for code generation is not automatically fine for open-ended emotional conversation with vulnerable users. Expect this to become a more prominent legal and regulatory thread in 2026.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/ai/2026/03/staff-complain-that-xai-is-flailing-because-of-constant-upheaval/" target="_blank" rel="noopener">xAI staff say constant upheaval is destroying morale and the company is 'flailing'</a>
+            </div>
+            <div class="story-summary">Internal complaints are surfacing from xAI employees who describe the company as organizationally chaotic, with constant leadership changes, shifting priorities, and low morale. The word 'flailing' reportedly comes from staff themselves, which is a pretty damning self-assessment for a company that's supposed to be competing with OpenAI and Anthropic at the frontier. xAI launched Grok and has been pushing hard on its own model development, but building a frontier AI lab requires sustained, focused engineering culture — something that's hard to maintain under constant upheaval. Elon Musk's management style across his companies is well-documented: high turnover, aggressive timelines, and a tolerance for chaos that sometimes produces results and sometimes just produces attrition. The concern here is that top ML talent, which is genuinely scarce, won't stick around in a dysfunctional environment when OpenAI, Google DeepMind, and Anthropic are all hiring. It's worth noting that organizational chaos narratives can be exaggerated or cherry-picked, so some skepticism is warranted. But if the complaints reflect a real pattern, it could slow xAI's roadmap considerably. The company's ability to train competitive frontier models depends heavily on retaining researchers who have options. This story is worth watching as a signal of whether xAI can sustain its ambitions or whether it remains a well-funded but structurally fragile operation.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://openai.com/index/openai-to-acquire-promptfoo" target="_blank" rel="noopener">OpenAI acquires Promptfoo, an AI security platform for finding vulnerabilities in LLM systems</a>
+            </div>
+            <div class="story-summary">OpenAI has acquired Promptfoo, a startup that helps enterprises find and fix security vulnerabilities in AI systems during the development phase — think of it as a security scanner purpose-built for LLM-based applications. This is a telling acquisition because it signals that OpenAI is taking AI application security seriously enough to build it in-house rather than leave it to third parties. Promptfoo's tooling focuses on identifying prompt injection risks, data leakage, and other LLM-specific vulnerabilities before code ships to production. That's increasingly important as more enterprises deploy agents and agentic workflows where a compromised prompt can have real consequences — deleting files, exfiltrating data, or making unauthorized API calls. The acquisition pairs interestingly with OpenAI's simultaneous work on instruction hierarchy and prompt injection resistance in its own models. It looks like a coordinated push: harden the models themselves and provide tooling to help developers build more secure applications on top. For developers already using Promptfoo's open-source tools, the key question is what happens to the open-source project post-acquisition — whether it stays maintained or gets absorbed into proprietary OpenAI products. Acquisitions of dev-tool companies by platform providers have a mixed track record on that front. This is also part of a broader trend of AI labs expanding beyond model development into the full application security stack.</div>
+            <div class="story-source">OpenAI Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://openai.com/index/designing-agents-to-resist-prompt-injection" target="_blank" rel="noopener">OpenAI designs AI agents to resist prompt injection — here's how</a>
+            </div>
+            <div class="story-summary">OpenAI has published a detailed post on how ChatGPT's agent workflows are being designed to resist prompt injection and social engineering attacks. The core strategy involves constraining risky actions, protecting sensitive data, and building architectural guardrails into the agent runtime rather than relying solely on model-level instruction following. Prompt injection — where malicious content in the environment tricks an agent into taking unintended actions — is widely considered the most serious near-term security threat in agentic AI systems. The fact that OpenAI is publishing this in detail suggests they've moved from acknowledging the problem to having concrete mitigations worth sharing. The post covers how the Responses API and hosted containers are being used to create isolated, auditable execution environments for agents. One key insight is that security in agentic systems requires thinking about the full action space of an agent, not just its outputs — an agent that can browse the web, execute code, and call APIs has a much larger attack surface than a chatbot. For engineers building on top of OpenAI's agent infrastructure, this is required reading. It also complements the simultaneous work on instruction hierarchy (IH-Challenge), which trains models to prioritize trusted instructions over injected ones. Together these represent a more systematic approach to agent security than has existed before. The honest caveat is that prompt injection remains an unsolved problem at a fundamental level, and these are mitigations, not solutions.</div>
+            <div class="story-source">OpenAI Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/03/15/bytedance-reportedly-pauses-global-launch-of-its-seedance-2-0-video-generator/" target="_blank" rel="noopener">ByteDance pauses global launch of Seedance 2.0 video generator over legal concerns</a>
+            </div>
+            <div class="story-summary">ByteDance has reportedly put the brakes on the global rollout of Seedance 2.0, its latest AI video generation model, while engineers and lawyers work through potential legal issues. The delay is a notable stumble for a company that has been aggressively pushing its AI capabilities globally through products like CapCut. The legal concerns aren't fully detailed in the reporting, but given the landscape, they almost certainly involve training data provenance and copyright — the same issues haunting Sora, Runway, and other video generation models. Video generation is a particularly fraught area legally because the training data often includes copyrighted film and video content, and the outputs can be visually distinctive in ways that invite comparison to source material. ByteDance's caution here may also reflect the heightened scrutiny the company faces in Western markets where its Chinese ownership already draws regulatory attention. A copyright lawsuit on top of existing regulatory pressure would be strategically painful. It's also worth noting that the video generation market is becoming increasingly competitive — OpenAI, Google, and several startups are all shipping — so a delay has competitive costs. The fact that ByteDance is pausing rather than pushing through suggests the legal team has identified something substantive. Worth watching to see whether this results in a modified launch, a dataset audit, or something more significant.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.technologyreview.com/2026/03/12/1134243/defense-official-military-use-ai-chatbots-targeting-decisions/" target="_blank" rel="noopener">US military may use AI chatbots to rank targets and recommend strike order, defense official reveals</a>
+            </div>
+            <div class="story-summary">A Defense Department official has disclosed that the US military is exploring using generative AI systems to rank lists of potential targets and recommend which to strike first — with human review in the loop before any action is taken. This is one of the most direct public acknowledgments of how AI is being integrated into military targeting workflows, and it's significant even with the human-in-the-loop caveat. The concern isn't that AI pulls the trigger autonomously — it's that AI shapes the decision space in ways that can introduce bias, errors, or optimizations that humans aren't fully equipped to second-guess under time pressure. The disclosure comes as the Pentagon faces scrutiny over a recent strike, context that makes the timing of this revelation particularly charged. MIT Technology Review notes that the use of AI for targeting recommendations represents a qualitative shift from AI as logistics tool to AI as decision-support in lethal contexts. There's a meaningful difference between 'AI helps route supply chains' and 'AI recommends who gets bombed first.' The human oversight argument is important but historically, human reviewers under operational pressure tend to rubber-stamp automated recommendations. This is the kind of story that will matter enormously in policy circles and is likely to accelerate calls for international norms around military AI. For technologists, it's a reminder that the systems being built have uses that extend well beyond the enterprise productivity applications they're usually discussed in.</div>
+            <div class="story-source">MIT Technology Review</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://simonwillison.net/guides/agentic-engineering-patterns/what-is-agentic-engineering/#atom-everything" target="_blank" rel="noopener">What is agentic engineering? Simon Willison's new guide on coding with AI agents</a>
+            </div>
+            <div class="story-summary">Simon Willison has published a comprehensive guide on 'agentic engineering' — his term for the practice of developing software with the assistance of coding agents like Claude Code and OpenAI Codex. This is less of a product announcement and more of a thoughtful practitioner's framework for understanding what's actually changing in software development. Willison distinguishes between coding agents and simple autocomplete tools: agents can both write and execute code, iterating on results in ways that earlier tools couldn't. The guide covers the 'stages of AI adoption' and is grounded in his own extensive hands-on experience, making it more credible than most breathless 'future of coding' takes. This also got significant traction on Hacker News, which suggests it resonates with working engineers trying to calibrate how much to change their workflows. The broader context is a genuine split in the developer community about AI-assisted coding — some engineers find it transformative, others find it exhausting and unreliable (there was also a well-read post this week titled 'LLMs can be exhausting'). Willison's framing is useful because it's neither maximalist nor dismissive. For senior engineers who haven't fully engaged with coding agents yet, this guide is probably the most grounded entry point available. It pairs well with the NYT Magazine piece on 'Coding After Coders' that circulated this week, which interviewed 70+ developers about the same shift. The question of how software development culture evolves around these tools is one of the most interesting open questions in tech right now.</div>
+            <div class="story-source">Simon Willison's Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.technologyreview.com/2026/03/13/1134230/future-ai-chips-could-be-built-on-glass/" target="_blank" rel="noopener">Future AI chips may be built on glass substrates — Absolics starts commercial production</a>
+            </div>
+            <div class="story-summary">A South Korean company called Absolics is beginning commercial production of glass-based substrates designed for next-generation AI chips, and MIT Technology Review has a detailed piece on why this matters. Traditional chip packaging uses organic materials that have limitations in how densely components can be packed and how efficiently signals travel between them. Glass substrates offer better dimensional stability, higher density interconnects, and lower signal loss — properties that become increasingly important as AI accelerators push toward higher compute density. The timing is interesting: as AI model sizes continue to grow and inference demands scale, the bottleneck increasingly shifts from raw transistor performance to how efficiently data moves between chips and memory. Glass-based packaging addresses some of that. Intel has been working on glass substrates for years but hasn't shipped commercially at scale. Absolics getting to commercial production is a meaningful milestone. The implications for the AI hardware supply chain are potentially significant — this could enable denser, more power-efficient AI accelerators than current organic substrate designs allow. It's a deep infrastructure story that doesn't get the attention it deserves compared to model releases. For engineers thinking about where AI compute is heading over the next five years, substrate technology is one of the less-discussed but genuinely important variables.</div>
+            <div class="story-source">MIT Technology Review</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.technologyreview.com/2026/03/11/1134179/china-openclaw-gold-rush/" target="_blank" rel="noopener">China's OpenClaw AI agent is spawning a gold rush of entrepreneurs and hustlers</a>
+            </div>
+            <div class="story-summary">MIT Technology Review has a detailed piece on OpenClaw, an open-source AI agent tool out of China that can take over a device and autonomously complete tasks — and the ecosystem of entrepreneurs rapidly building businesses on top of it. The piece profiles Feng Qingyang, a 27-year-old Beijing software engineer who started tinkering with OpenClaw in January and is now running his own company. The pattern is familiar — a powerful open-source tool gets released, early adopters figure out practical applications faster than anyone expected, and a cottage industry emerges before established companies can react. What's notable about OpenClaw specifically is that it's an autonomous task-running agent, not just a chatbot, which raises the stakes for both capability and potential misuse. The open-source nature means the tool is available globally, including outside the regulatory frameworks that govern proprietary AI deployments. This is the kind of development that tends to compress the timeline on both beneficial applications and concerning ones. The 'gold rush' framing is apt: the people profiled are less ideologically motivated and more pragmatically opportunistic, which is probably a more accurate representation of how AI adoption actually spreads at the ground level. For developers, OpenClaw is worth understanding as a data point on where open-source agentic tools are headed — especially given how the DeepSeek moment last year showed that Chinese open-source AI can move fast and matter globally.</div>
+            <div class="story-source">MIT Technology Review</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-policy"></div>
+            <h2>Policy & Regulation</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/security/2026/03/supply-chain-attack-using-invisible-code-hits-github-and-other-repositories/" target="_blank" rel="noopener">Supply chain attack using invisible Unicode hits GitHub and other repositories — 'Glassworm' returns</a>
+            </div>
+            <div class="story-summary">A sophisticated supply chain attack is targeting GitHub, npm, and VS Code extensions using invisible Unicode characters to hide malicious code from human reviewers. The attack — dubbed 'Glassworm' — exploits Unicode control characters that are invisible in most text editors and code review interfaces, allowing malicious logic to be embedded in code that looks clean on inspection. This technique was known theoretically for years but largely ignored until attackers started operationalizing it. The attack affects the fundamental assumption that code review catches malicious changes — if reviewers literally cannot see the malicious code, the review process provides false assurance. This has serious implications for open source supply chain security, where code review is often the primary defense. The attack targets the trust layer of the development ecosystem: maintainers merging PRs that appear clean, CI/CD pipelines running code that has hidden payloads. Ars Technica and Hacker News both covered this (with the Hacker News entry linking to a detailed Aikido Security breakdown), indicating it's getting significant attention in the security community. Mitigations involve tooling that renders invisible characters visually or flags their presence, and some linters and security scanners are being updated to catch this. For any team that merges external PRs or installs packages from public registries — which is essentially everyone — this is a real and present risk that deserves immediate attention in your security review process.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.michaelgeist.ca/2026/03/a-tale-of-two-bills-lawful-access-returns-with-changes-to-warrantless-access-but-dangerous-backdoor-surveillance-risks-remains/" target="_blank" rel="noopener">Canada's Bill C-22 mandates mass metadata surveillance of Canadians</a>
+            </div>
+            <div class="story-summary">Canada's Bill C-22 is drawing sharp criticism from privacy advocates including Michael Geist, who argues the legislation mandates mass metadata surveillance of Canadians under the guise of lawful access reform. The bill is framed as a modernization of law enforcement access to communications data, but critics say it goes far beyond targeted surveillance by requiring telecommunications providers to retain and make accessible broad swaths of metadata. Metadata — who you called, when, from where, for how long — is arguably more revealing than content in many cases, because it maps social networks, movement patterns, and behavioral routines at scale. The bill also reportedly does little to fix the problematic warrantless access provisions in existing Canadian law, meaning it adds new surveillance capabilities without closing existing civil liberties gaps. This scored highly on Hacker News (552 points), suggesting the developer community is paying attention, likely because the implications extend to any service operating in Canada or serving Canadian users. For companies with Canadian users or Canadian infrastructure, this could create new compliance obligations. The bill fits a global pattern of governments using security rationale to expand surveillance infrastructure in ways that persist long after any specific threat has passed. Privacy-by-design becomes more important, not less, in this environment.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/gadgets/2026/03/adobe-settles-doj-cancellation-fee-lawsuit-will-pay-75-million-penalty/" target="_blank" rel="noopener">Adobe settles DOJ cancellation fee lawsuit for $75 million</a>
+            </div>
+            <div class="story-summary">Adobe has settled with the Department of Justice over its practice of charging steep early-termination fees on annual subscriptions without adequately disclosing them at signup. The $75 million penalty is significant but probably not existential for Adobe, which generates billions in annual recurring revenue. The more meaningful outcome is the precedent: the DOJ successfully argued that burying cancellation fees in subscription flows constitutes an illegal deceptive practice. Adobe was notorious for a UX pattern where users would sign up thinking they were on a flexible plan, only to discover they'd committed to a year-long contract with a cancellation fee that could run into hundreds of dollars. The settlement also includes vague commitments to provide 'qualifying' customers with free services, though Adobe's deliberate vagueness on who qualifies and what they'll receive is itself a bit telling. For the broader SaaS industry, this is a warning shot: dark patterns in subscription flows are increasingly on regulators' radar, and the FTC's 'click to cancel' rule (which requires cancellation to be as easy as signup) is part of the same regulatory wave. If you're building a subscription product, now is a good time to review your cancellation flow and make sure what users are agreeing to is genuinely clear. Adobe's $75M problem started with a few lines of fine print.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-industry"></div>
+            <h2>Industry & Business</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/tech-policy/2026/03/google-fiber-will-be-sold-to-private-equity-firm-and-merge-with-cable-company/" target="_blank" rel="noopener">Google sells majority stake in Google Fiber to private equity firm Stonepeak; GFiber merges with Astound</a>
+            </div>
+            <div class="story-summary">Alphabet is selling a majority stake in Google Fiber to Stonepeak, a private equity infrastructure firm, with GFiber set to merge with Astound Broadband. This is effectively Google exiting the consumer internet service provider business it entered with considerable fanfare in 2010. Google Fiber was genuinely disruptive when it launched — it forced incumbents like Comcast and AT&T to accelerate fiber deployments in cities where Google was competing, arguably benefiting millions of consumers who never even had Google Fiber available. But running an ISP is an operationally intensive, capital-heavy, geographically constrained business that doesn't fit neatly into Alphabet's portfolio of high-margin software and AI bets. Stonepeak specializes in infrastructure assets and Astound is an established regional cable and fiber operator, so the combined entity will presumably be run more like a traditional telecom than a tech moonshot. For current Google Fiber customers, the near-term question is what changes under new ownership — pricing, service quality, and brand are all potentially on the table. The longer-term question is whether private equity ownership improves operational focus or leads to the kind of cost-cutting and service degradation that characterizes many PE telecom plays. The deal also says something about Alphabet's appetite for capital-intensive infrastructure bets outside its core advertising and cloud businesses.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/03/15/wiz-investor-unpacks-googles-32b-acquisition/" target="_blank" rel="noopener">Wiz investor unpacks Google's $32 billion acquisition — the largest in Google's history</a>
+            </div>
+            <div class="story-summary">Shardul Shah of Index Ventures, an early Wiz investor, has given a detailed breakdown of Google's $32 billion acquisition of Wiz — the largest acquisition Google has ever made, by a wide margin. For context, Google's previous largest acquisition was Motorola Mobility at $12.5 billion in 2012, which didn't end well. Wiz is a cloud security company that became the fastest-growing enterprise software startup in history, reaching $500 million ARR in record time. The acquisition gives Google Cloud a major security platform that's native to multi-cloud environments — importantly, Wiz works across AWS and Azure too, not just GCP. That's strategically interesting because it means Google is acquiring a tool its cloud competitors' customers rely on. Shah's investor perspective provides useful color on the deal dynamics, the competitive landscape, and why this price — which seemed eye-watering when first reported — arguably makes sense given Wiz's growth trajectory and the strategic value of owning cloud security infrastructure. The deal also reflects how important security has become as a differentiator in enterprise cloud sales. For engineers working in cloud-native security, this changes the vendor landscape meaningfully: Wiz's roadmap is now shaped by Google's priorities.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://simonwillison.net/2026/Mar/14/jannis-leidel/#atom-everything" target="_blank" rel="noopener">AI-generated spam PRs are killing open source communities — Jazzband shuts down</a>
+            </div>
+            <div class="story-summary">The open source community Jazzband — a collaborative GitHub organization that maintained dozens of popular Python packages — has announced it's shutting down, explicitly citing GitHub's 'slopocalypse': the flood of AI-generated spam pull requests and issues that has made their model of open membership untenable. Jazzband's model was elegant: shared push access among trusted contributors, low friction for community involvement. That model assumed the worst case was an accidental bad merge, not an industrial-scale wave of AI-generated spam that requires constant triage just to keep the signal-to-noise ratio manageable. This is an early but real casualty of the AI coding wave — not AI replacing developers, but AI-generated slop overwhelming the volunteer labor that keeps open source infrastructure running. The maintainer burnout problem in open source was already well-documented before AI; adding AI spam on top is making it acute. This has downstream implications for the broader software ecosystem, since many of the packages Jazzband maintained are dependencies in widely-used projects. It also raises uncomfortable questions for GitHub, which hosts this infrastructure and has thus far been slow to implement effective spam filtering at the PR level. The story connects to a broader pattern of AI-generated content degrading the quality of collaborative systems — whether that's open source repos, academic publishing, or code review. Worth reading Simon Willison's quote of Jannis Leidel's announcement for the full picture.</div>
+            <div class="story-source">Simon Willison's Blog</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-dev"></div>
+            <h2>Software & Dev Tools</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://developer.chrome.com/blog/chrome-devtools-mcp-debug-your-browser-session" target="_blank" rel="noopener">Chrome DevTools MCP: Debug your browser session with AI tools</a>
+            </div>
+            <div class="story-summary">Google has published documentation for Chrome DevTools MCP (Model Context Protocol), which allows AI tools to connect to and interact with an active Chrome DevTools session. This scored 419 points on Hacker News, suggesting it's resonating strongly with developers. MCP — the protocol Anthropic introduced for connecting AI models to external tools and data sources — is rapidly becoming infrastructure for AI-assisted development workflows. The ability to give an AI coding agent direct access to your browser's DevTools means the agent can inspect DOM elements, monitor network requests, read console errors, and potentially execute JavaScript — all in the context of a live debugging session. For frontend engineers, this is potentially significant: instead of copy-pasting error messages and stack traces into a chat interface, the AI can see what's happening in real time and iterate on fixes with direct feedback. The practical implications depend heavily on implementation quality — whether the AI can use this information reliably or just adds noise. But architecturally, this is the right direction: AI tools that have structured access to development environment state are more useful than ones that only see what you manually share with them. The MCP ecosystem is growing quickly, and Chrome DevTools integration is a high-value node in that graph.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://go.dev/blog/inliner" target="_blank" rel="noopener">Go adds //go:fix inline directive and a source-level inliner</a>
+            </div>
+            <div class="story-summary">The Go team has shipped a new //go:fix inline directive and an associated source-level inliner tool, documented on the official Go blog. This is a tooling quality-of-life improvement for Go developers that addresses a specific and somewhat underappreciated pain point: applying automated refactoring hints at scale. The //go:fix directive allows package authors to mark functions that should be inlined at call sites when a codebase is being updated, enabling automated migration tooling to handle deprecations and API changes more gracefully. For large codebases or library authors managing backward compatibility, this is genuinely useful — it means you can mark an old API function for inline-replacement with its newer equivalent and have tooling apply the change automatically across a codebase. The source-level inliner complements this by providing the actual mechanism to perform these transformations. It scored 126 on Hacker News, which is solid engagement for a language tooling post. This fits into Go's broader philosophy of making large-scale codebase evolution tractable through tooling rather than convention alone. For Go shops maintaining significant internal codebases or open-source libraries, this is worth understanding and potentially incorporating into your upgrade workflow.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+
+    
+    <div class="source-errors">
+        <h3>Source Issues</h3>
+        
+        <div class="error-item">Couldn't connect to Reuters Technology</div>
+        
+        <div class="error-item">Couldn't connect to Anthropic Blog</div>
+        
+    </div>
+    
+
+    
+    <div class="previous-day">
+        <a href="2026-03-15.html">&larr; Previous day</a>
+    </div>
+    
+
+    <footer>
+        Generated 2026-03-16 05:50 UTC &middot; Tech Digest
+    </footer>
+</body>
+</html>
