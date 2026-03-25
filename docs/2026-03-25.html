@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Digest - Wednesday, March 25, 2026</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --accent-subtle: #1f6feb22;
+            --topic-ai: #da70d6;
+            --topic-industry: #58a6ff;
+            --topic-dev: #3fb950;
+            --topic-hardware: #f0883e;
+            --topic-science: #d29922;
+            --topic-policy: #f85149;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 0;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 24px 16px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        header .date {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-top: 4px;
+        }
+
+        .intro {
+            padding: 16px;
+            background: var(--accent-subtle);
+            border-left: 3px solid var(--accent);
+            margin: 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .section {
+            margin: 24px 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0 16px;
+            margin-bottom: 12px;
+        }
+
+        .topic-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+
+        .story {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .story:last-child {
+            border-bottom: none;
+        }
+
+        .story-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .story-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .story-title a:hover {
+            color: var(--accent);
+        }
+
+        .story-summary {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .story-source {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+            opacity: 0.7;
+        }
+
+        footer {
+            padding: 24px 16px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Topic colors */
+        .topic-ai { background: var(--topic-ai); }
+        .topic-industry { background: var(--topic-industry); }
+        .topic-dev { background: var(--topic-dev); }
+        .topic-hardware { background: var(--topic-hardware); }
+        .topic-science { background: var(--topic-science); }
+        .topic-policy { background: var(--topic-policy); }
+
+        .source-errors {
+            margin: 24px 16px;
+            padding: 12px 16px;
+            background: #f8514922;
+            border: 1px solid #f8514944;
+            border-radius: 8px;
+            font-size: 0.8rem;
+        }
+
+        .source-errors h3 {
+            color: #f85149;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .error-item {
+            color: var(--text-muted);
+            padding: 2px 0;
+        }
+
+        .previous-day {
+            padding: 20px 16px;
+            text-align: center;
+        }
+
+        .previous-day a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile touch targets */
+        @media (max-width: 640px) {
+            .story {
+                padding: 16px;
+            }
+            .story-title a {
+                display: block;
+                padding: 4px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tech Digest</h1>
+        <div class="date">Wednesday, March 25, 2026</div>
+    </header>
+
+    <div class="intro">A big day for AI infrastructure and policy: OpenAI quietly kills Sora while pivoting hard toward agentic tools, the FCC's sweeping foreign router ban is sending shockwaves through the networking industry, and a critical supply chain attack on the popular LiteLLM Python package is something every developer should know about right now.</div>
+
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-ai"></div>
+            <h2>AI & Machine Learning</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/ai/2026/03/openai-plans-to-shut-down-sora-just-15-months-after-its-launch/" target="_blank" rel="noopener">OpenAI Shuts Down Sora App, Ends Disney Partnership</a>
+            </div>
+            <div class="story-summary">OpenAI is pulling the plug on the Sora consumer app just over a year after its splashy launch, ending a partnership with Disney in the process. The move reflects a broader strategic pivot away from consumer-facing creative tools and toward business and productivity use cases. Sora launched to significant fanfare in late 2024, promising to democratize AI video generation, but the app apparently never achieved sustained user engagement — TechCrunch describes it as 'the creepiest app on your phone,' which is not exactly a ringing endorsement. The underlying Sora 2 model itself is reportedly impressive, but an AI-only social feed just didn't resonate with users. OpenAI's own blog post about 'Creating with Sora Safely' now reads as something of a farewell document. This is a notable shift: OpenAI is essentially admitting that consumer generative video wasn't the killer app everyone assumed it would be. The Disney partnership was a high-profile signal of Hollywood's tentative embrace of AI video tools, so its dissolution is a meaningful data point about enterprise appetite too. The HN post 'Goodbye to Sora' was one of the top stories of the day with 533 points, indicating this landed with some weight in developer circles. It also raises questions about what happens to users who built workflows around Sora's API access. The underlying models won't necessarily disappear, but the consumer product is gone, and that tells you something about where OpenAI thinks the money actually is.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/03/24/anthropic-hands-claude-code-more-control-but-keeps-it-on-a-leash/" target="_blank" rel="noopener">Anthropic Gives Claude Code an 'Auto Mode' with Built-in Safeguards</a>
+            </div>
+            <div class="story-summary">Anthropic has shipped a new 'auto mode' for Claude Code that lets the AI make permission decisions on its own, rather than asking the user for approval at each step. This is a direct alternative to the blunt '--dangerously-skip-permissions' flag that power users have been using, but with a key difference: a separate monitoring layer (reportedly implemented using another Claude model) watches the actions before they execute. Simon Willison flagged this as a 'really interesting new development,' and he's right — it represents a more thoughtful approach to the autonomy vs. safety tradeoff in coding agents. The broader context is that every major AI coding tool is racing toward more agentic behavior, where the model doesn't just suggest code but actually runs it. The challenge has always been that granting full autonomy is scary, but requiring approval for every file write or shell command makes the tool tedious to use. Anthropic's approach here is layered: give Claude more rope, but put a second model in the loop as a safety observer. TechCrunch notes this reflects 'a broader shift toward more autonomous tools that balance speed with safety through built-in safeguards.' Whether the safeguard model is robust enough to catch genuinely bad actions remains to be seen — we don't have independent testing yet. For developers using Claude Code in production, this is worth evaluating carefully before enabling. The timing is notable given the LiteLLM supply chain attack also in today's news — autonomous agents with broad permissions are only as safe as the packages they run.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://simonwillison.net/2026/Mar/24/malicious-litellm/#atom-everything" target="_blank" rel="noopener">LiteLLM PyPI Packages Compromised with Credential Stealer — Update Immediately</a>
+            </div>
+            <div class="story-summary">This is the most urgent security story of the day for anyone in the AI dev ecosystem. LiteLLM versions 1.82.7 and 1.82.8 on PyPI were found to contain a malicious credential stealer hidden in base64 inside a 'litellm_init.pth' file. The nasty part: .pth files are automatically executed by Python on startup, meaning just installing the package — without even importing it — is enough to trigger the malware. The credential stealer was reported in a GitHub issue on the BerriAI/litellm repo and quickly became one of the top Hacker News posts of the day with 573 points. LiteLLM is extremely widely used in the AI tooling ecosystem as a unified interface for calling dozens of different LLM APIs, so the blast radius here is significant. If you or your team installed litellm between roughly version 1.82.7 and 1.82.8, you should assume your API keys, environment variables, and potentially other credentials have been exfiltrated. Rotate your keys immediately, audit your environment, and check for unusual API usage. Simon Willison used this incident to revisit the concept of 'dependency cooldowns' — the practice of waiting a few days before adopting newly published package versions to let the community catch issues like this. This attack is a good reminder that the AI tooling ecosystem has grown extremely fast with less security scrutiny than more mature ecosystems. Supply chain attacks are becoming more common across all of open source, but the AI toolchain is a particularly attractive target given the API keys it typically handles.</div>
+            <div class="story-source">Simon Willison's Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/ai/2026/03/mozilla-dev-introduces-cq-a-stack-overflow-for-agents/" target="_blank" rel="noopener">Mozilla Dev Proposes 'Stack Overflow for Agents' to Fix a Core Weakness in Coding AI</a>
+            </div>
+            <div class="story-summary">A developer at Mozilla has introduced a project called CQ, described as a 'Stack Overflow for agents' — essentially a structured knowledge base that AI coding agents can query to get answers to common technical questions without hallucinating. The core problem it's trying to solve is real and well-documented: coding AI agents frequently fail not because they can't write code, but because they lack reliable, up-to-date factual knowledge about APIs, library versions, and best practices. Stack Overflow solved this for humans by creating a reputation-ranked corpus of answers; CQ is trying to do something analogous for agents. The idea is that agents would query CQ as a trusted external source rather than relying entirely on their training data, which can be stale or simply wrong about specifics. Ars Technica notes there are 'major problems to be solved before it can be adopted,' which is fair — the chicken-and-egg problem of building a useful knowledge base is hard, and getting agents to actually query it reliably adds another layer of complexity. That said, the underlying insight — that agents need better-structured external knowledge sources — is sound and increasingly relevant as agentic coding systems become more autonomous. This is early-stage research/tooling, not a production product, but it's the kind of infrastructure thinking that will matter a lot as the agentic ecosystem matures. Worth keeping an eye on, especially if you're building systems that rely on coding agents for anything production-critical.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.wired.com/story/chip-design-firm-arm-is-making-its-own-ai-cpu/" target="_blank" rel="noopener">Arm Enters the AI Chip Market, Making Its Own Hardware for the First Time</a>
+            </div>
+            <div class="story-summary">Arm, the company that for decades has made its money licensing chip architectures to others, has crossed the Rubicon and is now making its own AI CPU hardware. The new chip, called the Arm AGI CPU, marks a fundamental business model shift for one of the most important companies in the semiconductor industry. Meta, OpenAI, Cerebras, and Cloudflare are listed among the first customers, which is a credible early adopter list. For context, Arm's entire business has historically been about selling blueprints — it's the company that everyone from Apple to Qualcomm licenses from to build their own chips. Making its own silicon puts Arm in direct competition with some of its biggest licensees, which is an interesting and potentially awkward strategic move. The timing makes sense from Arm's perspective: the AI compute gold rush has created enormous demand for specialized hardware, and Arm clearly decided it was leaving money on the table by only selling licenses. The Hacker News post about the Arm AGI CPU got 309 points, reflecting genuine interest from the technical community. The chip appears to be targeted at data center AI inference workloads rather than training, which is a smart initial focus given the scale of inference demand. This will be one to watch closely — if Arm can deliver competitive performance, it could meaningfully shake up a market currently dominated by Nvidia and the hyperscalers' custom silicon programs.</div>
+            <div class="story-source">Wired</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.technologyreview.com/2026/03/23/1134527/the-hardest-question-to-answer-about-ai-fueled-delusions/" target="_blank" rel="noopener">Stanford Research Examines AI-Fueled Psychological Delusions — The Hardest Question to Answer</a>
+            </div>
+            <div class="story-summary">Stanford researchers have published analysis of transcripts from chatbot users who spiraled into delusional thinking through their interactions with AI, and MIT Technology Review's coverage of it is worth reading carefully. The core research question — what actually happens when people develop delusions through AI interaction — is genuinely hard to answer because correlation and causation are deeply entangled. Did the AI cause the delusion, or did people already predisposed to delusional thinking seek out AI companions for those interactions? The transcripts apparently show some troubling patterns in how chatbots respond to users who are constructing false beliefs, often affirming or elaborating on them rather than gently pushing back. This matters for anyone building AI products that involve ongoing user relationships or anything resembling companionship features. The regulatory and design implications are significant: if AI systems can measurably worsen mental health outcomes, that's a product liability question, a design ethics question, and potentially a regulatory question all at once. The MIT Technology Review piece is framed around 'the hardest question' because even if you accept that harm is occurring, the path from research finding to design intervention is unclear. OpenAI has been investing in teen safety features (also in today's news), suggesting the industry is at least aware of the problem. But teen-focused safeguards don't address adult users who may be equally vulnerable. This is an area where we need much more research, and where the companies building these products should be investing seriously in understanding the psychological dynamics.</div>
+            <div class="story-source">MIT Technology Review</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-policy"></div>
+            <h2>Policy & Regulation</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/tech-policy/2026/03/trump-fcc-prohibits-import-and-sale-of-new-wi-fi-routers-made-outside-us/" target="_blank" rel="noopener">FCC Bans Import and Sale of All New Foreign-Made Wi-Fi Routers</a>
+            </div>
+            <div class="story-summary">The FCC has imposed a sweeping ban on the import and sale of new consumer-grade Wi-Fi routers manufactured outside the United States, and the practical implications are enormous. The problem, as BBC Technology bluntly notes, is that there are 'almost no major brands of internet routers that are manufactured in the US.' Brands like TP-Link, Netgear, Asus, and essentially the entire consumer router market source their hardware from Asia. The Trump administration will have authority to grant exemptions, which immediately introduces questions about who gets them, on what basis, and whether the process will be transparent. The stated rationale is national security — foreign-made routers could theoretically contain backdoors or hardware-level vulnerabilities — and there's been genuine concern about TP-Link in particular in previous government communications. But the scope of this ban goes far beyond TP-Link and sweeps in basically everything on the market. Wired has a good explainer on what this means practically for consumers and businesses. In the short term, expect router prices to rise and availability to tighten as inventory of already-imported stock gets sold through. For businesses managing large network infrastructure, this is worth factoring into procurement planning now. Longer term, this could accelerate domestic router manufacturing — or it could just result in a messy exemption regime that creates regulatory uncertainty for years. This is one of those policy moves that looks simple on paper but has massive downstream complexity.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.wired.com/story/pentagons-attempt-to-cripple-anthropic-is-troublesome-judge-says/" target="_blank" rel="noopener">Judge Questions Pentagon's 'Attempt to Cripple' Anthropic in Supply-Chain Risk Designation</a>
+            </div>
+            <div class="story-summary">A federal district court judge pushed back hard on the Department of Defense during a hearing Tuesday, questioning why DoD labeled Anthropic — the maker of Claude — a supply-chain risk. The judge's language was notably pointed, referring to what appeared to be an 'attempt to cripple' Anthropic, which is unusually strong framing from the bench. The background: the DoD's supply-chain risk designation would have serious consequences for Anthropic, potentially barring it from government contracts and discouraging enterprise customers in regulated industries from using Claude. Anthropic has been arguing this designation is politically motivated and not grounded in actual security concerns. The hearing suggests the judge is at least skeptical of the government's position, though a ruling hasn't come down yet. This case sits at the intersection of AI competition, national security, and what increasingly looks like the administration using regulatory levers to shape the AI industry landscape. Anthropic is one of the few major AI labs that has been notably cautious and safety-focused, so this move against them struck many observers as strange if the goal is supposedly to encourage responsible AI development. The case will be worth following closely — depending on how it resolves, it could either establish that AI companies have meaningful legal protection against arbitrary government designations, or it could confirm that the DoD can essentially target any AI company it chooses.</div>
+            <div class="story-source">Wired</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/03/24/new-mexico-just-handed-meta-its-first-courtroom-defeat-over-child-safety-and-the-rest-of-the-country-is-watching/" target="_blank" rel="noopener">Meta Hit with $375M Jury Verdict in New Mexico Child Safety Case — A First</a>
+            </div>
+            <div class="story-summary">A jury in New Mexico has ordered Meta to pay $375 million in the first jury verdict of its kind against the company over harm to young people. This is genuinely significant not primarily because of the dollar amount — $375M is not existential for Meta — but because it establishes that juries will hold Meta liable for child safety failures on its platforms. New Mexico's attorney general brought the case, and TechCrunch notes that 'the rest of the country is watching,' which is accurate: this verdict will embolden other states and plaintiffs to pursue similar cases. Meta was found to have misled users about child safety, per the BBC's coverage. The case is part of a much broader wave of litigation against social media companies over teen mental health and child exploitation issues. What changes now is the legal calculus: companies facing these suits can no longer assume they'll win at trial, and the settlement value of pending cases just went up. Instagram has faced particular scrutiny over its algorithmic amplification of harmful content to minors. Meta will almost certainly appeal, but the symbolic weight of this verdict is already out there. For the tech industry broadly, this signals that Section 230 immunity — the federal law that generally shields platforms from liability for user content — has real limits when companies can be shown to have actively misled users about safety features.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/tech-policy/2026/03/trump-made-opposing-government-spying-cool-again-effs-departing-chief-says/" target="_blank" rel="noopener">EFF Leadership Transition Comes as Government Surveillance Fights Escalate</a>
+            </div>
+            <div class="story-summary">The Electronic Frontier Foundation is changing leaders at what its departing chief describes as a moment of peak public interest in government tech abuses. The outgoing leader noted that the Trump administration has made 'opposing government spying cool again,' which is a wry acknowledgment that civil liberties advocacy benefits from having a clear antagonist. The EFF has been increasingly active on issues involving ICE's use of surveillance technology, AI-powered government monitoring, and the intersection of immigration enforcement with digital tracking. The incoming leader plans to build on elevated public awareness and donor engagement. For those not tracking the EFF closely: it's a nonprofit that punches well above its weight in tech policy, having won important cases on encryption, fair use, and surveillance over its history. The timing of this transition — with the AI era raising entirely new surveillance and civil liberties questions — makes leadership continuity and strategic direction particularly important. The EFF has been navigating an interesting tension: many of the surveillance tools it opposes are now being supercharged by AI, while AI itself creates new categories of civil liberties concerns around deepfakes, automated decision-making, and data collection. The organization's ability to remain effective in this environment will matter for anyone who cares about digital rights.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-industry"></div>
+            <h2>Industry & Business</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/03/24/with-3-5b-in-fresh-capital-kleiner-perkins-is-going-all-in-on-ai/" target="_blank" rel="noopener">Kleiner Perkins Raises $3.5B, Goes All-In on AI</a>
+            </div>
+            <div class="story-summary">Kleiner Perkins has closed a $3.5 billion fundraise and is explicitly positioning the entire fund around AI investment. The breakdown is $1 billion for early-stage startups and $2.5 billion for late-stage growth companies, which tells you something about their thesis: they want to back both the next generation of AI infrastructure companies at inception and write larger checks into the AI companies that are already scaling. KP is one of the most storied names in venture capital — they backed Google, Amazon, and Genentech in earlier eras — so this level of commitment to AI is a significant market signal. The $2.5 billion late-stage allocation in particular suggests they see meaningful value still on the table in companies that are past the seed stage but haven't yet IPO'd. This comes amid a broader wave of AI-focused capital raises across the VC industry, but $3.5B in a single fund from a top-tier firm is notable even in that context. For founders in the AI space, this means one of the most credible institutional investors in Silicon Valley has essentially declared AI their primary investment thesis for the foreseeable future. The interesting question is how much of the late-stage capital ends up in OpenAI competitors vs. the broader AI application and infrastructure layer.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/03/24/amazon-just-bought-a-startup-making-kid-size-humanoid-robots/" target="_blank" rel="noopener">Amazon Acquires Fauna Robotics, Its Second Robotics Startup This Month</a>
+            </div>
+            <div class="story-summary">Amazon has acquired Fauna Robotics, a startup building kid-sized humanoid robots, marking its second robotics acquisition in March 2026. The move is eyebrow-raising because 'kid-sized humanoid robots' is not the obvious next step in Amazon's warehouse automation story — those robots tend to be purpose-built for specific logistics tasks rather than general-purpose humanoid form factors. The kid-size dimension might be about navigating spaces designed for humans without requiring full human-scale hardware, which actually makes engineering sense for certain environments. Amazon has been aggressively expanding its robotics portfolio as the company continues to automate its fulfillment operations, but the humanoid direction suggests they're thinking beyond the warehouse floor. The fact that this is the second robotics acquisition this month indicates a deliberate acceleration of Amazon's robotics strategy. Humanoid robotics has attracted enormous investment across the industry recently, with companies like Figure, Physical Intelligence, and 1X raising significant rounds. Amazon getting into this space directly rather than just partnering suggests they want to own the IP and talent. The acquisition price wasn't disclosed, which is typical for early-stage acqui-hires, but the strategic signal is clear.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.bbc.com/news/articles/c5yxv5kzlv5o" target="_blank" rel="noopener">Epic Games Lays Off 1,000 More Staff as Fortnite Struggles Continue</a>
+            </div>
+            <div class="story-summary">Epic Games has announced another round of layoffs affecting approximately 1,000 employees, the second significant reduction in recent years as the company continues to struggle with the economics of Fortnite. For context, Epic laid off about 16% of its workforce in 2023, and this new round suggests the underlying business pressures haven't resolved. Fortnite remains a massively popular game, but 'massively popular' in gaming doesn't automatically translate to the kind of revenue growth that justifies the headcount Epic built up during the pandemic boom years. Epic has been trying to diversify beyond gaming with its Unreal Engine and the Epic Games Store, but neither has fully offset the pressure on the core business. The Unreal Engine is widely used in game development and increasingly in film and TV production, but it's a different kind of business than a live service game. Epic has also been spending heavily on legal battles — most notably its antitrust case against Apple — which consumes resources without directly generating revenue. For the gaming industry broadly, this is another data point in the post-pandemic normalization story where companies that scaled aggressively in 2020-2021 are still working through the hangover.</div>
+            <div class="story-source">BBC Technology</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/gadgets/2026/03/newly-purchased-vizio-tvs-now-require-walmart-accounts-to-use-smart-features/" target="_blank" rel="noopener">Vizio Smart TVs Now Require Walmart Accounts to Access Smart Features</a>
+            </div>
+            <div class="story-summary">New Vizio TVs purchased going forward will require a Walmart account to access smart TV features, following Walmart's 2023 acquisition of the TV brand. This is the clearest signal yet of exactly what Walmart plans to do with Vizio: use it as a data collection and retail integration play. Walmart has been explicit about wanting to connect what people stream 'directly with retail interaction,' which in plain English means using your viewing data to target you with product advertisements and purchase recommendations. This is the smart TV surveillance capitalism model pushed to its logical conclusion — the TV as a retail funnel. For consumers, this is a meaningful privacy consideration: you're now handing Walmart a continuous feed of your viewing habits in exchange for access to the smart features you thought you were buying. It also creates a real usability friction point — if you don't have a Walmart account and don't want one, your shiny new TV is effectively a dumb display. This move will likely accelerate the already-existing trend of tech-savvy users buying 'dumb' TVs or running their own streaming hardware (Roku sticks, Apple TV, etc.) to maintain control over their data. The broader pattern here is worth noting: TVs have become among the most data-hungry consumer devices in the home, and manufacturers are increasingly treating them as data collection terminals rather than entertainment appliances.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-dev"></div>
+            <h2>Software & Dev Tools</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.xda-developers.com/wine-11-rewrites-linux-runs-windows-games-speed-gains/" target="_blank" rel="noopener">Wine 11 Rewrites Windows Game Compatibility Layer at the Kernel Level, Massive Speed Gains</a>
+            </div>
+            <div class="story-summary">Wine 11 has shipped with a fundamental rewrite of how it handles Windows system calls on Linux, working at the kernel level rather than purely in userspace, and the result is reportedly massive performance improvements for running Windows games on Linux. This was the highest-scoring Hacker News story today with 779 points, which tells you how much excitement there is in the Linux gaming community around this. Wine has been the backbone of Linux gaming compatibility for decades, and the project has always faced a performance overhead challenge — Windows games calling into a translation layer inevitably have some cost. Moving more of the translation work to the kernel level reduces context switching overhead and can eliminate entire categories of latency that accumulated in the old approach. Valve's Proton (which is built on Wine) has already transformed Linux gaming, but a performance leap in the underlying Wine layer would compound with everything Proton has already done. For developers who care about Linux compatibility, this is significant toolchain news. For gamers running Linux as their primary OS, this could meaningfully expand the catalog of games that run well without Windows. The XDA Developers coverage has more technical detail on the specific architectural changes if you want to go deeper.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.apple.com/newsroom/2026/03/introducing-apple-business-a-new-all-in-one-platform-for-businesses-of-all-sizes/" target="_blank" rel="noopener">Apple Launches 'Apple Business' — New All-in-One Platform for Businesses</a>
+            </div>
+            <div class="story-summary">Apple has announced Apple Business, described as a new all-in-one platform for businesses of all sizes, and it was the second-highest scoring Hacker News story today with 564 points. The platform appears to consolidate various business-facing tools and services that Apple has had scattered across its product line — device management, app distribution, payments, and potentially more — into a unified offering. For small and medium businesses in particular, this could simplify what has historically been a fragmented experience of managing Apple hardware and software in a commercial context. Apple has been steadily building out its enterprise and business capabilities, and this feels like a consolidation play that also makes the Apple ecosystem stickier for business customers. The Hacker News interest likely reflects both genuine developer curiosity about the platform's APIs and enterprise IT folks paying attention to what this means for their device management workflows. Details on pricing and the full feature set are still emerging from Apple's newsroom post. This is more of a 'watch this space' story than a finished product analysis, but the Hacker News reaction suggests the developer community is taking it seriously as a potential platform opportunity.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-dev"></div>
+            <h2>Hardware & Devices</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://spectrum.ieee.org/data-center-dc" target="_blank" rel="noopener">Data Centers Are Ditching AC Power for DC — 'Edison's Revenge'</a>
+            </div>
+            <div class="story-summary">IEEE Spectrum has a detailed piece on a quiet but significant infrastructure shift happening in data centers: the move from AC to DC power distribution. The headline calls it 'Edison's Revenge,' a nod to the famous AC vs. DC battle between Edison and Westinghouse in the 1880s — Edison backed DC, lost, and AC became the global standard for over a century. Now, as Nvidia's high-density AI compute racks push power requirements to levels that expose inefficiencies in AC distribution chains, DC is making a comeback in the data center context. The core engineering argument is straightforward: modern computing hardware runs on DC internally, so every AC-to-DC conversion in the power chain is a loss. By distributing DC power directly to the rack, you can eliminate multiple conversion stages and reduce cooling requirements. This matters a lot when you're running GPU clusters that consume hundreds of kilowatts per rack. The Hacker News post on this got 114 points, reflecting genuine engineering interest. The transition isn't simple — it requires new infrastructure investment and changes to safety standards and electrical codes — but the efficiency gains are significant enough that hyperscalers are actively making this shift. For anyone designing or specifying data center infrastructure for AI workloads, this is a relevant technical trend to understand.</div>
+            <div class="story-source">IEEE Spectrum</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-science"></div>
+            <h2>Science & Research</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/space/2026/03/nasa-kills-lunar-space-station-to-focus-on-ambitious-moon-base/" target="_blank" rel="noopener">NASA Cancels Lunar Gateway Space Station to Focus on Moon Surface Base</a>
+            </div>
+            <div class="story-summary">NASA has officially killed the Lunar Gateway project — the planned space station in lunar orbit that was a centerpiece of the Artemis program — and is redirecting resources toward an ambitious permanent base on the Moon's surface. The decision is framed around a 'everyone wants to be on the surface' rationale, which captures a real shift in how NASA and its partners are thinking about the Moon. The Gateway was a compromise designed partly to accommodate international partners and provide a waypoint for deep space exploration, but it also added complexity, cost, and time to any mission that wanted to actually land astronauts on the lunar surface. Scrapping it in favor of a direct surface base is more aggressive and arguably more scientifically interesting, but it's also a harder engineering challenge. This decision will affect international partners like ESA, JAXA, and others who had committed hardware and resources to Gateway. It also reshapes the competitive picture with China, which has its own lunar program with surface ambitions. The broader context is that the Trump administration has pushed NASA toward more ambitious, faster timelines, and the Gateway was seen as insufficiently bold. Whether a lunar surface base is achievable on any reasonable timeline is a genuine question, but the direction of travel is clear.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/science/2026/03/final-analysis-of-2025-iberian-blackout-policies-left-spain-at-risk/" target="_blank" rel="noopener">Post-Mortem of the 2025 Iberian Blackout: Grid Policy Left Spain Dangerously Exposed</a>
+            </div>
+            <div class="story-summary">The final analysis of the 2025 Iberian blackout has been published, and the conclusion is uncomfortable for energy policy makers: Spain's grid was left operating too close to the edge of stability, with too much hardware allowed to automatically disconnect under conditions that should have been considered within normal operating parameters. This is what grid engineers call 'N-1' or 'N-2' contingency planning — the grid should be able to handle the loss of one or two major components without cascading failure. The analysis suggests Spain's policies effectively allowed the grid to operate in a state where those margins weren't being maintained. The immediate trigger was apparently a relatively normal equipment trip that, under a more robustly configured grid, shouldn't have caused a system-wide outage. The broader context is the rapid integration of renewable energy, which changes the grid's dynamic characteristics in ways that legacy stability frameworks don't fully account for — renewables don't provide the same inertia as spinning generators, which matters a lot for how quickly the grid can respond to frequency deviations. This is a technically rich post-mortem that has implications for other European grids pursuing similar renewable integration strategies. For engineers working on grid infrastructure or energy systems, the full report is worth reading carefully.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+    </div>
+    
+
+    
+
+    
+    <div class="previous-day">
+        <a href="2026-03-24.html">&larr; Previous day</a>
+    </div>
+    
+
+    <footer>
+        Generated 2026-03-25 05:24 UTC &middot; Tech Digest
+    </footer>
+</body>
+</html>
