@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Digest - Thursday, March 26, 2026</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --accent-subtle: #1f6feb22;
+            --topic-ai: #da70d6;
+            --topic-industry: #58a6ff;
+            --topic-dev: #3fb950;
+            --topic-hardware: #f0883e;
+            --topic-science: #d29922;
+            --topic-policy: #f85149;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 0;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 24px 16px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        header .date {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-top: 4px;
+        }
+
+        .intro {
+            padding: 16px;
+            background: var(--accent-subtle);
+            border-left: 3px solid var(--accent);
+            margin: 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .section {
+            margin: 24px 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0 16px;
+            margin-bottom: 12px;
+        }
+
+        .topic-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+
+        .story {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .story:last-child {
+            border-bottom: none;
+        }
+
+        .story-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .story-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .story-title a:hover {
+            color: var(--accent);
+        }
+
+        .story-summary {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .story-source {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+            opacity: 0.7;
+        }
+
+        footer {
+            padding: 24px 16px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Topic colors */
+        .topic-ai { background: var(--topic-ai); }
+        .topic-industry { background: var(--topic-industry); }
+        .topic-dev { background: var(--topic-dev); }
+        .topic-hardware { background: var(--topic-hardware); }
+        .topic-science { background: var(--topic-science); }
+        .topic-policy { background: var(--topic-policy); }
+
+        .source-errors {
+            margin: 24px 16px;
+            padding: 12px 16px;
+            background: #f8514922;
+            border: 1px solid #f8514944;
+            border-radius: 8px;
+            font-size: 0.8rem;
+        }
+
+        .source-errors h3 {
+            color: #f85149;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .error-item {
+            color: var(--text-muted);
+            padding: 2px 0;
+        }
+
+        .previous-day {
+            padding: 20px 16px;
+            text-align: center;
+        }
+
+        .previous-day a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile touch targets */
+        @media (max-width: 640px) {
+            .story {
+                padding: 16px;
+            }
+            .story-title a {
+                display: block;
+                padding: 4px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tech Digest</h1>
+        <div class="date">Thursday, March 26, 2026</div>
+    </header>
+
+    <div class="intro">AI is front and center today, from Google's memory compression breakthrough and OpenAI's ongoing safety efforts, to a nasty supply chain attack on LiteLLM that hit tens of thousands of developers. Meanwhile, a landmark social media addiction verdict against Meta and YouTube signals that Big Tech's liability shield may finally be cracking.</div>
+
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-ai"></div>
+            <h2>AI & Machine Learning</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/ai/2026/03/google-says-new-turboquant-compression-can-lower-ai-memory-usage-without-sacrificing-quality/" target="_blank" rel="noopener">Google's TurboQuant cuts LLM memory usage by up to 6x without quality loss</a>
+            </div>
+            <div class="story-summary">Google has unveiled TurboQuant, a new AI model compression algorithm that claims to reduce the working memory required to run large language models by up to six times, without the quality degradation that typically plagues other quantization approaches. Most existing quantization methods work by reducing the numerical precision of model weights, which shrinks memory footprint but introduces errors that accumulate across layers and noticeably degrade output quality. TurboQuant reportedly sidesteps this tradeoff through a novel approach to how it maps weight distributions, though Google has not yet published the full technical paper. The internet immediately started calling it 'Pied Piper' — the fictional compression algorithm from HBO's Silicon Valley — which is either a good sign that people are excited or a warning that hype is outpacing substance. Google itself is calling it a lab result for now, meaning it hasn't been productized or shipped inside any of its deployed models yet. That caveat matters a lot: there's a long road between a promising benchmark in a controlled environment and something that works reliably across the full diversity of real-world inference workloads. If it holds up, the implications are genuinely significant — smaller memory footprints mean you can run larger models on cheaper hardware, or run more model instances in parallel on the same GPU cluster, which has direct cost implications for anyone deploying AI at scale. It could also accelerate on-device AI by making models that previously required a data center feasible on consumer hardware. The timing is notable given the ongoing arms race around inference efficiency, with players like Groq, Cerebras, and even NVIDIA all competing on this axis. Worth watching, but hold off on celebrating until we see independent replication.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/03/25/delve-did-the-security-compliance-on-litellm-an-ai-project-hit-by-malware/" target="_blank" rel="noopener">LiteLLM supply chain attack hit ~47,000 downloads in under an hour</a>
+            </div>
+            <div class="story-summary">LiteLLM, one of the most widely used open-source Python libraries for routing requests across multiple LLM providers, was compromised in a supply chain attack when malicious versions 1.82.7 and 1.82.8 were published to PyPI. The malware was a credential stealer hidden in base64 inside a litellm_init.pth file — a particularly nasty hiding spot because .pth files are automatically executed by Python's import machinery at startup, meaning simply installing the package triggered the payload even without ever calling 'import litellm'. Analysis using BigQuery's public PyPI dataset reveals the malicious packages were live for approximately 46 minutes and were downloaded roughly 47,000 times during that window. Given that LiteLLM is used in production AI pipelines by enterprises and developers integrating with OpenAI, Anthropic, Gemini, and others, the credentials at risk here likely include API keys with real spending limits attached. The security compliance on LiteLLM was handled by a company called Delve, which is now facing uncomfortable questions about how this slipped through. This incident is a sharp reminder that the AI tooling ecosystem has grown extraordinarily fast without corresponding investment in supply chain security. The attack also reignites the debate around 'dependency cooldowns' — the practice of delaying installation of newly published package versions by a few days to let the community catch malicious releases before they spread. Simon Willison's blog has been covering this in real time and is the best source for technical details. If you or your team use LiteLLM in any pipeline, audit your installed versions and rotate any API keys that were present in environments where the package ran. This is not a drill.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/03/25/the-ai-skills-gap-is-here-says-ai-company-and-power-users-are-pulling-ahead/" target="_blank" rel="noopener">Anthropic study: AI skills gap is widening, power users are pulling ahead</a>
+            </div>
+            <div class="story-summary">Anthropic has published research findings suggesting that while AI isn't yet broadly replacing jobs, a measurable and growing skills gap is emerging between workers who use AI tools heavily and those who don't. The study finds that 'power users' — people who have invested time in learning how to prompt, chain, and integrate AI tools effectively — are achieving productivity multipliers that casual users simply aren't seeing. This tracks with something a lot of practitioners have noticed anecdotally: the productivity gains from AI tools are highly nonlinear and heavily dependent on how much you've invested in learning to use them well. The concern Anthropic raises is that this dynamic could deepen workforce inequality, since access to training and the time to develop these skills is not evenly distributed across income levels or job types. There's also an obvious self-interest angle here — Anthropic is an AI company with a financial stake in people believing that AI is important enough to skill up on — so take the framing with some salt. That said, the underlying observation about power users versus casual users is broadly consistent with what researchers and practitioners elsewhere have found. The implication for organizations is that 'giving everyone access to an AI tool' is not the same as 'getting productivity gains from AI.' Training, workflow integration, and cultural buy-in matter enormously. For individual engineers and knowledge workers, the practical takeaway is pretty simple: the gap between people who are learning to use these tools deeply and people who aren't is real and probably going to widen.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arcprize.org/arc-agi/3" target="_blank" rel="noopener">ARC-AGI-3 benchmark launched, raising the bar for AI reasoning tests</a>
+            </div>
+            <div class="story-summary">The ARC Prize team has released ARC-AGI-3, the latest iteration of the Abstraction and Reasoning Corpus benchmark that has become one of the most respected — and humbling — tests of genuine machine reasoning. Previous versions of ARC-AGI proved remarkably durable as evaluation tools precisely because they test the kind of fluid, compositional reasoning that current LLMs struggle with, even as those models ace many other benchmarks. ARC-AGI-2 saw limited success from frontier models, and ARC-AGI-3 reportedly raises the bar further. The release has sparked significant discussion on Hacker News, where it's currently one of the most upvoted posts of the day, reflecting genuine community interest in robust AI evaluation. The broader context here is that the AI field has a benchmark contamination problem — models are increasingly trained on or adjacent to evaluation datasets, making many benchmarks unreliable signals of actual capability. ARC-AGI's design philosophy, which requires novel problem-solving rather than pattern matching against training data, makes it more resistant to this kind of gaming. Whether current frontier models make meaningful progress on ARC-AGI-3 will be a useful signal about whether recent capability gains represent genuine reasoning improvements or mostly better memorization. The benchmark is open and publicly available, which means independent researchers can evaluate any model they like. This is the kind of infrastructure the field genuinely needs more of.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://openai.com/index/safety-bug-bounty" target="_blank" rel="noopener">OpenAI launches Safety Bug Bounty program and publishes Model Spec</a>
+            </div>
+            <div class="story-summary">OpenAI has made two related safety-focused announcements: the launch of a Safety Bug Bounty program, and a public explainer on its Model Spec — the internal document that governs how its models are supposed to behave. The Safety Bug Bounty is specifically oriented toward AI safety risks rather than traditional software vulnerabilities, covering things like agentic system vulnerabilities, prompt injection attacks, and data exfiltration pathways in deployed AI systems. This is a meaningful expansion of the bug bounty concept, which has historically been focused on code vulnerabilities, into the murkier territory of model behavior failures. The Model Spec publication is OpenAI's attempt to create public accountability around how it instructs its models to handle competing interests — between users, operators, and OpenAI itself. Publishing this kind of framework openly is a step toward the kind of transparency that researchers and regulators have been pushing for, though the gap between what a spec says and how a model actually behaves in practice is notoriously hard to close. Both announcements come at a moment when OpenAI is navigating significant scrutiny over its Pentagon deal, its corporate restructuring, and ongoing questions about whether its safety commitments are substantive or performative. The bug bounty in particular is an interesting structural move — it creates a financial incentive for external researchers to find and report safety failures rather than exploit or publish them. Whether the bounty amounts are sufficient to attract serious security researchers will determine how useful this actually is in practice.</div>
+            <div class="story-source">OpenAI Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://deepmind.google/blog/lyria-3-pro-create-longer-tracks-in-more/" target="_blank" rel="noopener">Google DeepMind releases Lyria 3 Pro with longer, structurally aware music generation</a>
+            </div>
+            <div class="story-summary">Google DeepMind has updated its Lyria music generation model with a new Pro tier called Lyria 3 Pro, which introduces support for longer tracks and what the team describes as 'structural awareness' — the model's ability to maintain musical coherence over extended durations, managing things like verse-chorus structure, dynamic variation, and thematic development. This is a technically meaningful improvement because most generative audio models degrade in coherence as output length increases, producing music that sounds fine locally but lacks global structure. The announcement also includes expanded distribution of Lyria capabilities to more Google products and surfaces, following the earlier integration of the standard Lyria 3 model into the Gemini app for 30-second track generation. The music generation space has gotten crowded fast, with Suno, Udio, and others competing aggressively on features and quality. Google's advantage here is tight integration with its consumer product ecosystem and the underlying research infrastructure of DeepMind. For developers, Lyria is available through the Gemini API, making it potentially interesting for applications that need programmatic music generation. The structural awareness improvement is the real story here — if it works as described, it moves AI music generation meaningfully closer to being useful for professional-length compositions rather than just short demos.</div>
+            <div class="story-source">Google DeepMind Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.bbc.com/news/articles/c3w3e467ewqo" target="_blank" rel="noopener">OpenAI closes Sora video app, cancels $1B Disney deal — then launches Sora 2</a>
+            </div>
+            <div class="story-summary">In a head-spinning sequence of events, OpenAI shut down the standalone Sora video-generation app less than two years after its launch, simultaneously canceling what was reported to be a $1 billion content deal with Disney. The original Sora launch in early 2024 genuinely shocked the media and entertainment industry with its ability to generate photorealistic video from text prompts, but the standalone app apparently struggled to find a sustainable user base or business model. The closure has been followed by the introduction of Sora 2, repositioned as a social creation platform rather than a standalone product, with a renewed focus on safety guardrails built into the foundation. The safety emphasis is presumably a direct response to the content moderation challenges that plagued the original, including concerns about deepfakes and synthetic media that could be weaponized for misinformation. The Disney deal cancellation is the more surprising business story — losing a $1B partnership is a significant signal about either the technology's readiness for premium commercial deployment or a mismatch in how Disney and OpenAI saw the product evolving. Sora 2's repositioning as a 'social creation platform' rather than a professional tool suggests OpenAI is pivoting toward consumer-facing creative use cases, similar to how tools like Canva or CapCut have found large audiences by making video creation accessible to non-professionals. Whether this pivot works will depend heavily on the quality of the output and the moderation experience.</div>
+            <div class="story-source">BBC Technology</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://mariozechner.at/posts/2026-03-25-thoughts-on-slowing-the-fuck-down/" target="_blank" rel="noopener">"Thoughts on slowing the fuck down": A sharp critique of agentic engineering culture</a>
+            </div>
+            <div class="story-summary">Mario Zechner, the engineer behind the Pi agent framework used in the OpenClaw project, has published a pointed essay arguing that the agentic AI engineering community has collectively abandoned discipline in favor of a production-maximizing addiction. His core argument is that the current culture around AI coding agents — where the goal is to generate the maximum amount of code with the least possible human oversight — is producing systems that are fast to build but expensive to maintain, debug, and trust. Zechner isn't an outsider taking potshots; he's someone who has been building and using these systems in production, which gives his critique considerably more weight than the usual skeptic handwringing. The post has become one of the most-discussed items on Hacker News today, with a score of 758, suggesting it's resonating with a lot of practicing engineers. The specific concern he raises is that agentic systems are being deployed with insufficient understanding of what they're actually doing, and that the feedback loops for catching errors are too slow or too weak. This connects to broader anxieties about prompt injection vulnerabilities, supply chain attacks like the LiteLLM incident, and the general question of whether we're building on foundations we understand well enough. The essay is worth reading in full, particularly if you're evaluating whether to let an AI agent make autonomous changes to your codebase or infrastructure. The counterargument — that moving fast and iterating is how you learn what actually works — is real, but Zechner's point is that the costs of mistakes in agentic systems are higher and less recoverable than in traditional software.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-policy"></div>
+            <h2>Policy & Regulation</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/03/25/jury-finds-meta-and-youtube-negligent-in-landmark-social-media-addiction-trial/" target="_blank" rel="noopener">Meta and YouTube found liable in landmark social media addiction trial, ordered to pay $6M</a>
+            </div>
+            <div class="story-summary">A jury has found Meta and YouTube negligent in what is being called a landmark social media addiction trial, awarding $6 million to a woman who alleged she became addicted to the platforms as a child, with resulting psychological harm. This is the second child safety trial verdict to hit these companies, and Meta emerged as the bigger loser — evidence presented at trial reportedly showed that Meta's own internal research identified how addictive its platforms were among teenagers and that the company actively used those findings to increase engagement rather than reduce harm. That's a significant factual distinction from a liability standpoint: knowing about a harm and using that knowledge to amplify the harm is a much stronger basis for negligence than simply building something that turned out to be addictive. The $6 million figure is modest compared to Meta's revenue, but the precedential value is enormous. There are hundreds of similar cases pending in the US, and this verdict gives plaintiffs' lawyers a template and evidence record to work from. Meta also separately faces a $375 million judgment in New Mexico for misleading users about child safety. The combination of these cases is starting to look like a slow-motion reckoning for social media platforms' liability under Section 230, which has historically shielded them from this kind of litigation. The UK is moving in parallel: Apple has introduced age verification requirements for UK iPhone users, and the UK government is trialling social media bans and digital curfews for teenagers. The regulatory and legal pressure is building from multiple directions simultaneously.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/tech-policy/2026/03/supreme-court-rejects-sonys-attempt-to-kick-music-pirates-off-the-internet/" target="_blank" rel="noopener">Supreme Court sides with Cox, rejects Sony's attempt to force ISP to disconnect pirates</a>
+            </div>
+            <div class="story-summary">The US Supreme Court has ruled against Sony in a significant copyright case, rejecting the music giant's argument that ISPs like Cox Communications should be held liable for their subscribers' piracy and required to terminate internet access for repeat infringers. Sony had argued that Cox's failure to aggressively enforce its own repeat infringer policy made the ISP a contributory infringer — essentially that enabling the pipes over which piracy flows makes you responsible for the piracy. The Court's ruling leaned on the same 'Betamax principle' from Sony's own 1984 win against Universal Studios, which established that technologies with substantial non-infringing uses are protected even if they're sometimes used for infringement. The irony of Sony being hoisted on its own Betamax petard is hard to miss. For ISPs, this is a major relief — the industry had been worried that a loss would effectively require them to become copyright enforcement arms of the entertainment industry, which would be both technically complex and commercially toxic. For internet users, the ruling preserves the principle that your ISP shouldn't be able to cut off your internet access based on accusations of piracy without due process. The broader significance is that it keeps the internet's architecture neutral with respect to content disputes rather than turning ISPs into gatekeepers. Rights holders will continue lobbying for legislative remedies, but for now the courts have held the line.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://fightchatcontrol.eu/?foo=bar" target="_blank" rel="noopener">EU still pushing to scan private messages and photos under Chat Control proposal</a>
+            </div>
+            <div class="story-summary">The EU's controversial Chat Control proposal — which would require messaging platforms to scan private encrypted messages and photos for child sexual abuse material — is back on the agenda, and it's generating significant backlash as evidenced by its position as the top-scored Hacker News story today with 872 points. The proposal has been contentious since it was first floated because end-to-end encrypted communications, by design, make it technically impossible to scan message content without either breaking the encryption or installing client-side scanning software on users' devices. Both approaches are deeply problematic: breaking E2E encryption undermines security for all users including journalists, dissidents, and abuse survivors, while client-side scanning effectively installs surveillance infrastructure on every device. Cryptographers and security researchers have been nearly unanimous in warning that there is no technical implementation of this mandate that doesn't create severe systemic security risks. The EU's stated goal — protecting children from abuse — is legitimate and important, but the proposed mechanism is widely regarded as technically naive at best and willfully surveillance-enabling at worst. Signal has previously threatened to pull out of the EU market if the proposal passes in a form that requires backdooring its encryption. The proposal has been stalled by member state disagreements but hasn't gone away, and periodic revivals keep the threat live for European users of encrypted communications.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/gadgets/2026/03/reddit-will-require-fishy-accounts-to-verify-they-are-run-by-a-human/" target="_blank" rel="noopener">Reddit to require identity verification for "fishy" accounts suspected of being bots</a>
+            </div>
+            <div class="story-summary">Reddit is rolling out a new policy requiring accounts that exhibit suspicious behavior — high-volume posting, unusual patterns, or other signals the platform associates with automated activity — to complete a human verification step. The move is a direct response to the growing proliferation of AI-generated content on the platform, which has become enough of a problem that Reddit feels it needs structural intervention rather than just moderation. Notably, Reddit is not banning AI-generated content outright — the policy is explicitly about verifying that accounts are operated by humans, not about policing whether the content they post was written by AI. This is a philosophically interesting line to draw: the concern is apparently not synthetic text per se, but synthetic accounts that have no human judgment or accountability behind them. For a platform that sells its identity as a community of humans sharing knowledge and opinions, the erosion of that premise by bot accounts is a genuine existential threat to the product's value proposition. The verification mechanism isn't fully detailed yet, but similar approaches at other platforms have ranged from phone number verification to third-party identity services. The practical challenge is that determined bad actors can usually get around these measures with effort, so the policy will likely reduce low-effort bot spam more than sophisticated influence operations. Still, doing something is better than doing nothing.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-industry"></div>
+            <h2>Industry & Business</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.bbc.com/news/articles/c5y8d721q18o" target="_blank" rel="noopener">SpaceX reportedly filing for share sale in what could be the biggest IPO ever</a>
+            </div>
+            <div class="story-summary">Reports are circulating that SpaceX is planning to file for a share sale that could represent the largest IPO in history, sending stocks of companies in SpaceX's orbit — launch vehicle manufacturers, satellite component suppliers, and aerospace contractors — surging in US trading. SpaceX has been one of the most valuable private companies in the world for years, with a valuation that has grown substantially on the back of Starlink's commercial success and its dominant position in the launch market. An IPO would be a massive liquidity event for early investors and employees, and would give public markets their first direct exposure to the commercial space sector's fastest-moving player. The timing is notable given Elon Musk's simultaneous role in the current administration, which raises governance questions about potential conflicts of interest between SpaceX's government contracts and a public company's fiduciary obligations. Starlink in particular has significant revenue from US government and military contracts, and the interplay between those relationships and public shareholder interests would be unusual territory. No formal filing has been confirmed, so treat this as a strong rumor rather than a done deal. If it proceeds, it would almost certainly be one of the most-watched market events of 2026.</div>
+            <div class="story-source">BBC Technology</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.bbc.com/news/articles/c5yxv5kzlv5o" target="_blank" rel="noopener">Epic Games lays off 1,000 more staff as Fortnite struggles</a>
+            </div>
+            <div class="story-summary">Epic Games has announced another round of layoffs affecting approximately 1,000 employees — the second significant headcount reduction in recent years — as the company continues to struggle with the financial pressures of maintaining Fortnite and its broader ambitions in the games and developer tools space. This follows a previous round of cuts that was also attributed to Fortnite's revenue trajectory not keeping pace with the company's spending. Epic built up a massive workforce during the Fortnite boom years and has been contracting since. The layoffs affect multiple teams, though the company hasn't fully detailed which divisions are being cut. Epic is also dealing with the aftermath of its antitrust battles with Apple and Google, which consumed significant legal resources and management attention even as the outcomes were mixed. The Unreal Engine business remains strategically valuable and is widely used across gaming and other industries, but it's expensive to maintain and doesn't generate the kind of consumer revenue that can sustain a headcount of thousands. For developers in the games industry, this is another data point in a difficult few years that have seen layoffs across many studios. The games industry's cycle of overhiring during boom periods and cutting during contractions has become depressingly predictable.</div>
+            <div class="story-source">BBC Technology</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://github.blog/news-insights/company-news/updates-to-github-copilot-interaction-data-usage-policy/" target="_blank" rel="noopener">GitHub updates Copilot interaction data usage policy</a>
+            </div>
+            <div class="story-summary">GitHub has published updates to how it uses interaction data from Copilot, the AI coding assistant used by millions of developers. The changes have attracted significant attention on Hacker News — 267 points — suggesting developers are paying close attention to what GitHub is doing with the code and prompts they feed into Copilot. The policy update comes at a moment when there is already heightened sensitivity around AI training data practices, particularly following various lawsuits and controversies about whether code generated by AI models trained on public GitHub repositories constitutes a copyright or licensing issue. The specific details of what changed in the policy matter enormously here, and developers using Copilot in enterprise or professional contexts should review the update carefully, particularly around whether interaction data is used to train future models and what opt-out mechanisms exist. Microsoft, which owns both GitHub and has a major stake in OpenAI, has a complex set of interests here — Copilot interaction data is genuinely valuable for improving the models, but heavy data collection from enterprise customers is a sales obstacle. The update is likely an attempt to clarify and possibly restrict data use in ways that address enterprise procurement concerns. Worth reading the actual policy document rather than relying on summaries.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-dev"></div>
+            <h2>Software & Dev Tools</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://blog.freecad.org/2026/03/25/freecad-version-1-1-released/" target="_blank" rel="noopener">FreeCAD v1.1 released — major milestone for open source CAD</a>
+            </div>
+            <div class="story-summary">FreeCAD version 1.1 has been released, marking a significant milestone for the long-running open source parametric 3D CAD application. FreeCAD has a dedicated community of users in engineering, product design, and maker contexts, but it has historically struggled with stability and usability issues compared to commercial CAD tools. Version 1.1 follows v1.0, which was itself a major landmark after years of pre-1.0 development, and the Hacker News discussion with 211 points reflects genuine community interest. The release notes reportedly include improvements to the topological naming problem — one of FreeCAD's most persistent and annoying bugs, where renaming or reordering model features causes downstream references to break — along with performance improvements and user interface refinements. For engineers and designers who have been waiting for FreeCAD to be reliable enough for serious professional use, each release moves the needle. The open source CAD space has become more interesting recently with growing interest in using CAD tools programmatically and integrating them with AI-assisted design workflows. FreeCAD's Python scripting capabilities make it more amenable to this kind of integration than many commercial alternatives.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://v-os.dev" target="_blank" rel="noopener">VitruvianOS: A new desktop Linux distribution inspired by BeOS philosophy</a>
+            </div>
+            <div class="story-summary">VitruvianOS is a new desktop Linux distribution that draws explicit design inspiration from BeOS, the beloved but commercially unsuccessful operating system from the 1990s that was renowned for its clean architecture, responsiveness, and thoughtful user interface design. The project has attracted 346 upvotes on Hacker News, which reflects the persistent nostalgia and genuine affection that BeOS still commands among people who used it, as well as broader interest in alternative approaches to desktop computing that don't just clone Windows or macOS conventions. BeOS was notable for its pervasive threading model, its media-friendly architecture, and an interface that felt fast and responsive in ways that Windows of the same era emphatically did not. Haiku OS has been keeping the BeOS flame alive for years, and VitruvianOS appears to be a separate but philosophically adjacent effort built on a Linux kernel rather than BeOS's original codebase. For developers interested in alternative computing environments or the history of OS design, this is worth a look. Whether it has the sustained development resources to become a serious daily-driver option remains to be seen — the graveyard of promising alternative Linux distributions is extensive.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-science"></div>
+            <h2>Science & Research</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/space/2026/03/here-is-nasas-plan-for-nuking-gateway-and-sending-it-to-mars/" target="_blank" rel="noopener">NASA's plan to repurpose Gateway with nuclear propulsion and send it to Mars</a>
+            </div>
+            <div class="story-summary">NASA has outlined a plan to take the Gateway lunar space station — originally conceived as a waypoint in lunar orbit under the Artemis program — and retrofit it with nuclear thermal propulsion to send it on a mission to Mars. This is an extraordinary pivot: Gateway has been under construction and planning for years as a Moon-focused asset, and redirecting it to Mars represents a significant shift in mission architecture. Nuclear thermal propulsion, which heats propellant using a fission reactor rather than chemical combustion, offers roughly twice the specific impulse of the best chemical rockets, which translates to faster transit times and/or lower propellant mass for deep space missions. The challenge is that only one US-built nuclear reactor has ever flown in space — SNAP-10A in 1965 — meaning this would require developing and certifying space nuclear technology that the US essentially hasn't touched for six decades. The political and regulatory hurdles for launching nuclear reactors are substantial and shouldn't be underestimated. The timing of this announcement also intersects with broader NASA restructuring and the administration's focus on Mars as a destination, which has created pressure to demonstrate a credible path to the red planet. Whether this plan survives budget cycles and administration changes is genuinely uncertain, but as a technical concept it's one of the more interesting things NASA has proposed in a while.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/health/2026/03/antibiotic-resistance-among-germs-swells-during-droughts-study-suggests/" target="_blank" rel="noopener">Antibiotic resistance surges during droughts, study finds — linking two global crises</a>
+            </div>
+            <div class="story-summary">A new study has identified a troubling connection between drought conditions and increased antibiotic resistance among bacterial pathogens, linking two of the most significant global health and environmental challenges of the coming decades. The proposed mechanism involves how drought affects microbial communities in soil and water systems: reduced water availability concentrates bacteria, increases horizontal gene transfer, and creates selection pressure that favors resistant strains. This is concerning because climate change is expected to increase both the frequency and severity of droughts across large parts of the world, which would — if this relationship holds up to further scrutiny — accelerate the already alarming rise of antibiotic-resistant infections. Antibiotic resistance is already estimated to cause over a million deaths per year globally and is projected to become one of the leading causes of mortality worldwide by mid-century. The study doesn't propose a solution, but identifying the linkage is important for how we think about both climate adaptation and antimicrobial stewardship policies. It also suggests that water management and conservation practices could have public health implications beyond the obvious ones. This is the kind of research that tends to get insufficient attention because it falls between disciplines — it's not purely a climate story or purely a public health story, so it often gets lost in the cracks.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-dev"></div>
+            <h2>Hardware & Devices</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://spectrum.ieee.org/data-center-dc" target="_blank" rel="noopener">Data centers are abandoning AC power distribution in favor of DC — and it matters</a>
+            </div>
+            <div class="story-summary">IEEE Spectrum has published a detailed look at a quietly significant transition underway in data center power architecture: the shift from alternating current (AC) to direct current (DC) distribution. Traditional data centers distribute power as AC and convert it to DC at each server rack, because servers run on DC internally. Every conversion step loses energy as heat, and with the power densities required by modern AI accelerators, those losses add up to meaningful inefficiency. Moving to DC distribution — supplying DC power at the rack level or even earlier in the distribution chain — eliminates several conversion steps and can improve power usage effectiveness (PUE) meaningfully. The trigger for this transition accelerating now is the extreme power density of AI GPU clusters: NVIDIA's latest rack-scale systems can consume 100kW or more per rack, making even small percentage efficiency gains economically significant at scale. NVIDIA's own infrastructure recommendations are reportedly pushing in this direction. The challenges are real — DC distribution at high voltages requires different safety standards, different equipment, and retraining of facilities staff — but the economics are compelling enough that major hyperscalers are moving forward. For anyone building or evaluating data center infrastructure, this is a trend worth tracking because it affects procurement, facilities design, and vendor selection in ways that aren't always obvious from the chip and server level.</div>
+            <div class="story-source">IEEE Spectrum</div>
+        </div>
+        
+    </div>
+    
+
+    
+
+    
+    <div class="previous-day">
+        <a href="2026-03-25.html">&larr; Previous day</a>
+    </div>
+    
+
+    <footer>
+        Generated 2026-03-26 05:42 UTC &middot; Tech Digest
+    </footer>
+</body>
+</html>
