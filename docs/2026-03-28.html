@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Digest - Saturday, March 28, 2026</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --accent-subtle: #1f6feb22;
+            --topic-ai: #da70d6;
+            --topic-industry: #58a6ff;
+            --topic-dev: #3fb950;
+            --topic-hardware: #f0883e;
+            --topic-science: #d29922;
+            --topic-policy: #f85149;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 0;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 24px 16px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        header .date {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-top: 4px;
+        }
+
+        .intro {
+            padding: 16px;
+            background: var(--accent-subtle);
+            border-left: 3px solid var(--accent);
+            margin: 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .section {
+            margin: 24px 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0 16px;
+            margin-bottom: 12px;
+        }
+
+        .topic-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+
+        .story {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .story:last-child {
+            border-bottom: none;
+        }
+
+        .story-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .story-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .story-title a:hover {
+            color: var(--accent);
+        }
+
+        .story-summary {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .story-source {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+            opacity: 0.7;
+        }
+
+        footer {
+            padding: 24px 16px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Topic colors */
+        .topic-ai { background: var(--topic-ai); }
+        .topic-industry { background: var(--topic-industry); }
+        .topic-dev { background: var(--topic-dev); }
+        .topic-hardware { background: var(--topic-hardware); }
+        .topic-science { background: var(--topic-science); }
+        .topic-policy { background: var(--topic-policy); }
+
+        .source-errors {
+            margin: 24px 16px;
+            padding: 12px 16px;
+            background: #f8514922;
+            border: 1px solid #f8514944;
+            border-radius: 8px;
+            font-size: 0.8rem;
+        }
+
+        .source-errors h3 {
+            color: #f85149;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .error-item {
+            color: var(--text-muted);
+            padding: 2px 0;
+        }
+
+        .previous-day {
+            padding: 20px 16px;
+            text-align: center;
+        }
+
+        .previous-day a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile touch targets */
+        @media (max-width: 640px) {
+            .story {
+                padding: 16px;
+            }
+            .story-title a {
+                display: block;
+                padding: 4px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tech Digest</h1>
+        <div class="date">Saturday, March 28, 2026</div>
+    </header>
+
+    <div class="intro">A busy week closes with AI tools expanding fast — OpenAI's Codex gets plugins, Google's Gemini audio model improves, and robotics startup Physical Intelligence eyes another billion — while security headlines are dominated by Iranian hackers breaching FBI Director Kash Patel's personal Gmail.</div>
+
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-ai"></div>
+            <h2>AI & Machine Learning</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/ai/2026/03/openai-brings-plugins-to-codex-closing-some-of-the-gap-with-claude-code/" target="_blank" rel="noopener">OpenAI brings plugins to Codex, pushing it beyond coding tasks</a>
+            </div>
+            <div class="story-summary">OpenAI has launched a plugins feature for Codex, its AI-powered coding assistant, significantly expanding what the tool can do beyond writing and reviewing code. The move is a direct response to competitive pressure — Claude Code and other rivals have offered extensible, tool-augmented coding experiences for some time. With plugins, Codex can now integrate with external services, retrieve live data, and act more like a general-purpose agentic tool rather than a narrow code-completion engine. This is part of a broader trend of coding assistants evolving into full-blown development agents that can reason, plan, and interact with external systems. For developers already using Codex in their workflows, this could meaningfully reduce context-switching by pulling in documentation, APIs, or deployment tools directly. OpenAI acquired Astral earlier this month — the team behind popular Python tooling like Ruff — signaling a serious push to own the Python developer stack. The timing also aligns with broader OpenAI infrastructure plays, including Sora 2 and agentic commerce features in ChatGPT, suggesting the company is racing to make all its products more agent-capable simultaneously. Whether Codex's plugin ecosystem will catch up to what Anthropic has built remains to be seen, but the gap is closing.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://deepmind.google/blog/gemini-3-1-flash-live-making-audio-ai-more-natural-and-reliable/" target="_blank" rel="noopener">Google DeepMind releases Gemini 3.1 Flash Live for more natural voice AI</a>
+            </div>
+            <div class="story-summary">Google DeepMind shipped Gemini 3.1 Flash Live, an updated voice model focused on making audio AI interactions feel more fluid and less robotic. The key improvements are lower latency and better precision — two of the most persistent frustrations in voice-driven AI interfaces. This is part of the broader Gemini 3.1 family refresh, which also includes Flash-Lite for cost-efficient scaled deployments and the more capable 3.1 Pro for complex reasoning tasks. Voice AI has historically lagged behind text AI in real-world usability, and Google appears to be investing seriously in closing that gap. Reduced latency matters enormously for conversational applications — even a few hundred milliseconds of delay breaks the sense of natural dialogue. This release competes directly with offerings from OpenAI's real-time audio API and emerging voice models from other labs. DeepMind has also been pushing into music generation with Lyria 3 Pro, which now supports longer structured tracks, suggesting a coordinated push into multimodal creative AI. For developers building voice-first products, Gemini 3.1 Flash Live is worth evaluating, especially given Google's competitive pricing on Flash-tier models.</div>
+            <div class="story-source">Google DeepMind Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/03/27/physical-intelligence-is-reportedly-in-talks-to-raise-1-billion-again/" target="_blank" rel="noopener">Physical Intelligence reportedly in talks to raise another $1 billion, doubling its valuation in four months</a>
+            </div>
+            <div class="story-summary">Physical Intelligence (PI), the robotics AI startup that trains foundation models for physical manipulation tasks, is reportedly in talks to raise $1 billion in a new round that would value the company at roughly $11 billion — up from $5.6 billion just four months ago. That's a remarkable valuation jump in a short window, and it reflects just how hot the robotics-plus-AI investment thesis has become. PI's approach is to build general-purpose policies that can control robot arms and other hardware across diverse tasks, rather than training task-specific models. If that works at scale, it could be to robotics what GPT-4 was to language — a single powerful model that generalizes broadly. The company has attracted serious talent from academia and big tech, and its earlier funding rounds included investment from notable names in the AI space. The fact that they're going back to market so quickly suggests either strong traction, aggressive expansion plans, or both. This also fits into a larger pattern: the physical AI space — robots, autonomous systems, embodied agents — is attracting massive capital as investors look for the next frontier beyond pure language models. Whether the valuation is justified depends on how quickly PI can show that general robot policies work reliably outside lab conditions, which remains an open question.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://deepmind.google/blog/measuring-progress-toward-agi-a-cognitive-framework/" target="_blank" rel="noopener">Google DeepMind publishes cognitive framework for measuring progress toward AGI</a>
+            </div>
+            <div class="story-summary">DeepMind released a formal framework for measuring progress toward AGI, framed around cognitive capabilities rather than benchmark performance. This is a significant step because the field has long lacked rigorous, agreed-upon ways to assess how close any given system is to general intelligence — leading to a lot of fuzzy marketing claims and poorly grounded comparisons. The framework appears to decompose intelligence into distinct cognitive dimensions and tracks how AI systems improve along each axis. Alongside the publication, DeepMind launched a Kaggle hackathon to crowdsource the development of relevant evaluations, which is a smart move — getting the broader research community to stress-test and build on the framework will improve its credibility. This matters beyond academic interest: how you define and measure AGI progress influences what gets funded, what gets regulated, and how companies communicate risk to the public. DeepMind's framing is notable coming in the same month as their ten-year retrospective on AlphaGo, which they're positioning as a foundational moment in the path toward AGI. Whether this framework gains traction will depend on whether other labs and researchers adopt it or propose competing alternatives. It's a welcome move toward rigor in a space that badly needs it.</div>
+            <div class="story-source">Google DeepMind Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.wired.com/story/made-in-china-ai-research-is-starting-to-split-along-geopolitical-lines/" target="_blank" rel="noopener">AI research is fracturing along geopolitical lines after NeurIPS policy reversal</a>
+            </div>
+            <div class="story-summary">NeurIPS, the world's premier AI research conference, announced a policy change this week that drew immediate and intense backlash from Chinese researchers, then quickly reversed course. The details of the original policy weren't fully disclosed in public reporting, but the reaction suggests it touched on author affiliation requirements, submission restrictions, or review processes that would have disadvantaged researchers at Chinese institutions. The episode exposes a real and growing tension: AI research has historically been a globally collaborative enterprise, with talent, ideas, and papers flowing freely across borders. But geopolitical pressures — export controls, national security concerns, and institutional mistrust — are increasingly pushing labs, conferences, and governments toward siloed ecosystems. Chinese AI institutions have been producing high-quality work at a rapid clip, and any move to structurally exclude them from top venues would fragment the field in ways that affect everyone. The reversal suggests that NeurIPS understood the backlash was legitimate, but the fact that the policy was floated at all signals that these pressures are building behind the scenes. For developers and researchers, this is a trend worth watching: the open, borderless culture of AI research that accelerated progress over the last decade may be under genuine threat. If research splits along geopolitical lines, we'll all eventually see the effects in slower, more duplicative progress.</div>
+            <div class="story-source">Wired</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://cursor.com/blog/real-time-rl-for-composer" target="_blank" rel="noopener">Cursor improves Composer with real-time reinforcement learning</a>
+            </div>
+            <div class="story-summary">Cursor, the AI-native code editor that has become a favorite among developers, published a blog post detailing how they're using real-time reinforcement learning to improve Composer, their multi-file editing agent. The core insight is that rather than relying purely on static fine-tuning or RLHF pipelines run offline, they're closing the feedback loop in a more dynamic way — letting the model learn from actual editing outcomes as they happen. This is technically interesting because agentic coding tools operate in a much more structured environment than open-ended chat, which makes reward signal design more tractable. Cursor's rapid iteration on Composer has been one of the reasons developers have stuck with it even as competitors like GitHub Copilot and Claude Code have improved. The post is fairly technical and worth reading if you're building or thinking about building similar systems. Real-time RL for coding agents is still early, but the fact that a product company is doing this in production — not just in a research lab — is notable. It suggests the gap between research and shipping in this space is narrowing fast. This is also a good reminder that the tool layer on top of foundation models still has enormous room for innovation even as the underlying models commoditize.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.technologyreview.com/2026/03/25/1134642/this-startup-wants-to-change-how-mathematicians-do-math/" target="_blank" rel="noopener">Startup wants to change how mathematicians do math with new AI tool Axplorer</a>
+            </div>
+            <div class="story-summary">Axiom Math, a Palo Alto startup, released Axplorer, a free AI tool designed to help mathematicians discover patterns that could unlock solutions to long-standing open problems. The tool is built on top of PatternBoost, a system co-developed by François Charton, now a research scientist at Axiom, originally published in 2024. The idea is not to have AI prove theorems autonomously, but to act as a pattern-discovery assistant that surfaces interesting structures a human mathematician might then pursue. This is a more modest and arguably more realistic use of AI in mathematics than some of the splashier claims about AI proving Fields Medal-level results. Charton has been one of the more credible voices in AI-for-math research, having published solid empirical work on what language models can and can't do with symbolic reasoning. Making the tool free and accessible to working mathematicians is a smart go-to-market move — it lowers the barrier to adoption in a community that tends to be skeptical of hype. If Axplorer genuinely helps surface non-obvious patterns, it could accelerate progress on combinatorics, number theory, and other pattern-heavy subfields. It's early, but this is the kind of quiet, useful AI application that actually delivers value rather than promising to replace human experts.</div>
+            <div class="story-source">MIT Technology Review</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-policy"></div>
+            <h2>Policy & Regulation</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/tech-policy/2026/03/hegseth-trump-had-no-authority-to-order-anthropic-to-be-blacklisted-judge-says/" target="_blank" rel="noopener">Judge blocks Pentagon's attempt to blacklist Anthropic, calls it unjustified</a>
+            </div>
+            <div class="story-summary">A federal judge ruled that Defense Secretary Pete Hegseth and the Trump administration lacked the authority to order Anthropic blacklisted from government contracts, and blocked enforcement of the ban while the case proceeds. The Department of War — as it has apparently been rebranded — reportedly could not offer coherent justification for the blacklisting when pressed by the court. This is a significant legal development because it suggests the executive branch overstepped in trying to exclude a specific AI company from federal business without going through proper procurement or security review channels. Anthropic has been positioning itself as a safety-focused AI lab and has cultivated relationships in Washington, making this politically fraught from multiple directions. The ruling doesn't resolve the underlying dispute, but it prevents the government from effectively crippling Anthropic's federal business in the interim. This is part of a broader pattern of the current administration using regulatory and procurement levers to reward allies and punish perceived adversaries in the tech sector. For AI companies generally, the case is a reminder that government relationships — and government risks — are now a core part of doing business in this space. The outcome will be worth watching, particularly for what it signals about due process protections for tech companies targeted by executive action.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.bbc.com/news/articles/c747x7gz249o" target="_blank" rel="noopener">Meta and YouTube lose landmark social media addiction trial; $6M awarded to plaintiff</a>
+            </div>
+            <div class="story-summary">A jury found this week that Meta and YouTube negligently designed their platforms and caused measurable harm to a 20-year-old woman referred to as Kaley G.M. in court documents, awarding her $6 million in damages. This is widely being called a landmark verdict because it's one of the first times a jury has held major social media platforms directly liable for addiction-related harm caused by their algorithmic design choices. The case rested on the argument that the platforms knowingly designed engagement-maximizing systems that were addictive, especially for young users, and that this constituted negligence. If this verdict holds through appeals, it opens the door to hundreds of similar cases currently working their way through the US court system. Platform redesign — not just content moderation — is increasingly being discussed as the appropriate remedy, which would represent a far more structural intervention than any previous regulatory action. Meta and YouTube are almost certain to appeal aggressively, and the legal battle could take years. But the psychological and political impact of the verdict is immediate: it validates the narrative that these companies built harmful systems by design, not by accident. This is the kind of ruling that changes how boards and executives think about product decisions going forward, regardless of the final legal outcome.</div>
+            <div class="story-source">BBC Technology</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/gadgets/2026/03/av1s-open-royalty-free-promise-in-question-as-dolby-sues-snapchat-over-codec/" target="_blank" rel="noopener">AV1's royalty-free promise in doubt as Dolby sues Snapchat over codec use</a>
+            </div>
+            <div class="story-summary">Dolby has filed a patent infringement lawsuit against Snapchat over its use of AV1, the open video codec that was specifically designed and promoted as royalty-free by the Alliance for Open Media — a coalition that includes Google, Apple, Meta, Microsoft, and others. The core issue is that declaring a codec royalty-free doesn't retroactively eliminate existing third-party patents that may read on the technology, and Dolby apparently believes it holds relevant patents that were not covered by the coalition's licensing commitments. This creates a real problem for the entire open codec ecosystem: AV1 has been widely adopted by streaming platforms, browsers, and device manufacturers precisely because of its royalty-free promise. If Dolby prevails, it could expose any company using AV1 to licensing demands, which would fundamentally undermine the value proposition of the whole effort. The case also raises broader questions about patent thickets in video compression — a space with overlapping claims going back decades. Snapchat was likely chosen as a target because it's a high-profile consumer of AV1 without the same patent portfolio depth as Google or Apple. This is going to be a closely watched case in the standards and IP community. If you're building products on AV1, it's worth understanding the risk landscape here, even if the eventual outcome is favorable.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.windowscentral.com/microsoft/windows-11/people-inside-microsoft-are-fighting-to-drop-windows-11s-mandatory-microsoft-account-requirements-during-setup" target="_blank" rel="noopener">People inside Microsoft are pushing back against mandatory Microsoft Account requirement in Windows 11 setup</a>
+            </div>
+            <div class="story-summary">Windows Central reports that there's internal dissent at Microsoft over the requirement to sign in with a Microsoft Account during Windows 11 setup — a policy that has frustrated users and IT administrators since it was introduced. Sources indicate that some product teams within Microsoft believe the mandatory account requirement is hurting user trust and making Windows 11 less competitive in enterprise and enthusiast markets. The workarounds for bypassing the requirement have been widely shared online, which suggests the friction is real enough that users actively route around it. This is a business and UX tension Microsoft created for itself: the MSA requirement is clearly driven by a desire to funnel users into the Microsoft ecosystem (OneDrive, Microsoft 365, Copilot), but it alienates users who want a clean local setup. For IT departments managing large fleets, the policy adds complexity and is generally unwelcome. The fact that internal pushback is significant enough to leak to press suggests this debate is serious. Whether it results in a policy change is unclear, but it's a useful reminder that even at large companies, product decisions with obvious monetization motives don't always go unchallenged internally. This story scored highest on Hacker News this week, which tells you something about how much developers and power users care about this.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-industry"></div>
+            <h2>Industry & Business</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/03/27/why-softbanks-new-40b-loan-points-to-a-2026-openai-ipo/" target="_blank" rel="noopener">SoftBank's $40B loan from JPMorgan and Goldman points to a 2026 OpenAI IPO</a>
+            </div>
+            <div class="story-summary">Wall Street giants JPMorgan and Goldman Sachs are extending a 12-month unsecured loan of $40 billion to SoftBank, and TechCrunch's analysis suggests this is timed to SoftBank's massive OpenAI investment commitment and a likely OpenAI IPO in 2026. SoftBank pledged $100 billion to US AI investment under Project Stargate, with a significant chunk going to OpenAI. An unsecured loan of this size and duration is unusual and expensive, suggesting SoftBank is confident it can repay through liquidity events — most plausibly an OpenAI IPO. OpenAI has been on a fundraising tear, having raised at an $80+ billion valuation, and a public listing would be the largest tech IPO in years if it happens. For SoftBank, this is a high-stakes bet: if OpenAI's valuation holds or grows through an IPO, the returns would be extraordinary; if the AI market corrects, the exposure is enormous. For the broader tech industry, an OpenAI IPO would be a significant moment — it would force the company to disclose financials publicly for the first time and subject it to scrutiny it has so far avoided as a private entity. The 12-month loan window aligns neatly with a late-2026 IPO timeline if OpenAI moves quickly. This is one of the more consequential financial stories in tech right now, even if the IPO itself is still speculative.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/03/27/memory-chip-giant-sk-hynix-could-help-end-rammageddon-with-blockbuster-us-ipo/" target="_blank" rel="noopener">SK hynix eyes US IPO to raise up to $14B and help end the memory chip shortage</a>
+            </div>
+            <div class="story-summary">South Korean memory chip giant SK hynix is reportedly considering a US IPO that could raise between $10 and $14 billion, with the proceeds earmarked to expand manufacturing capacity. The timing is significant: the tech industry is in the grip of what's being called 'RAMmageddon' — a severe shortage of memory chips driven by explosive AI training and inference demand that has pushed prices sharply higher across consumer and enterprise hardware. SK hynix is already a major supplier of HBM (High Bandwidth Memory) used in AI accelerators like Nvidia's H100 and its successors, giving it an outsized role in the AI supply chain. A US listing would raise capital faster than most other mechanisms and could also serve geopolitical purposes — establishing a larger US financial footprint amid ongoing concerns about semiconductor supply chain resilience. If the IPO succeeds and attracts other memory manufacturers to follow suit, it could meaningfully accelerate capacity expansion and eventually ease pricing pressure. The PS5 price hike from Sony, covered elsewhere this week, is partly attributable to the same memory shortage, illustrating how broadly the constraint is affecting consumer products. For anyone building AI infrastructure or buying servers, the memory shortage is a real and ongoing cost problem. SK hynix going public in the US would be one of the more consequential semiconductor market events in years.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/03/27/rivian-gets-another-1b-from-volkswagen/" target="_blank" rel="noopener">Rivian receives another $1 billion from Volkswagen for their EV tech joint venture</a>
+            </div>
+            <div class="story-summary">Volkswagen has injected another $1 billion into its joint venture with Rivian, continuing what has become one of the more interesting technology licensing arrangements in the EV space. The deal, announced last year, involves Rivian's electrical architecture and software stack going into future VW group vehicles — a significant acknowledgment by one of the world's largest automakers that it needed to buy rather than build its way to competitive EV software. Rivian has had a difficult road as a standalone EV company, facing production challenges and cash burn concerns, so the VW partnership has been a critical financial lifeline as well as a validation of its technology. This latest billion brings total VW investment in the joint venture to a substantial sum, suggesting both parties remain committed. For Rivian, licensing its stack to a mass-market automaker gives it a revenue stream that doesn't depend on selling trucks and SUVs at volume — which has been the harder business to scale. For VW, getting Rivian's software expertise accelerates a transformation the company has repeatedly struggled to execute internally. The deal is worth watching as a model for how traditional automakers might partner with EV-native companies rather than competing head-to-head on platform development.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/03/27/waymo-skyrocketing-ridership-in-one-chart/" target="_blank" rel="noopener">Waymo's robotaxi trips have increased tenfold in under two years</a>
+            </div>
+            <div class="story-summary">Waymo published data showing its weekly paid robotaxi rides have grown tenfold in less than two years — a growth curve that is genuinely impressive and suggests the company has moved well beyond proof-of-concept into something that looks like a real business. Waymo operates in San Francisco, Phoenix, and Los Angeles, with expansion plans ongoing. The growth is being driven by increasing availability in existing markets rather than geographic expansion alone, meaning existing users are riding more and new users are converting. For context, Waymo's closest competitor in the US — Tesla's robotaxi ambitions — remains largely unrealized in commercial deployment, giving Waymo a meaningful first-mover advantage in the licensed, geofenced robotaxi model. The growth is also notable given the regulatory and public perception challenges the industry has faced: Cruise's high-profile incident in San Francisco set back the whole sector, but Waymo appears to have maintained and grown its safety reputation. The financial picture is less clear — Waymo has burned enormous capital over many years and the path to profitability at scale is still long — but the ridership trajectory is the right kind of metric to watch. If Waymo can keep growing at anything close to this rate while maintaining its safety record, it will be very hard for late entrants to catch up on operational experience.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-dev"></div>
+            <h2>Software & Dev Tools</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://blog.dailydoseofds.com/p/anatomy-of-the-claude-folder" target="_blank" rel="noopener">Anatomy of the .claude/ folder: how Claude Code structures its project context</a>
+            </div>
+            <div class="story-summary">A detailed blog post breaking down the structure and purpose of the .claude/ folder that Claude Code creates and uses in software projects has been the top technical post on Hacker News this week, scoring over 400 points. The post explains how Claude Code organizes project memory, instructions, conversation history, and tool configurations within this directory — essentially demystifying a part of the agentic coding experience that many users interact with but few understand deeply. Understanding this structure matters if you're building on top of Claude Code, customizing its behavior, or debugging why it's behaving unexpectedly in a project. The .claude/ folder is to Claude Code roughly what .git/ is to git — a place where the tool's state and configuration live. As agentic coding tools become more sophisticated and persistent across sessions, the design of these context structures becomes increasingly important for both capability and security. There are interesting implications for multi-developer environments: how do you share, version, and audit the instructions your AI coding agent is operating under? The post surfaces these questions in a practical way. If you're using Claude Code regularly, this is worth reading.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://telnyx.com/resources/telnyx-python-sdk-supply-chain-security-notice-march-2026" target="_blank" rel="noopener">Telnyx Python SDK compromised in PyPI supply chain attack</a>
+            </div>
+            <div class="story-summary">Telnyx, a cloud communications platform, disclosed that its Python SDK on PyPI was compromised in a supply chain attack, warning users to audit whether they downloaded malicious versions. This follows closely on the heels of the LiteLLM malware attack from earlier this week, in which malicious code was injected into LiteLLM packages that were live on PyPI for 46 minutes and downloaded roughly 47,000 times before being caught. Two significant PyPI supply chain attacks in a single week is not a coincidence — it suggests either coordinated activity or attackers working from similar playbooks, and it's a meaningful signal about the current threat landscape for Python dependencies. PyPI has been a recurring target because of the enormous volume of packages, limited maintainer resources, and the relative ease of compromising accounts with weak authentication. For developers, the practical takeaway is familiar but bears repeating: pin your dependency versions, verify checksums, use lockfiles, and monitor for unexpected changes in packages you depend on. The broader issue is that the Python ecosystem's infrastructure security has not kept pace with its adoption in high-value contexts like AI tooling, fintech APIs, and cloud infrastructure. The Telnyx incident also highlights the risk of compromised SDKs specifically — these are packages you're likely running with significant permissions in your application.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.pcworld.com/article/3096432/lgs-new-1hz-display-is-the-secret-behind-a-new-laptops-battery-life.html" target="_blank" rel="noopener">LG's new 1Hz display is enabling dramatically improved laptop battery life</a>
+            </div>
+            <div class="story-summary">LG has developed a display capable of refreshing at as low as 1Hz — a significant engineering achievement that enables a new class of battery life optimization in laptops. Most modern displays idle at 30, 48, or 60Hz even when content isn't changing, burning power unnecessarily. By dropping to 1Hz during static or near-static content — reading a document, looking at a dashboard, reviewing code — a laptop can dramatically reduce display power consumption, which is typically one of the largest draws on battery. The practical impact is that laptops equipped with this panel are seeing significantly extended runtimes in real-world use cases rather than just in synthetic benchmarks. This is relevant not just for consumer laptops but for developers who spend long stretches staring at an editor or terminal — exactly the use case where 1Hz refresh is appropriate. LG has been quietly leading on display innovation, and this is a good example of a meaningful improvement that doesn't get the attention of flashier features. For anyone in the market for a laptop where battery life is a priority, the presence of this display technology is worth checking. The trickle-down to more affordable tiers will take time, but the technology appears production-ready.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-dev"></div>
+            <h2>Hardware & Devices</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/gadgets/2026/03/amds-ryzen-9-9950x3d2-dual-edition-crams-208mb-of-cache-into-a-single-chip/" target="_blank" rel="noopener">AMD's Ryzen 9 9950X3D2 Dual Edition packs 208MB of cache into a single chip</a>
+            </div>
+            <div class="story-summary">AMD has announced the Ryzen 9 9950X3D2 Dual Edition, a processor that crams 208MB of L3 cache into a single chip using dual 3D V-Cache stacks — a notable hardware engineering achievement. AMD's 3D V-Cache technology has already proven itself in gaming workloads, where large L3 caches dramatically reduce memory latency and improve frame rates in cache-sensitive titles. Doubling the V-Cache with a dual-stack design extends this advantage further and opens up the technology to workloads beyond gaming: large in-memory databases, certain scientific computing tasks, and AI inference on CPU all benefit significantly from reduced cache miss rates. 208MB of L3 on a consumer desktop processor is a genuinely impressive number — it wasn't long ago that this was the domain of server chips. The engineering challenge with stacked cache is thermal management, since the SRAM cache sits on top of the compute die and can impede heat dissipation. AMD has been iterating on this problem across generations of 3D V-Cache chips. For developers doing CPU-bound work with large working sets — compilers, simulators, certain data processing pipelines — this chip is worth paying attention to. It won't be cheap, but for the right workloads the performance uplift could be substantial.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-policy"></div>
+            <h2>Policy & Regulation</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/tech-policy/2026/03/doj-confirms-fbi-director-kash-patels-personal-email-was-hacked/" target="_blank" rel="noopener">Iranian hackers breach FBI Director Kash Patel's personal Gmail; DOJ confirms attack</a>
+            </div>
+            <div class="story-summary">The DOJ has confirmed that Handala, a pro-Iranian hacking group reportedly working for Iran's government, successfully breached FBI Director Kash Patel's personal Gmail account and published emails from it. The hackers claimed the attack was retaliation after Patel publicly vowed to 'hunt' them — which, if true, is a remarkably direct escalation of cyber conflict into personal territory. Critically, the breach was of Patel's personal email, not FBI systems, which limits the direct intelligence damage but raises serious questions about operational security practices at the highest levels of US law enforcement. Sensitive communications sometimes migrate to personal accounts precisely because they're less monitored — which is what makes breaches like this potentially significant even when they don't involve official systems. This follows a pattern: senior US officials have repeatedly been compromised through personal accounts and devices rather than hardened government infrastructure. The breach is also an embarrassment for the FBI director specifically, given that cybersecurity is within his institutional portfolio. Apple's simultaneous claim this week that no device running Lockdown Mode has been successfully compromised by spyware adds interesting contrast — the tools to harden personal devices exist, but they have to be used. For security-conscious individuals and organizations, this is another data point reinforcing that personal accounts are a primary attack surface for sophisticated adversaries.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/03/27/european-commission-confirms-cyberattack-after-hackers-claim-data-breach/" target="_blank" rel="noopener">European Commission confirms cyberattack and data breach of its cloud storage</a>
+            </div>
+            <div class="story-summary">The European Commission has confirmed it was the target of a cyberattack in which hackers reportedly exfiltrated significant amounts of data from its cloud storage systems. The Commission is the EU's top executive body, making this a high-value target from an intelligence perspective — it holds sensitive communications about EU policy, trade negotiations, regulatory decisions, and member state coordination. The attack was disclosed after hackers publicly claimed responsibility and released what they said was stolen data, forcing the Commission to confirm the incident. Cloud storage breaches at government institutions have become disturbingly common, often exploiting misconfigurations, phishing, or compromised credentials rather than sophisticated zero-day exploits. The EU has been one of the more aggressive regulatory actors globally when it comes to data protection and cybersecurity requirements for private companies — facing a breach of this scale at an EU institution itself is an uncomfortable irony. The full scope of what was taken has not been disclosed publicly. For enterprises, the incident is a reminder that large organizations — even those with significant IT resources — remain vulnerable to data exfiltration from cloud environments, and that perimeter security alone is insufficient.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+    </div>
+    
+
+    
+
+    
+    <div class="previous-day">
+        <a href="2026-03-27.html">&larr; Previous day</a>
+    </div>
+    
+
+    <footer>
+        Generated 2026-03-28 05:22 UTC &middot; Tech Digest
+    </footer>
+</body>
+</html>
