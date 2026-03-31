@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Digest - Tuesday, March 31, 2026</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --accent-subtle: #1f6feb22;
+            --topic-ai: #da70d6;
+            --topic-industry: #58a6ff;
+            --topic-dev: #3fb950;
+            --topic-hardware: #f0883e;
+            --topic-science: #d29922;
+            --topic-policy: #f85149;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 0;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 24px 16px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        header .date {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-top: 4px;
+        }
+
+        .intro {
+            padding: 16px;
+            background: var(--accent-subtle);
+            border-left: 3px solid var(--accent);
+            margin: 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .section {
+            margin: 24px 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0 16px;
+            margin-bottom: 12px;
+        }
+
+        .topic-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+
+        .story {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .story:last-child {
+            border-bottom: none;
+        }
+
+        .story-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .story-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .story-title a:hover {
+            color: var(--accent);
+        }
+
+        .story-summary {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .story-source {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+            opacity: 0.7;
+        }
+
+        footer {
+            padding: 24px 16px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Topic colors */
+        .topic-ai { background: var(--topic-ai); }
+        .topic-industry { background: var(--topic-industry); }
+        .topic-dev { background: var(--topic-dev); }
+        .topic-hardware { background: var(--topic-hardware); }
+        .topic-science { background: var(--topic-science); }
+        .topic-policy { background: var(--topic-policy); }
+
+        .source-errors {
+            margin: 24px 16px;
+            padding: 12px 16px;
+            background: #f8514922;
+            border: 1px solid #f8514944;
+            border-radius: 8px;
+            font-size: 0.8rem;
+        }
+
+        .source-errors h3 {
+            color: #f85149;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .error-item {
+            color: var(--text-muted);
+            padding: 2px 0;
+        }
+
+        .previous-day {
+            padding: 20px 16px;
+            text-align: center;
+        }
+
+        .previous-day a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile touch targets */
+        @media (max-width: 640px) {
+            .story {
+                padding: 16px;
+            }
+            .story-title a {
+                display: block;
+                padding: 4px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tech Digest</h1>
+        <div class="date">Tuesday, March 31, 2026</div>
+    </header>
+
+    <div class="intro">AI is dominating the headlines on multiple fronts today — from trust erosion among users and legal battles over Pentagon interference, to a massive seed round and new model launches — while a nasty supply-chain attack on the npm ecosystem is the sleeper story that every developer should know about.</div>
+
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-ai"></div>
+            <h2>AI & Machine Learning</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/03/30/ai-trust-adoption-poll-more-americans-adopt-tools-fewer-say-they-can-trust-the-results/" target="_blank" rel="noopener">Americans are adopting AI faster, but trusting it less</a>
+            </div>
+            <div class="story-summary">A new Quinnipiac University poll paints a nuanced picture of where the American public stands on AI: adoption is up, but trust is quietly eroding. Most respondents expressed concern about transparency — they don't know how these systems make decisions — and want stronger regulation. Separately, the same poll found that only 15% of Americans say they'd be willing to have an AI program as their direct supervisor, assigning tasks and setting schedules. That number is surprisingly low given how much enterprise software is already quietly doing exactly that. The trust gap is arguably the most important long-term problem in AI deployment: tools that people use but don't trust tend to be used badly, with users either over-relying on outputs or ignoring them entirely. For developers and product teams, this is a signal that explainability and transparency aren't just nice-to-haves — they're becoming user expectations. The poll didn't break down demographics, but it's a reasonable bet that younger, more tech-adjacent users are more comfortable with AI supervision than the general population. Still, 85% saying 'no thanks' to an AI boss is a number that enterprise AI vendors selling workforce automation tools probably don't want to advertise. The broader societal concern captured in the poll — about AI's impact on jobs, privacy, and accountability — reflects a public that is engaging with AI more critically than the industry sometimes acknowledges. Worth bookmarking as a baseline for how public sentiment is evolving.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.technologyreview.com/2026/03/30/1134881/the-pentagons-culture-war-tactic-against-anthropic-has-backfired/" target="_blank" rel="noopener">The Pentagon's attempt to label Anthropic a supply chain risk has backfired badly</a>
+            </div>
+            <div class="story-summary">About a month ago, the Pentagon made an unusual and aggressive move: it labeled Anthropic a supply chain risk and ordered federal agencies to stop using its AI products. A California federal judge has now temporarily blocked enforcement of that order, calling it an overreach. MIT Technology Review characterizes the move as a 'culture war tactic' — essentially an attempt to use national security bureaucracy to punish a company perceived as ideologically misaligned with the current administration. Anthropic, for its part, has been notably vocal about AI safety and has published detailed policy frameworks, which some in the current political environment have read as insufficiently hawkish or too aligned with academic and regulatory caution. The irony is that the Pentagon is one of the largest consumers of AI tools, and cutting off Anthropic would have left agencies scrambling for alternatives in the middle of active deployments. The judge's intervention is a temporary block — a preliminary injunction — not a final ruling, so this fight isn't over. But it signals that courts are willing to scrutinize politically motivated use of national security designations against tech companies. This case matters well beyond Anthropic: if the government can arbitrarily label any AI vendor a 'supply chain risk,' it creates massive uncertainty for the entire enterprise AI market. Every vendor selling to federal agencies now has to think about regulatory risk that has nothing to do with their actual security posture. Watch this one closely.</div>
+            <div class="story-source">MIT Technology Review</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/03/30/former-coatue-partner-raises-huge-65m-seed-for-enterprise-ai-agent-startup/" target="_blank" rel="noopener">Former Coatue partner raises $65M seed for enterprise AI agent startup</a>
+            </div>
+            <div class="story-summary">A former partner at Coatue Management has raised a $65 million seed round for a new enterprise AI agent startup, which is one of the largest seed rounds in recent memory and a strong signal of where investor appetite currently sits. The details on the specific product are thin at this stage — TechCrunch notes that a few things 'turned investors' heads' without fully elaborating — but the sheer size of the round tells you something about the competitive intensity around agentic AI for the enterprise. Seed rounds at this scale typically come with the expectation that the founding team has an unusually credible track record and/or unique technical insight. A Coatue pedigree means deep connections to both the capital and the enterprise customer base, which reduces execution risk somewhat. The enterprise AI agent space is getting crowded fast, with established players like Salesforce, ServiceNow, and Microsoft all pushing agentic features, plus a wave of startups trying to carve out vertical niches. A $65M seed gives this team a long enough runway to actually build and sell into enterprises, which have notoriously slow procurement cycles. It also raises the pressure: with that much capital, investors will expect meaningful ARR within 18-24 months. The round reflects a broader pattern of mega-seeds in AI infrastructure — capital is concentrating at the top, making it harder for smaller teams to compete for talent and compute. For anyone working in enterprise software, this is another data point that agentic automation is the primary investment theme of 2026.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://deepmind.google/blog/gemini-3-1-flash-live-making-audio-ai-more-natural-and-reliable/" target="_blank" rel="noopener">Gemini 3.1 Flash Live brings lower latency and more natural voice AI</a>
+            </div>
+            <div class="story-summary">Google DeepMind has released Gemini 3.1 Flash Live, an updated voice model focused on making audio AI interactions feel more natural through improved precision and reduced latency. Voice AI has historically suffered from two problems: unnatural cadence (the model sounds robotic or hesitates awkwardly) and latency spikes that make real-time conversation feel like a bad phone call. DeepMind says this release directly targets both issues. This is part of the broader Gemini 3.1 family, which also includes Flash-Lite (optimized for scale and cost) and the full Pro model (for complex reasoning tasks). The voice/audio AI segment is heating up significantly, with OpenAI's real-time voice features, ElevenLabs, and others all competing for developer mindshare. For developers building voice-first applications — customer service bots, accessibility tools, conversational interfaces — latency improvements are table stakes, but precision improvements (getting the model to correctly understand accented speech, overlapping audio, etc.) are harder and more valuable. DeepMind hasn't released detailed benchmarks yet, so the 'improved precision' claim is worth verifying against your specific use case before committing to a migration. That said, Google's infrastructure advantages mean they can likely deliver on the latency promises more consistently than smaller providers. Worth testing if you're building anything voice-adjacent.</div>
+            <div class="story-source">Google DeepMind Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.technologyreview.com/2026/03/30/1134795/there-are-more-ai-health-tools-than-ever-but-how-well-do-they-work/" target="_blank" rel="noopener">AI health tools are proliferating — but the evidence for how well they work is thin</a>
+            </div>
+            <div class="story-summary">Microsoft just launched Copilot Health, letting users connect medical records and ask health questions, and Amazon expanded its Health AI (previously restricted to One Medical members) to a broader audience. MIT Technology Review takes a hard look at whether any of this actually works as advertised, and the honest answer is: it's complicated. Clinical AI tools face a brutal validation challenge — they need to be accurate enough not to cause harm, which requires rigorous testing that most consumer-facing health tools have not yet undergone at scale. The LLM-based tools now flooding the health space are generally good at synthesizing information and explaining concepts, but they struggle with the thing that matters most in medicine: knowing the limits of their own knowledge and escalating appropriately when something is outside their competence. There's also a significant liability grey area — these tools are framed as 'informational' to avoid FDA oversight as medical devices, but users often treat them as diagnostic. For engineers building on top of these platforms, the regulatory landscape is murky: connecting to patient records via APIs creates HIPAA obligations that are non-trivial. For end users, the tools are probably useful for understanding your own test results or preparing questions for a doctor appointment — low-stakes informational use cases. For anything that might affect treatment decisions, independent validation studies are still the thing to look for, and most of the currently launched tools don't have them yet.</div>
+            <div class="story-source">MIT Technology Review</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://ollama.com/blog/mlx" target="_blank" rel="noopener">Ollama now powered by MLX on Apple Silicon — in preview</a>
+            </div>
+            <div class="story-summary">Ollama has shipped a preview release that swaps in Apple's MLX framework as the inference backend on Apple Silicon machines, replacing the previous CPU/Metal path for local model execution. This is a meaningful engineering change: MLX is specifically optimized for Apple's unified memory architecture, where CPU and GPU share the same memory pool, and it can deliver significantly better performance and energy efficiency for transformer inference compared to generic backends. For developers running local models on M-series Macs — which is a large and growing chunk of the developer community — this should mean faster token generation and lower thermal throttling during long inference runs. The change is in preview, meaning there may be rough edges, and not all model formats or quantization schemes may be supported yet. Ollama has become the de facto standard for running local LLMs on developer machines, so a performance improvement here has broad reach. MLX itself has matured considerably since Apple open-sourced it, with a growing ecosystem of fine-tuned models and tools. The practical implication: if you've been frustrated by how slowly Llama or Mistral variants run on your MacBook Pro, this update is worth installing and testing. Community benchmarks are already starting to appear on HN and Reddit showing meaningful improvements, though exact speedups vary by model and hardware generation. Apple Silicon's machine learning story keeps getting stronger.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/03/30/blueskys-new-ai-tool-attie-is-already-the-most-blocked-account-other-than-j-d-vance/" target="_blank" rel="noopener">Bluesky's new AI tool Attie is already one of the most blocked accounts on the platform</a>
+            </div>
+            <div class="story-summary">Bluesky launched an AI assistant called Attie, and within just a few days, more than 125,000 users had blocked it — making it one of the most blocked accounts on the platform, second only to J.D. Vance. That is, to put it gently, not the product launch you want. The backlash speaks to something real about the Bluesky user base: the platform attracted a significant wave of Twitter refugees who explicitly left because they were fed up with algorithmic manipulation and unwanted AI intrusions into their feeds. Introducing an AI bot into that community was always going to be a hard sell, and the execution apparently made it worse — Attie seems to have been proactive in ways users found intrusive, rather than being a passive opt-in tool. The comparison to Vance in block counts is both funny and telling: Bluesky's users have strong opinions about what belongs on their timeline, and 'AI that shows up uninvited' is apparently in the same category as 'politician they actively dislike.' For product teams building AI features into social platforms, this is a useful cautionary tale about community fit — a feature that might work fine on LinkedIn or even Twitter may land very differently on a platform where users self-selected for a specific kind of experience. Bluesky will likely retool the product, but the first impression damage with its core user base is real.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-dev"></div>
+            <h2>Software & Dev Tools</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.stepsecurity.io/blog/axios-compromised-on-npm-malicious-versions-drop-remote-access-trojan" target="_blank" rel="noopener">Axios npm package compromised — malicious versions dropping a remote access trojan</a>
+            </div>
+            <div class="story-summary">This is the story every developer needs to see today. Axios, one of the most widely used HTTP client libraries in the JavaScript/Node.js ecosystem, has been compromised on npm, with malicious versions distributing a remote access trojan (RAT). StepSecurity published the disclosure, and it's scoring very high on Hacker News for good reason. Supply chain attacks via npm have become one of the most effective vectors for compromising developer machines and CI/CD pipelines, precisely because developers have a deep habit of installing packages without scrutinizing them. Axios has hundreds of millions of weekly downloads, so even a brief window of malicious versions being live can affect an enormous number of projects. The attack pattern — compromise a popular package and use it to establish persistence on developer machines — is the same playbook used in the event.js and ua-parser-js compromises from previous years. If you or your team use Axios, you should immediately audit your lock files to verify you're not running any of the affected version ranges, and run a security scan on any machine where npm install has been run recently. The LiteLLM/Delve story (also in today's news) is related: LiteLLM was separately hit with credential-stealing malware last week, suggesting this is an active campaign period. Yarn, pnpm, and npm lockfiles all provide some protection, but only if you're actually validating hashes. This is a good moment to review your dependency pinning and integrity verification practices.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/03/30/popular-ai-gateway-startup-litellm-ditches-controversial-startup-delve/" target="_blank" rel="noopener">LiteLLM drops Delve after credential-stealing malware incident and 'fake compliance' allegations</a>
+            </div>
+            <div class="story-summary">LiteLLM, a popular open-source gateway that lets developers route requests across multiple LLM APIs with a unified interface, has cut ties with Delve, a compliance certification startup it had been using to obtain SOC 2 and other security certifications. The break came after LiteLLM was hit by credential-stealing malware last week, and separately, a whistleblower has been publishing detailed allegations that Delve was selling 'fake compliance' — essentially certifications that didn't reflect actual security controls. The whistleblower situation escalated quickly: after Delve's founder published a lengthy denial, the accuser came back with what they claim are documentary receipts. For developers who have been relying on LiteLLM's compliance certifications as part of their own security due diligence (especially those deploying in enterprise contexts where SOC 2 is a procurement requirement), this is a significant problem. The underlying concern is that compliance theater in the startup ecosystem — where companies buy certs rather than actually implementing controls — creates false confidence up and down the supply chain. LiteLLM itself appears to be moving quickly to remediate and re-certify through legitimate channels, which is the right response. But this incident highlights that certification should be one signal among many when evaluating infrastructure dependencies, not a substitute for your own security review. If you're running LiteLLM in production, now is a good time to rotate API keys and audit your deployment's access controls.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://android-developers.googleblog.com/2026/03/android-developer-verification-rolling-out-to-all-developers.html" target="_blank" rel="noopener">Android adds developer identity verification for all developers</a>
+            </div>
+            <div class="story-summary">Google is rolling out Android Developer Verification to all developers on the Play Store, expanding a program that previously covered a subset of accounts. The system requires developers to verify their identity — either as individuals or as organizations — creating a stronger link between a real-world entity and an app listing. This is a meaningful step in fighting the chronic problem of malicious or copycat apps on the Play Store, where bad actors have long exploited the relative anonymity of developer accounts to distribute malware, scam apps, and fake versions of popular apps. For legitimate developers, the verification process adds a small amount of friction at account creation time but should have minimal ongoing impact. The more significant effect is that it raises the cost of running disposable developer accounts for malicious purposes, since you now need to tie each account to a verifiable identity. Enterprise developers and those deploying internal apps will want to review the specific requirements for organizational verification, which are distinct from individual verification. Google has been under regulatory and press pressure for years about Play Store quality, and this is one of several recent moves (alongside improved review processes and policy enforcement) aimed at cleaning up the ecosystem. It won't solve the problem entirely — determined bad actors will find workarounds — but it shifts the economics in the right direction.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.sambent.com/the-white-house-app-has-huawei-spyware-and-an-ice-tip-line/" target="_blank" rel="noopener">Fedware: Government apps that spy harder than the apps they ban</a>
+            </div>
+            <div class="story-summary">A well-researched piece surfacing strongly on Hacker News reveals that several official U.S. government apps — including the White House app — contain the same types of tracking and data-collection SDKs that the government has used as justification for banning apps like TikTok on national security grounds. The White House app, per the reporting, includes what appears to be Huawei-linked spyware components and an ICE tip line. The framing as 'Fedware' is pointed: if the concern about TikTok is Chinese data collection, the presence of similar tracking infrastructure in domestically-distributed government apps raises obvious questions about consistency and intent. For security-conscious developers and IT administrators managing device fleets, this is a reminder that 'official' does not mean 'safe,' and MDM policies that restrict third-party apps should arguably apply the same scrutiny to government-distributed software. The story also touches on the ICE tip line functionality embedded in the app, which raises separate civil liberties concerns about what data is being collected from people who interact with it. This is one of those stories that cuts across both the security community and the policy community, and it deserves more mainstream attention than it's currently getting. The Hacker News score (504) suggests the technical community is taking it seriously.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-policy"></div>
+            <h2>Policy & Regulation</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/tech-policy/2026/03/judge-halts-nexstar-tegna-merger-after-fcc-let-firms-exceed-tv-ownership-limit/" target="_blank" rel="noopener">Judge halts Nexstar/Tegna merger after FCC allowed firms to exceed TV ownership limits</a>
+            </div>
+            <div class="story-summary">A federal judge has issued an injunction halting the merger between Nexstar and Tegna, ordering the companies to immediately stop integration and consolidation activities. The case turns on the FCC having granted waivers that allowed the combined entity to exceed statutory limits on television station ownership — limits that exist specifically to prevent excessive concentration in local broadcast markets. The judge's order suggests the FCC exceeded its own authority in granting those waivers, which puts the entire deal structure in question. This is a significant moment for media regulation: the FCC under the current administration has been broadly permissive on consolidation, and this judicial pushback suggests courts are willing to enforce statutory limits even when the regulator itself is waving deals through. Nexstar is already the largest television station group owner in the U.S.; adding Tegna's stations would have created an unprecedented concentration in local broadcast. For the broader tech and media industry, the case is a signal that consolidation deals structured around regulatory exceptions are legally fragile — especially when those exceptions are granted by an agency that may be overstepping its mandate. The 'immediately cease' language from the judge is unusually strong, suggesting there was ongoing integration work that needed to be stopped urgently. Expect appeals, but this is a meaningful win for those who think broadcast ownership limits should be enforced.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://spectrum.ieee.org/social-media-trial" target="_blank" rel="noopener">Meta and YouTube found negligent in landmark social media addiction trial</a>
+            </div>
+            <div class="story-summary">A jury has found Meta and YouTube negligently designed their platforms and caused harm to a plaintiff — a 20-year-old woman referred to as Kaley G.M. — in what IEEE Spectrum is calling a landmark verdict. The jury agreed that the platforms were addictively designed in ways that caused documented psychological harm. This is a significant legal milestone because prior social media litigation has largely struggled to get past Section 230 immunity and causation challenges; this verdict suggests at least one jury found the evidence of negligent design compelling enough to assign liability. The immediate legal implications are somewhat limited — one jury verdict doesn't create binding precedent the way an appellate ruling would — but it opens a door for similar suits and will likely accelerate settlement discussions in the many pending cases. The design-focused framing is important: the argument isn't just 'social media is bad' but specifically that the companies made deliberate engineering choices (infinite scroll, engagement-maximizing recommendations, notification systems) that they knew or should have known created addictive behavior patterns. For product teams at social platforms and consumer apps, this verdict increases the pressure to document the evidence base for design decisions that prioritize engagement. Regulators in the EU and Australia are watching closely, and this verdict will feature in upcoming policy discussions about mandatory platform redesigns.</div>
+            <div class="story-source">IEEE Spectrum</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/tech-policy/2026/03/meta-hopes-scotus-piracy-ruling-will-help-it-beat-lawsuit-over-torrenting-ai-data/" target="_blank" rel="noopener">Authors get a legal foothold in class action over Meta torrenting AI training data</a>
+            </div>
+            <div class="story-summary">A federal judge has given a class of authors an easier path to challenge Meta over its alleged use of torrented copyrighted books to train its AI models. The underlying allegations are that Meta used LibGen (a shadow library of pirated texts) as training data — essentially torrenting massive quantities of copyrighted material without permission or compensation. The judge's ruling reportedly lowered the evidentiary bar for the authors in ways that make the class action more viable. Meta's defense strategy is to lean on a recent Supreme Court ruling on copyright and digital piracy, arguing it provides a shield against the lawsuit. The tension between AI training data practices and copyright law is one of the most consequential unresolved legal questions in the tech industry right now — the outcome of cases like this will determine whether AI companies need to license training data retroactively, change their data acquisition practices, or pay damages. For developers and companies building AI systems, this is a live risk: if courts establish that using pirated training data creates copyright liability, the business models of several major AI labs become legally complicated. The Meta case is particularly interesting because the torrenting allegation implies an active choice to acquire data through illegal channels, rather than the more defensible 'we scraped the public web' argument. Worth watching for the Meta/SCOTUS argument when it's briefed.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.bbc.com/news/articles/cy4181pkxl2o?at_medium=RSS&at_campaign=rss" target="_blank" rel="noopener">Australia's regulator says social platforms aren't doing enough to enforce the under-16 ban</a>
+            </div>
+            <div class="story-summary">Australia's eSafety Commissioner has issued a rebuke to Facebook, Instagram, Snapchat, TikTok, and YouTube, saying none of them are adequately enforcing the country's ban on social media accounts for users under 16. Australia passed the under-16 ban late last year in a move that got significant global attention, with many other countries watching to see how enforcement would work in practice. The eSafety finding confirms what many observers suspected: age verification on social platforms is technically and practically very hard, and the platforms have not invested sufficiently in solving it. The regulator hasn't announced specific penalties yet, but the formal rebuke creates a paper trail that could support enforcement action. For the platforms, the challenge is real — short of requiring government ID verification (which creates its own privacy problems), reliably preventing determined minors from lying about their age is genuinely difficult. The regulator's position seems to be that the platforms need to try harder, not necessarily that they need to achieve 100% compliance. The broader question this raises is whether age-gating social media is actually achievable at scale, or whether it's a policy goal that sounds good but runs into fundamental technical limits. Other jurisdictions considering similar legislation — the UK, various US states — will be watching the Australian enforcement trajectory closely.</div>
+            <div class="story-source">BBC Technology</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-industry"></div>
+            <h2>Industry & Business</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/03/30/allbirds-is-selling-for-39-million-it-raised-nearly-10-times-that-amount-in-its-ipo/" target="_blank" rel="noopener">Allbirds selling for $39 million — having raised nearly $400 million including its IPO</a>
+            </div>
+            <div class="story-summary">Allbirds, the sustainable shoe company that was a darling of the direct-to-consumer and venture-backed brand era, is being acquired for just $39 million. To put that in context: the company raised nearly $400 million from investors and went public in 2021 at a valuation north of $4 billion. This is a near-total wipeout for most shareholders. Allbirds became something of a symbol of the DTC brand bubble — a company that built a passionate early customer base around a genuinely innovative product (wool sneakers with strong sustainability credentials), went public at a valuation that required massive scale to justify, and then found that scaling a premium sustainable shoe brand is very different from scaling software. The post-IPO years were brutal: declining revenues, executive turnover, multiple rounds of layoffs, and repeated attempts at a turnaround strategy that never clicked. The $39M exit is essentially a distressed sale of whatever brand equity and inventory remains. For the broader tech and startup ecosystem, Allbirds is a useful case study in the difference between product-market fit at a small scale and the financial model required to justify a growth-stage valuation. The DTC brand playbook — build a loyal niche, raise VC, go big — has a much worse track record than the 2019-2021 hype cycle suggested.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.bbc.com/news/articles/cde5y2x51y8o?at_medium=RSS&at_campaign=rss" target="_blank" rel="noopener">Tech CEOs are increasingly blaming AI for mass layoffs — and there are strategic reasons for that</a>
+            </div>
+            <div class="story-summary">BBC Technology has a sharp piece examining why tech executives are increasingly citing AI as the reason for headcount reductions, rather than the more traditional explanations (overhiring, slowing growth, cost optimization). The pattern has accelerated in 2026, with several high-profile layoffs explicitly framed as AI-driven workforce transformation rather than financial distress. The strategic calculus is interesting: blaming AI sends a positive signal to investors (we're modernizing, we're efficient, we're ahead of the curve) while softening the reputational blow of layoffs compared to admitting you simply hired too many people during the bull market. It also sets up a narrative for future hiring: 'we're not shrinking, we're reshaping.' The BBC piece notes that in many cases the actual evidence that AI tools are replacing these specific workers is thin — the same cost-cutting layoffs would likely have happened regardless. For workers in affected industries, the 'AI ate your job' framing is particularly demoralizing because it frames the displacement as inevitable and technological rather than a business decision made by specific people. For investors and analysts trying to read these announcements, it's worth applying skepticism: how much of this is genuine AI-driven productivity and how much is AI as a narrative wrapper on ordinary cost-cutting? The honest answer probably varies a lot by company.</div>
+            <div class="story-source">BBC Technology</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/03/30/meta-starts-testing-a-premium-subscription-on-instagram/" target="_blank" rel="noopener">Meta testing a premium Instagram subscription with stealth viewing and Story analytics</a>
+            </div>
+            <div class="story-summary">Meta has begun testing a paid subscription tier for Instagram that includes features like stealth Story viewing (watching someone's Story without triggering the 'seen by' indicator) and analytics showing how many times your Story has been rewatched. This follows Meta's existing verification subscription and represents a broader push toward diversifying revenue beyond advertising. The stealth viewing feature is the most interesting from a product perspective — it directly undermines one of the social accountability features built into Stories, and it's the kind of thing that could meaningfully change how people behave on the platform if widely adopted. If enough people pay to view anonymously, creators lose visibility into their actual audience, which could erode the feedback loop that makes Stories valuable for them. The rewatch analytics feature is more straightforwardly useful for creators and marketers trying to understand what content resonates. Instagram subscription pricing hasn't been announced, but Meta's previous subscription tiers in various markets have ranged from roughly $10-15/month. For advertisers, the shift toward subscriptions is worth monitoring — a more subscription-funded Meta could reduce ad load over time, though Meta has given no indication it plans to do that. The broader context is that Meta is under constant pressure to find revenue growth while its core advertising business matures.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/space/2026/03/after-16-years-and-8-billion-the-militarys-new-gps-software-still-doesnt-work/" target="_blank" rel="noopener">After 16 years and $8 billion, the military's new GPS software still doesn't work</a>
+            </div>
+            <div class="story-summary">The U.S. military's next-generation GPS ground control software — a program that has been in development for 16 years and consumed roughly $8 billion — still doesn't function properly, according to reporting from Ars Technica. The program, known as OCX (Operational Control Segment), was intended to upgrade the ground systems that manage the GPS satellite constellation, adding cybersecurity improvements and support for next-generation GPS III satellites. The quote from a program official — 'It's a very stressing program. We are still considering how to ensure we move forward.' — is either admirably honest or deeply alarming depending on your perspective. This is a classic large government IT acquisition failure: the program started with ambitious requirements, suffered from contractor difficulties and scope creep, and has been repeatedly delayed and restructured over the years. The GPS satellites themselves (GPS III) are already deployed and operational, but they can't use all their new capabilities because the ground software isn't ready. For the broader software engineering community, OCX is a useful if depressing case study in what happens when requirements are poorly managed over decade-plus timelines and oversight is insufficient. The military continues to operate the GPS constellation on legacy software in the meantime, which works but limits capability. Eight billion dollars is roughly 80 times the cost of some of the most successful government digital services ever built.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-science"></div>
+            <h2>Science & Research</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.technologyreview.com/2026/03/30/1134780/r3-bio-brainless-human-clones-full-body-replacement-john-schloendorn-aging-longevity/" target="_blank" rel="noopener">R3 Bio's pitch for 'brainless human clones' as organ replacement bodies, explained</a>
+            </div>
+            <div class="story-summary">R3 Bio, a California startup operating in stealth for years, has gone public with a genuinely unusual pitch: it wants to create nonsentient clones of human bodies — 'organ sacks,' in their framing — that could serve as a source of replacement organs or eventually as 'full body replacement' for aging longevity clients. The company says it has raised funding from Tim Draper and a Singapore-based fund called Immortal. Their near-term work is framed around nonsentient monkey organ sacks as an alternative to conventional animal testing, which is a more defensible regulatory entry point than the full human clone pitch. The 'brainless' aspect is meant to address the most obvious ethical objection — a clone without the brain structures necessary for consciousness or sentience would be argued to have no moral status. Whether that argument holds up philosophically, legally, or in public opinion is a very open question. The longevity industry has been attracting increasingly extreme bets from wealthy investors, but this is several steps beyond most of what's currently funded. MIT Technology Review covers this with appropriate skepticism about both the scientific feasibility and the ethical framework. The regulatory path for this kind of research in the U.S. is completely unclear — there's no existing framework for 'nonsentient human clone' as a category, which means R3 Bio would likely be operating in a regulatory grey zone for years before any clarity emerges. Worth watching as a signal of where the longevity investment community's risk appetite is.</div>
+            <div class="story-source">MIT Technology Review</div>
+        </div>
+        
+    </div>
+    
+
+    
+
+    
+    <div class="previous-day">
+        <a href="2026-03-30.html">&larr; Previous day</a>
+    </div>
+    
+
+    <footer>
+        Generated 2026-03-31 05:45 UTC &middot; Tech Digest
+    </footer>
+</body>
+</html>
