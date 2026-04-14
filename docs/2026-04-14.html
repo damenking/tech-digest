@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Digest - Tuesday, April 14, 2026</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --accent-subtle: #1f6feb22;
+            --topic-ai: #da70d6;
+            --topic-industry: #58a6ff;
+            --topic-dev: #3fb950;
+            --topic-hardware: #f0883e;
+            --topic-science: #d29922;
+            --topic-policy: #f85149;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 0;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 24px 16px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        header .date {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-top: 4px;
+        }
+
+        .intro {
+            padding: 16px;
+            background: var(--accent-subtle);
+            border-left: 3px solid var(--accent);
+            margin: 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .section {
+            margin: 24px 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0 16px;
+            margin-bottom: 12px;
+        }
+
+        .topic-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+
+        .story {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .story:last-child {
+            border-bottom: none;
+        }
+
+        .story-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .story-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .story-title a:hover {
+            color: var(--accent);
+        }
+
+        .story-summary {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .story-source {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+            opacity: 0.7;
+        }
+
+        footer {
+            padding: 24px 16px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Topic colors */
+        .topic-ai { background: var(--topic-ai); }
+        .topic-industry { background: var(--topic-industry); }
+        .topic-dev { background: var(--topic-dev); }
+        .topic-hardware { background: var(--topic-hardware); }
+        .topic-science { background: var(--topic-science); }
+        .topic-policy { background: var(--topic-policy); }
+
+        .source-errors {
+            margin: 24px 16px;
+            padding: 12px 16px;
+            background: #f8514922;
+            border: 1px solid #f8514944;
+            border-radius: 8px;
+            font-size: 0.8rem;
+        }
+
+        .source-errors h3 {
+            color: #f85149;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .error-item {
+            color: var(--text-muted);
+            padding: 2px 0;
+        }
+
+        .previous-day {
+            padding: 20px 16px;
+            text-align: center;
+        }
+
+        .previous-day a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile touch targets */
+        @media (max-width: 640px) {
+            .story {
+                padding: 16px;
+            }
+            .story-title a {
+                display: block;
+                padding: 4px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tech Digest</h1>
+        <div class="date">Tuesday, April 14, 2026</div>
+    </header>
+
+    <div class="intro">AI continues to dominate the news cycle, with Stanford's annual AI Index revealing a deepening gap between industry insiders and the general public, while OpenAI snaps up a fintech startup and Google's Gemma 4 open models keep raising the bar. Security is having a rough week too, with a massive WordPress supply chain attack and Booking.com confirming a data breach.</div>
+
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-ai"></div>
+            <h2>AI & Machine Learning</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/04/13/stanford-report-highlights-growing-disconnect-between-ai-insiders-and-everyone-else/" target="_blank" rel="noopener">Stanford's 2026 AI Index: Insiders and the Public Are Living in Different Realities</a>
+            </div>
+            <div class="story-summary">Stanford's Institute for Human-Centered AI released its annual AI Index report, and the headline finding is a stark and widening divide between AI industry insiders and the broader public. Experts inside the field are broadly optimistic — they see rapid capability growth and transformative potential. The general public, meanwhile, is increasingly anxious about job displacement, healthcare impacts, and economic disruption. This isn't entirely surprising, but the degree of divergence is notable: the people building AI tend to believe it's mostly positive, while the people most likely to be affected by it are skeptical or worried. The report also captures just how much AI capabilities have accelerated — the charts MIT Tech Review highlighted show exponential growth in model performance across benchmarks. One tension the report surfaces is that even well-intentioned AI coverage contributes to whiplash: AI is simultaneously over-hyped and under-explained to non-technical audiences. For engineers and product teams, this gap matters practically — it affects regulatory pressure, hiring, adoption rates, and public trust. The report serves as a useful reality check against both the doom-sayers and the boosters. If you're building AI products, understanding where public anxiety lives is genuinely useful signal. This is one of the more data-grounded annual reports in the space, worth bookmarking.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/04/13/openai-has-bought-ai-personal-finance-startup-hiro/" target="_blank" rel="noopener">OpenAI Acquires Personal Finance Startup Hiro, Signaling ChatGPT Financial Planning Push</a>
+            </div>
+            <div class="story-summary">OpenAI has quietly acquired Hiro, an AI-powered personal finance startup, in a move that signals the company is building out financial planning capabilities directly into ChatGPT. Hiro was focused on helping individuals manage budgets, track spending, and plan for financial goals using AI. This acquisition fits a clear pattern: OpenAI is building ChatGPT into an all-purpose assistant that can handle sensitive, high-stakes personal tasks — not just answering questions or generating text. Financial planning is a domain where accuracy and trust are paramount, which makes it an interesting and somewhat risky expansion. Getting numbers wrong when someone's retirement savings are on the line is a very different failure mode than a hallucinated history fact. The move also puts OpenAI in more direct competition with fintech players and with Microsoft, which has been pushing Copilot into enterprise productivity. It raises immediate questions about data privacy — will users' financial data be used to train future models? Regulatory scrutiny is likely, given that financial advice is a regulated activity in most jurisdictions. The acquisition price was not disclosed. For developers, it's worth watching whether OpenAI exposes any of these financial planning capabilities via API.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://openai.com/index/cloudflare-openai-agent-cloud" target="_blank" rel="noopener">Cloudflare and OpenAI Launch Agent Cloud with GPT-5.4 and Codex</a>
+            </div>
+            <div class="story-summary">Cloudflare has announced Agent Cloud, a new enterprise platform built in partnership with OpenAI that brings GPT-5.4 and Codex to agentic workflows at scale. The idea is to give enterprises a secure, managed environment to build, deploy, and run AI agents — things like automated code review pipelines, customer support bots, or data processing workflows — without having to stitch together infrastructure themselves. Cloudflare's edge network is doing a lot of the heavy lifting here in terms of low-latency execution and built-in security controls. This matters because one of the biggest friction points in enterprise AI adoption right now isn't the models themselves — it's the operational complexity of deploying agents safely and reliably. The partnership with OpenAI gives Cloudflare access to frontier models, while OpenAI gets broader distribution into enterprise IT departments that already trust Cloudflare. GPT-5.4 is notably newer than what most public-facing ChatGPT users interact with day to day, suggesting OpenAI is tiering its model access deliberately. For teams already on Cloudflare's platform, this lowers the barrier to experimenting with agentic architectures considerably. The security angle is worth noting — enterprise customers have been burned by open-source agent frameworks that are powerful but hard to audit. This is a direct pitch to CTOs and security teams who want guardrails baked in.</div>
+            <div class="story-source">OpenAI Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/ai/2026/04/meta-spins-up-ai-version-of-mark-zuckerberg-to-engage-with-employees/" target="_blank" rel="noopener">Meta Creates an AI Version of Mark Zuckerberg to Talk to Employees</a>
+            </div>
+            <div class="story-summary">Meta has built an AI-powered digital version of Mark Zuckerberg to interact with employees at scale, and Zuckerberg himself has reportedly been personally involved in training and testing it. The idea is that the AI Zuckerberg can engage with employee questions, share the CEO's perspective on decisions, and provide guidance in a way that scales beyond what one person can physically do across a 70,000+ person company. On one level, this is a natural extension of executive communication at large companies — Zuckerberg can't answer every Slack message. On another level, it's a deeply weird thing to have a synthetic version of your boss answering your questions. Questions about authenticity and accountability immediately arise: if the AI Zuckerberg gives guidance that turns out to be wrong or problematic, who is responsible? This also reflects Meta's broader strategy of dogfooding AI products internally before external release — they've been doing this with various AI tools for a while. The technical execution presumably leans on Meta's own AI infrastructure, likely Llama-based models fine-tuned on Zuckerberg's public communications, interviews, and internal memos. It's also a bit of a power move: it signals to employees that AI is here and real, not just a product they ship to others. Whether employees will trust or genuinely engage with a synthetic CEO is an open question.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/gadgets/2026/04/google-shoehorned-rust-into-pixel-10-modem-to-make-legacy-code-safer/" target="_blank" rel="noopener">Google Shoehorned Rust Into the Pixel 10 Modem to Harden Legacy Code</a>
+            </div>
+            <div class="story-summary">Google has revealed that the Pixel 10's cellular modem now includes Rust code, a significant engineering achievement given that cellular modem firmware is historically one of the most legacy-entrenched and opaque areas of consumer hardware. Modems are notorious black boxes — they run decades-old C/C++ code, often from third-party vendors, and have been the source of serious security vulnerabilities over the years. The Android security team has been on a multi-year campaign to introduce Rust into safety-critical parts of the Android stack, and extending that to modem code is a meaningful escalation. Memory safety bugs — the class of vulnerabilities Rust is designed to eliminate — are disproportionately exploited in baseband attacks, which can compromise a device at a very deep level, often with no user interaction required. The approach wasn't a clean rewrite; Google literally shoehorned Rust into an existing C codebase, which is technically tricky but increasingly well-supported through interoperability tooling. This follows similar efforts in Linux kernel Rust adoption and Android's broader Rust migration, suggesting an industry-wide momentum shift. It's also a notable data point for the ongoing debate about whether Rust can be practically adopted in embedded and firmware contexts — the answer increasingly appears to be yes, if you're patient and have Google-level resources. For security researchers, it's worth watching how this affects the vulnerability landscape for Pixel 10 baseband attacks compared to previous generations.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://simonwillison.net/2026/Apr/13/bryan-cantrill/#atom-everything" target="_blank" rel="noopener">LLMs Lack the Virtue of Laziness — And That's a Real Engineering Problem</a>
+            </div>
+            <div class="story-summary">Systems software veteran Bryan Cantrill wrote a sharp critique of LLMs that's been circulating in engineering circles, and Simon Willison flagged it for good reason. Cantrill's core argument is that LLMs fundamentally lack the programmer's virtue of laziness — the instinct to avoid unnecessary complexity, to do less, to optimize for future maintainability. A lazy programmer writes simple code because they don't want to debug complicated code at 2am six months later. LLMs have no such incentive: generating more code costs them nothing, so they produce layercakes of abstraction and verbosity that technically work but are a nightmare to maintain. This is a subtle but important critique that goes beyond the usual hallucination complaints. Code correctness is tractable — you can run tests. But code quality, simplicity, and long-term maintainability are much harder to measure, and that's precisely where LLM-generated code tends to degrade silently. Cantrill has spent his career at companies like Sun Microsystems and Joyent thinking hard about systems software quality, so his framing carries weight. For teams using AI-assisted coding heavily, this is worth taking seriously — you may be accumulating complexity debt faster than you realize. The fix isn't necessarily to use AI less, but to be more deliberate about reviewing and simplifying AI-generated code rather than accepting it wholesale.</div>
+            <div class="story-source">Simon Willison's Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://simonwillison.net/2026/Apr/13/steve-yegge/#atom-everything" target="_blank" rel="noopener">AI Adoption Inside Google Engineering Looks Surprisingly Flat</a>
+            </div>
+            <div class="story-summary">Steve Yegge, a well-known ex-Google and ex-Amazon engineer, shared a striking anecdote from a conversation with a long-tenured Google tech director: AI adoption inside Google Engineering appears to mirror the industry average, not the leading edge you'd expect from the company building the tools. The breakdown he described is roughly 20% power users who are deeply agentic in their AI use, 60% who are using it superficially or inconsistently, and 20% who are outright refusing to engage. Yegge compared this to John Deere, a tractor company — not exactly the cutting edge of software development culture. This is genuinely surprising if true: Google builds Gemini, has access to internal AI tooling most companies would kill for, and yet its own engineers aren't particularly ahead of the curve in adoption. It suggests that access to good models is not the primary bottleneck to AI adoption — workflow integration, trust, and cultural change are. This matches what many companies are reporting: giving people access to ChatGPT or Copilot doesn't automatically change how they work. The 20% refusal rate is also interesting — there's a meaningful cohort of experienced engineers who are skeptical or resistant, and they're not just luddites; many have legitimate concerns about code quality and over-reliance. If Google can't fully internally adopt its own AI tools, that's a useful data point for anyone planning enterprise AI rollouts.</div>
+            <div class="story-source">Simon Willison's Blog</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-policy"></div>
+            <h2>Policy & Regulation</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/tech-policy/2026/04/ibm-folds-to-trump-anti-dei-push-admits-no-misconduct-but-pays-17m-penalty/" target="_blank" rel="noopener">IBM Pays $17M to Settle DOJ's "Civil Rights Fraud Initiative" DEI Suit — Admits No Wrongdoing</a>
+            </div>
+            <div class="story-summary">IBM has become the first major company to pay a financial penalty under the Trump administration's "Civil Rights Fraud Initiative," settling a Department of Justice suit over its DEI programs for $17 million while explicitly admitting no misconduct. The settlement is significant less for the dollar amount — $17M is a rounding error for IBM — and more for the precedent it sets. By paying rather than fighting, IBM has signaled that the legal and reputational cost of protracted litigation outweighs the cost of settlement, even when you believe you've done nothing wrong. That calculus is exactly what the DOJ is counting on to push other companies into compliance. The Civil Rights Fraud Initiative is the Trump administration's legal mechanism for targeting corporate DEI programs, framing them as discriminatory practices that violate federal civil rights law. Critics argue this is a politically motivated reinterpretation of civil rights protections, essentially weaponizing anti-discrimination law against programs designed to address historical discrimination. For tech companies — which have invested heavily in DEI infrastructure over the past decade — this is a direct threat to those programs. IBM's capitulation may make it easier for other companies to fold rather than fight, accelerating a broader dismantling of corporate DEI. Whether this survives eventual legal challenge at the Supreme Court level remains an open question, but in the short term, it's having a chilling effect.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.bbc.com/news/articles/cq597n1pg6lo?at_medium=RSS&at_campaign=rss" target="_blank" rel="noopener">Man Charged with Attempted Murder Over Molotov Cocktail Attack on Sam Altman's Home</a>
+            </div>
+            <div class="story-summary">A 20-year-old Texas man has been charged with attempted murder following an attack on Sam Altman's San Francisco home, in which a Molotov cocktail was thrown at a perimeter gate. The suspect also faces federal felony charges, and investigators reportedly found documents on him advocating for violence against AI executives specifically. This escalates what was initially reported as an isolated arson incident into something more concerning — a politically or ideologically motivated targeting of AI leadership. Anti-AI sentiment has been building in various online communities, and this appears to be an extreme manifestation of it. Altman has become one of the most visible faces of the AI industry globally, making him a symbolic target for people who believe AI development is harmful or reckless. The attack raises immediate questions about physical security for AI executives and whether the industry's rapid expansion and polarizing public presence is creating genuine personal safety risks. It's also a reminder that the debate about AI's societal impact isn't just academic or political — it's generating real-world hostility at the extremes. Law enforcement's involvement of federal charges suggests they're treating this as a serious domestic threat, not just a local vandalism case.</div>
+            <div class="story-source">BBC Technology</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.wired.com/story/meta-ray-ban-oakley-smart-glasses-no-face-recognition-civil-society/" target="_blank" rel="noopener">Meta Warned That Facial Recognition in Smart Glasses Would Endanger Abuse Victims and Immigrants</a>
+            </div>
+            <div class="story-summary">A coalition of more than 70 civil society organizations — including the ACLU, EPIC, and Fight for the Future — has sent a formal warning to Meta urging it not to add facial recognition capabilities to its Ray-Ban and Oakley smart glasses line. The letter argues that such a feature would effectively put a surveillance tool in the hands of anyone who can afford a pair of glasses, with profound implications for abuse victims trying to stay hidden, undocumented immigrants, LGBTQ+ people in hostile environments, and anyone who doesn't want their location or identity tracked in public. This isn't a hypothetical concern: Harvard students previously demonstrated the concept by building a system that identified strangers in real time using Meta's glasses and publicly available databases. The technical capability clearly exists; the question is whether Meta will choose to deploy it commercially. Meta has previously said it has no plans to add facial recognition to the glasses, but the coalition's letter suggests there are credible signals that this might be under consideration. The power asymmetry here is stark — the person wearing the glasses has enormous information advantage over the person being scanned, who has no way of knowing it's happening. For a company that has repeatedly run into trouble over privacy, adding this feature would be an extraordinarily aggressive move. Regulators in the EU would almost certainly move quickly to restrict or ban it under GDPR.</div>
+            <div class="story-source">Wired</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-dev"></div>
+            <h2>Software & Dev Tools</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://anchor.host/someone-bought-30-wordpress-plugins-and-planted-a-backdoor-in-all-of-them/" target="_blank" rel="noopener">Someone Bought 30 WordPress Plugins and Planted Backdoors in All of Them</a>
+            </div>
+            <div class="story-summary">In a significant supply chain attack, a malicious actor purchased 30 legitimate WordPress plugins from their original developers and then pushed updates containing backdoors to all of them. This is a textbook supply chain attack: rather than trying to compromise a single high-value target, the attacker acquired trusted, established plugins with existing install bases and poisoned them all at once. The scale is particularly alarming — 30 plugins means potentially hundreds of thousands of WordPress sites were exposed. WordPress's plugin ecosystem is an enormous attack surface: there are tens of thousands of plugins, many maintained by individual developers who may not have strong security practices and who might sell their work without fully understanding the implications. The economics here are troubling — an attacker with modest capital can buy out plugin maintainers and instantly inherit trust and distribution. The backdoors presumably enable remote code execution or data exfiltration on any site running the compromised plugins. For anyone running WordPress-based infrastructure, the immediate action is auditing which plugins you're running and checking their recent update history and ownership changes. This also highlights the broader fragility of package ecosystems — npm, PyPI, and others face similar risks, and the WordPress incident is a timely reminder that "trusted" is a snapshot, not a permanent state.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://github.github.com/gh-stack/" target="_blank" rel="noopener">GitHub Launches Native Stacked PRs</a>
+            </div>
+            <div class="story-summary">GitHub has shipped a native stacked pull requests feature, a highly requested workflow improvement that's been a pain point for developers for years. Stacked PRs — also called stacked diffs or patch stacks — allow you to break a large feature into a series of smaller, dependent pull requests that build on each other, making code review much more manageable. Previously, teams wanting this workflow had to use third-party tools like Graphite, ghstack, or manual rebasing workflows, which added friction and complexity. Native support means it integrates directly with GitHub's UI, notifications, and CI/CD triggers without any extra tooling. This matters most for large teams working on complex features where code review bottlenecks are a real productivity problem — reviewers don't want to look at 3,000-line PRs, and stacking is the standard solution. The Hacker News score of 603 reflects genuine developer enthusiasm; this has been one of the most consistently upvoted feature requests on GitHub's feedback forums for years. It aligns GitHub more closely with the workflows Phabricator pioneered at Facebook and that tools like Gerrit support for Android/Chromium development. Smaller PRs also tend to result in better reviews and fewer merged bugs, so there's a real quality argument here beyond just workflow preference.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/04/13/fbi-announces-takedown-of-phishing-operation-that-targeted-thousands-of-victims/" target="_blank" rel="noopener">FBI Takes Down W3LL Phishing Operation That Hit 17,000+ Victims</a>
+            </div>
+            <div class="story-summary">The FBI has announced the takedown of a large-scale phishing operation centered on the W3LL phishing kit, which was used to compromise over 17,000 victims globally. W3LL is a sophisticated phishing-as-a-service platform that had been operating for several years, offering cybercriminals a polished toolkit for stealing credentials and bypassing multi-factor authentication. The MFA-bypass capability is the technically interesting and alarming part — traditional phishing just stole passwords, but W3LL used adversary-in-the-middle techniques to capture both passwords and OTP/TOTP codes in real time, making even MFA-protected accounts vulnerable. The platform was particularly focused on Microsoft 365 business accounts, making it a significant threat to enterprise environments. W3LL reportedly operated a dark web marketplace where the kit was sold as a subscription service, lowering the technical bar for launching sophisticated phishing campaigns. The FBI's action involved coordinating with international partners, which has become standard for these operations given that the infrastructure and victims are spread globally. For security teams, this is a reminder that MFA is not a silver bullet — hardware security keys (FIDO2) remain the only MFA method that's genuinely resistant to adversary-in-the-middle phishing. Organizations should audit their MFA methods and consider moving away from SMS or TOTP for high-value accounts.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://developers.google.com/search/blog/2026/04/back-button-hijacking" target="_blank" rel="noopener">Google Introduces Anti-Spam Policy for "Back Button Hijacking"</a>
+            </div>
+            <div class="story-summary">Google's search team has published a new spam policy specifically targeting "back button hijacking," a user-hostile web pattern where clicking the browser's back button doesn't actually navigate away from a page but instead traps users in a redirect loop or returns them to the same page. This has been a longstanding annoyance, particularly on mobile where the back button is a primary navigation mechanism, and it's been heavily abused by low-quality ad-heavy sites trying to maximize page views and revenue. Google's decision to classify this as a spam violation and presumably factor it into search rankings is a meaningful intervention — SEO penalties are the sharpest tool Google has to change publisher behavior. The announcement is notable because it signals Google is increasingly willing to go beyond content quality signals and also penalize sites for poor user experience at the navigation level. For web developers, this is a reminder to audit any SPA routing logic or ad integration code that might inadvertently manipulate browser history in ways that break expected back-button behavior. The policy also reflects Google's broader push against manipulative web practices, which has accelerated in the Helpful Content era of its ranking algorithms. Publishers running legitimate sites should double-check their history API usage — some frameworks push state in ways that can accidentally create these patterns.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://kirancodes.me/posts/log-who-watches-the-watchers.html" target="_blank" rel="noopener">Lean Proof Verified a Program Correct — Then a Developer Found a Real Bug</a>
+            </div>
+            <div class="story-summary">A developer published a detailed post about a humbling experience: they used Lean, the formal verification proof assistant, to prove a program correct, and then subsequently found an actual bug in it. This sounds paradoxical, but it illustrates a subtle and important point about formal verification — proofs are only as good as the properties you specify. If your proof verifies that the program satisfies property X, but the actual bug manifests in property Y that you didn't think to prove, the verification gives you false confidence. This is sometimes called the "specification gap" — the hard part of formal verification isn't the mechanics of writing proofs, it's correctly and completely capturing what "correct" means for your program. The post is a valuable real-world data point in an era where formal verification tooling is becoming more accessible and AI-assisted proof generation is making it cheaper to write proofs. It doesn't undermine the value of formal verification — proofs are still enormously valuable — but it's a useful corrective against the idea that verified equals bug-free. For engineers exploring Lean or Coq or similar tools, this is required reading: think carefully about your specifications, not just your proofs. The Hacker News discussion around this was lively and substantive, suggesting the community found it genuinely instructive.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/04/13/booking-com-confirms-hackers-accessed-customers-data/" target="_blank" rel="noopener">Booking.com Confirms Hackers Accessed Customer Personal Data</a>
+            </div>
+            <div class="story-summary">Booking.com has confirmed a security incident in which hackers accessed customer personal data including names, email addresses, and phone numbers. The travel giant began notifying affected customers, though the company has been relatively sparse on technical details about how the breach occurred and how many customers are affected. Booking.com is one of the largest travel platforms in the world with hundreds of millions of users, so even a partial breach could expose a very large number of people. The combination of names, emails, and phone numbers is the standard starter pack for targeted phishing campaigns — expect affected users to see a wave of convincing travel-themed phishing emails in the coming weeks. This follows a pattern of travel industry breaches that have been hitting the sector fairly regularly; travel platforms hold rich personal data combined with payment information and travel plans that make them high-value targets. Booking.com should be commended for confirming the breach relatively quickly rather than sitting on it, but the lack of technical transparency makes it hard to assess the severity. If you use Booking.com, be extra vigilant about any communications claiming to be from them in the near term, and consider whether the email address on your account is also used for other sensitive services.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-industry"></div>
+            <h2>Industry & Business</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/gadgets/2026/04/nzxt-agrees-to-3-45-million-settlement-over-controversial-rental-pc-program/" target="_blank" rel="noopener">NZXT Settles Controversial Rental PC Class Action for $3.45M, Customers Keep Their Rigs</a>
+            </div>
+            <div class="story-summary">NZXT has agreed to a $3.45 million class-action settlement over its Flex PC rental program, with the notable headline term being that customers get to keep their rental PCs and NZXT will forgive up to $5,000 in outstanding debt per customer. The Flex program was a subscription rental service for gaming PCs that attracted significant criticism because the total cost of ownership over the rental period far exceeded what the hardware was actually worth, and the debt accumulation terms weren't well communicated to customers. This is a reasonable outcome for affected consumers — keeping the hardware and having debt forgiven is more tangible relief than a typical cash settlement that works out to a few dollars per claimant. For NZXT, it closes a reputational wound that had been bleeding for a while; the Flex program became a cautionary tale cited frequently in discussions about gaming hardware subscription models. The case also has implications for how rent-to-own and subscription hardware programs are structured and disclosed going forward — consumer protection lawyers will be looking at this settlement as precedent. NZXT is primarily a hardware enthusiast brand, and the Flex program was a somewhat surprising diversification into financial services territory that clearly wasn't their core competency. The $3.45M settlement is material but not existential for the company.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/04/13/uber-nuro-san-francisco-testing-premium-robotaxi-service/" target="_blank" rel="noopener">Uber and Nuro Begin Testing Premium Robotaxi Service in San Francisco Using Lucid EVs</a>
+            </div>
+            <div class="story-summary">Uber and autonomous vehicle startup Nuro have started testing a premium robotaxi service in San Francisco, initially available only to Uber employees. The vehicles are Lucid Air electric cars, positioning this explicitly as a luxury tier rather than a mass-market offering — think UberBlack or Uber Comfort but fully driverless. Nuro had previously focused on autonomous delivery vehicles before pivoting toward passenger transport, making this a significant strategic shift for the company. San Francisco has become the de facto proving ground for robotaxi technology, with Waymo already offering commercial service there and having expanded to other markets. Uber's approach here is partnership-based rather than building its own AV stack — they've been consistent about wanting to be the distribution layer for autonomous vehicle fleets rather than compete directly in hardware and software development. Starting with employees is standard practice for AV testing — it creates a motivated, feedback-oriented user base while limiting liability exposure during early operations. The Lucid partnership is interesting because Lucid has been looking for ways to generate revenue beyond selling consumer vehicles; becoming a fleet provider for robotaxi services is a potentially significant business line. Whether a premium-tier robotaxi is the right initial market positioning remains to be seen — Waymo's success has been with a broad market approach.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-dev"></div>
+            <h2>Hardware & Devices</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.wired.com/story/unitree-r1-humanoid-robot-for-sale-on-aliexpress/" target="_blank" rel="noopener">Unitree's R1 Humanoid Robot Goes on Sale via AliExpress for $4,370</a>
+            </div>
+            <div class="story-summary">Chinese robotics company Unitree is bringing its R1 humanoid robot to international markets through AliExpress at a starting price of $4,370, which is remarkably low for a full humanoid robot with aerobatic capabilities. Unitree has built a reputation for aggressive pricing — their quadruped robots like the Go1 and Go2 undercut Western competitors significantly and helped democratize access to legged robotics research. The R1 can apparently perform some genuinely impressive physical maneuvers, reflecting improvements in whole-body motion control that the robotics field has been making rapidly. The AliExpress distribution channel is unusual and worth noting — it positions this as almost a consumer product rather than a research or industrial tool, though at $4,370 it's still not something you'd impulse buy. The practical question of what you'd actually do with a home humanoid robot remains largely unanswered; most use cases still require significant custom software development. For robotics researchers and hackers, the low price point could meaningfully expand access to humanoid hardware for experimentation. The broader context is a wave of Chinese robotics companies bringing increasingly capable hardware to market at prices that Western companies are struggling to match, mirroring what happened in the drone market with DJI. Import and export controls, particularly in the current US-China trade environment, could complicate availability.</div>
+            <div class="story-source">Wired</div>
+        </div>
+        
+    </div>
+    
+
+    
+
+    
+    <div class="previous-day">
+        <a href="2026-04-13.html">&larr; Previous day</a>
+    </div>
+    
+
+    <footer>
+        Generated 2026-04-14 06:00 UTC &middot; Tech Digest
+    </footer>
+</body>
+</html>
