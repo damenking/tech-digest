@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Digest - Wednesday, April 15, 2026</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --accent-subtle: #1f6feb22;
+            --topic-ai: #da70d6;
+            --topic-industry: #58a6ff;
+            --topic-dev: #3fb950;
+            --topic-hardware: #f0883e;
+            --topic-science: #d29922;
+            --topic-policy: #f85149;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 0;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 24px 16px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        header .date {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-top: 4px;
+        }
+
+        .intro {
+            padding: 16px;
+            background: var(--accent-subtle);
+            border-left: 3px solid var(--accent);
+            margin: 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .section {
+            margin: 24px 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0 16px;
+            margin-bottom: 12px;
+        }
+
+        .topic-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+
+        .story {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .story:last-child {
+            border-bottom: none;
+        }
+
+        .story-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .story-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .story-title a:hover {
+            color: var(--accent);
+        }
+
+        .story-summary {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .story-source {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+            opacity: 0.7;
+        }
+
+        footer {
+            padding: 24px 16px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Topic colors */
+        .topic-ai { background: var(--topic-ai); }
+        .topic-industry { background: var(--topic-industry); }
+        .topic-dev { background: var(--topic-dev); }
+        .topic-hardware { background: var(--topic-hardware); }
+        .topic-science { background: var(--topic-science); }
+        .topic-policy { background: var(--topic-policy); }
+
+        .source-errors {
+            margin: 24px 16px;
+            padding: 12px 16px;
+            background: #f8514922;
+            border: 1px solid #f8514944;
+            border-radius: 8px;
+            font-size: 0.8rem;
+        }
+
+        .source-errors h3 {
+            color: #f85149;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .error-item {
+            color: var(--text-muted);
+            padding: 2px 0;
+        }
+
+        .previous-day {
+            padding: 20px 16px;
+            text-align: center;
+        }
+
+        .previous-day a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile touch targets */
+        @media (max-width: 640px) {
+            .story {
+                padding: 16px;
+            }
+            .story-title a {
+                display: block;
+                padding: 4px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tech Digest</h1>
+        <div class="date">Wednesday, April 15, 2026</div>
+    </header>
+
+    <div class="intro">AI security is the dominant theme today — Anthropic's Claude Mythos is shaking up how governments and companies think about AI-powered cyber threats, while the broader AI investment landscape continues its dizzying upward spiral with Anthropic pulling ahead of OpenAI in investor confidence.</div>
+
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-ai"></div>
+            <h2>AI & Machine Learning</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/ai/2026/04/uk-govs-mythos-ai-tests-help-separate-cybersecurity-threat-from-hype/" target="_blank" rel="noopener">Claude Mythos Clears a Major Cybersecurity Benchmark — and OpenAI Responds with GPT-5.4-Cyber</a>
+            </div>
+            <div class="story-summary">Anthropic's Claude Mythos has become the first AI system to complete a difficult multistep network infiltration challenge, according to evaluations run by the UK government's AI Safety Institute. This is a significant milestone because prior AI models could assist with individual hacking steps but couldn't chain them together autonomously into a full attack sequence. The UK's AISI ran their own independent analysis and backed up Anthropic's claims, lending this some real credibility rather than just self-reported benchmarks. Anthropic co-founder Jack Clark confirmed at the Semafor World Economy Summit that the company briefed the Trump administration on Mythos — a somewhat awkward situation given that Anthropic is simultaneously suing the government on unrelated matters. Clark framed the briefings as a responsibility: if you build something this capable, you owe it to policymakers to explain what it can do. OpenAI, not wanting to sit on the sidelines, responded by announcing GPT-5.4-Cyber, a model fine-tuned specifically for defensive cybersecurity use cases, made available to vetted defenders through an expanded Trusted Access for Cyber program. The competitive dynamic here is interesting — both companies are essentially racing to define what 'responsible' looks like when your model can hack. One useful framing circulating online is that AI is turning cybersecurity into a proof-of-work problem: defenders now need to run AI-assisted sweeps constantly just to keep up with AI-assisted attackers. For engineers working in security, this is the moment where the threat model fundamentally changes, and both Anthropic and OpenAI are trying to be your vendor for the defensive side.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/04/14/anthropics-rise-is-giving-some-openai-investors-second-thoughts/" target="_blank" rel="noopener">Anthropic's Rise Is Making OpenAI Investors Nervous</a>
+            </div>
+            <div class="story-summary">A revealing report from the Financial Times, picked up by TechCrunch, details how some investors who have backed both OpenAI and Anthropic are quietly reconsidering where to put their chips. The crux of the issue is valuation math: OpenAI's most recent funding round implies a future IPO valuation of $1.2 trillion or more, and at least one dual investor told the FT that Anthropic's current $380 billion valuation looks like the relative bargain by comparison. That's a striking reversal from even 18 months ago, when Anthropic was seen as the scrappy challenger. Claude Mythos appears to be a key catalyst — it's given Anthropic real technical credibility and generated government-level attention that OpenAI hasn't matched in the same way recently. The data center angle reinforces this: Fluidstack, which secured a $50 billion deal to build data centers specifically for Anthropic, is now reportedly raising a $1 billion round at an $18 billion valuation — up from $7.5 billion just months ago. Infrastructure investors are clearly betting on Anthropic's compute needs being very real and very large. None of this means OpenAI is in trouble — they still have the dominant consumer brand and enterprise relationships — but the narrative that OpenAI is the unquestioned leader is showing some cracks. For developers choosing which API to build on, this competitive pressure is ultimately good news: both companies are being pushed to ship faster and be more open about their capabilities. The valuation gap between the two is becoming a proxy for broader uncertainty about which approach to AI development — OpenAI's more commercial path versus Anthropic's safety-first positioning — will win in the market.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/google/2026/04/google-introduces-skills-in-chrome-to-make-gemini-prompts-instantly-reusable/" target="_blank" rel="noopener">Google Introduces 'Skills' in Chrome — Reusable Gemini Prompt Shortcuts for the Browser</a>
+            </div>
+            <div class="story-summary">Google has launched a feature called Skills inside Chrome that lets you save AI prompts as reusable, one-click tools that work across any website. Think of it like browser macros, but powered by Gemini: you write a prompt once, save it as a Skill, and then it's available in the toolbar whenever you need it. Google is also providing a library of premade Skills covering common tasks like summarizing pages, drafting emails in a particular tone, or translating content. This builds on Gemini's existing browser integration but is a meaningful UX upgrade — previously, you'd have to re-enter prompts manually each time. The feature is clearly aimed at knowledge workers who have figured out a handful of prompts that work well for their specific tasks and don't want to re-type them every day. It's a somewhat modest announcement in the grand scheme of things, but it represents an interesting direction: making the browser itself an AI workflow layer rather than just a way to access AI apps. From a product strategy standpoint, Google is also trying to make Gemini stickier by weaving it into the daily browser experience rather than competing head-to-head with ChatGPT as a standalone destination. Engineers and power users will probably find the most value here, since they're most likely to have well-crafted prompts worth saving. The HN community found this worth discussing — it scored 144 points — suggesting genuine interest from the developer crowd even if it's not a model release.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://deepmind.google/blog/gemini-robotics-er-1-6/" target="_blank" rel="noopener">Google DeepMind's Gemini Robotics-ER 1.6 Pushes Spatial Reasoning for Real-World Robots</a>
+            </div>
+            <div class="story-summary">Google DeepMind released Gemini Robotics-ER 1.6, the latest iteration of their robotics-focused model, with the headline improvements being better spatial reasoning and multi-view scene understanding. These are genuinely hard problems in robotics — a robot needs to understand where things are in 3D space from 2D camera inputs, often from multiple angles simultaneously, and it needs to do this reliably in messy, unpredictable real environments. The 'ER' in the name stands for embodied reasoning, which is DeepMind's framing for AI that understands the physical world well enough to act in it rather than just describe it. Prior versions were already impressive in controlled lab settings, but real-world deployment has always been where robotics AI falls apart; this release is explicitly focused on closing that gap. The timing is worth noting alongside the Ukraine military robot story — there's clearly a broader societal moment where autonomous physical systems are moving from research demos to deployment. DeepMind hasn't released detailed benchmarks in this announcement, which is a little frustrating, but the focus on multi-view understanding is a technically meaningful advance rather than a marketing one. For developers building robotics applications, this model potentially lowers the bar for perception pipelines that previously required significant custom engineering. It also reinforces DeepMind's strategy of embedding Gemini across every modality — text, image, audio, video, and now physical world interaction. This is the part of the AI stack that most consumer-facing AI coverage ignores, but it's arguably where the most consequential real-world applications will emerge.</div>
+            <div class="story-source">Google DeepMind Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/health/2026/04/americans-ask-ai-for-health-care-hospitals-think-the-answer-is-more-chatbots/" target="_blank" rel="noopener">Hospitals Are Doubling Down on AI Chatbots for Patient Health Advice</a>
+            </div>
+            <div class="story-summary">A pattern is solidifying across the US healthcare system: as patients increasingly turn to AI assistants for health questions, hospital systems are responding not by pushing back but by building their own AI chatbots directly into patient portals. The logic is understandable — if people are going to ask AI anyway, better they ask a system the hospital controls and can at least partly validate. But the risks are significant: patient portal chatbots carry an implicit institutional authority that generic ChatGPT does not, meaning patients are more likely to trust and act on the advice without seeking a human second opinion. There's also the liability question, which remains genuinely unsettled — if a hospital's chatbot misses a warning sign and a patient comes to harm, who's responsible? The article notes that patient trust in these tools varies enormously by demographic, with older patients often more trusting of anything that feels 'official' while younger patients are savvier about AI limitations. From a technical standpoint, most of these hospital chatbots are built on top of commercial LLM APIs with some retrieval-augmented generation layered on top of the hospital's own guidelines and formularies. That's a reasonable architecture but it introduces its own failure modes, especially around conditions that are underrepresented in training data. For engineers building in healthcare AI, this is a moment where the decisions being made now about guardrails, escalation paths, and user interface design will have lasting consequences. The story doesn't have a clean conclusion — this is happening, it's accelerating, and the regulatory framework is still catching up.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://code.claude.com/docs/en/routines" target="_blank" rel="noopener">Claude Code Gets 'Routines' — Persistent Workflow Automation for Agentic Coding</a>
+            </div>
+            <div class="story-summary">Anthropic has shipped a feature called Routines for Claude Code, their AI-assisted coding environment, and based on its 546-point HN score it's resonating strongly with developers. Routines let you define persistent, named sequences of actions that Claude Code can execute on demand — essentially giving the agentic system a memory for multi-step workflows you run repeatedly. This addresses one of the practical annoyances of current AI coding tools: you end up re-explaining the same context and steps every session. The feature is positioned as a developer productivity tool but it's also an interesting step toward more autonomous coding agents that can reliably execute complex tasks without hand-holding at each step. The HN discussion is likely focused on both the practical utility and the architectural implications — if your coding agent can reliably execute defined routines, you're much closer to genuinely delegating a whole class of tasks rather than just getting assistance. Anthropic is clearly competing hard with GitHub Copilot, Cursor, and other AI coding tools, and features like this are about differentiation through depth of integration rather than just raw model capability. For senior engineers, the interesting question is how Routines interact with version control, code review, and team workflows — the announcement documentation presumably covers this but the real test will be how teams adopt it. The timing alongside Claude Mythos and the Anthropic investor story reinforces that the company is firing on multiple fronts right now.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.technologyreview.com/2026/04/13/1135675/want-to-understand-the-current-state-of-ai-check-out-these-charts/" target="_blank" rel="noopener">Stanford's 2026 AI Index: Cutting Through the Hype with Data</a>
+            </div>
+            <div class="story-summary">Stanford University's Institute for Human-Centered AI released its annual AI Index for 2026, and MIT Technology Review dug into the most interesting findings with a visual explainer. The report attempts to do what's genuinely hard right now: give a grounded, data-driven picture of where AI actually is, as opposed to where the press releases claim it is. Key findings include continued strong benchmark performance improvements alongside persistent gaps between lab results and real-world deployment outcomes — a theme that anyone building production AI systems will recognize immediately. The report also documents growing divergence in public opinion on AI across different countries and demographic groups, with optimism concentrated in certain geographies and industries while skepticism is rising elsewhere. Investment data in the Index shows the funding environment remains historically elevated despite broader economic uncertainty, with foundation model companies capturing a disproportionate share. On the 'AI taking jobs' question, the Index takes a notably careful position: the evidence for large-scale labor displacement is still mixed and context-dependent, which runs against both the doom narrative and the pure-optimism narrative. For technologists who want a defensible, citation-backed source to share with non-technical colleagues or executives, this is the best annual reference in the space. MIT Technology Review's framing — that people following AI news are getting whiplash because the real story is complicated and nuanced — is about as honest an editorial stance as you'll find in tech media.</div>
+            <div class="story-source">MIT Technology Review</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-industry"></div>
+            <h2>Industry & Business</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/tech-policy/2026/04/amazon-to-merge-with-globalstar-become-iphones-primary-satellite-provider/" target="_blank" rel="noopener">Apple Picks Amazon's Satellites Over Starlink in a Major Infrastructure Deal</a>
+            </div>
+            <div class="story-summary">In a move that surprised most of the industry, Apple has chosen Amazon's satellite network as the primary satellite provider for iPhone, passing over SpaceX's Starlink — which apparently made an offer that Apple previously rejected. The deal is wrapped up in a significant M&A transaction: Amazon is merging with Globalstar in an $11.6 billion deal, effectively acquiring the satellite spectrum and infrastructure that Apple has been using for emergency SOS features on iPhones. By securing Amazon as its primary satellite partner, Apple is positioning itself for a future where satellite connectivity is a standard iPhone feature rather than an emergency-only fallback. The Starlink rejection is the juicy subplot here — reports suggest Apple turned down SpaceX's offer, likely over concerns about Elon Musk's control of a critical infrastructure dependency and potentially over commercial terms. For Amazon, this is a significant validation of its Kuiper satellite project, which has struggled to attract the kind of high-profile partnerships that would justify its enormous capital expenditure. The Globalstar merger gives Amazon immediate spectrum assets and an existing relationship with the world's most valuable consumer hardware company. From a competitive dynamics perspective, this is a real blow to SpaceX's ambitions to become the backbone of satellite connectivity for consumer devices — losing Apple as a potential anchor customer matters. For iPhone users, the practical implication is that satellite features should become more capable and reliable over time as Amazon invests in the infrastructure. This story also has geopolitical dimensions: Apple clearly decided that having its satellite layer controlled by someone with significant government relationships (Musk and SpaceX) was not desirable.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/04/14/ai-datacenter-startup-fluidstack-in-talks-for-1b-round-at-18b-valuation-months-after-hitting-7-5b-says-report/" target="_blank" rel="noopener">Fluidstack Reportedly Near $1B Round at $18B Valuation — Up from $7.5B Just Months Ago</a>
+            </div>
+            <div class="story-summary">AI data center startup Fluidstack is reportedly in talks to raise $1 billion at an $18 billion valuation, which would represent more than doubling its valuation from $7.5 billion earlier this year. The catalyst is clear: Fluidstack landed a $50 billion deal to build data centers for Anthropic, instantly making it one of the most important infrastructure plays in the AI stack. This kind of valuation trajectory — tripling in months — is the sort of thing that makes people nervous about bubbles, but it's worth understanding the underlying logic: AI compute demand is genuinely constrained, Anthropic has a known and credible roadmap for needing massive GPU clusters, and Fluidstack now has a contractual anchor for that demand. The company's model is essentially to aggregate compute resources from multiple providers and data center operators into a unified pool, which gives hyperscalers and AI labs a way to scale without building everything themselves. Whether the $18B valuation is justified depends heavily on whether Anthropic's own trajectory continues — if Anthropic's valuation or compute needs deflate, Fluidstack's numbers look very different. For engineers, the interesting signal here is about the infrastructure layer: the market is clearly betting that AI training and inference compute demand will remain constrained for years, making data center builders the picks-and-shovels play of the AI gold rush. The speed of Fluidstack's valuation growth is itself a data point about how much money is chasing AI infrastructure right now.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/gadgets/2026/04/two-year-old-surface-pcs-get-300-price-hikes-as-sub-1000-models-go-away/" target="_blank" rel="noopener">Surface PCs Get $300 Price Hikes as Tariffs Bite Consumer Hardware</a>
+            </div>
+            <div class="story-summary">Microsoft has raised prices on two-year-old Surface PC models by up to $300 while quietly discontinuing sub-$1,000 configurations, leaving consumers with fewer options at lower price points. This is not a story about new hardware — it's about existing products becoming meaningfully more expensive without any corresponding feature improvements. The price hikes are widely attributed to tariff pressures on hardware manufactured in Asia, making this one of the more visible consumer-facing examples of how the current trade environment is translating into sticker price increases. Microsoft isn't alone here — similar dynamics are playing out across the PC market — but the Surface line is notable because it's Microsoft's own branded hardware that competes with premium Windows laptops from partners. The removal of sub-$1,000 models is perhaps the more significant detail: it effectively abandons the value tier of the market and cedes that ground to competitors. For enterprise buyers who standardize on Surface hardware, this creates a real budget planning headache since refresh cycles will now cost noticeably more. Ars Technica's framing — 'paying more for the same stuff is the story of consumer technology in 2026' — captures the broader mood accurately. If you're in IT procurement or advising someone on hardware purchases, this is a concrete data point that hardware costs are not going back to 2024 levels anytime soon.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-policy"></div>
+            <h2>Policy & Regulation</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://stopflock.com" target="_blank" rel="noopener">Flock Safety's License Plate Reader Network Faces Growing Public Backlash</a>
+            </div>
+            <div class="story-summary">Two separate stories with very high HN scores — 'Stop Flock' at 543 points and a personal account of opting out of Flock's surveillance program at 568 points — indicate that Flock Safety's sprawling network of automated license plate readers is generating serious public concern. Flock Safety sells its camera networks to local police departments and HOAs, creating a distributed surveillance infrastructure that can track vehicle movements across wide areas without drivers' knowledge or meaningful consent mechanisms. The opt-out process, documented in the personal account, appears deliberately difficult and likely ineffective in practice: you can contact Flock's privacy team, but your plate data is likely still collected and held for a period even if you request removal. The 'Stop Flock' campaign appears to be a grassroots advocacy effort pushing for regulation or outright bans on the technology. What makes Flock particularly notable compared to other surveillance tech is its adoption by private entities like HOAs alongside law enforcement — meaning the legal frameworks that govern government surveillance don't cleanly apply. For engineers, this is a case study in how networked infrastructure with legitimate stated uses (finding stolen cars, solving crimes) can aggregate into something that looks very different at scale. The level of HN engagement suggests this is hitting a nerve among the technically literate crowd who understand exactly how the data could be used and retained. California's regulatory environment will likely be an early test case for whether Flock-style networks face meaningful constraints.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/gadgets/2026/04/websites-that-hijack-your-back-button-must-stop-by-june-15-or-face-googles-wrath/" target="_blank" rel="noopener">Google Will Penalize 'Back Button Hijacking' Starting June 15</a>
+            </div>
+            <div class="story-summary">Google announced a new spam policy targeting websites that manipulate the browser's back button navigation — a dark pattern where sites inject fake history entries to trap users in a loop or redirect them elsewhere when they try to leave. Starting June 15, 2026, Google says it may demote sites that engage in this behavior in search rankings. This scored 861 points on HN, making it one of the most enthusiastically received items in today's feed, which tells you how much developers and users despise this pattern. Back button hijacking is one of those practices that's been annoying users for years, primarily used by ad-heavy content farms and aggressive affiliate sites that want to maximize time-on-site metrics. Google's decision to treat it as a spam signal is interesting because it extends the search quality framework beyond content quality into behavioral/UX manipulation — a meaningful expansion of what Google considers fair game for ranking penalties. The June 15 deadline gives sites about two months to clean up, which is tight enough to be taken seriously. For developers who maintain or advise on sites, the practical takeaway is to audit your history.pushState usage and any redirect chains that might trigger this policy. It's also worth noting that enforcement of Google's spam policies has historically been uneven, so the real test will be whether the June rollout actually moves rankings for offending sites.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.eff.org/deeplinks/2026/04/dangers-californias-legislation-censor-3d-printing" target="_blank" rel="noopener">California's Proposed 3D Printing Censorship Bill Draws Fierce Criticism from EFF</a>
+            </div>
+            <div class="story-summary">The Electronic Frontier Foundation has published a detailed critique of California legislation that would restrict what designs can be created with 3D printers, framing it as a dangerous precedent for censoring manufacturing technology. The EFF's core argument is that 3D printing is a general-purpose technology, and attempts to regulate it at the software or design-file level amount to prior restraint on speech — the same principle that makes it unconstitutional to ban books about dangerous topics. The legislation appears motivated by concerns about 3D-printed firearms, which is a real and legitimate policy concern, but the EFF argues the proposed solution is far too broad and would capture many legitimate uses. This scored 335 points on HN, reflecting strong interest from the maker and open-hardware community. The technical enforcement challenges are also significant: 3D printer firmware and design files are distributed globally, making California-specific restrictions difficult to enforce without platform-level controls that would affect all users. For engineers in the hardware and maker space, this is worth following closely because the legal and regulatory frameworks being established now will shape what's permissible in additive manufacturing for years. The EFF's intervention is significant because they tend to be strategically selective about which fights they enter, suggesting they see this as a consequential precedent rather than a one-off bad bill.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-dev"></div>
+            <h2>Software & Dev Tools</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://rareese.com/posts/backblaze/" target="_blank" rel="noopener">Backblaze Quietly Stopped Backing Up OneDrive and Dropbox Folders</a>
+            </div>
+            <div class="story-summary">A post that rocketed to 1,034 points on HN details a significant and apparently under-communicated change from Backblaze: the backup service has stopped backing up folders managed by OneDrive and Dropbox sync clients. This is a genuinely serious issue for anyone relying on Backblaze as a safety net under their cloud sync setup — the assumption that 'it's in Dropbox AND Backblaze' providing redundancy turns out to be wrong. The root cause appears to be changes in how OneDrive and Dropbox implement local sync, using virtual or on-demand file access that Backblaze's backup agent doesn't recognize as real local files. From a technical standpoint, these cloud sync clients increasingly use filesystem virtualization to show files in Explorer or Finder without actually storing them locally, which confounds backup agents that scan the filesystem. The fix, according to user reports in the thread, is to configure your sync client to keep files fully local — but many users have these set to 'Files On-Demand' or equivalent modes without realizing the implications for backup. What makes this particularly problematic is that most users won't discover the gap until they need to restore, which is exactly the worst time to find out your backup isn't complete. The HN score suggests this is affecting a lot of people and the information has not been well surfaced by Backblaze. If you use Backblaze and any cloud sync folder, this deserves immediate attention and a backup audit.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://github.com/openssl/openssl/releases/tag/openssl-4.0.0" target="_blank" rel="noopener">OpenSSL 4.0.0 Ships — First Major Version in Years</a>
+            </div>
+            <div class="story-summary">OpenSSL 4.0.0 has been released, the first major version bump for the world's most widely deployed TLS library in years, and it scored 237 points on HN indicating the community is paying attention. Major version releases in OpenSSL are significant events because of the library's ubiquity — it underlies an enormous proportion of encrypted internet traffic and is embedded in countless systems, languages, and applications. Version 4.0.0 brings breaking API changes, which is expected in a major release and is probably the primary reason for the bump; downstream maintainers for Linux distributions, language runtimes, and applications will need to assess compatibility. OpenSSL has had a complicated history — Heartbleed in 2014 was a watershed moment that led to massive investment in code auditing and the eventual formation of the OpenSSL Foundation with real funding. The project has been considerably healthier since then, and major releases now go through extensive review processes. For engineers who maintain server infrastructure or build applications that link against OpenSSL directly, the migration path and timeline for your platform's package managers is the immediate practical concern. For those using higher-level TLS abstractions, the impact will mostly be felt when your underlying OS or runtime ships updated packages. The release notes will be the authoritative source on what's changed, and reading them is worth the time for anyone in a security-sensitive role.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/04/14/someone-planted-backdoors-in-dozens-of-wordpress-plugins-used-in-thousands-of-websites/" target="_blank" rel="noopener">WordPress Plugin Supply Chain Attack: Backdoors Found After Acquisition</a>
+            </div>
+            <div class="story-summary">Dozens of WordPress plugins were reportedly compromised after being acquired by a new corporate owner who then pushed backdoored updates to the existing install base, affecting thousands of websites that had these plugins installed and set to auto-update. This is a textbook software supply chain attack using a particularly clever vector: buy legitimate, trusted plugins with existing user bases, then use the update mechanism that users already trust to deliver malicious code. The attack is especially insidious because it exploits the trust relationship that's supposed to be a feature of the plugin ecosystem — the idea that updates from an existing plugin author are safe. For site operators, this is a reminder that any plugin with auto-updates enabled is implicitly trusting whoever currently owns that plugin, not just whoever wrote it originally. The WordPress ecosystem is particularly vulnerable to this pattern because plugin ownership changes hands relatively frequently and there's no robust mechanism for notifying users when a plugin is acquired. Security researchers are likely still untangling the full scope of what the backdoors do, but common payloads in these attacks include remote code execution capabilities, credential harvesting, and the ability to inject malicious content. If you maintain WordPress sites professionally, this is a good moment to audit which plugins have auto-updates enabled, check for any unusual plugin publisher changes in recent months, and review server logs for anomalous outbound connections.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://news.ycombinator.com/item?id=47769796" target="_blank" rel="noopener">Fiverr Left Customer Files Public and Searchable — Users Reported to HN</a>
+            </div>
+            <div class="story-summary">A 'Tell HN' post scoring 506 points reports that Fiverr exposed customer files in a way that made them publicly accessible and searchable, representing a significant data exposure for users who uploaded files as part of gig transactions. The details in the thread suggest this wasn't a breach in the traditional sense but rather a misconfiguration — files stored without proper access controls, potentially indexed by search engines. For a platform built on freelance services where clients regularly upload sensitive business documents, design assets, code, and other proprietary materials as part of project briefs, this is a particularly serious exposure. The HN score and the 'Tell HN' framing suggest this was discovered organically by users rather than disclosed by Fiverr, which raises questions about when Fiverr became aware and whether notification obligations were triggered. This fits into a broader pattern of object storage misconfiguration incidents — S3 buckets, Azure Blob Storage, and similar services require explicit access policy configuration, and getting it wrong is an easy mistake that has bitten many companies. For engineers who build or audit platforms where users upload files, this is a reminder that storage access controls need to be in the default-deny baseline, not configured on a per-case basis. If you use Fiverr for business work and have uploaded sensitive files in the past, it may be worth checking what was included in those uploads.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-dev"></div>
+            <h2>Hardware & Devices</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.blackmagicdesign.com/products/davinciresolve/photo" target="_blank" rel="noopener">DaVinci Resolve Launches a Photo Editing App — Blackmagic Takes on Lightroom</a>
+            </div>
+            <div class="story-summary">Blackmagic Design has released DaVinci Resolve Photo, a dedicated photo editing application that brings the same color science and toolset that made DaVinci Resolve the industry standard for professional video color grading into the still photography workflow. This scored an impressive 1,082 points on HN, making it the single highest-scoring item in today's feed, which speaks to how much appetite there is for a serious Lightroom alternative. Adobe's subscription-only model for Lightroom and Photoshop has generated sustained frustration among photographers for years, and Blackmagic's approach — historically offering professional-grade tools at one-time purchase prices or for free — positions this as a direct challenge to Adobe's lock on the prosumer photography market. The color grading tools in DaVinci Resolve are genuinely world-class, used on major Hollywood productions, so the underlying technology is not a question. The bigger questions are around DAM (digital asset management) features, catalog organization, and the import/export ecosystem with camera manufacturers' raw formats — these are areas where Lightroom's years of development show. Early reactions in the community seem to range from enthusiastic to cautiously optimistic, with the main concern being workflow parity for photographers who live in Lightroom's organizational tools. For photographers who've been waiting for a reason to leave Adobe's ecosystem, this is the most credible alternative to appear in years. Worth downloading and evaluating even if you're not ready to switch.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-science"></div>
+            <h2>Science & Research</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/04/14/max-hodaks-science-corp-is-preparing-to-place-its-first-sensor-in-a-human-brain/" target="_blank" rel="noopener">Science Corp. Prepares to Implant Its First Brain Sensor in a Human Patient</a>
+            </div>
+            <div class="story-summary">Science Corp., the neurotechnology company founded by Max Hodak — one of Neuralink's original co-founders — is preparing to implant its first neural sensor in a human brain, the company confirmed. The device is designed to read neural signals and, importantly, to deliver gentle electrical stimulation to damaged brain or spinal cord cells with the goal of promoting healing — which is a somewhat different therapeutic angle than Neuralink's focus on communication interfaces. Hodak left Neuralink in 2021 and has been building Science Corp. with a focus on what he describes as a more cautious and scientifically grounded approach, though both companies are now at roughly similar stages of early human trials. The conditions targeted include neurological damage from stroke, spinal cord injury, and similar traumas where stimulating damaged tissue could theoretically restore some function. First-in-human implants are a major regulatory and technical milestone — it means the FDA has reviewed the device's safety case and the clinical team believes the risk-benefit profile is acceptable for a patient who has volunteered. The stimulation-for-healing angle is genuinely interesting and distinct from pure brain-computer interface work; there's a growing body of research suggesting that targeted electrical stimulation can promote neuroplasticity and nerve regeneration. For the broader brain-computer interface field, having multiple companies at the human trial stage is healthy — more data points on safety and efficacy across different device architectures will accelerate the whole field's understanding. This is early-stage research and the gap between 'first human implant' and 'available therapy' is measured in years and substantial clinical trial data.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.technologyreview.com/2026/04/14/1135848/nasa-nuclear-powered-spacecraft/" target="_blank" rel="noopener">NASA Is Building the First Nuclear-Powered Interplanetary Spacecraft</a>
+            </div>
+            <div class="story-summary">NASA administrator Jared Isaacman announced plans for the first nuclear reactor-powered spacecraft designed for interplanetary missions, timed to coincide with the Artemis II lunar flyby. This is a significant departure from the radioisotope thermoelectric generators (RTGs) that have powered probes like Voyager and Curiosity — those use passive radioactive decay to generate heat and electricity, while this would be an actual fission reactor generating substantially more power. More power unlocks mission capabilities that have been off the table: electric propulsion systems that are far more efficient than chemical rockets, the ability to send more instruments further and faster, and potentially crewed missions to Mars or beyond on timelines that don't require multi-year transits. The technical challenges are real — designing a reactor that operates reliably in space, passes launch safety reviews, and can handle the thermal environment of spaceflight is hard. The US has launched nuclear reactors in space before (the SNAP-10A in 1965) but hasn't done so since, so there's an institutional knowledge gap that needs to be rebuilt. Isaacman's announcement style — making it alongside Artemis II — suggests this is meant to signal a broader vision for an ambitious NASA agenda rather than just a single program. MIT Technology Review's explainer on the technology is worth reading for the engineering details. For space industry followers, nuclear propulsion has been 'coming soon' for decades; the question is whether this administration has the sustained political will to see it through to flight.</div>
+            <div class="story-source">MIT Technology Review</div>
+        </div>
+        
+    </div>
+    
+
+    
+
+    
+    <div class="previous-day">
+        <a href="2026-04-14.html">&larr; Previous day</a>
+    </div>
+    
+
+    <footer>
+        Generated 2026-04-15 06:00 UTC &middot; Tech Digest
+    </footer>
+</body>
+</html>
