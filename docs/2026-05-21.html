@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Digest - Thursday, May 21, 2026</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --accent-subtle: #1f6feb22;
+            --topic-ai: #da70d6;
+            --topic-industry: #58a6ff;
+            --topic-dev: #3fb950;
+            --topic-hardware: #f0883e;
+            --topic-science: #d29922;
+            --topic-policy: #f85149;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 0;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 24px 16px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        header .date {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-top: 4px;
+        }
+
+        .intro {
+            padding: 16px;
+            background: var(--accent-subtle);
+            border-left: 3px solid var(--accent);
+            margin: 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .section {
+            margin: 24px 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0 16px;
+            margin-bottom: 12px;
+        }
+
+        .topic-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+
+        .story {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .story:last-child {
+            border-bottom: none;
+        }
+
+        .story-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .story-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .story-title a:hover {
+            color: var(--accent);
+        }
+
+        .story-summary {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .story-source {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+            opacity: 0.7;
+        }
+
+        footer {
+            padding: 24px 16px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Topic colors */
+        .topic-ai { background: var(--topic-ai); }
+        .topic-industry { background: var(--topic-industry); }
+        .topic-dev { background: var(--topic-dev); }
+        .topic-hardware { background: var(--topic-hardware); }
+        .topic-science { background: var(--topic-science); }
+        .topic-policy { background: var(--topic-policy); }
+
+        .source-errors {
+            margin: 24px 16px;
+            padding: 12px 16px;
+            background: #f8514922;
+            border: 1px solid #f8514944;
+            border-radius: 8px;
+            font-size: 0.8rem;
+        }
+
+        .source-errors h3 {
+            color: #f85149;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .error-item {
+            color: var(--text-muted);
+            padding: 2px 0;
+        }
+
+        .previous-day {
+            padding: 20px 16px;
+            text-align: center;
+        }
+
+        .previous-day a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile touch targets */
+        @media (max-width: 640px) {
+            .story {
+                padding: 16px;
+            }
+            .story-title a {
+                display: block;
+                padding: 4px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tech Digest</h1>
+        <div class="date">Thursday, May 21, 2026</div>
+    </header>
+
+    <div class="intro">The SpaceX IPO filing is the undisputed story of the week, pulling back the curtain on Elon Musk's empire for the first time — but it's competing with a genuinely remarkable day for AI, including OpenAI's model disproving an 80-year-old math conjecture and Anthropic announcing its first profitable quarter.</div>
+
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-industry"></div>
+            <h2>Industry & Business</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/05/20/the-spacex-ipo-filing-ai-bets-starship-dreams-elon-musk/" target="_blank" rel="noopener">SpaceX files for IPO, opens its books for the first time — and it's a window into Musk's entire empire</a>
+            </div>
+            <div class="story-summary">SpaceX has filed its S-1 with the SEC ahead of what's expected to be the largest IPO in history, planned for June, with Elon Musk serving as CEO, CTO, and chairman of the board simultaneously. For a company that's been famously secretive about its financials for over two decades, this filing is a landmark moment — we're finally getting hard numbers on revenue, burn rates, and future bets. The filing reveals that xAI, Musk's AI company, burned $6.4 billion in 2025 alone, and SpaceX is deeply entangled with it: they're training Grok 5 at the COLOSSUS II data center and have signed Cloud Services Agreements with Anthropic to sell compute capacity to third parties. xAI is also committing to buy $2.8 billion in natural gas turbines over the next three years, even as it faces lawsuits over the environmental impact of its existing generators in Memphis. The filing describes SpaceX's TAM as 'the largest in human history,' a characteristically Musk-ian framing that encompasses not just launch services but Starlink internet, AI compute, and ultimately the colonization of Mars. Starlink is clearly the financial engine of the company right now, providing recurring subscription revenue that subsidizes the capital-intensive launch and Starship development programs. The IPO will trade under the ticker SPCX and could make Musk a trillionaire on paper depending on valuation. The Anthropic compute deal is particularly notable — it means SpaceX/xAI infrastructure is now directly supporting a competitor AI lab, suggesting Musk is willing to be pragmatic about monetizing compute even when it benefits rivals. For investors, the key question will be how to value a company that spans rockets, satellite internet, AI compute, and Mars colonization under a single CEO who also runs Tesla, X, and the Department of Government Efficiency. The filing is required reading for anyone trying to understand the full scope of Musk's bets.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/05/20/anthropic-says-its-about-to-have-its-first-profitable-quarter/" target="_blank" rel="noopener">Anthropic says it's about to have its first profitable quarter, with revenue doubling to $10.9B</a>
+            </div>
+            <div class="story-summary">Anthropic has told investors it expects to post its first profitable quarter in Q2 2026, with revenue projected to more than double to around $10.9 billion — a striking number for a company that was burning cash at an extraordinary rate just 18 months ago. This is a significant inflection point for the AI industry broadly: it suggests that at least one frontier lab has found a path to profitability without sacrificing its safety-focused positioning. The revenue growth is being driven primarily by API usage from enterprise customers and developers building on Claude, as well as the expansion of Claude's capabilities into coding, analysis, and agentic workflows. The SpaceX IPO filing adds an interesting wrinkle: Anthropic has signed a Cloud Services Agreement with SpaceX/xAI to use COLOSSUS II compute, which may be helping manage infrastructure costs. Anthropic's profitability news comes as OpenAI is reportedly filing for its own IPO, meaning both of the top-tier frontier labs are now moving toward public market accountability. For the broader AI ecosystem, a profitable Anthropic matters because it validates the enterprise B2B model and reduces the company's dependency on continued fundraising from Google and others. The company has been expanding aggressively into international markets and government contracts, and the revenue trajectory suggests those bets are paying off. It's worth noting these are investor communications, not audited financials, so the actual Q2 report will be the real test — but the directional signal is clear.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/05/20/nvidia-posts-another-record-quarter-reveals-43-billion-of-holdings-in-startups/" target="_blank" rel="noopener">Nvidia posts another record quarter, reveals $43 billion in startup holdings</a>
+            </div>
+            <div class="story-summary">Nvidia announced yet another record revenue quarter after market close Wednesday, continuing a streak that has made it the most valuable company in the world for much of the past two years. The headline numbers are impressive, but the more interesting disclosure is that Nvidia now holds $43 billion in equity stakes across AI startups — a portfolio that has quietly become one of the largest corporate venture positions in the tech industry. This means Nvidia isn't just a picks-and-shovels play on AI; it has a direct financial interest in the success of the companies buying its chips, creating a somewhat circular dynamic. The company did caution that revenue growth would slow in the following quarter, which sent some jitters through markets that have priced in perpetual hypergrowth. CEO Jensen Huang separately flagged what he sees as a 'brand new $200 billion market' in CPUs optimized for AI agents — a signal that Nvidia is planning to compete more directly with Intel and AMD in the broader compute stack, not just GPUs. The $43B portfolio figure also raises governance questions: Nvidia is simultaneously a supplier, investor, and in some cases a board observer at companies it's selling to. For engineers, the practical takeaway is that Nvidia's dominance in AI compute isn't going anywhere soon, but the company is clearly trying to move up the stack and capture more of the value chain before competitors close the gap.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/05/20/intuit-to-lay-off-over-3000-employees-to-refocus-on-ai/" target="_blank" rel="noopener">Intuit laying off over 3,000 employees to 'refocus on AI'</a>
+            </div>
+            <div class="story-summary">Intuit announced it will lay off more than 3,000 employees — a significant chunk of its workforce — as part of a strategic pivot to concentrate resources on AI-driven products. This follows a now-familiar pattern in enterprise software: companies are using AI as both a genuine transformation opportunity and a convenient justification for headcount reductions they might have pursued anyway. Intuit's core products — TurboTax, QuickBooks, Credit Karma, Mailchimp — are all candidates for deep AI integration, from automated tax filing to AI-assisted bookkeeping for small businesses. The company has been investing heavily in its AI platform 'Intuit Assist' for the past couple of years, but clearly feels it needs to move faster and leaner. For the workers affected, the framing as an 'AI refocus' rather than a 'cost cut' will ring hollow — the outcome is the same. What's notable is that Intuit is a profitable, established company making this move, not a struggling startup; this suggests AI-driven workforce restructuring is now hitting mature enterprise software firms, not just the bleeding edge. The broader implication is that the AI productivity gains that were promised are now being extracted in the form of reduced headcount rather than purely additive capacity. This is one of the cleaner data points we have so far on AI's actual impact on software company employment.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.technologyreview.com/2026/05/18/1137488/elon-musk-suit-openai-verdict/" target="_blank" rel="noopener">Musk loses OpenAI lawsuit after jury finds he waited too long to sue</a>
+            </div>
+            <div class="story-summary">The Musk v. Altman trial concluded with a decisive loss for Elon Musk: a unanimous jury advisory verdict found that Musk had sued OpenAI too late, with his claims barred by the applicable statutes of limitations. US District Judge Yvonne Gonzalez Rogers immediately accepted the verdict. Musk had alleged that Sam Altman and Greg Brockman had deceived him about OpenAI's commitment to its nonprofit mission when they were soliciting his early funding and involvement. The case was genuinely interesting as a piece of legal theater — weeks of testimony pulled back the curtain on the early dynamics of OpenAI, the egos involved, and the informal promises made when the company was founded. The statute of limitations ruling is something of a technicality in that it doesn't adjudicate the underlying merits of whether Musk was actually deceived; it just says he waited too long to complain about it. Musk announced on X that he would appeal, which surprised exactly no one. The real winner here, as MIT Technology Review noted, may be the AI industry itself: the trial generated enormous public attention and made it clear just how much money and power is now concentrated in a handful of AI labs. For OpenAI specifically, clearing this legal cloud matters as the company moves toward its own IPO filing, reportedly as soon as this Friday.</div>
+            <div class="story-source">MIT Technology Review</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.cnbc.com/2026/05/20/openai-ipo-filing.html" target="_blank" rel="noopener">OpenAI reportedly filing for IPO confidentially as soon as Friday</a>
+            </div>
+            <div class="story-summary">OpenAI is reportedly preparing to file confidentially for an IPO as soon as this Friday, according to CNBC, following closely on the heels of the SpaceX IPO filing. A confidential filing means the S-1 won't be publicly visible immediately — OpenAI gets to work through SEC comments in private before going fully public with the documents. This is a significant moment: OpenAI's transition from a nonprofit to a capped-profit and now apparently a fully public company has been one of the most-watched corporate transformations in tech history. The timing alongside SpaceX is interesting and almost certainly not coincidental — both companies are riding an AI enthusiasm wave in public markets. For OpenAI, an IPO raises immediate governance questions given the unusual structure Musk spent years complaining about, and it will require hard disclosures about revenue, costs, and the terms of its relationships with Microsoft and others. Anthropic's profitability news this week will likely help set favorable market expectations for AI lab valuations. The confidential filing route gives OpenAI time to get its story straight before public scrutiny, but the pressure to disclose will be intense given how central ChatGPT and its API are to so many businesses.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-ai"></div>
+            <h2>AI & Machine Learning</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://openai.com/index/model-disproves-discrete-geometry-conjecture" target="_blank" rel="noopener">An OpenAI model has disproved an 80-year-old conjecture in discrete geometry</a>
+            </div>
+            <div class="story-summary">OpenAI announced that one of its models has disproved a central conjecture in discrete geometry known as the unit distance problem, which had stood unsolved for roughly 80 years. This is a meaningful milestone, distinct from AI systems that verify or assist human proofs — the model here appears to have generated a genuine mathematical counterexample that researchers had failed to find. The unit distance problem involves counting the maximum number of times a unit distance can appear among n points in the plane; the disproved conjecture was a foundational assumption in the field. This joins a short but growing list of cases where AI has made substantive contributions to pure mathematics, including AlphaProof's work on olympiad problems and FunSearch's discoveries in combinatorics. The hacker news score of 1055 on this story — the highest in today's feed — reflects how striking the community finds it: mathematicians don't just hand out 'disproved an 80-year conjecture' lightly. What makes this particularly interesting from a capability standpoint is that disproving a conjecture requires finding a specific counterexample, which is a different kind of search problem than constructing a proof. OpenAI hasn't been fully transparent about which model was used or the exact methodology, which is a recurring frustration with these announcements. Still, if the mathematics checks out — and presumably it will be peer-reviewed — this is one of the most concrete demonstrations yet that frontier AI systems can do novel, useful work in formal reasoning.</div>
+            <div class="story-source">OpenAI Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://deepmind.google/blog/fast-tracking-genetic-leads-to-reverse-cellular-aging/" target="_blank" rel="noopener">Google DeepMind's Co-Scientist accelerates aging research and infectious disease discovery</a>
+            </div>
+            <div class="story-summary">Google DeepMind published a cluster of research posts this week highlighting real-world scientific applications of its Co-Scientist tool, which is an AI system designed to assist with hypothesis generation and literature synthesis in biology. Three separate research groups reported meaningful results: biologists at a DeepMind-partnered lab used Co-Scientist to identify novel genetic factors that successfully rejuvenate human cells; Clare Bryant's lab used it to find genetic triggers in emerging infectious diseases; and Calico Life Sciences used it to connect scattered findings and generate new research leads in aging. These aren't just demonstrations — they involve wet-lab validation where the AI-suggested hypotheses were tested experimentally and some panned out. The pattern here is Co-Scientist acting as an extremely well-read collaborator that can surface connections across a vast literature that no individual human researcher could hold in their head. DeepMind also announced a national AI partnership with Singapore this week, suggesting it's actively trying to embed its scientific tools in national research infrastructure. For biologists and biomedical researchers, the practical question is when these tools become accessible beyond DeepMind's direct collaborators. The cumulative picture from these posts is that AI-assisted science is moving from 'interesting demo' to 'actual discovery tool' in a handful of domains, particularly molecular biology.</div>
+            <div class="story-source">Google DeepMind Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://simonwillison.net/2026/May/19/gemini-35-flash/" target="_blank" rel="noopener">Google releases Gemini 3.5 Flash at Google I/O — straight to general availability</a>
+            </div>
+            <div class="story-summary">At Google I/O this week, Google released Gemini 3.5 Flash, skipping the usual preview period and going straight to general availability — a notable change in approach that suggests Google is trying to move faster to market. The model is being deployed at scale across Google's own products immediately, including the Gemini app and AI Mode in Search, reaching 'billions of people globally' according to Google's announcement. Simon Willison notes that 3.5 Flash is more expensive than its predecessor, which is an interesting trade-off: Google is positioning it as a better model worth paying more for rather than competing purely on cost. Google also announced Gemini Omni, a multimodal variant, and Project Genie with Street View integration for simulating real-world environments — though many of the splashier I/O announcements are 'coming soon' rather than available today. The broader context is that Google is widely perceived as third in the foundation model race behind OpenAI and Anthropic, and I/O is its biggest opportunity to change that narrative. The Gemini 3.5 Flash general availability is the most concrete deliverable from the event. For developers already using Gemini via API, the new model is worth benchmarking — particularly for tasks involving long context, code generation, and multimodal inputs where Google claims improvements.</div>
+            <div class="story-source">Simon Willison's Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://openai.com/index/ramp" target="_blank" rel="noopener">Ramp engineers use OpenAI Codex with GPT-5.5 to cut code review time from hours to minutes</a>
+            </div>
+            <div class="story-summary">OpenAI published a case study showing how Ramp — the corporate spend management company — has integrated Codex with GPT-5.5 into its engineering workflow to accelerate code review. The core use case is having Codex provide substantive technical feedback on pull requests in minutes rather than waiting for human reviewers, which can take hours or days. Ramp is a good test case because it's a fast-moving fintech with a large, active codebase and engineering teams under pressure to ship quickly. The GPT-5.5 model is notable in its own right — it's a significant step up from GPT-4 era models on the OfficeQA Pro benchmark, and Databricks separately announced they're deploying it for enterprise agent workflows where it set a new state of the art. The Ramp case study is part of a broader OpenAI push to demonstrate enterprise ROI for Codex, which also has a new partnership with Dell for on-premise and hybrid deployments. For engineering teams evaluating AI code review tools, the honest question is whether these tools catch the bugs that matter or primarily surface stylistic issues — the case study is positive but comes from OpenAI's marketing, so independent benchmarking is warranted. The direction of travel is clear: AI-assisted code review is going from experimental to standard practice at companies willing to move fast.</div>
+            <div class="story-source">OpenAI Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.bbc.com/future/article/20260519-google-tackles-attempts-to-hack-its-ai-results" target="_blank" rel="noopener">Google's AI search results are being actively manipulated — and Google is quietly fighting back</a>
+            </div>
+            <div class="story-summary">A BBC investigation reveals that bad actors are systematically attempting to manipulate Google's AI-generated search results, exploiting the way large language models synthesize information to inject false or misleading content into AI Overviews and similar features. This is a natural evolution of traditional SEO spam, but the attack surface is different and in some ways larger: rather than just gaming ranking signals, attackers are trying to get their content ingested and summarized by AI systems in ways that traditional link-based spam filters don't catch well. Google is reportedly developing countermeasures, including better provenance tracking and adversarial testing of its AI systems, but has been quiet about the specifics. This connects to a broader concern that as AI-generated answers displace traditional blue-link search results, the accountability mechanisms built up over 20 years of SEO are being partially bypassed. For developers and businesses that depend on search traffic, the practical implication is that AI search results are not yet as trustworthy as they appear — they can be influenced by sophisticated actors. OpenAI and others are separately working on content provenance tools (Content Credentials, SynthID) to help users identify AI-generated content, but those are largely defensive tools for consumers rather than solutions to active manipulation.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-policy"></div>
+            <h2>Policy & Regulation</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.wired.com/story/the-eu-is-going-through-a-trump-fueled-breakup-with-big-tech/" target="_blank" rel="noopener">EU countries accelerating break from US Big Tech, switching to homegrown alternatives</a>
+            </div>
+            <div class="story-summary">Wired reports that EU member states are actively moving away from US tech products — with France already transitioning government communications away from Zoom and Microsoft Teams toward European alternatives — and that other countries are following suit. The driver is a combination of Trump administration trade tensions, concerns about the CLOUD Act giving US authorities access to data stored by American companies, and a broader strategic anxiety about dependency on US tech infrastructure. This isn't a new concern, but the pace appears to have accelerated meaningfully in 2025-2026. Countries are investing in domestic alternatives for productivity software, cloud infrastructure, and communications tools. For US tech companies, the EU has been their most lucrative international market, and losing government contracts is both financially significant and reputationally damaging — governments signal legitimacy. For European software companies, this is a genuine market opening, though many lack the feature parity and support infrastructure of incumbent US tools. The longer-term question is whether this government-led shift pulls private sector organizations along with it, or whether the convenience gap keeps enterprise customers on US platforms. If the trend holds, it could meaningfully reshape the competitive landscape for cloud and productivity software over the next decade.</div>
+            <div class="story-source">Wired</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.bbc.com/news/articles/cn0pky4zpxxo" target="_blank" rel="noopener">UK regulator Ofcom says TikTok and YouTube are 'not safe enough' for children</a>
+            </div>
+            <div class="story-summary">UK communications regulator Ofcom has published findings stating that both TikTok and YouTube fail to adequately protect children, citing concerns about harmful content recommendations, insufficient age verification, and inadequate parental controls. This comes under the Online Safety Act, which gives Ofcom real enforcement teeth — including the ability to levy fines up to 10% of global revenue for non-compliance. TikTok pushed back by saying Ofcom failed to acknowledge existing safety features; YouTube said it works with experts to provide appropriate experiences. The practical context is that both platforms have invested heavily in safety features in recent years, but Ofcom's assessment suggests those efforts aren't sufficient against the specific failure modes the regulator cares about most, particularly around algorithm-driven rabbit holes that lead young users to harmful content. This finding puts both companies on notice that regulatory action could follow, and creates precedent that other EU and US regulators may cite. Separately, US consumer groups are pushing for an investigation into Roblox's child safety and spending practices, suggesting the pressure on children's digital safety is building simultaneously across multiple jurisdictions. For engineers at these companies, the regulatory scrutiny means safety features are no longer just a product nicety — they're compliance infrastructure.</div>
+            <div class="story-source">BBC Technology</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/security/2026/05/google-publishes-exploit-code-threatening-millions-of-chromium-users/" target="_blank" rel="noopener">Google publishes Chromium exploit code before patch is ready — 29 months after initial report</a>
+            </div>
+            <div class="story-summary">Google's Project Zero published working exploit code for a vulnerability affecting millions of Chromium-based browser users before a patch was available, in what appears to be a breakdown of the usual responsible disclosure process. The vulnerability was originally reported 29 months ago, making this an extraordinary timeline: the bug sat unpatched for over two years, and now exploit code is publicly available before users can protect themselves. Project Zero's standard policy is to publish after 90 days regardless of patch status, but 29 months suggests something went wrong in the patch development or coordination process on a significant scale. Chromium powers not just Chrome but Edge, Brave, Opera, and dozens of other browsers, meaning the potential attack surface is genuinely enormous. The disclosure creates an immediate window where attackers who didn't previously know about the vulnerability now have working code to exploit it. For security teams, the immediate priority is understanding whether this vulnerability is being actively exploited and what mitigations are available. The broader issue is that Project Zero's 90-day policy, while generally healthy for the ecosystem, creates real harm when applied mechanically to severe vulnerabilities that remain unpatched — this case may prompt a policy review.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-dev"></div>
+            <h2>Software & Dev Tools</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.bleepingcomputer.com/news/security/github-confirms-breach-of-3-800-repos-via-malicious-vscode-extension/" target="_blank" rel="noopener">GitHub confirms breach of 3,800 repositories via malicious VSCode extension</a>
+            </div>
+            <div class="story-summary">GitHub has confirmed a security breach in which approximately 3,800 repositories were compromised through a malicious VSCode extension distributed through the Visual Studio Code Marketplace. This is a significant supply chain attack: VSCode extensions run with substantial privileges and have access to the developer's local file system, environment variables, secrets, and git credentials. An attacker who can get a malicious extension onto a developer's machine is in a very powerful position to steal credentials, inject code into repositories, or pivot to cloud infrastructure. The attack vector of compromising the extension marketplace rather than targeting individual developers is particularly dangerous because it can scale horizontally — one malicious package can affect thousands of developers who trust the marketplace. GitHub's confirmation of 3,800 affected repos is likely a floor rather than a ceiling, as detection of supply chain compromises is notoriously incomplete. For developers, the immediate action is auditing installed VSCode extensions against the confirmed malicious list and rotating any credentials that may have been exposed. The broader lesson is one the community keeps relearning: extension/package marketplaces are high-value targets, and the trust model of 'it's in the official marketplace' is insufficient. This echoes previous npm and PyPI supply chain incidents and suggests the industry still hasn't solved the marketplace security problem.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://spidermonkey.dev/blog/2026/05/20/saying-goodbye-to-asmjs.html" target="_blank" rel="noopener">Mozilla removes asm.js from SpiderMonkey, closing a chapter in web performance history</a>
+            </div>
+            <div class="story-summary">Mozilla's SpiderMonkey team has announced the removal of asm.js support from the JavaScript engine, marking the end of a technology that played a significant role in the history of web performance and ultimately paved the way for WebAssembly. Asm.js was a strict subset of JavaScript designed to be AOT-compiled by browsers, enabling near-native performance for compute-intensive web applications — it was famously used by Emscripten to compile C/C++ codebases to run in browsers. The technology was pioneered at Mozilla and briefly made Unreal Engine demos running in a browser feel like the future. WebAssembly, which launched in 2017 and achieved cross-browser support quickly, is a proper binary format that does everything asm.js did but better, and has completely superseded it in practice. The removal makes sense from a maintenance perspective: supporting asm.js's special compilation path costs engineering time for a technology that essentially no new code targets. The Hacker News score of 366 reflects genuine nostalgia from developers who remember when asm.js felt like a breakthrough. For the web platform, this is a healthy bit of cleanup — technical debt from the pre-Wasm era getting retired. It's also a reminder of how quickly 'the future' can become 'legacy' in this industry.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://blog.railway.com/p/incident-report-may-19-2026-gcp-account-outage" target="_blank" rel="noopener">Railway's GCP account suspension incident highlights cloud provider single-point-of-failure risk</a>
+            </div>
+            <div class="story-summary">Railway, a popular developer platform for deploying applications, published a detailed incident report about a May 19 outage caused by a sudden Google Cloud Platform account suspension. The incident took down Railway's entire platform — not just degraded performance, but a full suspension — affecting all customers who had applications running on Railway's infrastructure. The incident report is worth reading for the detail it provides about how a GCP account suspension unfolds from the victim's perspective: what signals appear, how quickly support responds, and what options are available. The core issue is a structural one: even if you're not directly on GCP, if you're using a platform that is, you inherit their GCP account risk. This is a second-order cloud concentration risk that many developers don't think about when choosing a deployment platform. For Railway's customers, the incident raises questions about disaster recovery options and whether multi-cloud or self-hosted fallback strategies are worth the operational overhead. For the broader developer infrastructure community, this is a useful data point about the fragility of building on top of cloud providers' account management systems, which can move faster than human review processes allow.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://docs.flipper.net/one/general/tech-specs" target="_blank" rel="noopener">Flipper One hardware specs revealed — a significant upgrade from the original Flipper Zero</a>
+            </div>
+            <div class="story-summary">The official technical specifications for the Flipper One have been published, revealing what appears to be a substantial hardware upgrade over the wildly popular Flipper Zero. The Flipper Zero became a cult device among security researchers, pentesters, and hardware hackers for its compact form factor and broad radio capabilities — and attracted significant regulatory controversy when politicians mischaracterized its capabilities as a tool for car theft. The Flipper One appears to build on that foundation with more processing power, expanded radio capabilities, and a more capable hardware platform. The Hacker News score of 347 reflects the size and enthusiasm of the Flipper community. For security professionals, the practical interest is in what new attack surfaces and defensive testing capabilities the upgraded hardware enables. For regulators, this will likely reignite debates about the legality and appropriate use of multi-purpose radio devices. The device sits in an interesting position: genuinely useful for legitimate security research, but also attracting hobbyist users whose use cases are more ambiguous. The publication of specs without a ship date suggests Flipper is still in pre-release, but the community will be watching closely.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-science"></div>
+            <h2>Science & Research</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.technologyreview.com/2026/05/19/1137471/colossal-biosciences-is-growing-chickens-in-a-3d-printed-container/" target="_blank" rel="noopener">Colossal Biosciences grows baby chicks in 3D-printed artificial eggshells</a>
+            </div>
+            <div class="story-summary">De-extinction company Colossal Biosciences has demonstrated what it's calling a 'fully artificial egg' — transparent 3D-printed plastic containers in which fertilized avian embryos can develop to hatching. Baby chicks have successfully hatched from these artificial shells at Colossal's Dallas headquarters. The primary motivation is enabling Colossal's avian de-extinction work: to resurrect extinct birds like the dodo or passenger pigeon, you need a way to incubate embryos with edited genomes, and natural eggs from living birds are impractical for that purpose. But as MIT Technology Review notes, the tool has broader implications for developmental biology — an artificial egg is a research platform that lets scientists observe and intervene in avian embryonic development in ways that are impossible with opaque natural eggs. The technique could potentially accelerate research on avian flu, developmental disorders, and vaccine production. Colossal has become one of the more scientifically productive biotech companies in the de-extinction space, having previously made progress on woolly mammoth and thylacine projects. The artificial egg is a good example of how the tools developed for seemingly exotic goals (bringing back extinct species) can yield practical scientific infrastructure with much broader applications.</div>
+            <div class="story-source">MIT Technology Review</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/space/2026/05/nasas-psyche-spacecraft-returns-unfamiliar-views-of-a-familiar-world/" target="_blank" rel="noopener">NASA's Psyche spacecraft captures rare images of Mars and an unfamiliar view of Earth</a>
+            </div>
+            <div class="story-summary">NASA's Psyche spacecraft, en route to the metal-rich asteroid 16 Psyche in the main asteroid belt, has returned images of both Earth and Mars from a unique perspective that no spacecraft has previously captured from this particular position in the solar system. Earth looks unfamiliar from deep space — a pale blue dot with recognizable continental outlines but stripped of the visual context we're accustomed to — while the Mars images were described as a 'bonus' from the mission's trajectory. Psyche launched in October 2023 and has been using gravity assists and solar electric propulsion to make its way to the asteroid belt. The primary science mission is to study 16 Psyche, a metallic asteroid believed to be the exposed core of a differentiated planetesimal — essentially a window into the iron-nickel cores of rocky planets like Earth. The imaging of familiar planets from novel perspectives is both scientifically interesting (it helps calibrate the spacecraft's instruments) and philosophically arresting in a way that tends to resonate broadly. The spacecraft is currently healthy and on track for its arrival at 16 Psyche, expected in 2029.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+    </div>
+    
+
+    
+
+    
+    <div class="previous-day">
+        <a href="2026-05-20.html">&larr; Previous day</a>
+    </div>
+    
+
+    <footer>
+        Generated 2026-05-21 07:47 UTC &middot; Tech Digest
+    </footer>
+</body>
+</html>
