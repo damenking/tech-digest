@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Digest - Saturday, May 23, 2026</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --accent-subtle: #1f6feb22;
+            --topic-ai: #da70d6;
+            --topic-industry: #58a6ff;
+            --topic-dev: #3fb950;
+            --topic-hardware: #f0883e;
+            --topic-science: #d29922;
+            --topic-policy: #f85149;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 0;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 24px 16px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        header .date {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-top: 4px;
+        }
+
+        .intro {
+            padding: 16px;
+            background: var(--accent-subtle);
+            border-left: 3px solid var(--accent);
+            margin: 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .section {
+            margin: 24px 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0 16px;
+            margin-bottom: 12px;
+        }
+
+        .topic-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+
+        .story {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .story:last-child {
+            border-bottom: none;
+        }
+
+        .story-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .story-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .story-title a:hover {
+            color: var(--accent);
+        }
+
+        .story-summary {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .story-source {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+            opacity: 0.7;
+        }
+
+        footer {
+            padding: 24px 16px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Topic colors */
+        .topic-ai { background: var(--topic-ai); }
+        .topic-industry { background: var(--topic-industry); }
+        .topic-dev { background: var(--topic-dev); }
+        .topic-hardware { background: var(--topic-hardware); }
+        .topic-science { background: var(--topic-science); }
+        .topic-policy { background: var(--topic-policy); }
+
+        .source-errors {
+            margin: 24px 16px;
+            padding: 12px 16px;
+            background: #f8514922;
+            border: 1px solid #f8514944;
+            border-radius: 8px;
+            font-size: 0.8rem;
+        }
+
+        .source-errors h3 {
+            color: #f85149;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .error-item {
+            color: var(--text-muted);
+            padding: 2px 0;
+        }
+
+        .previous-day {
+            padding: 20px 16px;
+            text-align: center;
+        }
+
+        .previous-day a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile touch targets */
+        @media (max-width: 640px) {
+            .story {
+                padding: 16px;
+            }
+            .story-title a {
+                display: block;
+                padding: 4px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tech Digest</h1>
+        <div class="date">Saturday, May 23, 2026</div>
+    </header>
+
+    <div class="intro">AI is everywhere this week — from OpenAI models disproving 80-year-old math conjectures to concerns about inflated startup metrics and a quiet but significant shift in how enterprises are deploying coding agents. Meanwhile, space news is busy with SpaceX's Starship V3 making its debut and the company's IPO filing looming large.</div>
+
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-ai"></div>
+            <h2>AI & Machine Learning</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://openai.com/index/model-disproves-discrete-geometry-conjecture" target="_blank" rel="noopener">An OpenAI model has disproved a central conjecture in discrete geometry</a>
+            </div>
+            <div class="story-summary">An OpenAI model has solved the unit distance problem, disproving a conjecture that has stood for roughly 80 years in discrete geometry. This is a significant milestone because it's not just AI assisting human researchers — it's a model autonomously reaching a novel mathematical result that humans hadn't cracked. The unit distance problem concerns how many times a single distance can appear among a set of points in the plane, and it's been a cornerstone open problem in combinatorial geometry. The result was apparently verified by mathematicians, which matters a lot — you don't want to get excited about a claimed proof that turns out to be flawed. This follows a broader trend of AI systems making inroads into formal mathematics, including AlphaProof's work on IMO problems last year. What's notable here is that this wasn't just pattern-matching on known proofs; it required constructing a genuine counterexample or proof of impossibility. For working mathematicians and theoretical CS people, this is the kind of result that actually matters — pure math breakthroughs aren't just academic, they often underpin cryptography, algorithms, and complexity theory. It also raises interesting questions about authorship and credit in mathematics when a model does the heavy lifting. OpenAI published this on their blog, and while they have obvious marketing incentives, the mathematical community's verification lends it credibility. This is the kind of story that will be cited for years when people argue about whether AI is doing real science.</div>
+            <div class="story-source">OpenAI Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.technologyreview.com/2026/05/22/1137813/google-i-o-showed-how-the-path-for-ai-science-is-shifting/" target="_blank" rel="noopener">Google I/O showed how the path for AI-driven science is shifting</a>
+            </div>
+            <div class="story-summary">At Google I/O, DeepMind CEO Demis Hassabis declared we are 'standing in the foothills of the singularity' — a striking statement from someone who's typically more measured than the average tech CEO. MIT Technology Review's analysis focuses less on the soundbite and more on the substantive shift in how AI is being deployed in scientific research, with Google positioning its tools as genuine research accelerators rather than productivity toys. The piece highlights how Google's science-focused AI efforts — including AlphaFold derivatives, Co-Scientist, and Gemini for Science — are being integrated into real lab workflows. DeepMind separately announced that biologists are using Co-Scientist to identify novel genetic factors that rejuvenate human cells, and Calico Life Sciences is using it for aging research leads. The shift MIT TR identifies is that AI is moving from 'search and summarize' to 'hypothesize and design experiments,' which is a qualitatively different capability level. For researchers, this matters because it potentially compresses the front end of the scientific method — literature review, hypothesis generation, experimental design — dramatically. The caveat is that validation still requires wet labs, clinical trials, and human judgment, and that bottleneck doesn't go away. Hassabis's singularity comment will generate more heat than light, but the underlying scientific tool deployment is the more interesting story. Google is making a serious play to become infrastructure for research institutions, not just a search company that also does science. Whether that materializes depends on whether the tools hold up under real research conditions, which early reports from actual labs suggest is promising but uneven.</div>
+            <div class="story-source">MIT Technology Review</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://openai.com/index/gartner-2026-agentic-coding-leader" target="_blank" rel="noopener">OpenAI named a Leader in enterprise coding agents by Gartner; Microsoft starts canceling Claude Code licenses</a>
+            </div>
+            <div class="story-summary">Two related stories that together paint a picture of how the enterprise AI coding market is consolidating. Gartner placed OpenAI in the Leaders quadrant of its 2026 Magic Quadrant for Enterprise AI Coding Agents, recognizing Codex for both innovation and deployment at scale — this is the kind of analyst validation that moves procurement decisions in large organizations. Simultaneously, The Verge reported that Microsoft has started canceling Claude Code licenses, suggesting a deliberate move away from Anthropic's coding tool within Microsoft's own ecosystem, likely in favor of OpenAI's Codex and its own GitHub Copilot products. This is notable because Microsoft has had a complex relationship with Anthropic — they're an investor in OpenAI but Anthropic has been making inroads with developers who wanted alternatives. Virgin Atlantic's case study from OpenAI illustrates the practical stakes: they used Codex to ship a revamped mobile app on a hard holiday travel deadline, achieving near-total unit test coverage and zero P1 defects. Ramp engineers are reportedly using Codex with GPT-5.5 to get code review feedback in minutes instead of hours. The enterprise coding agent space is becoming genuinely competitive, with OpenAI, GitHub Copilot, Cursor, and others all fighting for the same budget line. For engineering organizations, the interesting question is whether these tools are actually reducing defect rates and shipping time at scale, or whether the productivity gains get absorbed into scope creep. The Microsoft-canceling-Claude-Code story also has strategic implications for Anthropic, which has been positioning Claude as the developer-friendly alternative. If the biggest potential enterprise distributor is pulling back, that's a meaningful headwind.</div>
+            <div class="story-source">OpenAI Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.technologyreview.com/2026/05/21/1137735/anthropics-code-with-claude-showed-off-codings-future-whether-you-like-it-or-not/" target="_blank" rel="noopener">Anthropic's Code with Claude showed off coding's future — whether you like it or not</a>
+            </div>
+            <div class="story-summary">Anthropic held a two-day developer event called Code with Claude in London, running on the same day as Google I/O — which Anthropic insists was a coincidence. MIT Technology Review's reporter was there and the piece is worth reading for the cultural snapshot it provides: developers were asked how many had shipped a pull request in the last week that was completely AI-written, and apparently a significant number of hands went up. The event showcased Anthropic's vision of a world where the developer's primary job shifts from writing code to reviewing, directing, and curating AI-generated code — which some developers find exciting and others find existentially uncomfortable. Claude's coding capabilities have been a genuine differentiator for Anthropic, with Claude Sonnet and Opus models consistently ranking well on coding benchmarks. The 'Code with Claude' framing is deliberate — it's about collaboration rather than replacement, though the line between those is blurring fast. For senior engineers, the practical question is what this means for their career arc: if junior developers can ship production-quality code with AI assistance, does that compress the pipeline of people developing into senior engineers? There's also a tooling ecosystem angle — Anthropic is building out MCP (Model Context Protocol) integrations to make Claude more useful in existing developer workflows. The event reportedly had strong energy, which matters for developer adoption — tools that developers actually enjoy using spread virally through organizations. Separately, Project Glasswing from Anthropic (trending on Hacker News with a score of 393) appears to be a new research initiative, though details are sparse from the initial update. The coding agent space is moving fast enough that what's cutting-edge at a May conference may already be table stakes by fall.</div>
+            <div class="story-source">MIT Technology Review</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/05/22/how-vcs-and-founders-use-inflated-arr-to-kingmake-ai-startups/" target="_blank" rel="noopener">How VCs and founders use inflated 'ARR' to crown AI startups</a>
+            </div>
+            <div class="story-summary">TechCrunch has a sharp piece on a growing problem in AI startup land: the manipulation of Annual Recurring Revenue metrics to make companies look more successful than they are. Traditional SaaS ARR is a clean metric — it's contracted, recurring revenue that you can reliably forecast. But AI startups are increasingly counting things like one-time API usage fees, pilot credits, and non-contracted usage as 'ARR,' inflating their numbers substantially. The piece reports that investors are fully aware this is happening, which raises the uncomfortable question of whether they're complicit in misleading downstream investors and acquirers. This matters because ARR is often used as the basis for valuation multiples — if you're being valued at 20x ARR and your ARR is substantially fabricated, the implications for the eventual reckoning are significant. For engineers at these companies, it's worth understanding because it affects funding stability — a startup that raises on inflated metrics may face a brutal down-round or bridge crunch when reality reasserts itself. The pattern has echoes of the 2021 SPAC era when 'projected revenue' became a substitute for actual revenue in presentations. The AI hype cycle has been powerful enough that investors have been willing to overlook metric quality, but as the cycle matures, that tolerance tends to shrink. The piece doesn't name specific companies, which is both responsible (avoiding defamation risk) and frustrating (you want to know who). For anyone evaluating AI vendors or considering joining an AI startup, asking hard questions about how revenue is actually defined and contracted is increasingly important.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/05/22/ai-is-being-used-to-resurrect-the-voices-of-dead-pilots/" target="_blank" rel="noopener">AI used to resurrect voices of dead pilots from crash investigation documents</a>
+            </div>
+            <div class="story-summary">This one is genuinely unsettling and legally complex. People discovered they could use AI voice synthesis on spectrogram images of cockpit voice recordings that appear in NTSB (National Transportation Safety Board) accident investigation documents, effectively reconstructing audio that federal law explicitly prohibits releasing. The NTSB responded by temporarily blocking access to its entire docket system — a blunt instrument that also cut off access to legitimate safety research. The law banning release of cockpit audio exists for good reasons: families of victims have consistently argued that public release of their loved ones' final moments would be traumatic and voyeuristic. The workaround using spectrograms is clever in a horrible way — the images aren't audio, so they technically weren't covered by the prohibition, but AI can reconstruct the audio from them. Congress and regulators are now scrambling to figure out how to close the loophole, which may require redacting or modifying how spectrograms are published in public investigation dockets. This is a case where the gap between legal framework and technical capability has widened faster than legislators anticipated — a recurring theme. For AI researchers and engineers, it's a useful reminder that unintended use cases for AI capabilities can emerge in sensitive domains very quickly. The NTSB docket system being taken offline also highlights a broader problem: when a legal workaround is discovered, the response of blocking everything penalizes legitimate users (safety researchers, journalists, lawyers) while probably not stopping determined bad actors who already downloaded what they needed.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://api-docs.deepseek.com/quick_start/pricing" target="_blank" rel="noopener">DeepSeek makes V4 Pro price discount permanent</a>
+            </div>
+            <div class="story-summary">DeepSeek has made its previously temporary price discount on V4 Pro permanent, which is a quietly significant move in the AI model pricing wars. DeepSeek has been the consistent price pressure on the market — their models have repeatedly forced OpenAI, Anthropic, and Google to respond with their own price cuts to stay competitive. Making a discount permanent signals confidence that they can sustain those economics, and it's also a strategic statement about their positioning as the value option in a market where frontier models are expensive. For developers and companies with high-volume AI workloads, DeepSeek's pricing has been genuinely attractive, particularly for use cases that don't require the absolute frontier of capability. The V4 Pro model has been competitive on benchmarks while being significantly cheaper than equivalent Western models, which has driven adoption especially among cost-sensitive startups and enterprises. This also has implications for the broader AI compute market — if the pricing floor keeps dropping, the economics of running large AI workloads improve substantially, which could accelerate adoption in price-sensitive domains like education, healthcare, and government. The geopolitical dimension of DeepSeek's success remains a background concern for US policymakers, but for practitioners the pricing reality is hard to ignore. The permanent discount also undercuts the narrative that DeepSeek's earlier price cuts were temporary promotional tactics.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://simonwillison.net/2026/May/22/ftc-active-listening/#atom-everything" target="_blank" rel="noopener">FTC requires Cox Media Group and two other firms to pay nearly $1 million over 'Active Listening' AI marketing service</a>
+            </div>
+            <div class="story-summary">The FTC has settled charges against Cox Media Group and two other firms over their 'active listening' AI-powered advertising product, requiring them to pay nearly $1 million combined. For those who missed the 2024 story: Cox Media Group was caught marketing an advertising service that claimed to use microphones in consumers' phones and smart devices to listen to conversations and target ads accordingly — so if you talked about wanting a new car, ads for cars would follow you around the internet. The FTC found they were deceiving customers about this capability, though the actual legal question of whether they were truly doing it vs. just selling the idea of doing it was left somewhat murky. The settlement is notable both for what it punishes (deceptive marketing of surveillance-based advertising) and for what the fine signals: $1 million across three companies is not exactly a deterrent for large media organizations. Privacy advocates have criticized the settlement as insufficient given the severity of the alleged conduct. For consumers, the more important takeaway is that 'active listening' advertising — whether it's real or just very good behavioral profiling — is a genuine industry practice that some companies are actively trying to sell. For engineers working in ad tech, this is a reminder that the FTC is watching how AI capabilities are marketed, not just deployed. The case also illustrates how hard it is to regulate AI-powered surveillance when it's bundled inside legitimate advertising products.</div>
+            <div class="story-source">Simon Willison's Blog</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-dev"></div>
+            <h2>Software & Dev Tools</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://deno.com/blog/v2.8" target="_blank" rel="noopener">Deno 2.8 released</a>
+            </div>
+            <div class="story-summary">Deno 2.8 has dropped and it's generating significant interest on Hacker News with a score of 340, suggesting meaningful developer attention. Deno has been on a steady improvement trajectory since the 2.0 release, which significantly improved Node.js compatibility and made it a more practical choice for teams that couldn't afford to rewrite everything. Version 2.8 continues that pattern, with the Deno team working on making the runtime both more capable and more compatible with existing JavaScript/TypeScript ecosystems. Deno's positioning has always been about being what Node.js should have been — better security defaults, built-in TypeScript support, a more coherent standard library, and URL-based imports rather than the npm sprawl. The reality is that npm compatibility has become table stakes, which Deno has delivered, but winning over entrenched Node.js shops is still an uphill battle. For greenfield projects, particularly those that value security and want a cleaner development experience, Deno is increasingly competitive. The Deno team has also been working on Deno Deploy and their cloud infrastructure, trying to build a sustainable business around the runtime. The Bun deprecation news (from yt-dlp dropping Bun support) running alongside this release is an interesting contrast — the runtime space is still unsettled enough that tools are making explicit choices about what they support. For TypeScript developers, Deno 2.8 is worth at least a look if you haven't revisited it since the 1.x days when compatibility was genuinely painful.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://simonwillison.net/2026/May/21/datasette-agent/#atom-everything" target="_blank" rel="noopener">Simon Willison launches Datasette Agent: AI assistant for Datasette</a>
+            </div>
+            <div class="story-summary">Simon Willison has released Datasette Agent, an AI assistant built into the Datasette data exploration tool, representing the culmination of three years of work on his LLM Python library finally merging with Datasette itself. For those unfamiliar, Datasette is an open-source tool that lets you explore SQLite databases through a web interface — it's been popular among journalists, data analysts, and developers who need to quickly make data explorable without building a full application. Datasette Agent adds a conversational interface so you can ask questions in natural language and get SQL-backed answers, with the agent able to reason about your data schema and construct appropriate queries. The agent architecture is extensible via plugins, and Willison has already shipped companion plugins including datasette-agent-charts (for visualization) and datasette-agent-sprites (for sandboxed code execution). What's interesting about this from an architectural standpoint is that it demonstrates how well-constrained AI agents — operating in a defined domain with clear tools — can be genuinely useful without the reliability problems that plague more open-ended agents. Willison's approach to building AI tools has been notably pragmatic and well-documented, making his releases useful both as tools and as reference implementations. The plugin system means the community can extend it in directions the core team hasn't anticipated. For data teams and analysts, this is worth evaluating as a way to lower the barrier to data exploration for non-technical stakeholders. It's not the most hyped AI release of the week, but it may be one of the more practically useful ones.</div>
+            <div class="story-source">Simon Willison's Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://github.blog/changelog/2026-05-22-staged-publishing-and-new-install-time-controls-for-npm/" target="_blank" rel="noopener">npm gets staged publishing and new install-time controls</a>
+            </div>
+            <div class="story-summary">GitHub has added staged publishing and install-time controls to npm, addressing two significant pain points in the JavaScript package ecosystem's security and reliability story. Staged publishing means package authors can now release to a subset of users before a full rollout — similar to how mobile app stores do percentage-based releases — which would have been enormously useful in preventing incidents like the various malicious package substitution attacks the ecosystem has suffered. Install-time controls give organizations and developers more granular ability to decide what runs when packages are installed, which matters because install scripts have been a persistent attack vector for supply chain compromises. These are unglamorous but important infrastructure improvements — the kind of thing that doesn't generate conference keynotes but meaningfully improves the security posture of millions of projects that depend on npm. The JavaScript ecosystem's supply chain security has been a long-running concern, with incidents ranging from the colors.js sabotage to various typosquatting and malicious package campaigns. For engineering teams, particularly those in security-sensitive industries, these controls represent new tools worth building into their dependency management workflows. The changes also reflect npm's ongoing effort to remain relevant as alternatives like Bun, Deno's native imports, and pnpm have chipped away at its dominance. It's incremental progress rather than a wholesale redesign, but the ecosystem is large enough that incremental improvements have outsized impact.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-dev"></div>
+            <h2>Hardware & Devices</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/05/22/spacex-launches-starship-v3-for-the-first-time-but-loses-booster-on-return/" target="_blank" rel="noopener">SpaceX launches Starship V3 for the first time, but loses booster on return</a>
+            </div>
+            <div class="story-summary">SpaceX conducted the first launch of Starship V3, its upgraded iteration of the massive rocket system, and it was mostly a success — with the significant asterisk that the Super Heavy booster was lost during the return phase. Starship V3 represents meaningful upgrades over V2, with higher thrust Raptor 3 engines and structural improvements that increase payload capacity, which SpaceX needs for its Lunar lander commitments to NASA and eventual Mars architecture ambitions. Losing the booster is a real setback for the economics of the system — reusability is the key to SpaceX's cost structure, and a booster that doesn't come back means an expensive hardware loss. The ship (upper stage) apparently performed well, which is the harder technical challenge to solve, so there's a glass-half-full reading available. SpaceX's iterative testing philosophy means they'll learn from this failure and probably have it solved in a few flights, as they did with earlier booster catch attempts. This launch is also happening against the backdrop of SpaceX's IPO filing — the company is planning a record-breaking stock market debut under the ticker SPCX, which would potentially make Elon Musk a trillionaire based on current valuations. Investors will be watching subsequent launches closely as the company enters the public markets. Blue Origin getting cleared to fly New Glenn again after its April engine failure adds competitive context — the heavy lift launch market is getting more crowded. For the space industry broadly, V3's performance will determine how quickly SpaceX can move toward higher-cadence launches needed for Starlink Gen 3 and other missions.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://simonwillison.net/2026/May/22/memory-shortage/#atom-everything" target="_blank" rel="noopener">Memory shortage causing repricing of consumer electronics</a>
+            </div>
+            <div class="story-summary">A detailed analysis from David Oks lays out why consumer electronics are likely to get meaningfully more expensive over the next few years, with memory as the key constraint. The memory manufacturing industry has consolidated down to just three major players — Samsung, SK Hynix, and Micron — and their combined wafer capacity is now being heavily competed for by AI infrastructure demand, particularly for HBM (High Bandwidth Memory) used in AI accelerators. The problem is that HBM requires the same fabs and some of the same processes as standard DRAM, so every wafer that goes to HBM is a wafer that doesn't go to smartphone or PC memory. AI training and inference clusters are absorbing an increasing share of global memory production at premium prices that consumer electronics manufacturers can't match. The result is that memory prices for consumer products are rising, and margins that were already thin in competitive consumer hardware markets are getting compressed further. This is going to show up in smartphone pricing first — entry-level and mid-range Android phones are likely to see price increases or spec downgrades. For developers and engineers, this has implications for embedded systems, IoT devices, and any hardware product that's memory-constrained on a budget. The three-manufacturer oligopoly means there's no quick competitive response — no new fab comes online in less than 4-5 years. Simon Willison called this the clearest explanation he'd seen of the dynamic, which is a useful endorsement given his track record of curating quality technical analysis.</div>
+            <div class="story-source">Simon Willison's Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/space/2026/05/a-satellite-company-supporting-ukraine-appears-to-be-in-russias-crosshairs/" target="_blank" rel="noopener">Four Russian satellites maneuvering within striking distance of an ICEYE radar satellite</a>
+            </div>
+            <div class="story-summary">Ars Technica reports that four Russian satellites have maneuvered into close proximity with an ICEYE SAR (Synthetic Aperture Radar) satellite that has been supporting Ukraine's military operations. ICEYE is a Finnish commercial satellite company that provides high-resolution radar imaging, and their satellites have been commercially leased by Ukraine for real-time battlefield surveillance — giving Ukraine persistent coverage of Russian military movements regardless of weather or time of day. The maneuvering is notable because, as Ars notes, this kind of close-proximity behavior is not typical for satellites conducting normal missions — it's exactly what you'd do if you were preparing to physically interfere with, jam, or characterize a target satellite. Russia has been developing anti-satellite capabilities for years, and this appears to be a demonstration of that capability against a commercial satellite directly supporting an adversary. The implications are significant for the entire commercial space industry: if Russia physically interferes with or disables an ICEYE satellite, it would be the first confirmed kinetic attack on a commercial satellite in an active conflict and would set a precedent with enormous consequences. For space companies and their insurance underwriters, it raises questions about what risk premium should apply to satellites in orbits that might be contested. ICEYE has been quiet about the situation publicly, which is understandable but makes independent verification difficult. This is one of those stories that's getting less attention than it deserves given what it signals about the future of commercial space in conflict zones.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-policy"></div>
+            <h2>Policy & Regulation</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/security/2026/05/texas-ag-sues-meta-over-claims-that-whatsapp-doesnt-provide-end-to-end-encryption/" target="_blank" rel="noopener">Texas AG sues Meta over claims WhatsApp doesn't provide end-to-end encryption</a>
+            </div>
+            <div class="story-summary">The Texas Attorney General has filed suit against Meta claiming WhatsApp does not actually provide the end-to-end encryption it advertises — a serious allegation if true, and a puzzling one given the available evidence. Critics, including security researchers and legal analysts, are pointing out that the lawsuit appears to lack factual support and may be more about the Texas AG's US Senate campaign than about consumer protection. WhatsApp's end-to-end encryption implementation (based on the Signal Protocol) has been extensively audited and is widely considered genuine — while there are legitimate criticisms of Meta's metadata collection practices, the core encryption of message content appears to hold. The lawsuit seems to conflate metadata collection (which Meta does extensively) with the encryption not working, which are very different claims. For security engineers, it's worth noting that legitimate criticisms of WhatsApp's privacy do exist: Meta knows who you talk to, when, how often, and from what location, even if they can't read message content. A lawsuit focused on those metadata practices would be on much firmer factual ground. As a Senate candidate, the Texas AG filing a high-profile Big Tech lawsuit generates headlines without necessarily needing to succeed in court. This pattern of state-level antitrust and consumer protection actions against tech companies is increasingly common and worth tracking even when individual suits are weak, because they collectively shape the regulatory environment. Meta will almost certainly move to dismiss, and the lack of technical substance makes that motion likely to succeed.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://krebsonsecurity.com/2026/05/lawmakers-demand-answers-as-cisa-tries-to-contain-data-leak/" target="_blank" rel="noopener">CISA tries to contain data leak as lawmakers demand answers</a>
+            </div>
+            <div class="story-summary">CISA (the Cybersecurity and Infrastructure Security Agency) is dealing with a significant data leak and facing congressional demands for an explanation, according to Krebs on Security. This is particularly awkward given that CISA's entire purpose is to protect critical infrastructure and government cybersecurity — a data breach at the agency responsible for advising others on preventing data breaches is exactly the kind of institutional credibility problem that takes years to recover from. The details of what leaked and how are still emerging, but lawmakers on relevant oversight committees are pressing for answers about the scope and nature of the breach. CISA has been in a complicated political position under the current administration — the agency has faced scrutiny over its disinformation research programs, and some of its key personnel and functions have been reduced. A significant data leak at this moment compounds the agency's challenges substantially. For security professionals and organizations that rely on CISA's advisories and threat intelligence, this raises uncomfortable questions about the handling of sensitive information shared with the agency. The incident also comes at a time when federal cybersecurity posture has been under the microscope, with several high-profile incidents involving government systems in the past year. Brian Krebs has been following federal cybersecurity closely enough that his coverage is worth reading for the context he brings to government breach reporting.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/tech-policy/2026/05/police-boast-of-hacking-vpn-where-criminals-believed-themselves-to-be-safe/" target="_blank" rel="noopener">Police hack VPN where criminals 'believed themselves to be safe'</a>
+            </div>
+            <div class="story-summary">Law enforcement agencies have successfully hacked a commercial VPN service that was being used by criminals who believed it provided secure, anonymous communications. Authorities intercepted VPN traffic, seized domains, and arrested the operator in what appears to be a coordinated multi-jurisdiction operation. The headline quote — that criminals 'believed themselves to be safe' — is deliberately provocative, designed to undermine confidence in VPN services generally, which is almost certainly intentional messaging strategy by the agencies involved. The technically important question is how they did it: whether through a vulnerability in the VPN software, server seizure and traffic logging, a compromised operator, legal compulsion of logs, or active traffic analysis. Ars Technica's coverage suggests this was at least partly about seizing servers and gaining access to logs that the VPN operator claimed not to keep. This matters because the security properties of a VPN depend entirely on the trustworthiness and technical competence of the operator — a 'no-logs' policy is only as good as the operator's actual practices and their resistance to legal or technical compromise. For privacy-conscious users, this is a reminder that VPN selection requires evaluating operator jurisdiction, technical implementation, and audit history, not just marketing claims. For the security community, it's also a reminder that law enforcement capabilities against VPN infrastructure have matured significantly. The operation raises legitimate questions about what privacy tools remain effective for journalists, activists, and others with genuine need for anonymity.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.science.org/content/article/u-s-researchers-face-new-restrictions-publishing-foreign-collaborators" target="_blank" rel="noopener">U.S. researchers face new restrictions on publishing with foreign collaborators</a>
+            </div>
+            <div class="story-summary">Science magazine reports that US researchers are now facing new restrictions on publishing research with foreign collaborators, a policy shift that's generating significant concern in the academic community and landing with high interest on Hacker News (score of 382). The restrictions appear to be part of the broader export control and national security framework that has been tightening around research institutions, particularly affecting collaboration with Chinese and other designated country researchers. For academic science, international collaboration isn't just a nice-to-have — it's fundamental to how modern research works, with most high-impact papers having multi-country author lists. Restricting publication rights effectively means restricting the ability to do joint research, since you can't collaborate productively if you can't publish together. The practical implications for US research competitiveness are significant: if the best researchers from other countries can't publish with US counterparts, they'll route their collaborations through European or other institutions instead. There are legitimate national security concerns in specific domains like certain AI research, semiconductor design, and hypersonic applications, but broad restrictions risk sweeping up fundamental research that has no clear security application. For universities and research institutions, compliance is going to be complex and expensive, requiring legal review of collaborations that previously didn't require any special scrutiny. The long-term damage to US research leadership from chilling international collaboration could outweigh the security benefits, though that calculus is genuinely contested.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-industry"></div>
+            <h2>Industry & Business</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.bbc.com/news/articles/cg4pe2953q1o" target="_blank" rel="noopener">SpaceX files for IPO that could make Musk a trillionaire; Blue Origin cleared after April mishap</a>
+            </div>
+            <div class="story-summary">SpaceX has filed its S-1 for a stock market debut under the ticker SPCX, in what would be one of the largest IPOs in history and potentially push Elon Musk's net worth into trillionaire territory based on current private valuations. The S-1 filing contains some notable details that Simon Willison flagged: SpaceX has entered into Cloud Services Agreements with Anthropic, using compute resources from COLOSSUS II (which is currently training Grok 5) while also providing capacity to third parties. This is a significant detail — SpaceX's compute infrastructure is apparently large enough to be a commercial service, not just internal tooling. The filing also reveals the scope of SpaceX's ambitions across Starlink, Starship, and defense contracts, making the case that this is a fundamentally different company than a traditional launch provider. Blue Origin separately received clearance to fly New Glenn again after an engine failure in April caused the loss of an AST SpaceMobile satellite, with the company confirming the engine failure but providing limited technical detail — somewhat frustrating for an industry that benefits from shared failure analysis. The juxtaposition of SpaceX's IPO ambitions with its Starship V3 booster loss on the same day is notable: public market investors will need to price in the reality that rocket development involves regular expensive failures. For the commercial space industry, SpaceX going public will be a major event that changes the competitive dynamics — public company transparency requirements will reveal information that's currently private, and the capital raised will fund an even more aggressive development pace.</div>
+            <div class="story-source">BBC Technology</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-science"></div>
+            <h2>Science & Research</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.bbc.com/news/articles/cdrp3zzzp71o" target="_blank" rel="noopener">AI may speed up search for drugs to treat brain conditions like MND</a>
+            </div>
+            <div class="story-summary">BBC Technology covers research using AI to accelerate identification of drug candidates for motor neurone disease (MND) and other brain conditions, with researchers hoping the approach will help find affordable and effective treatments faster than traditional drug discovery pipelines. MND (known as ALS in the US) is a devastating disease with very limited treatment options — the existing drugs extend life by months rather than offering meaningful disease modification. Traditional drug discovery for brain conditions is particularly hard because the blood-brain barrier restricts what compounds can even reach their targets, and the biology of neurodegeneration is complex and poorly understood. AI-driven drug discovery in this context is using models trained on molecular biology data to predict which compounds might modulate relevant disease pathways, then filtering down to candidates that can be synthesized and tested. The emphasis on 'affordable' in the researchers' framing is interesting and worth noting — one failure mode of AI-accelerated drug discovery is that it produces novel patented compounds rather than identifying existing off-patent drugs that might be repurposed, which would be faster and cheaper to get to patients. The research appears to be at an early stage — identifying candidates rather than reporting clinical results — but the direction is promising. This story fits into the broader theme of AI being applied to hard scientific problems this week, alongside the Google DeepMind Co-Scientist aging research and OpenAI's mathematical breakthrough.</div>
+            <div class="story-source">BBC Technology</div>
+        </div>
+        
+    </div>
+    
+
+    
+
+    
+    <div class="previous-day">
+        <a href="2026-05-22.html">&larr; Previous day</a>
+    </div>
+    
+
+    <footer>
+        Generated 2026-05-23 06:33 UTC &middot; Tech Digest
+    </footer>
+</body>
+</html>
