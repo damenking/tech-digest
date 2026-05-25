@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Digest - Monday, May 25, 2026</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --accent-subtle: #1f6feb22;
+            --topic-ai: #da70d6;
+            --topic-industry: #58a6ff;
+            --topic-dev: #3fb950;
+            --topic-hardware: #f0883e;
+            --topic-science: #d29922;
+            --topic-policy: #f85149;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 0;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 24px 16px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        header .date {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-top: 4px;
+        }
+
+        .intro {
+            padding: 16px;
+            background: var(--accent-subtle);
+            border-left: 3px solid var(--accent);
+            margin: 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .section {
+            margin: 24px 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0 16px;
+            margin-bottom: 12px;
+        }
+
+        .topic-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+
+        .story {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .story:last-child {
+            border-bottom: none;
+        }
+
+        .story-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .story-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .story-title a:hover {
+            color: var(--accent);
+        }
+
+        .story-summary {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .story-source {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+            opacity: 0.7;
+        }
+
+        footer {
+            padding: 24px 16px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Topic colors */
+        .topic-ai { background: var(--topic-ai); }
+        .topic-industry { background: var(--topic-industry); }
+        .topic-dev { background: var(--topic-dev); }
+        .topic-hardware { background: var(--topic-hardware); }
+        .topic-science { background: var(--topic-science); }
+        .topic-policy { background: var(--topic-policy); }
+
+        .source-errors {
+            margin: 24px 16px;
+            padding: 12px 16px;
+            background: #f8514922;
+            border: 1px solid #f8514944;
+            border-radius: 8px;
+            font-size: 0.8rem;
+        }
+
+        .source-errors h3 {
+            color: #f85149;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .error-item {
+            color: var(--text-muted);
+            padding: 2px 0;
+        }
+
+        .previous-day {
+            padding: 20px 16px;
+            text-align: center;
+        }
+
+        .previous-day a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile touch targets */
+        @media (max-width: 640px) {
+            .story {
+                padding: 16px;
+            }
+            .story-title a {
+                display: block;
+                padding: 4px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tech Digest</h1>
+        <div class="date">Monday, May 25, 2026</div>
+    </header>
+
+    <div class="intro">AI coding tools are having a serious moment this week — from OpenAI's Codex landing enterprise recognition to Anthropic's developer event showcasing a future where most code is AI-written. Meanwhile, memory economics are quietly reshaping the entire hardware landscape, and a few other stories deserve your attention before the long weekend is over.</div>
+
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-ai"></div>
+            <h2>AI & Machine Learning</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://openai.com/index/gartner-2026-agentic-coding-leader" target="_blank" rel="noopener">OpenAI named a Leader in enterprise coding agents by Gartner; Codex adoption accelerating</a>
+            </div>
+            <div class="story-summary">Gartner dropped its 2026 Magic Quadrant for Enterprise AI Coding Agents, and OpenAI landed squarely in the Leaders quadrant, recognized for both innovation and enterprise-scale deployment of Codex. This is notable because Gartner analyst placements carry real weight in enterprise procurement decisions — being named a Leader here means OpenAI is not just a consumer AI story anymore, it's increasingly a serious B2B infrastructure play. The timing aligns with a wave of Codex case studies: Virgin Atlantic used it to ship a revamped mobile app on a fixed holiday travel deadline, achieving near-total unit test coverage and zero P1 defects. Ramp engineers are using Codex with GPT-5.5 to get substantive code review feedback in minutes rather than hours. AdventHealth is deploying ChatGPT for Healthcare to reduce administrative burden and return time to patient care. The pattern here is telling — these aren't experiments, they're production deployments with measurable ROI. OpenAI also announced a partnership with Dell to bring Codex to hybrid and on-premise enterprise environments, addressing a major blocker for regulated industries that can't send data to the cloud. The breadth of verticals — aviation, fintech, healthcare — suggests Codex is genuinely multi-sector. The Gartner recognition will likely accelerate procurement conversations that were already in progress. For engineers, the interesting question is how this changes the cost-of-headcount calculus at large companies over the next 18 months.</div>
+            <div class="story-source">OpenAI Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.technologyreview.com/2026/05/21/1137735/anthropics-code-with-claude-showed-off-codings-future-whether-you-like-it-or-not/" target="_blank" rel="noopener">Anthropic's Code with Claude event showed a future where AI writes most of the code — whether you like it or not</a>
+            </div>
+            <div class="story-summary">Anthropic held a two-day developer event in London called Code with Claude, and MIT Technology Review's on-the-ground report captures a distinct cultural moment in software development. The opening question to attendees — 'who has shipped a pull request in the last week that was completely AI-written?' — got a significant show of hands, which would have been unthinkable even two years ago. The event wasn't shy about its thesis: the near-future of software development involves AI agents writing large portions of code while humans shift toward architecture, review, and intent specification. This framing landed differently depending on where you sit in the engineering hierarchy — senior engineers in the room seemed energized, while others expressed genuine anxiety about what this means for junior developer pipelines. Anthropic positioned Claude not just as a pair programmer but as an autonomous agent capable of handling multi-step coding tasks end-to-end. The event coincided with Google I/O, which Anthropic staffers insisted was a coincidence, though the timing underscored just how crowded and competitive this space has become. What makes this worth paying attention to is Anthropic's reputation for being more thoughtful about capability deployment than some competitors — their enterprise traction is real. The broader takeaway from MIT Tech Review's piece is that the 'vibe shift' in professional software development is happening faster than most people realize, and the gap between organizations that have internalized this and those that haven't is already widening.</div>
+            <div class="story-source">MIT Technology Review</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://openai.com/index/model-disproves-discrete-geometry-conjecture" target="_blank" rel="noopener">An OpenAI model disproved an 80-year-old conjecture in discrete geometry</a>
+            </div>
+            <div class="story-summary">OpenAI announced that one of its models solved the unit distance problem, a conjecture in discrete geometry that had stood for roughly 80 years, and in doing so disproved it — meaning the model didn't just find a proof but actually found a counterexample that overturned what mathematicians had long believed to be true. This is qualitatively different from AI systems that verify or assist with proofs; disproving a standing conjecture requires a kind of creative mathematical exploration that was thought to be a distinctly human capability. The unit distance problem concerns how many times a given distance can appear among a set of points in the plane — a seemingly simple question with deep combinatorial implications. OpenAI is framing this as a milestone in 'AI-driven mathematics,' and that framing seems fair rather than hyperbolic. This follows Google DeepMind's Co-Scientist work, which has been similarly making waves in biological research, suggesting we're entering a period where AI is generating genuinely novel scientific knowledge rather than just synthesizing existing knowledge. For mathematicians, the reaction will likely be mixed — excitement about the tool, uncertainty about what it means for the discipline. For AI researchers, it's a meaningful data point about the ceiling of current systems' reasoning capabilities. The practical implications for fields that rely on combinatorics — cryptography, network design, theoretical computer science — could be significant, though it'll take time to work out what flows from this specific result.</div>
+            <div class="story-source">OpenAI Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://deepmind.google/blog/fast-tracking-genetic-leads-to-reverse-cellular-aging/" target="_blank" rel="noopener">Google DeepMind's Co-Scientist is accelerating biological research: cellular aging and infectious disease breakthroughs</a>
+            </div>
+            <div class="story-summary">Two separate research stories from Google DeepMind this week highlight their Co-Scientist AI system doing genuinely useful work in biology. In one case, biologists used Co-Scientist to identify novel genetic factors that successfully rejuvenate human cells — a meaningful step in cellular aging research with potential implications for age-related disease. In another, researcher Clare Bryant used Co-Scientist to identify genetic triggers in emerging infectious diseases, the kind of cross-domain pattern-matching that traditionally takes years of literature review and hypothesis generation. Co-Scientist appears to function as a research accelerant — it doesn't replace domain expertise but dramatically compresses the time between 'here's a problem' and 'here are testable hypotheses worth pursuing.' Calico Life Sciences, the Alphabet-backed longevity company, is also using it to connect scattered findings in aging research and generate new research leads. What's interesting about these use cases is they're not the flashy demos you see at conferences — they're the unsexy but high-value work of literature synthesis, hypothesis generation, and experimental design at scale. DeepMind CEO Demis Hassabis recently said we're 'standing in the foothills of the singularity,' which is the kind of statement that normally deserves skepticism, but the Co-Scientist results are at least consistent with a world where AI is meaningfully accelerating the pace of scientific discovery. For anyone working in biotech, pharma, or academic research, it's worth paying close attention to how quickly access to tools like this democratizes (or doesn't).</div>
+            <div class="story-source">Google DeepMind Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://esengine.github.io/DeepSeek-Reasonix/" target="_blank" rel="noopener">DeepSeek Reasonix hits HN's top spot: a native coding agent with aggressive caching and low cost</a>
+            </div>
+            <div class="story-summary">A project called DeepSeek Reasonix topped Hacker News this weekend with a score of 542, which is high enough to take seriously as a signal of developer interest. The project bills itself as a DeepSeek-native coding agent designed specifically around high caching efficiency and low operational cost — two things that matter enormously when you're running AI-assisted coding at scale. The caching angle is particularly interesting because one of the hidden costs of agentic AI workflows is the token expense of repeatedly re-processing context that doesn't change between steps; smart caching can dramatically reduce this. DeepSeek has been one of the more interesting open-weight model stories of the past year, offering competitive reasoning performance at a fraction of the cost of frontier closed models. A coding agent purpose-built around DeepSeek's architecture could be a compelling alternative to Codex or Claude Code for teams that are cost-sensitive or prefer to run models locally. The HN score suggests this isn't just a personal project — it's attracted serious attention from engineers who are actively evaluating coding agent options. The open-source nature of the project fits into a broader pattern of the community building tooling around capable open-weight models to close the gap with closed-model products. Worth watching to see whether this project gets maintained and whether the caching claims hold up under real-world workloads.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://simonwillison.net/2026/May/22/ftc-active-listening/#atom-everything" target="_blank" rel="noopener">FTC fines Cox Media Group nearly $1M for deceptive 'Active Listening' AI marketing service</a>
+            </div>
+            <div class="story-summary">The FTC has finalized a settlement requiring Cox Media Group and two other firms to pay nearly $1 million for deceiving customers about an AI-powered marketing service that claimed to use 'active listening' — essentially, monitoring ambient microphone audio — to target ads. This story traces back to a 2024 exposé that caught Cox pitching advertisers on packages based on real-time audio surveillance of consumers' devices, which was both deeply creepy and legally questionable. The FTC's action confirms what many suspected: this wasn't just sketchy marketing language, it crossed into deceptive trade practices. The $1 million fine is relatively modest given the scale of the deception, but the regulatory signal matters more than the dollar amount. This is one of the first significant FTC enforcement actions specifically targeting AI-powered behavioral surveillance marketing, which sets a precedent for how regulators think about these capabilities. For privacy advocates, the case validates concerns that had often been dismissed as paranoid — the 'your phone is listening to you' worry turns out to have at least some basis in fact, at least in terms of what companies were trying to sell. For engineers and product teams working on AI-powered marketing tools, this is a clear reminder that 'we can technically do this' and 'we are legally allowed to sell this' are different questions. Expect more enforcement actions in this space as regulators get more comfortable with the technical landscape.</div>
+            <div class="story-source">Simon Willison's Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arxiv.org/abs/2605.06445" target="_blank" rel="noopener">Research paper: 'Constraint Decay' — LLM agents get unreliable in back-end code generation over long contexts</a>
+            </div>
+            <div class="story-summary">A research paper titled 'Constraint Decay: The Fragility of LLM Agents in Back End Code Generation' landed on arXiv and picked up significant HN traction (228 points), and if you're deploying AI coding agents in production you should probably read it. The core finding is that LLM agents exhibit what the authors call 'constraint decay' — as the complexity and length of code generation tasks increases, the agents increasingly fail to maintain consistency with earlier constraints, producing code that violates requirements they correctly handled at the start of the task. This is a practical, not theoretical, problem: it means that the longer and more complex your code generation task, the less you can trust the output to be internally consistent. The back-end code generation focus is particularly relevant because back-end code tends to have more complex constraint interdependencies — database schemas, API contracts, security requirements — than front-end code. The findings suggest that current agentic coding workflows need more robust constraint-checking layers rather than just longer context windows. For teams evaluating coding agents for production use, this is a useful calibration: short, well-scoped tasks are where current agents are most reliable, and the reliability degrades meaningfully as task scope expands. The paper's findings are consistent with practitioner reports from engineers using Copilot, Cursor, and similar tools on large refactoring tasks. This is exactly the kind of empirical grounding the field needs as AI coding tools move from demo to deployment.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-dev"></div>
+            <h2>Hardware & Devices</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://epoch.ai/data-insights/ai-chip-component-cost-shares" target="_blank" rel="noopener">Memory is now nearly two-thirds of AI chip component costs — and it's reshaping consumer electronics pricing</a>
+            </div>
+            <div class="story-summary">A data insight from Epoch AI shows memory has grown to account for nearly two-thirds of AI chip component costs, which is a dramatic shift in the economics of chip design and one that has cascading effects well beyond the AI industry. A companion piece highlighted on Simon Willison's blog (by David Oks) explains the consumer implications: memory manufacturers — and there are now only three major ones — have fixed wafer capacity that's being increasingly allocated to high-bandwidth memory (HBM) for AI chips rather than the DRAM and NAND used in smartphones and laptops. The result is a structural supply squeeze on consumer memory that's expected to drive significant price increases in consumer electronics over the next few years. This isn't a temporary shortage caused by a factory fire or pandemic disruption — it's a sustained reallocation of production capacity driven by the economics of AI infrastructure build-out, where the margins on HBM for data centers dwarf those on commodity consumer memory. For consumers, this means the cheap Android smartphone category is under real pressure, with sub-$200 devices likely to get harder to find or meaningfully worse in specs. For the tech industry, it's a reminder that AI infrastructure investment has externalities that ripple into seemingly unrelated product categories. For investors and product managers, it's worth stress-testing roadmaps against a scenario where memory costs 20-40% more in 2027 than they do today.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://adaptivesupport.amd.com/s/question/0D5Pd00001YQLdMKAX/why-is-vivado-20261-dropping-linux-support-for-free-tier-?language=en_US" target="_blank" rel="noopener">Vivado 2026.1 is dropping Linux support for the free tier, and FPGA developers are not happy</a>
+            </div>
+            <div class="story-summary">AMD's Xilinx Vivado FPGA design tool is dropping Linux support for its free (WebPACK) tier in version 2026.1, a decision that's landed with considerable anger in the FPGA community — the HN post has 317 points and the comments are scathing. Vivado is the dominant tool for Xilinx/AMD FPGA development, and the free tier has historically been how students, hobbyists, and small companies get into FPGA work; removing Linux support for this tier effectively makes the free toolchain Windows-only. This matters because a large portion of serious FPGA development happens on Linux — it's the preferred OS for the embedded systems engineers, researchers, and open-source hardware folks who are most likely to be using the free tier in the first place. The move looks like either a deliberate attempt to push free-tier users toward paid licenses or a cost-cutting measure that AMD didn't think through carefully, and neither interpretation is flattering. FPGA toolchains are already notoriously painful, and Vivado has long been criticized for its resource requirements and complexity; this decision does nothing to improve AMD's relationship with the developer community. Open-source FPGA toolchain alternatives like Yosys/nextpnr exist but don't yet cover the full range of Xilinx devices, so the substitution isn't seamless. This is the kind of decision that erodes platform trust over time and gives competitors like Lattice an opening. Worth watching to see if community pushback causes AMD to reverse course.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-dev"></div>
+            <h2>Software & Dev Tools</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://simonwillison.net/2026/May/21/datasette-agent/#atom-everything" target="_blank" rel="noopener">Datasette Agent launches: a conversational AI assistant built into Datasette for querying data</a>
+            </div>
+            <div class="story-summary">Simon Willison announced the first release of Datasette Agent, which brings a conversational AI interface directly into Datasette — his widely-used open-source tool for exploring SQLite databases via a web interface. This is the moment where Willison's LLM Python library and Datasette finally converge, which he describes as something he's been working toward for three years. In practical terms, it means you can ask natural language questions about your data directly from the Datasette UI and get SQL-powered answers, with the agent handling the query construction, execution, and result interpretation. The new Datasette 1.0a30 release adds an extensible 'Jump to...' menu and plugin hooks that the agent integrates with, showing a thoughtful approach to extensibility. The datasette-agent-sprites plugin adds the ability to run agent commands in a sandboxed Fly Sprites environment, which addresses a real security concern with giving AI agents database access. For data engineers and analysts who already use Datasette, this is a meaningful quality-of-life improvement — it lowers the barrier to ad-hoc data exploration without requiring SQL knowledge. Willison's projects tend to be well-documented and genuinely useful rather than demo-ware, so this is worth evaluating if you're in the SQLite/data exploration space. The extensible plugin architecture also means the agent capabilities can be customized and expanded, which is the right design philosophy for a tool that needs to fit into diverse data environments.</div>
+            <div class="story-source">Simon Willison's Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://audiomass.co/?multitrack=1" target="_blank" rel="noopener">Audiomass: a free, open-source multitrack audio editor that runs in the browser</a>
+            </div>
+            <div class="story-summary">Audiomass launched a multitrack version and hit the top of Hacker News with 333 points, which is a strong signal that people have been waiting for a capable open-source web-based audio editor. The tool runs entirely in the browser — no installation, no account, no server-side processing — which makes it immediately accessible for anyone who needs to do basic audio editing without the overhead of installing a full DAW like Audacity or Reaper. The multitrack capability is the headline addition, enabling layering and mixing of multiple audio tracks in the browser, which opens up use cases well beyond simple cut-and-trim editing. For developers, podcasters, and content creators who occasionally need audio editing capabilities, this fills a real gap — the existing browser-based options have historically been limited to single-track editing. The open-source nature means it can be self-hosted, embedded in other tools, or contributed to, which increases its long-term viability. Audio processing in the browser has historically been constrained by Web Audio API limitations and memory management challenges, so the multitrack implementation is technically non-trivial. The HN score suggests the community is genuinely excited rather than just appreciating the concept — people are actually finding it useful. Worth bookmarking even if you don't have an immediate use case.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://corrode.dev/learn/migration-guides/go-to-rust/" target="_blank" rel="noopener">Comprehensive guide to migrating from Go to Rust: practical differences and decision framework</a>
+            </div>
+            <div class="story-summary">A detailed migration guide from Corrode on moving codebases from Go to Rust picked up 251 HN points, reflecting sustained developer interest in Rust as a systems programming language and the real-world friction teams encounter when making the switch. The guide is notable for being practical rather than evangelical — it doesn't argue that you should migrate, but rather covers what changes, what stays the same, and where the genuine pain points are for Go developers learning Rust. The memory management model is obviously the biggest conceptual shift, but the guide also covers the differences in concurrency patterns, error handling philosophy, and ecosystem tooling. Go's simplicity-first philosophy versus Rust's correctness-first philosophy represents a genuine tradeoff, and the guide treats it as such rather than declaring a winner. For teams running Go services that are hitting performance ceilings or dealing with memory safety issues, this is the kind of resource that makes the investigation tractable rather than overwhelming. The 251-point HN score suggests this resonated with a lot of engineers who are either actively considering the migration or have already been through it. Rust adoption in production systems has been steadily increasing — it's showing up in Linux kernel contributions, AWS infrastructure, and various network services — so the audience for this kind of practical guide is growing. The guide's framing as a migration rather than a 'Rust tutorial' is exactly the right approach for experienced Go developers.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/gadgets/2026/04/microsoft-open-sources-the-earliest-dos-source-code-discovered-to-date/" target="_blank" rel="noopener">Microsoft open-sources the earliest DOS source code ever discovered</a>
+            </div>
+            <div class="story-summary">Microsoft released what it's describing as the earliest DOS source code discovered to date, and it landed on HN with 464 points — a reminder that computing history gets people genuinely excited in a way that few modern product announcements do. The code predates the versions previously available, pushing the historical record of MS-DOS's origins back further and giving researchers and enthusiasts a window into the very earliest days of the PC operating system that shaped the personal computing industry. Microsoft has been on an interesting historical open-sourcing run in recent years, having previously released early DOS and Windows source code through the Computer History Museum, but this discovery apparently came from an unexpected archival find. For systems programmers and computing historians, the code is a fascinating artifact — it shows how DOS was structured before the design patterns that later became familiar solidified. The assembly code is extremely dense and reflects the hardware constraints of early PCs in ways that modern developers rarely encounter. Beyond nostalgia, there's real educational value here: seeing how fundamental OS abstractions were implemented in just a few kilobytes of assembly gives context for why modern systems are designed the way they are. The community reception on HN has reportedly included people running and modifying the code, which is the most sincere form of interest. It's a good reminder that computing's institutional memory is fragile and that archival work matters.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-industry"></div>
+            <h2>Industry & Business</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.bbc.com/news/articles/cg4pe2953q1o" target="_blank" rel="noopener">SpaceX files for IPO that could make Elon Musk the world's first trillionaire; Starship V3 has mostly successful first flight</a>
+            </div>
+            <div class="story-summary">Two major SpaceX stories converged this week. First, SpaceX filed for a stock market debut that could value the company high enough to push Musk's net worth into trillion-dollar territory — it would trade under the ticker SPCX and represents one of the largest potential IPOs in history. The filing comes after years of SpaceX remaining private while generating enormous revenue from Starlink subscriptions and NASA launch contracts, and the timing aligns with a broader window of favorable market conditions. Second, Starship V3 had its first flight and was described as 'mostly successful' — which, given Starship's history of spectacular failures on early flights, is genuinely good news. Ars Technica notes SpaceX still has more to prove before flying Starship all the way to low-Earth orbit, meaning this was a significant but incomplete milestone. The connection between the two stories isn't accidental — a successful Starship development program dramatically increases SpaceX's long-term valuation and the credibility of the IPO story. Starship is the vehicle on which NASA's Artemis lunar lander contract depends, so its development progress has implications beyond SpaceX's business. Interestingly, the Starship launch was initially postponed just a day after the IPO filing was announced, which raised eyebrows about the timing. For investors, SpaceX is unusual in that it's genuinely technically differentiated rather than just a financial story — the reusable rocket economics and Starlink's cash generation create a real moat.</div>
+            <div class="story-source">BBC Technology</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.bbc.com/news/articles/ckgplyxxl75o" target="_blank" rel="noopener">Waymo pauses robotaxi service in five US cities after vehicles drive into flooded roads</a>
+            </div>
+            <div class="story-summary">Waymo temporarily suspended robotaxi operations across five US cities after vehicles drove into flooded roads, a failure mode that highlights a persistent challenge for autonomous vehicle systems: handling weather conditions and real-time road hazard detection that experienced human drivers navigate intuitively. The company expanded the pause 'out of an abundance of caution' beyond the initial incident areas, which suggests the issue is at least partially a sensor or perception confidence problem rather than an isolated software bug in one region. This is the kind of story that gets outsized attention because it confirms a specific public concern about self-driving vehicles — that edge cases involving unusual environmental conditions remain difficult. To be fair, human drivers also sometimes make poor decisions in flood conditions, but the bar for autonomous vehicles in the public discourse is higher and rightly so. Waymo has generally been regarded as the most technically rigorous player in the robotaxi space, so this incident is notable coming from them specifically. The TechCrunch Mobility newsletter this weekend specifically did a 'robotaxi reality check' that provides useful context on where the industry actually is versus where the hype cycle suggested it would be by 2026. The commercial robotaxi business is real — Waymo is doing genuine paid rides in multiple cities — but incidents like this are reminders that the technology is still maturing. For engineers working on autonomous systems, edge case handling in adverse weather remains one of the most actively researched and least-solved problems in the field.</div>
+            <div class="story-source">BBC Technology</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/05/21/scammers-are-abusing-an-internal-microsoft-account-to-send-spam/" target="_blank" rel="noopener">Scammers are abusing an internal Microsoft account to send authenticated spam with malicious links</a>
+            </div>
+            <div class="story-summary">TechCrunch reported — and it landed with 284 HN points — that scammers have found a way to abuse an internal Microsoft account to send spam that passes email authentication checks, including SPF and DKIM validation, making it appear to come from a legitimate Microsoft domain. This is a particularly nasty attack because the standard defenses against phishing — 'check that the email is really from who it says it's from' — don't work when the email genuinely is authenticated by Microsoft's own infrastructure. The technique exploits some form of misconfiguration or abusable feature in Microsoft's email systems, and the fact that it reached TechCrunch reporting suggests it's been active long enough to affect real users at scale. Microsoft has not yet publicly confirmed a fix as of the reporting. For security-conscious organizations, this is a reminder that authentication (SPF/DKIM/DMARC) is necessary but not sufficient for email security — it proves the email came from the stated domain's infrastructure, but if that infrastructure can be abused, authentication becomes a trust-laundering mechanism. End-users receiving emails that appear to come from Microsoft with urgent calls to action involving links should be especially cautious right now. For IT and security teams, this is worth adding to your threat briefing and potentially updating end-user phishing awareness training to cover the 'legitimate-looking Microsoft sender' vector. Microsoft's scale means any abuse of its infrastructure reaches an enormous number of potential victims quickly.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-policy"></div>
+            <h2>Policy & Regulation</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/ai/2026/05/ai-users-re-create-dead-pilots-voices-from-crash-investigation-docs/" target="_blank" rel="noopener">US scrambles to stop AI users from recreating dead pilots' voices from crash investigation documents</a>
+            </div>
+            <div class="story-summary">Ars Technica reports that people are using AI voice cloning tools to recreate the voices of pilots who died in crashes, using transcripts and phonetic data from publicly available NTSB (National Transportation Safety Board) investigation documents as source material — effectively circumventing a law that prohibits the NTSB from publicly releasing actual cockpit audio recordings. The law against releasing cockpit audio exists specifically to protect the dignity of victims and their families, and the workaround is a genuinely disturbing example of how AI capabilities can erode legal protections that were designed without those capabilities in mind. The US government is apparently scrambling to find a legal or technical response, but the options are constrained: the investigation documents themselves need to be public for transparency and safety research purposes, and regulating what people can do with public information combined with widely available AI tools is legally and practically difficult. This sits at the intersection of several thorny issues: privacy for the deceased, AI misuse, the limits of existing privacy law in an era of powerful generative AI, and the specific sensitivity around aviation accidents where recordings are already tightly controlled. For families of crash victims, the existence of this capability — even if not yet widely deployed — is deeply distressing. For policymakers, it's another example of AI outrunning the legal frameworks designed to protect people. The NTSB and FAA may need to revisit what data is included in public investigation releases, which creates a real tension with aviation safety transparency.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/space/2026/05/a-satellite-company-supporting-ukraine-appears-to-be-in-russias-crosshairs/" target="_blank" rel="noopener">Four Russian satellites maneuvering into striking distance of a Ukrainian-supporting radar satellite</a>
+            </div>
+            <div class="story-summary">Ars Technica reports that four Russian satellites have maneuvered to positions within striking distance of an ICEYE synthetic aperture radar satellite — a Finnish company whose capabilities have been used to support Ukraine in monitoring Russian military movements. The phrasing from space domain awareness observers — 'this capability is not common for satellites conducting typical missions' — is diplomatically understated for what is being described: potential positioning for a kinetic or electronic attack on a commercial satellite. ICEYE's radar satellites are valuable precisely because they can image through clouds and darkness, providing persistent surveillance that has proven strategically important in the Ukraine conflict. This represents an escalation of the space domain conflict that has been a quieter but significant dimension of the war — Russia has already used jamming and spoofing against GPS and other satellite services, and kinetic anti-satellite capability has been demonstrated. The incident highlights how commercial satellite operators are now genuine military stakeholders in conflicts they didn't choose to be part of, creating new risks for the commercial space industry broadly. For the space industry and policymakers, this raises urgent questions about the protection of commercial space infrastructure, norms around satellite proximity operations, and whether commercial operators need new legal or defensive frameworks. The fact that this is happening to a Finnish company also has implications for NATO's Article 5 discussions around space assets.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+    </div>
+    
+
+    
+
+    
+    <div class="previous-day">
+        <a href="2026-05-24.html">&larr; Previous day</a>
+    </div>
+    
+
+    <footer>
+        Generated 2026-05-25 08:18 UTC &middot; Tech Digest
+    </footer>
+</body>
+</html>
