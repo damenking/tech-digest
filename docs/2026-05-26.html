@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Digest - Tuesday, May 26, 2026</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --accent-subtle: #1f6feb22;
+            --topic-ai: #da70d6;
+            --topic-industry: #58a6ff;
+            --topic-dev: #3fb950;
+            --topic-hardware: #f0883e;
+            --topic-science: #d29922;
+            --topic-policy: #f85149;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 0;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 24px 16px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        header .date {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-top: 4px;
+        }
+
+        .intro {
+            padding: 16px;
+            background: var(--accent-subtle);
+            border-left: 3px solid var(--accent);
+            margin: 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .section {
+            margin: 24px 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0 16px;
+            margin-bottom: 12px;
+        }
+
+        .topic-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+
+        .story {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .story:last-child {
+            border-bottom: none;
+        }
+
+        .story-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .story-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .story-title a:hover {
+            color: var(--accent);
+        }
+
+        .story-summary {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .story-source {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+            opacity: 0.7;
+        }
+
+        footer {
+            padding: 24px 16px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Topic colors */
+        .topic-ai { background: var(--topic-ai); }
+        .topic-industry { background: var(--topic-industry); }
+        .topic-dev { background: var(--topic-dev); }
+        .topic-hardware { background: var(--topic-hardware); }
+        .topic-science { background: var(--topic-science); }
+        .topic-policy { background: var(--topic-policy); }
+
+        .source-errors {
+            margin: 24px 16px;
+            padding: 12px 16px;
+            background: #f8514922;
+            border: 1px solid #f8514944;
+            border-radius: 8px;
+            font-size: 0.8rem;
+        }
+
+        .source-errors h3 {
+            color: #f85149;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .error-item {
+            color: var(--text-muted);
+            padding: 2px 0;
+        }
+
+        .previous-day {
+            padding: 20px 16px;
+            text-align: center;
+        }
+
+        .previous-day a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile touch targets */
+        @media (max-width: 640px) {
+            .story {
+                padding: 16px;
+            }
+            .story-title a {
+                display: block;
+                padding: 4px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tech Digest</h1>
+        <div class="date">Tuesday, May 26, 2026</div>
+    </header>
+
+    <div class="intro">AI is everywhere today — from the Vatican's first-ever encyclical on artificial intelligence to an OpenAI model disproving an 80-year-old math conjecture, the technology is moving fast enough that even the Pope feels compelled to weigh in. Meanwhile, the labor market implications are becoming impossible to ignore, with ClickUp replacing hundreds of humans with AI agents.</div>
+
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-ai"></div>
+            <h2>AI & Machine Learning</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/tech-policy/2026/05/citing-gandalf-pope-leo-says-we-must-disarm-ai/" target="_blank" rel="noopener">Pope Leo XIV releases first papal encyclical on AI, cites Gandalf and calls for 'disarmament'</a>
+            </div>
+            <div class="story-summary">Pope Leo XIV released 'Magnifica Humanitas,' a formal papal encyclical dedicated to the ethics of artificial intelligence — a genuinely remarkable document that multiple commentators have called some of the clearest ethical writing on AI integration into modern society. The Pope frames AI not primarily as a technology problem but as a symptom of older, deeper pathologies: concentrated power, eroding democratic accountability, and a tech elite that shapes society to its own advantage. He invokes Gandalf from Lord of the Rings to argue that wisdom, not capability, should govern powerful tools. Notably, Anthropic co-founder Christopher Olah had a private meeting with the Pope prior to the encyclical's release, leading tech commentator Corey Quinn to quip that 'getting the literal Pope to canonize your product's specific technical limitations as a spiritual treatise is the single greatest act of vendor lobbying I have ever seen.' Whether or not Anthropic had any real influence, the document is substantively engaging — it's not a reactionary condemnation but a philosophical argument about who benefits and who is harmed by AI deployment at scale. The encyclical calls for what it terms 'disarmament' of AI, meaning stripping it of applications designed to concentrate power or surveil populations. It also calls for 'artisans of hope' — technologists and policymakers who build AI systems that serve human dignity rather than extract from it. The Pope chose the name Leo in honor of Pope Leo XIII, who wrote the landmark 1891 encyclical Rerum Novarum addressing the labor abuses of the Industrial Revolution — a deliberate parallel to today's AI-driven labor disruption. For technologists who dismiss religious commentary on tech, this one is worth actually reading; the policy arguments are sharper than most think-tank white papers on the same subject.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://openai.com/index/model-disproves-discrete-geometry-conjecture" target="_blank" rel="noopener">An OpenAI model disproved an 80-year-old conjecture in discrete geometry</a>
+            </div>
+            <div class="story-summary">OpenAI announced that one of its models has solved the unit distance problem, disproving a major conjecture in discrete geometry that had stood for roughly 80 years — and this is genuinely significant, not just a benchmark cherry-pick. The unit distance problem concerns how many pairs of points in a set can be exactly distance 1 apart, and the conjecture being disproved had been a foundational assumption in the field. This follows a pattern of AI systems making real mathematical contributions, joining AlphaProof's work on IMO problems and various other AI-assisted proofs, but the OpenAI team is claiming this is a full disproof of a standing conjecture, not just a solution to a known open problem. The result was apparently verified by human mathematicians, which is the right bar to clear before making a claim like this. What's interesting here is that the model isn't just doing brute-force search — it's doing something closer to mathematical reasoning, generating and testing proof strategies in ways that complement rather than replace human mathematicians. This matters because mathematics has historically been the domain where AI systems struggle most with genuine novelty, as opposed to pattern-matching on training data. If AI can reliably disprove conjectures in pure mathematics, the implications for theoretical computer science, cryptography, and adjacent fields are substantial. It also raises the question of attribution and credit in academic mathematics — if an AI model disproves a conjecture, who publishes the paper? OpenAI hasn't fully answered that. Watch this space carefully: if results like this become reproducible and frequent, the math research pipeline changes significantly.</div>
+            <div class="story-source">OpenAI Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.technologyreview.com/2026/05/21/1137735/anthropics-code-with-claude-showed-off-codings-future-whether-you-like-it-or-not/" target="_blank" rel="noopener">Anthropic's 'Code with Claude' event signals AI is eating software development</a>
+            </div>
+            <div class="story-summary">Anthropic held a two-day developer event in London called 'Code with Claude,' timed the same day as Google I/O — coincidence according to Anthropic, though the timing benefited from the buzz. The event opened with a striking question to the audience: who had shipped a pull request in the last week that was completely AI-written? The show of hands reportedly stunned even the organizers. MIT Technology Review's coverage describes the event as a preview of coding's future 'whether you like it or not' — a notably honest framing that acknowledges the discomfort many developers feel about the direction things are heading. Anthropic showcased Claude's agentic coding capabilities, where the model doesn't just autocomplete but takes multi-step tasks, writes tests, handles errors, and iterates — the kind of workflow that used to require a junior developer. The event also reinforced Gartner's recent recognition of OpenAI as a leader in enterprise AI coding agents (a separate story), suggesting the analyst community has now fully legitimized agentic coding as a real product category. For senior engineers, the key question isn't whether AI can write code — it clearly can — but whether the code it writes is maintainable, secure, and correct at production scale. The Virgin Atlantic case study (also released this week by OpenAI, using Codex) showed near-total unit test coverage and zero P1 defects, which is a useful data point. The harder question is what happens to the career pipeline when junior developer roles thin out, since those roles have historically been how senior engineers are grown. Anthropic doesn't address that, and neither does anyone else in this space.</div>
+            <div class="story-source">MIT Technology Review</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.technologyreview.com/2026/05/22/1137813/google-i-o-showed-how-the-path-for-ai-science-is-shifting/" target="_blank" rel="noopener">Google DeepMind's Demis Hassabis says we are 'standing in the foothills of the singularity'</a>
+            </div>
+            <div class="story-summary">At Google I/O, DeepMind CEO Demis Hassabis made a headline-grabbing claim: that humanity is currently 'standing in the foothills of the singularity.' It's a striking statement from someone who is usually more measured than the average AI booster, and MIT Technology Review's coverage is notably thoughtful about unpacking what Hassabis actually means versus what people will hear. The singularity, as a concept, has been so thoroughly associated with fringe futurism that invoking it in a keynote is either brave or reckless — Hassabis is clearly betting on 'brave.' The broader context of his remarks was AI-driven science: DeepMind's tools like AlphaFold have already reshaped structural biology, and the company is now pushing into areas like drug discovery, materials science, and aging research. The MIT Technology Review piece notes that the path for AI-driven science is genuinely shifting — not just because models are better, but because the research infrastructure around them (better datasets, better evaluation frameworks, better human-AI collaboration workflows) is maturing. The Gemini for Science suite announced at I/O includes tools specifically designed for researchers, which is a more concrete deliverable than a singularity proclamation. What's worth watching is whether these tools actually accelerate published research outcomes, or whether they mostly accelerate the production of research-flavored outputs that don't replicate. The distinction matters enormously for fields like drug development where false leads are costly. For now, Hassabis's credibility comes from AlphaFold being real — but 'foothills of the singularity' is the kind of claim that ages badly if the next few years are more incremental than exponential.</div>
+            <div class="story-source">MIT Technology Review</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://support.apple.com/en-us/127115" target="_blank" rel="noopener">Claude finds a kernel vulnerability in macOS 26.5 (CVE-2026-28952)</a>
+            </div>
+            <div class="story-summary">A Hacker News entry pointing to an Apple security advisory reveals CVE-2026-28952, a macOS 26.5 kernel vulnerability reportedly found by Claude — Anthropic's AI assistant. This is a significant milestone in AI-assisted security research: finding a kernel-level vulnerability requires understanding memory management, privilege escalation vectors, and OS internals at a level that was considered firmly in expert-human territory until recently. The CVE designation means Apple took it seriously enough to issue an official fix, which is the real validation here — not a demo, not a benchmark, but an actual patched vulnerability in a major production OS. This fits a broader pattern emerging in 2026 where AI systems are being used not just to review code for obvious bugs but to actively probe systems for novel attack surfaces. Wired also covered the general trend under the headline 'The AI Era Is Creating a Bug Hunting Arms Race,' noting that as defenders use AI to find bugs faster, attackers are doing the same. The arms race framing is accurate: the same capability that lets Claude find a kernel vuln for a responsible disclosure can be used to find one for exploitation. It's worth noting that AI-found vulnerabilities raise interesting questions about disclosure policy — who is the 'researcher' who gets credit, and what are the liability implications if an AI finds a bug that's subsequently exploited before a patch ships? These questions don't have clean answers yet. For security teams, the practical implication is that your attack surface is being probed at a scale and speed that human red teams can't match, and your own defensive tooling needs to keep up.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.bbc.com/news/articles/cdrp3zzzp71o" target="_blank" rel="noopener">AI may speed up discovery of drugs for brain conditions like MND</a>
+            </div>
+            <div class="story-summary">Researchers published work suggesting that AI tools can meaningfully accelerate the identification of drug candidates for brain conditions, with a focus on motor neurone disease (MND) and similar neurological disorders where current treatment options are extremely limited. The BBC's coverage highlights the economic angle as well — the goal is to identify affordable, effective drugs, not just effective ones, which is a refreshingly grounded framing given that many AI drug discovery stories focus on novelty without regard for accessibility. The work builds on the broader AI-in-science trend but is specifically notable because the blood-brain barrier makes neurological drug development one of the hardest problems in pharma, with extremely high failure rates in late-stage trials. AI tools help here not by replacing clinical trials but by culling the candidate pool earlier and more cheaply, which means fewer failed expensive trials down the line. This connects to the Google DeepMind Co-Scientist work on aging and infectious diseases also announced this week — there's a clear pattern of AI being used to compress the early-stage research cycle across biology. The practical timeline from 'AI identifies candidate' to 'approved drug' is still measured in years to decades, so temper expectations accordingly. But if the failure rate in early-stage screening drops meaningfully, that has real compounding effects on the overall drug development pipeline over time.</div>
+            <div class="story-source">BBC Technology</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://nolanlawson.com/2026/05/25/using-ai-to-write-better-code-more-slowly/" target="_blank" rel="noopener">Using AI to write better code more slowly — a counterintuitive developer experience</a>
+            </div>
+            <div class="story-summary">A thoughtful blog post making the rounds on Hacker News with 538 upvotes argues something that cuts against the prevailing narrative: that AI coding tools can help you write *better* code, but that the process actually takes *more* time when done properly, not less. The author's core argument is that the speed gains people report from AI coding assistants come largely from cutting corners — accepting generated code without fully understanding it, skipping edge case analysis, or not thinking through architecture before generating. When you use AI as a genuine thought partner — asking it to critique your approach, explore alternatives, and explain tradeoffs — the feedback loops are richer but slower than just typing. This is a useful corrective to the productivity metrics that companies cite when justifying AI tool investments, which typically measure output velocity (lines of code, PRs merged) rather than code quality or long-term maintainability. The post resonates with the experience of many senior engineers who find that junior developers using AI tools produce impressive-looking code that falls apart under scrutiny. The implication is that AI coding tools might have a bifurcated effect on productivity: accelerating experienced developers who use them thoughtfully, while creating a false sense of productivity for less experienced ones. This is worth keeping in mind as companies like ClickUp (see related story) make decisions to replace human engineers with AI agents — the quality of the output is a function of the quality of the oversight, and that oversight still requires human expertise.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-industry"></div>
+            <h2>Industry & Business</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/05/25/what-clickups-mass-layoff-tells-us-about-the-future-of-work/" target="_blank" rel="noopener">ClickUp lays off hundreds, replaces them with thousands of AI agents</a>
+            </div>
+            <div class="story-summary">ClickUp, the nine-year-old productivity and project management startup, has announced a mass layoff in which hundreds of employees are being replaced by — and this is their framing — 'thousands of AI agents.' This is one of the most explicit and unapologetic examples yet of a tech company directly substituting AI systems for human workers, rather than using the softer language of 'augmentation' or 'efficiency gains.' TechCrunch's framing is pointed: this is a window into the future of work, and it's arriving faster than most labor economists anticipated. ClickUp's product is itself a productivity tool, which makes this a particular case of a company eating its own category — if AI agents can do the work, why not demonstrate that with your own workforce? The move is likely partly genuine operational decision-making and partly marketing: being seen as an 'AI-native' organization is a competitive advantage for a SaaS company selling to other organizations that are themselves trying to figure out how to use AI. The scale claim — 'thousands of AI agents' — deserves scrutiny; AI agents doing administrative and coordination tasks is very different from AI agents doing software development or customer success at the quality level humans provide. Still, even if the reality is more modest than the headline, the direction is clear, and ClickUp is betting its brand on being seen as ahead of that curve. For anyone thinking about career resilience in tech, ClickUp is worth watching as a leading indicator of how companies will justify and communicate AI-driven workforce reductions going forward.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://openai.com/index/gartner-2026-agentic-coding-leader" target="_blank" rel="noopener">OpenAI named a Leader in Gartner's Magic Quadrant for Enterprise AI Coding Agents</a>
+            </div>
+            <div class="story-summary">Gartner has published its 2026 Magic Quadrant for Enterprise AI Coding Agents — the fact that this category now has a Magic Quadrant is itself a signal of how seriously enterprises are taking agentic coding. OpenAI's Codex was recognized as a leader, lauded for innovation and enterprise-scale deployment. This matters less as a validation of OpenAI specifically and more as a signal that the enterprise market for agentic coding tools has matured to the point where Gartner thinks it's worth categorizing and ranking. When Gartner publishes a Magic Quadrant for a category, it typically means procurement teams at large companies are already budgeting for it, which accelerates adoption. The timing aligns with Virgin Atlantic's publicized use of Codex to ship a mobile app on a tight deadline with high test coverage — exactly the kind of enterprise case study that moves procurement decisions. Ramp (the fintech company) also published a case study this week describing using Codex with GPT-5.5 for code review, getting substantive feedback in minutes rather than hours. The practical implication for engineering leaders is that 'should we use AI coding tools?' is no longer the question — the question is which ones, for which workflows, with what governance. Companies that are still in the evaluation phase are falling behind peers who are already operationalizing these tools.</div>
+            <div class="story-source">OpenAI Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/tech-policy/2026/05/uss-big-bet-on-quantum-computing-may-not-be-entirely-legal/" target="_blank" rel="noopener">US government's quantum computing investment may have legal problems</a>
+            </div>
+            <div class="story-summary">Ars Technica reports that the US government's major bet on quantum computing — which also launched what would be the first quantum foundry company — may have been executed in ways that aren't entirely consistent with existing procurement and investment law. The details involve how the deal was structured and whether the government had the legal authority to make certain commitments, rather than whether quantum computing itself is a worthwhile investment. This is a recurring problem with ambitious government tech initiatives: the urgency to move fast on strategic technologies creates pressure to bend or stretch legal frameworks that were designed for slower, more deliberate procurement cycles. The quantum foundry angle is interesting regardless of the legal issues — the US has been worried about its semiconductor supply chain, and a domestic quantum computing foundry would be a meaningful piece of strategic infrastructure if quantum hardware ever matures to practical utility at scale. Critics quoted in the piece question whether there's current market demand for a quantum foundry, given that quantum hardware is still largely in the research and early-commercial phase. The legal scrutiny could delay or unwind parts of the deal, which would be embarrassing for the administration and potentially set back domestic quantum development. Worth watching as a case study in how governments are struggling to use Cold War-era acquisition frameworks to compete in a fast-moving technology race.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://9to5google.com/2026/05/25/motorola-amazon-app-hijacking-behavior/" target="_blank" rel="noopener">Motorola phones caught hijacking Amazon app to insert affiliate codes</a>
+            </div>
+            <div class="story-summary">Motorola devices have been discovered modifying the Amazon app at runtime to insert Motorola-controlled affiliate codes into purchases — meaning Motorola was quietly earning a commission on purchases users made through the Amazon app without their knowledge or consent. This surfaced through 9to5Google's reporting and quickly shot up Hacker News. It's a significant breach of user trust and almost certainly a violation of Amazon's terms of service, though the more interesting legal question is whether it constitutes a consumer protection violation or fraud. The practice of device manufacturers inserting affiliate codes or adware has a long history on Android — particularly with budget and mid-range handsets — but the brazenness of doing it to a major platform like Amazon is striking. Motorola (now owned by Lenovo) has not issued a public response as of publication. For users, the practical question is whether this behavior can be detected and blocked, and for the Android ecosystem more broadly, it raises questions about what other silent modifications device manufacturers may be making. Google has policies against this kind of app manipulation, but enforcement on the device/OEM layer is notoriously difficult. This is another reason why the 'open' nature of Android that gets celebrated in developer circles creates real consumer harm when OEMs act in bad faith.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://simonwillison.net/2026/May/22/memory-shortage/#atom-everything" target="_blank" rel="noopener">Memory shortage is driving up consumer electronics prices — and AI is the culprit</a>
+            </div>
+            <div class="story-summary">A post on Simon Willison's blog links to an analysis by David Oks that provides the clearest explanation yet of why consumer electronics prices are rising: AI training and inference is consuming massive amounts of memory (DRAM and NAND flash), and the three remaining large memory manufacturers — Samsung, SK Hynix, and Micron — have a fixed wafer production capacity that they're increasingly allocating to high-margin AI applications rather than consumer products. The result is a supply squeeze on the memory that goes into smartphones, laptops, and other consumer devices, pushing prices up for products that aren't themselves AI-focused. This is a structural problem, not a temporary supply hiccup — building new memory fabs takes years and billions of dollars, and the ROI math currently favors allocating production to AI customers over consumer electronics OEMs. Norway's use of 2 petabytes of Huawei flash storage for LLM training (a separate Hacker News story this week) illustrates the scale of memory appetite at the infrastructure level. For consumers, this means the era of cheap smartphones and continuously improving price-to-performance ratios may be pausing. For enterprise buyers, memory costs are a significant input into the total cost of AI infrastructure, and this dynamic suggests those costs aren't coming down as fast as GPU prices. It's a supply chain story that gets less attention than chip shortages but may have equally broad economic effects.</div>
+            <div class="story-source">Simon Willison's Blog</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-policy"></div>
+            <h2>Policy & Regulation</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.tomshardware.com/software/linux/california-moves-to-exempt-linux-from-its-upcoming-age-verification-law-after-backlash-over-forcing-operating-systems-to-collect-users-ages-amendment-proposed-by-the-same-lawmaker-who-wrote-the-original-law" target="_blank" rel="noopener">California moves to exempt Linux from its age-verification law after backlash</a>
+            </div>
+            <div class="story-summary">California's age-verification law, which would have required operating systems to collect users' ages, faced significant backlash from the open-source community because it would have effectively made Linux distributions non-compliant — an obviously absurd outcome that would have required Linux kernel distributors and distro maintainers to implement age-collection infrastructure. The same lawmaker who wrote the original law is now proposing an amendment to exempt Linux, which is a win for common sense but also illustrates how poorly technology legislation is often drafted in the first place. Age verification laws are proliferating across US states as a response to concerns about minors accessing adult content and social media, and the underlying policy goal has genuine public support — but the technical implementation questions are enormously thorny. Requiring OS-level age verification would create a centralized database of users' ages tied to their devices, which raises obvious privacy and security concerns beyond just the Linux compliance question. The Linux exemption, if passed, would create a two-tier system where open-source OS users avoid requirements that commercial OS users face — which creates its own set of perverse incentives. This story is a useful reminder that tech policy battles are often won or lost on implementation details that legislators don't fully understand when drafting, and that the open-source community's ability to mobilize quickly on issues like this is one of its underappreciated political assets.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://simonwillison.net/2026/May/22/ftc-active-listening/#atom-everything" target="_blank" rel="noopener">FTC settles with Cox Media Group over deceptive 'active listening' AI marketing service</a>
+            </div>
+            <div class="story-summary">The FTC has required Cox Media Group and two other firms to pay nearly $1 million to settle charges that they deceived customers about an 'active listening' AI-powered marketing service. The service, which dates back to 2024 when Cox Media was caught marketing it to advertisers, claimed to use device microphones to listen to conversations and target ads based on what users were saying aloud — the kind of thing consumers have long suspected but companies have denied. The settlement is notable for what it validates: the FTC is treating claims about AI surveillance capabilities as false advertising when companies can't substantiate them, not just as a privacy violation. The $1 million penalty is small relative to the revenues of the companies involved, but the FTC's willingness to pursue these cases sends a signal to the adtech industry. The 'active listening' claim was almost certainly technically false — the evidence for ambient microphone surveillance in mainstream ad targeting has never been compelling — but Cox Media was selling it as a real product capability, which is the deceptive practice the FTC penalized. For engineers working in adtech or martech, this is a reminder that overpromising AI capabilities to sales teams and clients isn't just ethically questionable — it creates legal exposure. The broader implication is that as AI marketing tools proliferate, the gap between what vendors claim and what they deliver will attract increasing regulatory attention.</div>
+            <div class="story-source">Simon Willison's Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.bbc.com/news/articles/c5y7r9gqp6jo" target="_blank" rel="noopener">Social media is as harmful as smoking for young people, top UK doctors say</a>
+            </div>
+            <div class="story-summary">The Academy of Medical Royal Colleges in the UK has published a report arguing that social media use is as damaging to young people's health as smoking, and recommending that doctors routinely screen for screen time and social media use during appointments with younger patients. This comes in a week that also saw UK police bosses call for unsafe social media platforms to be blocked for under-16s, Ofcom declare TikTok and YouTube 'not safe enough' for kids, and Meta settle a social media addiction case with a US school district (with 1,200 similar cases still pending). The convergence of these stories in a single week is striking — there's a clear regulatory and medical consensus forming in the UK that social media platforms' current default configurations cause measurable harm to minors, and that self-regulation has failed. The smoking analogy is deliberately provocative: it implies that platforms should face the same kind of regulatory regime that eventually forced tobacco companies to restrict marketing to minors and add health warnings. Whether that analogy holds up to scientific scrutiny is contested — the evidence on social media harms is real but more complex than the linear dose-response relationship of nicotine — but as a framing device for policy debates, it's clearly gaining traction with medical and law enforcement communities. For platform companies, the trajectory here is toward mandatory age verification, content restrictions, and potentially usage time limits — not as voluntary features but as legal requirements.</div>
+            <div class="story-source">BBC Technology</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.technologyreview.com/2026/05/21/1137632/lawsuit-trump-administration-online-safety-coalition-for-independent-technology-research/" target="_blank" rel="noopener">Tech researchers sue Trump administration over online safety research crackdown</a>
+            </div>
+            <div class="story-summary">A coalition of researchers who study hate speech, disinformation, harassment, and propaganda online has filed a lawsuit against the Trump administration after months of the administration targeting and defunding this research area. The lawsuit made its first court appearance last week and could have significant implications not just for US research but for global online safety policy, since American academic institutions have historically led this field. The Trump administration's actions against online safety research have taken multiple forms: defunding grants, pressuring platforms to distance themselves from researchers, and in some cases pursuing individual researchers who worked on election integrity topics. The researchers argue their First Amendment rights are being violated and that the chilling effect on the field is already measurable — researchers are self-censoring or leaving the field entirely. The irony is that this crackdown is happening simultaneously with state governments passing laws to protect minors online (see the social media / age verification stories this week), meaning the policy apparatus for *studying* online harms is being dismantled at the same moment political pressure to *regulate* them is increasing. Without independent research, legislators will be more dependent on platform-provided data to make policy decisions — which is a significant conflict of interest. The lawsuit's outcome will be a significant indicator of how much space remains for independent tech policy research in the current political environment.</div>
+            <div class="story-source">MIT Technology Review</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-dev"></div>
+            <h2>Software & Dev Tools</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://mullvad.net/en/help/exit-ip-vpn-servers-mitigation-rollout" target="_blank" rel="noopener">Mullvad VPN rolls out exit IP mitigation for VPN servers</a>
+            </div>
+            <div class="story-summary">Mullvad VPN published details of a significant infrastructure change: a mitigation rollout affecting how exit IP addresses are assigned and managed on their VPN servers. With 339 upvotes on Hacker News, this clearly resonated with the privacy-conscious developer community. The specific concern Mullvad is addressing relates to the ability of adversaries to correlate VPN exit IPs with user activity — a known attack vector against VPN anonymity that becomes more tractable as surveillance capabilities improve. Mullvad has a strong track record of being technically transparent about how their network works and what threats it does and doesn't protect against, which is unusual in an industry full of marketing-heavy 'military grade encryption' claims. The mitigation involves changes to how exit IPs are rotated and shared, making traffic correlation attacks harder. For developers and security-conscious users who rely on VPNs for threat model reasons rather than just bypassing geo-restrictions, Mullvad's detailed technical disclosures are worth reading because they explain not just what they changed but why, which gives you a clearer picture of the actual threat model. The broader context is that VPN exit node correlation attacks are a known tool used by both state-level adversaries and sophisticated private investigators, so infrastructure-level mitigations matter for journalists, activists, and others with serious privacy needs.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://simonwillison.net/2026/May/24/datasette/#atom-everything" target="_blank" rel="noopener">Datasette 1.0a30 ships with extensible 'Jump to' menu and new plugin hooks</a>
+            </div>
+            <div class="story-summary">Simon Willison released Datasette 1.0a30, continuing the long road to a 1.0 stable release for the open-source data exploration tool. The headline feature is a customizable 'Jump to...' menu (triggered by pressing '/' on any Datasette instance), which functions as a command palette for navigating databases, tables, and queries. More significant for plugin developers is the new makeJumpSections() JavaScript plugin hook, which allows plugins to inject their own entries into the Jump to menu — an extensibility pattern that makes the overall interface much more composable. The companion datasette-agent plugin (version 0.1a4) now uses this hook to surface an 'agent chat' entry point directly in the navigation, making the AI assistant capabilities more discoverable without cluttering the main interface. Datasette has developed a remarkably coherent design philosophy for a solo open-source project: everything is a URL, everything is composable, and the plugin system is a first-class citizen rather than an afterthought. The 1.0a30 release also adds a new datasette.fixtures.populate_fixture_database() helper for plugin testing, which is the kind of boring infrastructure improvement that makes the development experience significantly better over time. For anyone building internal data tools or wanting to quickly expose SQLite databases as explorable web interfaces, Datasette remains one of the most underrated tools in the Python ecosystem.</div>
+            <div class="story-source">Simon Willison's Blog</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-science"></div>
+            <h2>Science & Research</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/space/2026/05/spacexs-starship-v3-still-a-work-in-progress-mostly-successful-on-first-flight/" target="_blank" rel="noopener">SpaceX Starship V3's first flight: mostly successful, more to prove before orbital</a>
+            </div>
+            <div class="story-summary">SpaceX completed the first flight of Starship V3, with Ars Technica's coverage characterizing it as 'mostly successful' while making clear that the vehicle is still a work in progress before it can attempt full low-Earth orbit missions. The V3 configuration represents meaningful hardware improvements over the V2 that completed its own test campaign last year, but SpaceX still has a list of capabilities to demonstrate — including the full ascent and reentry profile — before claiming a fully operational orbital vehicle. The 'mostly successful' framing is worth unpacking: in the context of Starship's development, a flight that doesn't result in a rapid unscheduled disassembly is a win, but the bar for a system that's supposed to eventually carry humans to the Moon (and Mars, per Musk's ambitions) is considerably higher. The same week, the BBC reported that SpaceX postponed an earlier Starship launch as a major share sale loomed — suggesting the company is managing its public market debut alongside an extremely active flight test program. Four Russian satellites also maneuvered within striking distance of an ICEYE radar satellite this week, a reminder that the space environment Starship will operate in is increasingly contested and adversarial. The Starship program's pace of iteration remains genuinely impressive by any aerospace standard, even accounting for the spectacle of the failures along the way.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.bgr.com/2178211/japan-hypersonic-engine-ramjet-2-hour-flights-to-us/" target="_blank" rel="noopener">Japan successfully tests ramjet engine designed for Mach-5 aircraft</a>
+            </div>
+            <div class="story-summary">Japan's aerospace research community achieved a significant milestone with a successful trial of a ramjet engine capable of powering aircraft at Mach 5 — hypersonic speeds that would enable flights between Japan and the US in approximately two hours. The successful test makes Japan one of a small number of countries (alongside the US, China, and Russia) to have demonstrated working hypersonic air-breathing engine technology. The distinction between a ramjet and a scramjet matters here: ramjets work below roughly Mach 5, while scramjets (supersonic combustion ramjets) are required for higher hypersonic speeds — Japan's test is at the boundary of that envelope. The military implications of hypersonic flight are obvious and don't need elaboration, but the civilian aviation angle is real too: commercial supersonic transport has been reviving with companies like Boom Supersonic, and hypersonic commercial aviation — while much further off — would be a genuinely transformative transportation development. The test result is a data point in the ongoing geopolitical competition over hypersonic technology, where the US has faced criticism for moving more slowly than China in testing and deploying these systems. For context on the engineering challenge: ramjet combustion at hypersonic speeds requires managing airflows and fuel injection in conditions where everything happens in milliseconds and the structural loads are extreme.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+
+    
+
+    
+    <div class="previous-day">
+        <a href="2026-05-25.html">&larr; Previous day</a>
+    </div>
+    
+
+    <footer>
+        Generated 2026-05-26 07:43 UTC &middot; Tech Digest
+    </footer>
+</body>
+</html>
