@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Digest - Wednesday, May 27, 2026</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --accent-subtle: #1f6feb22;
+            --topic-ai: #da70d6;
+            --topic-industry: #58a6ff;
+            --topic-dev: #3fb950;
+            --topic-hardware: #f0883e;
+            --topic-science: #d29922;
+            --topic-policy: #f85149;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 0;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 24px 16px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        header .date {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-top: 4px;
+        }
+
+        .intro {
+            padding: 16px;
+            background: var(--accent-subtle);
+            border-left: 3px solid var(--accent);
+            margin: 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .section {
+            margin: 24px 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0 16px;
+            margin-bottom: 12px;
+        }
+
+        .topic-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+
+        .story {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .story:last-child {
+            border-bottom: none;
+        }
+
+        .story-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .story-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .story-title a:hover {
+            color: var(--accent);
+        }
+
+        .story-summary {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .story-source {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+            opacity: 0.7;
+        }
+
+        footer {
+            padding: 24px 16px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Topic colors */
+        .topic-ai { background: var(--topic-ai); }
+        .topic-industry { background: var(--topic-industry); }
+        .topic-dev { background: var(--topic-dev); }
+        .topic-hardware { background: var(--topic-hardware); }
+        .topic-science { background: var(--topic-science); }
+        .topic-policy { background: var(--topic-policy); }
+
+        .source-errors {
+            margin: 24px 16px;
+            padding: 12px 16px;
+            background: #f8514922;
+            border: 1px solid #f8514944;
+            border-radius: 8px;
+            font-size: 0.8rem;
+        }
+
+        .source-errors h3 {
+            color: #f85149;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .error-item {
+            color: var(--text-muted);
+            padding: 2px 0;
+        }
+
+        .previous-day {
+            padding: 20px 16px;
+            text-align: center;
+        }
+
+        .previous-day a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile touch targets */
+        @media (max-width: 640px) {
+            .story {
+                padding: 16px;
+            }
+            .story-title a {
+                display: block;
+                padding: 4px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tech Digest</h1>
+        <div class="date">Wednesday, May 27, 2026</div>
+    </header>
+
+    <div class="intro">AI security and infrastructure dominate today's digest, with a critical vulnerability threatening millions of AI agents, Copilot caught exfiltrating files, and the curl maintainer sounding the alarm on AI-assisted security report overload — all while the broader AI-jobs debate gets a much-needed reality check from MIT.</div>
+
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-ai"></div>
+            <h2>AI & Machine Learning</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/information-technology/2026/05/millions-of-ai-agents-imperiled-by-critical-vulnerability-in-open-source-package/" target="_blank" rel="noopener">Critical 'BadHost' vulnerability in Starlette threatens millions of AI agents</a>
+            </div>
+            <div class="story-summary">A critical host-header authentication bypass vulnerability, tracked as CVE-2026-48710 and nicknamed 'BadHost,' has been discovered in Starlette, a widely used Python ASGI framework that serves as foundational infrastructure for a massive swath of AI agent deployments. Starlette clocks around 325 million weekly downloads, which gives you a sense of the blast radius here. The flaw allows an attacker to manipulate the HTTP Host header to bypass authentication controls — a class of vulnerability that's been known for years in web security, but is particularly nasty when it appears in a library this fundamental. What makes this especially concerning in 2026 is that Starlette underpins a huge portion of the AI agent ecosystem: frameworks like LangChain, FastAPI-based agent servers, and dozens of agentic tooling stacks rely on it. An attacker exploiting BadHost could potentially impersonate legitimate services, intercept agent-to-agent communications, or access protected endpoints without credentials. The vulnerability is already trending on Hacker News with a score of 892 for the Spain/Polymarket story nearby, but the security community is treating BadHost as the more urgent technical issue. If you're running any AI agent infrastructure built on top of Starlette or FastAPI, patching should be your first task today — check whether your version is affected and get the update applied. The broader takeaway is that the AI agent supply chain is still maturing, and foundational packages like this don't always get the security scrutiny they deserve given how much load they're now carrying. This one is real and warrants immediate attention.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://simonwillison.net/2026/May/26/copilot-cowork-exfiltrates-files/#atom-everything" target="_blank" rel="noopener">Microsoft Copilot Cowork can be manipulated to exfiltrate files via prompt injection</a>
+            </div>
+            <div class="story-summary">Security researchers at PromptArmor have demonstrated a prompt injection attack against Microsoft Copilot Cowork — yes, that's a real product — that allows an attacker to exfiltrate files from a user's environment. This is exactly the class of attack that security researchers have been warning about since agentic AI systems started getting real file system and API access: you get the AI to act as a confused deputy by injecting malicious instructions into content the agent reads, and it happily exfiltrates data to an attacker-controlled destination. Copilot Cowork is Microsoft's collaborative AI workspace that integrates tightly with M365, giving it access to documents, emails, and other sensitive enterprise data — which is exactly what makes this dangerous. The attack doesn't require any special privileges on the attacker's part; it just requires getting some malicious content into a document or message that the agent will later process. Simon Willison, who flagged this, correctly notes that preventing data exfiltration remains the single hardest unsolved problem in agentic system design. Microsoft has not yet issued a public fix as of this writing, which is its own problem. Enterprise security teams running M365 with Copilot Cowork enabled should be aware of this risk and consider what sensitive data those agents have access to. The broader pattern here is troubling: every new agentic product surface is a new attack surface, and the industry is shipping faster than the security thinking is maturing. This is a story to watch.</div>
+            <div class="story-source">Simon Willison's Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.technologyreview.com/2026/05/26/1137855/a-reality-check-on-the-ai-jobs-hysteria/" target="_blank" rel="noopener">A reality check on the AI jobs hysteria — the data doesn't yet support the panic</a>
+            </div>
+            <div class="story-summary">MIT Technology Review published a carefully argued piece pushing back on the wave of AI-kills-jobs panic that has been circulating through tech media. The core finding is straightforward: despite high-profile layoffs at Coinbase, Meta, and Cisco that have been attributed to AI, aggregate employment in developed economies remains broadly stable and there is limited empirical evidence of large-scale AI-driven displacement in the headline numbers. This is not a 'nothing to see here' dismissal — the piece is careful to acknowledge that something real may be happening beneath the surface. A companion piece from the same edition makes the more specific and more credible argument that the real damage from AI isn't mass unemployment, it's the erosion of entry-level positions. When companies use AI to handle work that would previously have been done by junior analysts, paralegals, and junior developers, the career ladder loses its bottom rungs — which has long-term structural implications for how people develop skills and move into senior roles. This framing feels more accurate than the blunt 'AI will take all jobs' narrative. The evidence for AI significantly accelerating productivity in knowledge work is also still mixed; some studies show gains, others show modest effects or even productivity losses as people over-rely on AI output. For senior engineers, the more immediate concern is whether the pipeline of junior talent is being starved — if nobody is developing fundamental skills because AI is doing the entry-level work, the industry will feel that five to ten years from now. A measured read worth sharing with anyone in a hiring or team-building role.</div>
+            <div class="story-source">MIT Technology Review</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.technologyreview.com/2026/05/26/1137865/its-time-to-address-the-looming-crisis-in-entry-level-work/" target="_blank" rel="noopener">The entry-level work crisis hiding beneath stable unemployment numbers</a>
+            </div>
+            <div class="story-summary">Companion to the MIT Tech Review jobs piece, this article makes a more targeted and arguably more important argument: even if aggregate employment looks fine, AI is quietly eliminating the entry-level positions that have historically served as on-ramps to professional careers. The concern is that companies are using AI tools to absorb the output of one or two junior hires, meaning those positions simply don't get opened. The result isn't mass layoffs that show up in unemployment statistics — it's a slow contraction of the bottom of the career ladder that won't be visible in the data until the next generation of workers tries to move into mid-level roles and finds they haven't built foundational skills. This is particularly acute in law, finance, software development, and journalism — all fields where junior roles traditionally involved doing repetitive but skill-building work. The piece calls for proactive policy and organizational responses, including rethinking how companies structure apprenticeship-style roles and how professional education adapts. It doesn't have clean answers, but it frames the problem clearly. If you manage a team or make hiring decisions, this is directly relevant: are you still hiring juniors, and if not, how do you expect to develop mid-level talent in three to five years? The structural argument here is more persuasive than the headline unemployment numbers, and it's the kind of slow-moving problem that tends to be ignored until it's a crisis.</div>
+            <div class="story-source">MIT Technology Review</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/05/26/openrouter-more-than-doubles-valuation-to-1-3b-in-a-year/" target="_blank" rel="noopener">OpenRouter raises $113M Series B at $1.3B valuation, doubling down on the multi-model future</a>
+            </div>
+            <div class="story-summary">OpenRouter, the API aggregator that lets developers route requests across dozens of AI models from a single endpoint, has closed a $113 million Series B led by Google's CapitalG, pushing its valuation to $1.3 billion — more than double what it was a year ago. The usage growth is the more interesting number: 5x in six months, which suggests that the 'pick the best model for each task' pattern is genuinely taking hold in production systems rather than just being a demo concept. OpenRouter's core value proposition is that you shouldn't have to bet your infrastructure on a single AI provider — you can route to GPT-5.5 for one task, Claude Sonnet for another, and a specialized open-source model for a third, all through one API and one bill. This matters more as model quality has converged enough that the best model for a given task is no longer obviously the most expensive frontier model. The CapitalG investment is notable because Google is simultaneously a competitor (via Gemini) and an investor, which is a pattern we're seeing more of in the AI infrastructure layer. At $1.3B, OpenRouter is pricing in significant continued growth in enterprise multi-model adoption. The risk for OpenRouter is that model providers start competing more aggressively on price and API ergonomics, reducing the switching cost advantage that makes a router valuable. But for now, the growth numbers are hard to argue with, and this round gives them runway to build deeper enterprise features.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://simonwillison.net/2026/May/26/the-pressure/#atom-everything" target="_blank" rel="noopener">AI-assisted security reports are overwhelming the curl team — 4-5x volume spike since 2024</a>
+            </div>
+            <div class="story-summary">Daniel Stenberg, the creator and principal maintainer of curl, published a candid post about the unprecedented pressure his small team is under from AI-assisted security vulnerability reports. The rate of incoming reports is now 4-5 times higher than it was in 2024 and double the rate of 2025, meaning the curl team is now receiving more than one security report per day on average. The problem is that AI tools have dramatically lowered the barrier to generating security reports — you can point a language model at a codebase and get a plausible-looking vulnerability writeup in minutes, even if the underlying finding is wrong or trivial. This creates a situation where volunteer maintainers of critical open-source infrastructure have to spend enormous time triaging reports, most of which turn out to be false positives or non-issues, while still needing to treat every report seriously because curl is in effectively everything. Curl is one of the most widely deployed pieces of software on earth — it ships in every Linux distro, every Mac, every phone, and is embedded in countless devices and applications. The maintainer burnout risk here is real: small teams doing high-stakes work are now being flooded with noise generated by AI tools, and there's no easy fix. The post is a useful data point for anyone thinking about responsible AI use in security research — the tooling makes it easy to generate reports but doesn't help you evaluate whether they're worth a maintainer's time. Some bug bounty programs have already started filtering AI-generated reports more aggressively. This is a systemic problem for open source that will get worse before it gets better.</div>
+            <div class="story-source">Simon Willison's Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.technologyreview.com/2026/05/26/1137584/rethinking-organizational-design-in-the-age-of-agentic-ai/" target="_blank" rel="noopener">Rethinking organizational design for the agentic AI era: ambition vs. readiness gap</a>
+            </div>
+            <div class="story-summary">MIT Technology Review, in partnership with a research sponsor, published findings on what's actually happening as enterprises try to deploy AI agents at scale. The headline numbers are striking in their contradiction: 85% of organizations say they want to be 'agentic' within three years, but 76% say their current operations and infrastructure can't support that transition. This readiness gap — wanting the outcome without having the foundation — is a recurring pattern in enterprise technology adoption, but agentic AI makes it sharper because the failure modes are more visible and more costly than, say, failed CRM migrations. The piece argues that the problem isn't just technical infrastructure (though that's part of it) — it's that agentic AI requires rethinking how work is divided between humans and systems, which is an organizational design problem as much as a software one. Most companies haven't done that design work. They're trying to add agents on top of existing processes rather than re-architecting around what agents are actually good at. The piece advocates for what it calls 'hybrid teams' with clear human-in-the-loop protocols, explicit agent ownership, and governance structures for when agents make mistakes. This is sensible if somewhat obvious advice. The more useful signal here is the 76% infrastructure-readiness number — if you're in enterprise software or infrastructure, there's a large market of organizations that know they want to get to agentic workflows but don't know how to get there.</div>
+            <div class="story-source">MIT Technology Review</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/05/26/duckduckgo-installs-are-up-30-as-users-reject-being-force-fed-googles-ai-search/" target="_blank" rel="noopener">DuckDuckGo installs up 30% as users push back against Google's AI-first search</a>
+            </div>
+            <div class="story-summary">Following Google's overhaul of Search at I/O 2026 — which replaced the familiar blue-link results page with an AI agent that answers queries directly — DuckDuckGo has seen a 30% spike in app installs as users look for an exit. This is a genuinely interesting signal because it suggests that at least a meaningful slice of Google's user base actively doesn't want AI-mediated search, or at least doesn't want it as the default with no easy way around it. Google's bet at I/O was that AI Overviews and full agentic search would be received as a clear upgrade, but the backlash has been swift and visible. The complaints cluster around a few themes: the AI answers are sometimes wrong in ways that are hard to detect, sources are less prominent, and the experience feels less like a tool you control and more like a service that decides what you should know. DuckDuckGo's 30% install spike is impressive but worth contextualizing — DuckDuckGo still has a small base relative to Google, so a percentage spike doesn't translate into a major shift in market share. The more important dynamic is whether this triggers any recalibration at Google or whether they read it as temporary friction that users will adapt to. There's also a real question about whether DuckDuckGo's traditional index quality can hold users who are used to Google's results. Still, 30% is a signal worth noting, and it rhymes with the broader pattern of users pushing back on AI being forced into previously simple tools.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/ai/2026/05/3d-printable-humanoid-legs-let-robotics-experiments-run-wild/" target="_blank" rel="noopener">Hugging Face debuts $2,500 open-source bipedal robot with 3D-printable legs</a>
+            </div>
+            <div class="story-summary">Hugging Face has launched an open-source bipedal robot project targeting builders and researchers, priced at $2,500 and featuring 3D-printable humanoid legs. This is a direct extension of Hugging Face's strategy of open-sourcing hardware and software to accelerate community-driven robotics research — think of it as the Hugging Face Hub model applied to physical robots. The $2,500 price point is deliberately accessible; it positions this as something a well-equipped university lab, a serious hobbyist, or a startup can actually afford to experiment with, rather than the six-figure robotics platforms that have historically gated this kind of research. The 3D-printable design is clever because it dramatically lowers repair and iteration costs — if a leg component breaks during an experiment, you print a new one rather than waiting for a part. The humanoid form factor is a deliberate choice to generate training data and research insights that are applicable to the broader humanoid robot field, which has seen enormous investment from Figure, 1X, Boston Dynamics, and others. What Hugging Face brings to the table is its model and dataset ecosystem — the idea is that researchers using this robot contribute back locomotion models, training data, and control algorithms to a shared commons. Whether the community actually coalesces around this hardware the way it has around the software platform remains to be seen, but the strategy is coherent. This is worth watching if you're in robotics research or physical AI.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/05/26/human-archive-taps-into-indias-services-startups-to-collect-data-for-physical-ai/" target="_blank" rel="noopener">Human Archive uses India's gig economy to collect physical AI training data</a>
+            </div>
+            <div class="story-summary">Human Archive, a startup founded by researchers from UC Berkeley and Stanford, is paying gig workers in India to wear camera-equipped caps and sensor devices to collect real-world physical training data for AI and robotics labs. The startup plugs into India's existing gig economy infrastructure — the same networks of workers used by food delivery and logistics services — to rapidly scale data collection in ways that would be prohibitively expensive in the US or Europe. The core insight is that physical AI — robots and embodied agents that need to navigate and manipulate the real world — is bottlenecked on diverse, high-quality training data of humans doing everyday tasks. Lab-collected data is expensive and narrow; real-world gig worker data is cheaper and captures genuine environmental diversity. The ethical questions here are real and worth flagging: the power asymmetry between well-funded US AI labs and low-wage gig workers in India raises questions about consent quality, data rights, and fair compensation that the startup will need to address transparently. The business model depends on AI and robotics labs being willing to pay a premium for physical training data, which seems plausible given how much the industry is spending on compute relative to data. This is part of a broader trend of 'data labor' becoming a recognized and increasingly organized category of work in the AI supply chain. Worth watching both as a business and as an ethical case study.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-policy"></div>
+            <h2>Policy & Regulation</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/05/26/uk-visa-portal-spilled-thousands-of-applicants-passports-and-selfies-online-and-hasnt-fixed-the-leak/" target="_blank" rel="noopener">UK visa portal leaking thousands of applicants' passports and selfies — and sending lawyers instead of fixes</a>
+            </div>
+            <div class="story-summary">A third-party portal used in the UK visa application process has been found to be exposing sensitive documents — passports, selfies, personal identification data — of thousands of applicants, and rather than patching the vulnerability, the company's response was to send attorneys. TechCrunch broke this story and as of publication the leak had not been fixed. The combination of a government-adjacent data exposure and a legal-threat response is about as bad as it gets from a PR and regulatory standpoint, but more importantly it's a real harm to real people whose biometric and identity data is now potentially accessible to bad actors. Visa applicants are a particularly vulnerable population in this context — they often have limited recourse, are dependent on the process moving forward, and may not even know their data was exposed. The UK's Information Commissioner's Office has strict breach notification requirements under UK GDPR, and a failure to remediate a known vulnerability would be a serious compliance issue. The third-party portal model — where government services outsource data collection to private companies — is common but creates accountability gaps exactly like this one: the government can point to the contractor, the contractor lawyers up, and applicants are left exposed. This story is a useful reminder that 'digital government transformation' often means your most sensitive data ends up with a third party you've never heard of. The response by lawyers rather than engineers is particularly telling about where the company's priorities lie.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/05/26/dutch-government-blocks-us-company-from-acquisition-citing-risk-to-public-interest/" target="_blank" rel="noopener">Dutch government blocks US company from acquiring cloud provider hosting national digital ID</a>
+            </div>
+            <div class="story-summary">The Dutch government has blocked a US company from acquiring a Dutch cloud provider that hosts the country's digital identity infrastructure, citing 'risk to public interest.' The move is part of a broader and accelerating European trend toward what Brussels has started calling 'digital sovereignty' — reducing dependence on US-controlled technology for critical national infrastructure. The specific concern here is straightforward: if a US company owns the cloud infrastructure running your national digital ID system, that system is potentially subject to US legal process, US ownership decisions, and the geopolitical relationship between the US and EU at any given moment. Given the current state of US-EU relations under the Trump administration, European governments have become considerably more cautious about these dependencies. The Netherlands has been one of the more proactive EU members on this front, and this decision signals that national security reviews of tech M&A are now explicitly covering cloud infrastructure for government identity systems. For US tech companies eyeing European acquisitions, this is another data point suggesting that government-adjacent deals face a higher bar than they did three years ago. The broader trend of EU digital sovereignty investment — in cloud alternatives, AI infrastructure, and now identity systems — is real and accelerating, though how far it goes in practice will depend on whether European alternatives can actually match US providers on capability and cost.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.reuters.com/business/spain-blocks-prediction-markets-polymarket-kalshi-over-lack-gambling-licences-2026-05-26/" target="_blank" rel="noopener">Spain blocks Polymarket and Kalshi over missing gambling licenses</a>
+            </div>
+            <div class="story-summary">Spain's gaming regulator has blocked access to prediction markets Polymarket and Kalshi, citing the absence of gambling licenses required under Spanish law. This is significant because it's one of the first major Western European enforcement actions against prediction markets, which have been in a regulatory grey zone globally — are they financial instruments, gambling products, or information markets? Spain has answered that question clearly, at least for its jurisdiction: if it looks like betting, it needs a gambling license. Polymarket in particular has been operating in a complex regulatory environment, having already settled with US regulators and blocked US users, and is now facing restrictions in Europe. Kalshi, which has been fighting for legitimacy as a regulated exchange in the US, faces the irony of being blocked as a gambling platform in Europe even as it pursues a different regulatory framing at home. The practical impact in Spain may be limited — VPNs exist and enforcement of web blocks is imperfect — but the signal to other EU regulators is meaningful. If prediction markets become normalized as financial tools in the US under more permissive CFTC rules, there will be an interesting transatlantic regulatory divergence to navigate. This story was the highest-scoring item on Hacker News today (892 points), suggesting the tech community is paying close attention to prediction market regulation.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/tech-policy/2026/05/musk-says-us-military-suicide-drones-used-starlink-in-violation-of-spacex-rules/" target="_blank" rel="noopener">Musk says US military used Starlink — not Starshield — in suicide drone operations, blames contractor</a>
+            </div>
+            <div class="story-summary">Elon Musk has publicly stated that US military suicide drones used commercial Starlink satellite connectivity in violation of SpaceX's own usage policies, rather than Starshield, which is SpaceX's military-grade, government-controlled satellite service. Musk placed blame on the military contractor involved rather than on SpaceX directly, framing it as an unauthorized use of the commercial product. This disclosure is remarkable for several reasons. First, it draws a public line between Starlink (commercial) and Starshield (defense), a distinction that SpaceX has financial and legal reasons to maintain clearly. Second, it raises obvious questions about oversight: how does a commercial satellite internet service end up being used to guide lethal military hardware, and what does that mean for SpaceX's commercial customer relationships globally? Third, it puts Musk in the unusual position of publicly criticizing a US military contractor at a time when he has significant other government relationships. The Starshield program exists precisely to provide a legally and operationally cleaner channel for military use of SpaceX's satellite infrastructure, with government-controlled encryption and access management. Using commercial Starlink for weapons guidance — if accurate — would represent a significant governance failure somewhere in the procurement chain. This will likely generate congressional interest and could affect how other countries think about the risks of their militaries or adversaries using commercial Starlink.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-industry"></div>
+            <h2>Industry & Business</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.cnbc.com/2026/05/26/dropbox-ceo-drew-houston-ashraf-alkarmi.html" target="_blank" rel="noopener">Dropbox CEO Drew Houston to step down</a>
+            </div>
+            <div class="story-summary">Drew Houston, who co-founded Dropbox in 2007 and has led the company as CEO for nearly two decades, is stepping down. Ashraf Alkarmi will take over as CEO. Houston's departure marks the end of an era for one of the defining consumer-to-enterprise software companies of the cloud storage generation — Dropbox essentially created the consumer cloud sync market and then spent the better part of a decade trying to find its next act as that market commoditized. Houston has been transparent over the years about the challenges of competing against Microsoft OneDrive, Google Drive, and iCloud, which essentially bundled Dropbox's core functionality into operating systems and productivity suites. In recent years, Dropbox has pivoted toward productivity and document collaboration tools, with mixed results. The company is profitable and cash-generative but has not found the growth narrative that would justify a much higher valuation. A CEO change at this stage is typically either a signal that the board wants a different strategic direction or that the founder is ready to move on after a long run — and in this case it may well be both. Alkarmi's background and specific mandate will be worth watching. For the engineering community, Dropbox is historically significant: it was an early showcase for Python at scale, and its infrastructure engineering blog produced some of the most widely-read systems content of the 2010s. This is the end of a significant chapter.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/05/26/spacexs-starlink-nabs-american-airlines-contract-another-win-for-its-ipo/" target="_blank" rel="noopener">SpaceX Starlink wins American Airlines contract for 500+ Airbus aircraft</a>
+            </div>
+            <div class="story-summary">American Airlines has announced plans to install Starlink on more than 500 Airbus aircraft, making it one of the largest in-flight connectivity contracts Starlink has secured as SpaceX moves toward its IPO. This follows earlier wins with other carriers and adds significant revenue visibility to SpaceX's commercial Starlink business at an important moment. In-flight connectivity has been a frustrating, slow market for years — passengers have been dealing with expensive, unreliable satellite internet on planes for over a decade, with providers like ViaSat and Gogo struggling to deliver the bandwidth that modern travelers expect. Starlink's low-Earth orbit constellation architecture delivers meaningfully better latency and throughput than legacy geostationary satellite systems, which is why airlines are moving. For American Airlines, this is also a competitive move: Delta has been rolling out Starlink and using free in-flight Wi-Fi as a differentiator, so American needs to respond. The contract size — 500+ aircraft — is substantial and will take years to fully install, providing a long revenue tail for SpaceX. Combined with the S-1 filing, SpaceX is clearly trying to demonstrate a diversified, recurring revenue base beyond launch services ahead of the IPO. The Starlink business, particularly aviation, is arguably the most IPO-compelling part of the SpaceX story right now, since launch revenue is lumpy and Starship's path to full reusability remains uncertain.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-dev"></div>
+            <h2>Software & Dev Tools</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://developers.cloudflare.com/flagship/" target="_blank" rel="noopener">Cloudflare Flagship launches — a new developer platform concept worth watching</a>
+            </div>
+            <div class="story-summary">Cloudflare has introduced something called Flagship, a new developer platform entry point that has been quietly generating significant interest on Hacker News (score of 200). The documentation suggests Flagship is aimed at consolidating Cloudflare's sprawling suite of developer products — Workers, Pages, R2, D1, KV, Queues, and more — into a more coherent unified development experience, potentially addressing one of the main criticisms of Cloudflare's developer platform, which is that it has grown powerful but complex. Cloudflare has been aggressively expanding its developer platform over the past several years, positioning itself as a credible alternative to AWS Lambda and similar serverless platforms, particularly for latency-sensitive workloads that benefit from edge execution. The platform's tight integration with Cloudflare's global network is a genuine technical advantage — you get edge compute, CDN, DNS, and DDoS protection from a single vendor with a coherent pricing model. If Flagship genuinely simplifies the onboarding and mental model for new developers, it could meaningfully accelerate adoption. The timing is also interesting given the AI workload angle: Cloudflare has been adding AI inference capabilities to its edge network, and a cleaner platform abstraction would make it easier to route AI workloads intelligently across the network. Details are still emerging, but this is worth a look if you're evaluating serverless or edge compute options.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-science"></div>
+            <h2>Science & Research</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/space/2026/05/nasa-takes-steps-toward-building-moon-base-including-discussing-a-perimeter/" target="_blank" rel="noopener">NASA takes concrete steps toward a Moon Base, including defining a perimeter</a>
+            </div>
+            <div class="story-summary">NASA has moved beyond conceptual discussions on a permanent Moon Base, with officials now talking about specific operational details including establishing a 'perimeter' around the facility. The agency has been careful to note awareness of the Outer Space Treaty, which prohibits national appropriation of celestial bodies — defining a physical perimeter around a Moon Base raises obvious questions about where the line is between operational safety zones and de facto territorial claims. The discussions represent a meaningful step forward from pure architecture concepts into something more operationally real, likely informed by the Artemis program's progress and by the broader geopolitical context of China's own stated lunar ambitions. A permanent Moon Base is qualitatively different from the Apollo-era visit model — it implies sustained human presence, supply chains, power generation, and the kinds of infrastructure decisions that have legal and political implications. The Outer Space Treaty reference in the official quote is significant: it suggests NASA's lawyers are actively engaged in trying to thread the needle between operational necessity and treaty compliance. The question of how nations establish exclusive use zones without violating the non-appropriation principle is one that international space law has never had to answer practically, and it's going to need answers in the next decade. For engineers, this is also a fascinating set of design constraints: how do you build infrastructure that's physically bounded without making a territorial claim?</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+    </div>
+    
+
+    
+
+    
+    <div class="previous-day">
+        <a href="2026-05-26.html">&larr; Previous day</a>
+    </div>
+    
+
+    <footer>
+        Generated 2026-05-27 08:01 UTC &middot; Tech Digest
+    </footer>
+</body>
+</html>
