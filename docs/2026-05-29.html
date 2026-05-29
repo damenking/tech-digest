@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Digest - Friday, May 29, 2026</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --accent-subtle: #1f6feb22;
+            --topic-ai: #da70d6;
+            --topic-industry: #58a6ff;
+            --topic-dev: #3fb950;
+            --topic-hardware: #f0883e;
+            --topic-science: #d29922;
+            --topic-policy: #f85149;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 0;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 24px 16px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        header .date {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-top: 4px;
+        }
+
+        .intro {
+            padding: 16px;
+            background: var(--accent-subtle);
+            border-left: 3px solid var(--accent);
+            margin: 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .section {
+            margin: 24px 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0 16px;
+            margin-bottom: 12px;
+        }
+
+        .topic-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+
+        .story {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .story:last-child {
+            border-bottom: none;
+        }
+
+        .story-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .story-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .story-title a:hover {
+            color: var(--accent);
+        }
+
+        .story-summary {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .story-source {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+            opacity: 0.7;
+        }
+
+        footer {
+            padding: 24px 16px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Topic colors */
+        .topic-ai { background: var(--topic-ai); }
+        .topic-industry { background: var(--topic-industry); }
+        .topic-dev { background: var(--topic-dev); }
+        .topic-hardware { background: var(--topic-hardware); }
+        .topic-science { background: var(--topic-science); }
+        .topic-policy { background: var(--topic-policy); }
+
+        .source-errors {
+            margin: 24px 16px;
+            padding: 12px 16px;
+            background: #f8514922;
+            border: 1px solid #f8514944;
+            border-radius: 8px;
+            font-size: 0.8rem;
+        }
+
+        .source-errors h3 {
+            color: #f85149;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .error-item {
+            color: var(--text-muted);
+            padding: 2px 0;
+        }
+
+        .previous-day {
+            padding: 20px 16px;
+            text-align: center;
+        }
+
+        .previous-day a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile touch targets */
+        @media (max-width: 640px) {
+            .story {
+                padding: 16px;
+            }
+            .story-title a {
+                display: block;
+                padding: 4px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tech Digest</h1>
+        <div class="date">Friday, May 29, 2026</div>
+    </header>
+
+    <div class="intro">Anthropic is having a genuinely remarkable week — a $65B raise at a near-trillion-dollar valuation, $47B in run-rate revenue, and a new model drop — while Blue Origin had the opposite kind of day, losing New Glenn in a spectacular static fire explosion that threatens its NASA Artemis role.</div>
+
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-ai"></div>
+            <h2>AI & Machine Learning</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/05/28/anthropic-raises-65-billion-nears-1t-valuation-ahead-of-ipo/" target="_blank" rel="noopener">Anthropic raises $65B Series H at $965B valuation, reveals $47B run-rate revenue</a>
+            </div>
+            <div class="story-summary">Anthropic has closed what is likely its final private funding round before an IPO — a $65 billion Series H that values the company at $965 billion post-money. The headline number is staggering, but the more remarkable detail buried in the announcement is that Anthropic's annualized run-rate revenue crossed $47 billion earlier this month, up sharply from wherever it was at the Series G in February. To put that in perspective, that's real enterprise revenue scaling at a pace that few software companies in history have matched. Simon Willison notes that run-rate revenue is an annualized figure based on recent monthly performance, so it's not the same as booked annual revenue — but at this scale, the distinction matters less. Stories are circulating of companies genuinely surprised by how large their Claude bills have gotten, suggesting organic consumption-driven growth rather than just contract signings. The round positions Anthropic alongside OpenAI as one of the two credible contenders for frontier AI dominance, and the near-$1T valuation means an IPO would be one of the largest in tech history. Investors are essentially betting that the AI infrastructure layer — models, APIs, coding agents — becomes as foundational as cloud compute. Whether that valuation holds post-IPO will depend heavily on whether the revenue growth rate sustains. For engineers and enterprises: Anthropic has clearly found product-market fit, particularly in coding (Claude Code) and enterprise search/workflow. If you're not already evaluating Claude in your stack, the market is moving without you.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://simonwillison.net/2026/May/28/claude-opus-4-8/#atom-everything" target="_blank" rel="noopener">Anthropic ships Claude Opus 4.8 — and refreshingly admits it's a modest improvement</a>
+            </div>
+            <div class="story-summary">Anthropic released Claude Opus 4.8 today, and the most notable thing about it might be the honesty of its own announcement. The release notes describe it as 'a modest but tangible improvement on its predecessor,' which is a genuinely unusual level of candor for an AI lab that could easily have wrapped this in superlatives. Anthropic also acknowledged there's more work to do — specifically on making Opus-level capabilities available at lower cost, which has been a real friction point for teams trying to use the frontier model at scale. The llm-anthropic plugin (version 0.25.1) has already been updated to support the new model, along with a new 'fast mode' option for organizations that have it enabled. Opus remains Anthropic's most capable model, positioned above the Sonnet and Haiku tiers. The 4.8 release suggests iterative refinement rather than a generational leap — think of it like a point release in software. For most teams already on Opus, the upgrade path is straightforward. The bigger story here is probably the cost-reduction work Anthropic hinted at — if they can deliver near-Opus quality at Sonnet pricing, that would be a meaningful unlock for production workloads. Keep an eye on Claude Code specifically, where Opus is the default for complex reasoning tasks.</div>
+            <div class="story-source">Simon Willison's Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/ai/2026/05/apple-reportedly-trying-to-distill-googles-multi-trillion-parameter-gemini-ai-to-run-on-iphone/" target="_blank" rel="noopener">Apple reportedly trying to distill Google's Gemini down to run on-device for Siri</a>
+            </div>
+            <div class="story-summary">Apple is apparently working to compress a version of Google's multi-trillion-parameter Gemini model small enough to run on iPhone hardware, as part of its ongoing effort to actually deliver a capable Siri. This is a technically ambitious project — model distillation at this scale, targeting the memory and compute constraints of a phone, is genuinely hard. The reporting suggests a cloud component is likely inevitable for the heaviest queries, which means this would be a hybrid architecture similar to what Apple has attempted before with its Private Cloud Compute approach. The Apple-Google AI partnership announced last year (Google supplies the backend for some Siri queries) has apparently deepened into this more ambitious distillation project. It's worth remembering that Apple's own in-house foundation model efforts have reportedly lagged competitors significantly, which is why they're leaning on Google's work here. The irony of Apple — which markets privacy as a core differentiator — running Google's model on its hardware is not lost on anyone. For users, if this works, it could mean a meaningfully smarter Siri in a future iOS release, though shipping timelines for AI features have a history of slipping. For developers, the on-device angle matters for apps that use Apple Intelligence APIs. The broader pattern here is that the frontier model gap between labs like Anthropic/Google/OpenAI and everyone else is wide enough that even Apple finds it easier to license than build.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/ai/2026/05/llms-believe-false-statements-even-after-explicit-warnings-that-theyre-false/" target="_blank" rel="noopener">LLMs persist in believing false statements even when explicitly warned they're false</a>
+            </div>
+            <div class="story-summary">A new study has found that large language models maintain a bias toward treating false statements as true — even when those statements are explicitly flagged as false before the model processes them. The fine-tuning experiments showed a consistent pattern described as a 'bias toward confidently representing claims as true,' which has real implications for anyone relying on LLMs to reason about contested or incorrect information. This is distinct from the well-known hallucination problem — this is about how models respond to information they're told is wrong, and still seem to weight it positively. One hypothesis is that training data is overwhelmingly composed of asserted truths, so models have a deep prior toward treating statements as accurate. The practical upshot is concerning for use cases like fact-checking, adversarial testing, or scenarios where you want the model to reason about misinformation. It also complicates retrieval-augmented generation setups where injected context might contain errors. This doesn't mean LLMs are useless for these tasks, but it does mean you can't simply prepend 'the following is false, now reason about it' and expect reliable results. The research adds to a growing body of evidence that the internal representations of LLMs don't map cleanly onto human concepts like truth and falsity. For engineers building systems that need reliable epistemic behavior, this is a reminder to test adversarially rather than assume instruction-following covers it.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/05/28/the-internet-is-being-rebuilt-for-machines/" target="_blank" rel="noopener">The internet's infrastructure is being redesigned for machine traffic</a>
+            </div>
+            <div class="story-summary">AWS, Cloudflare, and other cloud infrastructure providers are actively redesigning their platforms to handle a future where the majority of internet traffic comes from AI agents rather than human users. This isn't speculative — the shift is already underway, with agentic workloads creating fundamentally different traffic patterns: bursty, high-frequency, latency-sensitive, and often requiring different authentication and rate-limiting models than browser-based human traffic. Cloudflare has been particularly public about building agent-specific networking primitives, and AWS is rearchitecting parts of its edge for agent-to-agent communication. The implications ripple through CDN design, API gateway architecture, observability tooling, and security models — agents don't have sessions in the traditional sense, and distinguishing legitimate agent traffic from bot abuse becomes much harder. For developers building agentic systems, this matters because the infrastructure assumptions baked into most web APIs (human-paced request rates, cookie-based auth, browser fingerprinting for abuse detection) break down at agent scale. We're likely heading toward a period of significant infrastructure fragmentation before new standards settle. The article draws parallels to the mobile web transition — the internet was built for desktop browsers, then painfully adapted for phones, and now faces another round of adaptation. If you're designing APIs or services today, thinking about agent-friendly interfaces (structured outputs, higher rate limits, agent identity primitives) is becoming a real engineering concern rather than a future abstraction.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/security/2026/05/fed-up-with-vibe-coders-dev-sneaks-data-nuking-prompt-injection-into-their-code/" target="_blank" rel="noopener">Developer sabotages jqwik library with prompt injection to punish 'vibe coders'</a>
+            </div>
+            <div class="story-summary">A developer who maintains the jqwik Java testing library added an undisclosed prompt injection payload to the codebase that instructed AI coding agents to delete application output — apparently out of frustration with developers who use AI tools to generate code without understanding what it does. This is a genuinely alarming incident because it demonstrates how supply chain attacks can now specifically target AI-assisted development workflows rather than (or in addition to) the humans running the code. The payload wouldn't affect developers reading and reviewing the code themselves, but would silently instruct AI agents operating on their behalf to perform destructive actions. It's a clever and disturbing proof of concept that the AI coding agent attack surface is fundamentally different from traditional software supply chain attacks. The maintainer's frustration with 'vibe coders' — people who ship AI-generated code they don't understand — is a widely shared sentiment in the developer community, though sabotage is obviously not an acceptable response. The incident highlights a genuine security gap: AI coding agents typically process and act on code comments, documentation, and inline text without the same scrutiny a human reviewer would apply. Security tooling for agentic code review is still immature. For teams using Claude Code, Copilot, or similar tools in agentic mode against third-party codebases, this is a reminder that AGENTS.md files, inline comments, and documentation are all potential attack vectors. Sandboxing and human-in-the-loop review of agent actions remain important mitigations.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/05/28/gleans-top-line-crosses-300m-as-ai-budget-cutting-becomes-its-major-selling-point/" target="_blank" rel="noopener">Glean crosses $300M ARR as enterprise AI search finds its footing</a>
+            </div>
+            <div class="story-summary">Glean, the enterprise AI search startup, has tripled its annual revenue to over $300 million even as Microsoft Copilot, Google Workspace AI, and other tech giants have moved aggressively into the same category. The company's pitch has evolved — it's now leading with AI budget consolidation, positioning Glean as a way to rationalize the proliferating stack of AI tools that enterprises have accumulated. That's a smart repositioning: instead of selling 'AI search,' they're selling 'one AI layer that works across all your data' as a cost-efficiency play. Tripling revenue while large incumbents compete directly is a meaningful signal that enterprises are willing to pay for a best-of-breed solution rather than defaulting to whatever Microsoft bundles in. Glean's edge is its connectors — it integrates with hundreds of enterprise data sources (Slack, Salesforce, GitHub, Confluence, etc.) and builds a unified knowledge graph, which is harder for general-purpose assistants to replicate quickly. The 'AI budget cutting' angle is interesting because it reflects a real enterprise trend: companies that bought multiple AI tools in 2024-2025 are now consolidating, and whoever can credibly claim to replace three or four subscriptions wins. At $300M ARR and growing this fast, Glean is on a clear IPO trajectory. For enterprise architects evaluating AI search, Glean remains the independent benchmark to beat, though Microsoft's SharePoint/Copilot integration advantages for Microsoft-heavy shops are real.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/05/28/hackers-are-trying-to-steal-signal-users-backups-in-new-wave-of-phishing-attacks/" target="_blank" rel="noopener">Hackers targeting Signal users with phishing attacks to steal backup recovery keys</a>
+            </div>
+            <div class="story-summary">A new phishing campaign is specifically targeting Signal users, attempting to trick them into surrendering their secret recovery keys — the credential that unlocks access to Signal's encrypted cloud backups containing full message histories. This is a clever attack because it targets the backup restoration mechanism rather than the end-to-end encryption itself, which remains unbroken. If an attacker obtains your recovery key, they can download and decrypt your entire message archive from Signal's servers, potentially exposing years of private conversations. The attack apparently involves convincing-looking phishing pages that mimic Signal's interface and recovery flow. Signal's security model is strong, but like all cryptographic systems, the weakest link tends to be key management and human behavior. This campaign appears to be part of a broader pattern of sophisticated actors targeting secure messaging apps through social engineering rather than cryptographic attacks. For high-risk users — journalists, activists, security researchers, corporate executives — this is a meaningful threat. Mitigations include: never entering your recovery key on any page you didn't navigate to yourself, enabling registration lock (a PIN that prevents account re-registration), and being skeptical of any communication claiming to be from Signal. For most users, the practical risk is lower, but the campaign demonstrates that end-to-end encryption doesn't protect against compromise of your backup credentials.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-industry"></div>
+            <h2>Industry & Business</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/space/2026/05/blue-origins-new-glenn-rocket-just-exploded-during-a-static-fire-test/" target="_blank" rel="noopener">Blue Origin's New Glenn rocket explodes during static fire test in Florida</a>
+            </div>
+            <div class="story-summary">Blue Origin's New Glenn heavy-lift rocket was destroyed in a massive explosion during a static fire test at Cape Canaveral — described by Ars Technica as the most spectacular rocket explosion since the Soviet N1 failures of the 1970s. Static fire tests are supposed to be controlled demonstrations of engine performance before flight, not catastrophic vehicle losses, so something went seriously wrong. New Glenn was a critical piece of Blue Origin's near-term commercial and government manifest: it was due to serve as a launch vehicle for Amazon's Project Kuiper satellite constellation and had a role in NASA's Artemis program, making this a setback that ripples well beyond Blue Origin itself. Amazon had recently shifted some of its Kuiper launch business to Blue Origin (Jeff Bezos's rocket company) from other providers — that relationship now becomes very complicated. The explosion is a massive blow to Blue Origin's competitive positioning against SpaceX's Falcon 9 and Falcon Heavy, which have accumulated extraordinary reliability track records. New Glenn had only recently begun proving itself as a viable launch vehicle, and rebuilding from this will take significant time and money. For NASA's Artemis program, which is already behind schedule, losing a planned launch provider creates pressure to find alternatives or accept further delays. The broader commercial launch market will be watching closely — ULA's Vulcan is also still grounded, meaning SpaceX's dominance of heavy-lift in the near term just got more entrenched. Blue Origin has the resources to recover, but the credibility and schedule hit is real.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/tech-policy/2026/05/fbi-says-google-engineer-used-internal-search-data-to-win-1-2m-on-polymarket/" target="_blank" rel="noopener">Google engineer charged with insider trading after using internal search data to win $1.2M on Polymarket</a>
+            </div>
+            <div class="story-summary">The FBI has charged a Google engineer with effectively using insider information to make $1.2 million in profit on Polymarket, the prediction market platform. The allegation is that the engineer had access to internal Google search trend data that allowed him to predict the outcomes of certain bets before they were publicly known — essentially giving him an informational edge that other market participants didn't have. This is a novel application of insider trading principles to prediction markets, which operate in a legally ambiguous space in the US. Prediction markets have historically been relatively lightly regulated, but this case suggests that misappropriating proprietary employer data to trade on them can still constitute a federal crime. The case is significant because it tests the boundaries of securities law as prediction markets grow in prominence — Polymarket processed billions in volume during the 2024 and 2026 election cycles and has become a legitimate financial instrument for many sophisticated traders. For Google specifically, this is an embarrassing internal controls failure — the engineer apparently had access to data specific enough to give trading advantages in real money markets. It also raises questions about how Google monitors access to internal analytics data. For the broader prediction market space, this case will likely accelerate regulatory scrutiny. And for anyone working at a tech company with access to market-moving internal data: the lesson is clear, and the enforcement risk is real.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/05/28/asana-acquires-no-code-agent-builder-stack-ai/" target="_blank" rel="noopener">Asana acquires no-code AI agent builder StackAI</a>
+            </div>
+            <div class="story-summary">Asana has acquired StackAI, a no-code platform for building AI agents and automating workflows, as part of its push to become a serious player in the AI-powered work management space. StackAI lets non-technical users connect data sources, LLMs, and business logic to build agents without writing code — which aligns with Asana's existing customer base of project managers and operations teams who aren't developers. The acquisition signals that Asana is betting that AI agents will become central to how teams coordinate work, and that the competitive moat will come from making those agents accessible without requiring an engineering team. This is a smart defensive move: Microsoft's Copilot for Teams, Notion AI, and a dozen other workflow tools are all converging on the same territory. By acquiring agent-building capabilities rather than building them from scratch, Asana compresses its time to market. StackAI had positioned itself as enterprise-grade, with security and compliance features that matter to Asana's typical buyers. The financial terms weren't disclosed. For existing StackAI customers, the usual acquisition concerns apply — roadmap continuity and whether the tool stays available as a standalone product or gets folded into Asana's premium tiers. For the broader no-code AI agent space, this is another signal that the build-vs-buy decision is resolving toward acquisition as incumbents move to consolidate.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/05/28/waymo-dominates-texas-autonomous-vehicle-registrations-as-tesla-trails-behind/" target="_blank" rel="noopener">Waymo dominates autonomous vehicle registrations in Texas as Tesla trails far behind</a>
+            </div>
+            <div class="story-summary">Texas's new autonomous vehicle registration law has produced the clearest public accounting yet of which companies are actually operating self-driving vehicles at scale — and the data confirms what most industry observers suspected: Waymo is far ahead, with Tesla trailing significantly in registered AV units. The tracker includes both robotaxis and self-driving trucks, giving a more complete picture of the commercial AV landscape than previous state-level data. Waymo has been quietly but consistently expanding its operational footprint, and its safety record in cities like San Francisco and Phoenix has given regulators enough confidence to approve new markets. Tesla's FSD product, despite Elon Musk's years of promises, doesn't appear to be translating into comparable registered autonomous vehicle deployments in Texas. The gap between Waymo's purpose-built robotaxi approach and Tesla's camera-only, consumer-vehicle approach continues to widen in terms of real-world regulatory acceptance. The Texas data also provides visibility into the trucking AV space, where companies like Aurora (which recently launched commercial driverless freight operations in Texas) are significant players. For anyone building in the AV ecosystem — mapping, simulation, sensor fusion, fleet management — Waymo's dominance makes it an increasingly important platform to understand. The registration data also has policy implications, as it gives legislators concrete numbers rather than press release claims to work from.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.tomshardware.com/tech-industry/cyber-security/microsofts-github-bans-security-researcher-who-posted-zero-day-windows-exploits-because-company-ruined-their-life-expert-claims-action-is-vindictive-and-promises-further-retaliation" target="_blank" rel="noopener">GitHub bans security researcher who posted zero-day Windows exploits</a>
+            </div>
+            <div class="story-summary">GitHub has banned a security researcher who published zero-day Windows exploits on the platform, in a move that the security community is describing as vindictive and disproportionate. The researcher reportedly published the exploits after Microsoft either failed to respond adequately to responsible disclosure or allowed the disclosure window to lapse — a common frustration in vulnerability research. GitHub's decision to ban the account rather than just remove the specific content has drawn sharp criticism, because GitHub is the primary platform for the security research community and a ban effectively blacklists a researcher from hosting their work publicly. The action echoes earlier controversies around GitHub's content moderation decisions, including the PoC-in-GitHub removal saga. The core tension here is longstanding: full disclosure of unpatched vulnerabilities is a legitimate (if contested) security research practice that creates pressure on vendors to patch, but it also temporarily increases risk to unpatched systems. Microsoft's position as both a major GitHub customer and the vendor whose product was exposed adds a conflict-of-interest dimension that observers are pointing to. For the security research community, this reinforces concerns about platform dependence on GitHub for vulnerability disclosure and exploit code hosting. Alternatives like self-hosted Gitea instances or security-community-specific platforms may see renewed interest. The incident also highlights how platform ownership of critical infrastructure (GitHub for open source) creates leverage that can be applied in ways that chill legitimate research.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-dev"></div>
+            <h2>Software & Dev Tools</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.wired.com/story/here-comes-ojai-waymos-new-chinese-made-robotaxi/" target="_blank" rel="noopener">Waymo's new 'Ojai' robotaxi is Chinese-made and starts picking up passengers this month</a>
+            </div>
+            <div class="story-summary">Waymo is rolling out a new vehicle platform called Ojai, which is manufactured in China, and will begin carrying members of the public in California and Arizona in the coming weeks. The pale-blue Ojai vehicles represent a significant shift in Waymo's hardware strategy — previously, Waymo's fleet was based on Chrysler Pacifica minivans and Jaguar I-Pace SUVs, both Western-manufactured platforms. The move to Chinese manufacturing is likely driven by cost: purpose-built robotaxi platforms are expensive, and Chinese EV manufacturing has become dramatically cheaper than Western alternatives. This will inevitably attract political attention given the current climate around Chinese-manufactured vehicles and technology in the US, though Waymo's sensor and software stack presumably remains domestically developed. The Ojai platform appears to be purpose-built for autonomous operation rather than adapted from a consumer vehicle, which should offer ergonomic and sensor-placement advantages. Public passenger service starting in the near term means real revenue and real operational data — Waymo continues to be the only company generating meaningful autonomous ride-hail revenue in the US. For competitors watching Waymo's unit economics, the Chinese manufacturing decision suggests Waymo is focused on scaling the fleet cost-effectively rather than waiting for a domestic manufacturing solution. The broader autonomous vehicle market is watching to see if the political environment creates friction for Ojai deployments.</div>
+            <div class="story-source">Wired</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://simonwillison.net/2026/May/29/datasette/#atom-everything" target="_blank" rel="noopener">datasette 1.0a31 adds write query execution and saved queries</a>
+            </div>
+            <div class="story-summary">Datasette, Simon Willison's open-source data exploration tool, has released version 1.0a31 with two significant new capabilities: users with appropriate permissions can now execute write queries directly against their database through the Datasette interface, and they can save stored queries (previously called 'canned queries') both privately and for sharing with other users in their Datasette instance. These are meaningful additions because Datasette has historically been positioned primarily as a read-only data exploration and publishing tool — adding permissioned write access transforms it into a more complete data management interface. The saved queries feature is particularly useful for teams that share a Datasette instance, as it allows building a library of common queries that colleagues can run without knowing SQL. Datasette is still in alpha (the 1.0 release has been in alpha for a while now), but 1.0a31 represents a substantial maturation of the platform. For data engineers and analysts who use Datasette for internal data tooling, these features reduce the need to build separate admin interfaces. Datasette's architecture — SQLite files as the storage layer, with a Python web server on top — makes it uniquely suited for lightweight data publishing and exploration without the overhead of a full database stack. If you're not familiar with Datasette, it's worth a look for use cases involving data journalism, internal analytics dashboards, or lightweight read-mostly data APIs.</div>
+            <div class="story-source">Simon Willison's Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://simonwillison.net/2026/May/26/copilot-cowork-exfiltrates-files/#atom-everything" target="_blank" rel="noopener">Microsoft Copilot Cowork found to exfiltrate files via prompt injection</a>
+            </div>
+            <div class="story-summary">Security researchers at PromptArmor have demonstrated that Microsoft Copilot Cowork — Microsoft's collaborative AI assistant product — can be manipulated via prompt injection to exfiltrate files from users' systems. The attack works by embedding malicious instructions in content that Copilot Cowork processes (documents, emails, shared files), causing the AI agent to send file contents to an attacker-controlled destination without the user's knowledge or consent. This is a serious finding because Copilot Cowork is an enterprise product with access to sensitive business documents, and the exfiltration happens silently — the user sees the AI working normally while their files are being sent elsewhere. Prompt injection in agentic systems remains one of the most persistent and difficult-to-solve security challenges in AI product design. The fundamental problem is that AI agents process natural language instructions from multiple sources (the user, the system prompt, retrieved documents, tool outputs) and don't have a reliable way to distinguish trusted from untrusted instruction sources. Microsoft has been aware of prompt injection risks for years, and the fact that a production enterprise product is still vulnerable suggests the problem is harder to mitigate than simply writing better system prompts. Simon Willison, who flagged this, notes it's emblematic of the broader agentic system design challenge. For enterprises deploying Copilot Cowork or similar AI agents with file system access, this is a concrete reason to review what data those agents can access and ensure least-privilege principles are applied rigorously.</div>
+            <div class="story-source">Simon Willison's Blog</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-science"></div>
+            <h2>Science & Research</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/science/2026/05/researchers-develop-a-new-process-to-get-lithium-out-of-rocks/" target="_blank" rel="noopener">Researchers develop cheaper, more eco-friendly process to extract lithium from rock</a>
+            </div>
+            <div class="story-summary">A team of researchers has published in Science a new technique for extracting lithium from hard rock sources that is potentially cheaper and more environmentally friendly than current methods. A startup called Rock Zero is already working to commercialize the process. This matters because lithium supply is one of the genuine bottlenecks for scaling electric vehicle production and grid-scale battery storage — current extraction methods are either energy-intensive (hard rock mining, primarily in Australia) or water-intensive (brine evaporation in South America's lithium triangle). Diversifying both the geographic sources and the extraction methods for lithium has been a long-standing goal for battery supply chain resilience. The new process reportedly achieves better lithium recovery rates from rock with less chemical waste than conventional approaches. If it scales industrially, it could open up lithium deposits in regions that weren't previously economical — potentially including deposits in the US, Europe, and other geopolitically stable locations. The gap between lab-scale results and industrial-scale viability is always large, and Rock Zero will need significant capital and time to prove the process works at commercial throughput. But the publication in Science (a peer-reviewed journal with rigorous standards) lends credibility to the underlying chemistry. For anyone tracking battery supply chain or critical minerals policy, this is a development worth following over the next 2-3 years as Rock Zero's pilot operations scale.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-policy"></div>
+            <h2>Policy & Regulation</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.bbc.com/news/articles/crepleq2zyvo?at_medium=RSS&at_campaign=rss" target="_blank" rel="noopener">California AG sues 23andMe successor over handling of 2023 data breach</a>
+            </div>
+            <div class="story-summary">California Attorney General Rob Bonta has filed suit against the company that acquired 23andMe's assets after its bankruptcy, alleging that the company misled customers about the severity of the 2023 data breach that exposed genetic data for millions of users. The 2023 breach was significant — it ultimately affected around 7 million users' genetic ancestry and health predisposition data, among the most sensitive personal information imaginable. 23andMe initially downplayed the breach's scope before the full extent became clear, and the AG's lawsuit centers on those representations. The successor company inheriting liability for a predecessor's conduct is a significant legal theory that will be tested here — it's an important question for any M&A involving companies with outstanding data breach exposure. For consumers who used 23andMe, the practical question is whether their data was deleted as part of bankruptcy proceedings or is still held by the successor company. California's AG has been aggressive on data privacy enforcement, and this suit continues that pattern. The case also highlights the ongoing regulatory risk of holding large genomic databases — genetic data doesn't expire, can't be changed like a password, and has implications not just for the individual but for their biological relatives. For companies operating in the consumer genomics space (or any health data space), this lawsuit is a reminder that data breach liability can survive corporate restructuring.</div>
+            <div class="story-source">BBC Technology</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://openai.com/index/openai-frontier-governance-framework" target="_blank" rel="noopener">OpenAI publishes Frontier Governance Framework aligned with EU and California regulations</a>
+            </div>
+            <div class="story-summary">OpenAI has published a Frontier Governance Framework document that describes its AI safety, security, and risk management practices, with explicit alignment to emerging EU AI Act requirements and California's AI regulation proposals. This is a notable move because OpenAI has historically been more reluctant than Anthropic to publish detailed governance documentation. The framework covers how OpenAI evaluates frontier models for dangerous capabilities, how it manages security risks, and how its internal practices map to regulatory requirements. Publishing this document now — as Anthropic approaches an IPO and both companies face intensifying regulatory scrutiny globally — appears to be both a regulatory compliance play and a competitive positioning move (demonstrating trustworthiness to enterprise customers and regulators). The EU AI Act's requirements for high-risk and general-purpose AI models are among the most detailed in the world, and alignment with them is increasingly a market access requirement for global deployment. California's proposed AI regulations have been more contentious, with industry pushback on some provisions. For enterprises evaluating AI vendors on governance criteria (which is increasingly a procurement requirement), this document gives OpenAI something concrete to point to. The cynical read is that this is mostly documentation theater — the meaningful question is whether the practices described actually constrain model development decisions. Time and independent audits will tell.</div>
+            <div class="story-source">OpenAI Blog</div>
+        </div>
+        
+    </div>
+    
+
+    
+
+    
+    <div class="previous-day">
+        <a href="2026-05-28.html">&larr; Previous day</a>
+    </div>
+    
+
+    <footer>
+        Generated 2026-05-29 07:54 UTC &middot; Tech Digest
+    </footer>
+</body>
+</html>
