@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Digest - Saturday, June 13, 2026</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --accent-subtle: #1f6feb22;
+            --topic-ai: #da70d6;
+            --topic-industry: #58a6ff;
+            --topic-dev: #3fb950;
+            --topic-hardware: #f0883e;
+            --topic-science: #d29922;
+            --topic-policy: #f85149;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 0;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 24px 16px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        header .date {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-top: 4px;
+        }
+
+        .intro {
+            padding: 16px;
+            background: var(--accent-subtle);
+            border-left: 3px solid var(--accent);
+            margin: 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .section {
+            margin: 24px 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0 16px;
+            margin-bottom: 12px;
+        }
+
+        .topic-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+
+        .story {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .story:last-child {
+            border-bottom: none;
+        }
+
+        .story-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .story-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .story-title a:hover {
+            color: var(--accent);
+        }
+
+        .story-summary {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .story-source {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+            opacity: 0.7;
+        }
+
+        footer {
+            padding: 24px 16px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Topic colors */
+        .topic-ai { background: var(--topic-ai); }
+        .topic-industry { background: var(--topic-industry); }
+        .topic-dev { background: var(--topic-dev); }
+        .topic-hardware { background: var(--topic-hardware); }
+        .topic-science { background: var(--topic-science); }
+        .topic-policy { background: var(--topic-policy); }
+
+        .source-errors {
+            margin: 24px 16px;
+            padding: 12px 16px;
+            background: #f8514922;
+            border: 1px solid #f8514944;
+            border-radius: 8px;
+            font-size: 0.8rem;
+        }
+
+        .source-errors h3 {
+            color: #f85149;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .error-item {
+            color: var(--text-muted);
+            padding: 2px 0;
+        }
+
+        .previous-day {
+            padding: 20px 16px;
+            text-align: center;
+        }
+
+        .previous-day a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile touch targets */
+        @media (max-width: 640px) {
+            .story {
+                padding: 16px;
+            }
+            .story-title a {
+                display: block;
+                padding: 4px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tech Digest</h1>
+        <div class="date">Saturday, June 13, 2026</div>
+    </header>
+
+    <div class="intro">The US government just forced Anthropic to pull its most powerful AI models offline over a jailbreak concern — a move that's setting off alarms across the entire AI industry about what government intervention in frontier AI could look like going forward. Meanwhile, SpaceX's IPO made Elon Musk the world's first trillionaire, and there's a lot to unpack about what a public SpaceX means for the future.</div>
+
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-policy"></div>
+            <h2>Policy & Regulation</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.wired.com/story/anthropic-says-us-government-ordered-it-to-shut-down-mythos-models/" target="_blank" rel="noopener">US Government Forces Anthropic to Pull Fable 5 and Mythos Models Offline</a>
+            </div>
+            <div class="story-summary">This is the big one today. The Trump administration's Commerce Department issued an export control directive ordering Anthropic to suspend all access to its Fable 5 and Mythos 5 models for any foreign national — including foreign-national employees working inside the United States. In practice, Anthropic says the directive is so broad that it would be 'operationally impossible' to comply with while keeping the models running, so it has taken them fully offline for everyone. The stated rationale is that the government believes it has identified a method of jailbreaking Fable 5 that poses a national security threat, though no specifics about the vulnerability have been made public. Anthropic pushed back hard in a public statement, writing that it 'disagrees that the finding of a narrow potential jailbreak should be cause for recalling a commercial model deployed to hundreds of millions of people.' The company has been notably candid in its safety communications over the years, and the bitter irony here — widely noted — is that its own transparency about model risks may have handed the government the ammunition to do this. This is the first time the US government has used export control authority to force a major AI lab to take a commercial product offline, which sets a precedent that has the entire industry watching nervously. It also raises an obvious question: if a jailbreak is the threshold for government shutdown, virtually every frontier model is potentially vulnerable. The directive affects Anthropic's most capable models at a time when competitors like OpenAI and Google are aggressively pushing ahead. Simon Willison called it 'nuts,' which feels about right — the scope of the action seems wildly disproportionate to the stated concern, and the lack of any public technical detail makes it very hard to evaluate whether the threat is real or manufactured.</div>
+            <div class="story-source">Wired</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/tech-policy/2026/06/controversial-fisa-spying-law-expires-tonight-the-spying-will-continue/" target="_blank" rel="noopener">FISA Section 702 Expires, But the Surveillance Continues Until March 2027</a>
+            </div>
+            <div class="story-summary">Section 702 of the Foreign Intelligence Surveillance Act, which authorizes the NSA to collect communications of foreign targets — and, controversially, incidentally sweeps up Americans' communications — officially expired last night without Congress passing a reauthorization. However, that doesn't mean the spying stops: existing certifications under Section 702 remain legally valid until they expire, which won't happen until March 2027. This is a pattern that has played out before with controversial surveillance authorities — the legal and technical infrastructure of surveillance tends to outlast its explicit legislative authorization. Privacy advocates have argued for years that Section 702 collection is used as a backdoor to surveil Americans without a warrant, since the government can query databases of incidentally collected US person communications without seeking a warrant. The expiration without reauthorization is technically a political win for civil liberties groups, but the practical impact in the near term is essentially zero. For the tech industry, this matters because Section 702 is a primary legal basis for government access to data held by US tech companies on foreign users. The ongoing uncertainty about the law's status creates compliance headaches for companies operating internationally, particularly in the EU where data transfer mechanisms depend partly on the robustness of US surveillance law limitations.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/tech-policy/2026/06/130-billion-in-data-center-projects-blocked-by-protests-so-far-this-year/" target="_blank" rel="noopener">$130 Billion in Data Center Projects Blocked by Community Protests This Year</a>
+            </div>
+            <div class="story-summary">A striking data point: over $130 billion worth of planned AI data center projects have been blocked or significantly delayed by local community protests so far in 2026. This is a genuinely new political phenomenon — opposition to data centers used to be a fairly niche concern, but it's gone mainstream as communities grapple with the real impacts: power grid strain, water consumption, noise, and the sense that massive infrastructure is being imposed on localities without meaningful consent. Wired has a companion piece pushing back on GOP lawmakers and tech investors who have tried to tie the anti-data-center movement to Chinese interference and influence operations — experts say that framing is mostly a deflection from legitimate local grievances. The water consumption angle is nuanced: while data centers' total national water use is a small fraction of overall consumption, their local impact can be outsized, particularly in water-stressed regions. Communities that have successfully blocked projects report a 'taste of political power' that is encouraging broader organizing. For AI infrastructure planning, this represents a genuine constraint that's not going away — the days of siting a massive data center anywhere with cheap power and land are over. This will push companies toward more distributed deployment, offshore options, or the increasingly discussed idea of orbital data centers (which have their own serious engineering challenges). It also feeds into the broader political economy of AI, where the benefits accrue to a small number of companies and investors while the costs — grid strain, water use, noise — are externalized onto local communities.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://openai.com/index/prc-linked-influence-operations-ai-debates" target="_blank" rel="noopener">OpenAI Reports PRC-Linked Influence Operations Targeting US AI Policy Debates</a>
+            </div>
+            <div class="story-summary">OpenAI published a report detailing influence operations linked to the Chinese government that are specifically targeting US debates about AI technology, data centers, and tech policy. The operations apparently involve using AI tools to generate and amplify content around narratives about data center opposition, tariffs, and false claims about ChatGPT. This is notable on multiple levels: it's an AI company documenting foreign actors using AI to manipulate debates about AI policy, which is a genuinely weird recursive situation. It also gives important context to the data center protest story — while experts say the anti-data-center movement is largely organic and driven by real local concerns, that doesn't mean foreign actors aren't also trying to amplify and shape those narratives. OpenAI has been publishing these influence operation reports periodically, and they've become an important source of public documentation about how AI tools are being used in information warfare. The report is worth reading alongside Wired's piece debunking the 'China is behind all data center protests' narrative — both things can be true simultaneously: real local opposition exists AND foreign actors are trying to exploit and amplify it. For engineers and tech workers, the broader takeaway is that the information environment around AI policy is increasingly polluted, and claims about public opinion on AI infrastructure should be evaluated skeptically.</div>
+            <div class="story-source">OpenAI Blog</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-ai"></div>
+            <h2>AI & Machine Learning</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://deepmind.google/blog/investing-in-multi-agent-ai-safety-research/" target="_blank" rel="noopener">Google DeepMind Launches $10M Funding Call for Multi-Agent AI Safety Research</a>
+            </div>
+            <div class="story-summary">Google DeepMind announced a $10 million funding initiative specifically focused on the safety challenges of multi-agent AI systems — what happens when millions of AI agents start interacting with each other at scale. This is a research area that DeepMind's own AGI safety lead Rohin Shah has flagged as underexplored and potentially dangerous: agents that can act without human oversight and take instructions from other agents create emergent behaviors that are very hard to anticipate or control. The concern isn't just about individual agents going rogue, but about systemic effects — adversarial dynamics, coordination failures, or unexpected equilibria that emerge from large-scale agent interaction. This is somewhat uncharted territory for AI safety research, which has historically focused more on individual model alignment. The $10M figure is modest relative to what the major labs spend on capabilities research, but funding calls like this help attract academic researchers who might otherwise not focus on this problem. It's also a signal that DeepMind is taking the multi-agent deployment horizon seriously — if you have tens of millions of users running AI agents that can spawn sub-agents and interact with other users' agents, the interaction surface gets very complex very fast. The timing is interesting given that agentic AI is the current hot deployment paradigm across the industry.</div>
+            <div class="story-source">Google DeepMind Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://deepmind.google/blog/diffusiongemma-4x-faster-text-generation/" target="_blank" rel="noopener">DiffusionGemma: Google's Diffusion-Based Language Model Claims 4x Faster Text Generation</a>
+            </div>
+            <div class="story-summary">Google DeepMind released DiffusionGemma, a language model based on diffusion methods rather than the standard autoregressive (token-by-token) generation approach. The headline claim is 4x faster text generation, which would be a meaningful practical improvement if it holds up in real-world use cases. Diffusion models for text have been an active research area for a few years, with the appeal being that they can potentially generate text in parallel rather than sequentially, which is the fundamental speed bottleneck in autoregressive models. Simon Willison noted that Google briefly released an experimental Gemini Diffusion model last year that was clocked at 857 tokens per second, which was genuinely impressive. The key question with diffusion language models has always been quality — early versions tended to lag behind autoregressive models on coherence and accuracy, particularly for longer outputs. DiffusionGemma appears to be a more mature version of that earlier research. If diffusion-based text generation can match autoregressive quality at significantly lower latency, it would be a genuinely important advance for deployment economics and real-time applications. Worth watching to see independent evaluations of quality versus the speed claims.</div>
+            <div class="story-source">Google DeepMind Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/google/2026/06/google-sues-chinese-cybercrime-network-that-used-gemini-to-automate-scams/" target="_blank" rel="noopener">Google Sues Chinese Cybercrime Network That Used Gemini to Automate Scam Infrastructure</a>
+            </div>
+            <div class="story-summary">Google filed a lawsuit against a Chinese cybercrime operation called 'Outsider Enterprise' that allegedly used Google's own Gemini AI to build and operate large-scale scam infrastructure. The group reportedly sent 2.5 million fraudulent text messages in just two weeks, targeting hundreds of thousands of victims. The mechanism was using Gemini to automatically generate and deploy scam websites, essentially industrializing fraud at a scale that would have been much harder without AI assistance. Google's legal strategy here is notable — rather than just reporting the activity to law enforcement, it's pursuing civil litigation, which gives it more direct tools to potentially identify operators and disrupt the infrastructure. This follows a pattern Google established suing operators of other fraud networks, where civil suits can be used to get court orders that help identify and disrupt the technical infrastructure even when criminal prosecution across international borders is impractical. The broader concern this illustrates is that AI tools substantially lower the barrier to running large-scale fraud operations — Outsider Enterprise apparently didn't need a large team of web developers to spin up hundreds of scam sites. This is going to be a persistent and growing problem as AI coding assistants become more capable.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/06/12/mistral-is-rumored-to-be-raising-e3b-at-e20-valuation/" target="_blank" rel="noopener">Mistral Rumored to Be Raising €3B at €20B Valuation</a>
+            </div>
+            <div class="story-summary">The French AI lab Mistral is reportedly in fundraising talks that would value it at around €20 billion — roughly $23 billion — nearly double its Series C valuation of €11.7 billion. The funding round would reportedly be €3 billion. Mistral has positioned itself as the leading European alternative to American AI labs, and it has maintained a dual strategy of releasing capable open-weight models while also offering commercial API products. The valuation jump reflects both the general AI funding mania and Mistral's specific success in the enterprise and European markets, where concerns about US data sovereignty and regulatory compliance have made a European-headquartered option attractive. At €20B, Mistral is valued comparably to many significant tech companies, which is remarkable for a lab that is only a few years old. The open-weight releases have given Mistral significant developer mindshare, which translates to pipeline for enterprise deals. The fundraising also comes at a moment when the broader IPO window is opening for AI companies — SpaceX just went public, Anthropic and OpenAI have both filed S-1s — and late-stage investors are looking for the next entry points before those windows close.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/ai/2026/06/ukraines-one-time-test-used-fully-autonomous-drones-to-kill-russian-soldiers/" target="_blank" rel="noopener">Ukraine Used Fully Autonomous Drones to Kill Russian Soldiers in One-Time Test</a>
+            </div>
+            <div class="story-summary">Ukraine conducted what it's describing as a one-time test of fully autonomous lethal drones — meaning drones that identified and engaged targets without a human in the loop at the moment of engagement. This is a significant milestone in the deployment of lethal autonomous weapons systems, and Ukraine is notable as essentially a live testing ground for this technology at scale. Ukrainian forces have been progressively adding AI modules to drones and ground robots to improve their effectiveness, but full autonomy for lethal decisions has remained a threshold most countries have publicly claimed not to cross. The 'one-time test' framing is interesting — it suggests this was deliberate and controlled rather than an inadvertent capability, and the public acknowledgment is itself a policy signal. The ethical and legal debates around autonomous lethal systems have been running in academic and policy circles for years, but Ukraine is showing that operational necessity tends to accelerate deployment of technologies that are theoretically controversial. For the robotics and AI community, this is a data point about how quickly autonomous systems are being deployed in high-stakes real-world environments. The broader military AI race — which now includes humanoid robots being evaluated for battlefield roles — is moving considerably faster than international governance frameworks.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/ai/2026/06/heres-what-jeff-bezos-new-startup-prometheus-will-do/" target="_blank" rel="noopener">Jeff Bezos' New Startup Prometheus Bets Big on Physical AI</a>
+            </div>
+            <div class="story-summary">Jeff Bezos has a new startup called Prometheus focused on what the industry is calling 'physical AI' — AI systems that operate in and manipulate the physical world, as distinct from the text and image generation models that have dominated the news cycle. Prometheus is described as one of the best-funded entrants in this space, which given Bezos' resources is not surprising, but it signals serious conviction. Physical AI encompasses robotics, autonomous systems, and AI for industrial and logistics applications — areas where Bezos has obvious deep expertise from Amazon's massive robotics and fulfillment operations. The timing is interesting: while the large language model space is increasingly crowded with well-capitalized competitors, physical AI is seen as a harder, less saturated problem with potentially enormous commercial applications. Robotics has historically been limited by the gap between perception and manipulation — the ability to see and understand a scene and the ability to physically interact with it precisely. Recent advances in multimodal foundation models are helping close that gap. Prometheus is entering a space that also includes Boston Dynamics, Figure, Physical Intelligence, and a range of other well-funded startups, so the competition is real, but Bezos' logistics expertise and capital give him a credible angle.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-industry"></div>
+            <h2>Industry & Business</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/06/12/spacex-ipo-closes-up-19-and-delivers-the-worlds-first-trillionaire/" target="_blank" rel="noopener">SpaceX IPO Closes Up 19%, Making Elon Musk the World's First Trillionaire</a>
+            </div>
+            <div class="story-summary">SpaceX made its long-anticipated public market debut yesterday, pricing at $135 per share and closing up 19% — a strong debut by any measure. The IPO pushed Elon Musk's net worth past the $1 trillion mark, making him the first person in history to reach that threshold, a genuinely surreal milestone. Crucially, Ars Technica notes that SpaceX is being valued substantially for its AI potential rather than purely as a rocket company, which is either a sign of investor sophistication or a sign of AI valuation mania bleeding into everything. The company is now owned by public market investors who will want returns, which creates a different kind of accountability than SpaceX had as a private company with Musk as the dominant shareholder. Robinhood reported record-breaking traffic as retail investors piled in on the first day. SpaceX president Gwynne Shotwell dropped hints about a potential SpaceX-Tesla merger in post-IPO comments, which would be a massive corporate event if it materialized — combining Musk's two most significant companies into a single public entity with space launch, satellite internet, electric vehicles, and AI capabilities under one roof. The IPO is happening alongside a broader wave: Anthropic and OpenAI have both filed S-1s, and the FAANG acronym is apparently being replaced by MANGOS in some corners of the financial press. Robinhood's traffic surge is a good indicator of how much retail enthusiasm there is for this cohort of companies.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.wired.com/story/mark-zuckerberg-meta-employee-meeting-interrupt-ai/" target="_blank" rel="noopener">Meta's New AI Unit Is in Open Revolt: 6,500 Engineers Describe 'Soul-Crushing' Environment</a>
+            </div>
+            <div class="story-summary">Multiple reports from TechCrunch and Wired paint a vivid and concerning picture of conditions inside Meta's centralized AI unit, which employs around 6,500 people. Engineers are describing the environment as a 'soul-crushing gulag,' and internal forums show widespread frustration with Meta's AI strategy under Zuckerberg. Wired's piece includes the detail that one executive told an employee to 'tell him he's a piece of shit,' which gives you a sense of the reported cultural temperature. There's also a specific flashpoint: Zuckerberg's plan for a company-wide AI hackathon, which employees have publicly criticized in internal forums, with one writing 'I'm not sure that this company supports a hackathon culture anymore.' The underlying issue appears to be a chaotic AI strategy — Meta made a major organizational bet by centralizing AI development, but the execution has been turbulent, with unclear priorities and management dysfunction. This matters beyond just being a workplace drama story: Meta has enormous AI resources and reach, and Llama has become a genuinely important open-weight model ecosystem. If the internal talent situation is as bad as described, it could affect Meta's ability to compete in the frontier model race. The timing is also notable — this is happening while Anthropic's models are being pulled offline by the government, which might create recruiting opportunities for other labs.</div>
+            <div class="story-source">Wired</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://openai.com/index/openai-to-acquire-ona" target="_blank" rel="noopener">OpenAI Acquires Ona to Expand Codex with Persistent Cloud Environments for Long-Running Agents</a>
+            </div>
+            <div class="story-summary">OpenAI announced plans to acquire Ona, a startup focused on secure, persistent cloud environments. The acquisition is specifically aimed at expanding Codex — OpenAI's AI coding assistant — with the ability to run long-horizon agentic workflows in persistent cloud environments. The core technical problem Ona solves is that current AI coding agents typically operate in ephemeral environments where state doesn't persist between sessions, which limits their ability to handle large, multi-day engineering projects. With persistent environments, an AI agent could theoretically work on a codebase over extended periods, maintaining context and state in a way that more closely resembles how a human engineer would operate on a project. This is an important infrastructure piece for the 'AI software engineer' vision that multiple companies are pursuing. It also fits with OpenAI's clear strategic direction of moving up the stack from model provider to full workflow platform. The acquisition of infrastructure companies rather than just model talent suggests OpenAI is thinking seriously about the deployment and reliability challenges of long-running agentic systems, not just the raw capability questions.</div>
+            <div class="story-source">OpenAI Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.bbc.com/news/articles/cn8qj8wjgxwo" target="_blank" rel="noopener">EU Orders Meta to Open WhatsApp to Rival AI Chatbots Under New Interoperability Rules</a>
+            </div>
+            <div class="story-summary">The European Union issued a ruling requiring Meta to open WhatsApp's platform to competing AI chatbots, a significant antitrust and platform regulation development. Meta has pushed back sharply, accusing the EU of 'regulatory overreach' and arguing that the decision effectively gives large competitors like OpenAI free access to WhatsApp's massive user base. The EU's position is that WhatsApp, as a designated gatekeeper under the Digital Markets Act, must allow interoperability with competing messaging and AI services. This is part of the broader DMA enforcement pattern where the EU is using its gatekeeper designation to force platform openness in ways that go considerably further than anything being attempted in the US right now. From Meta's perspective, WhatsApp is an increasingly important surface for deploying its own AI assistant, and forced interoperability with competitors undercuts that strategic position. From a competition standpoint, the EU's argument is that a platform with WhatsApp's scale shouldn't be able to use that scale to foreclose AI assistant competition. The practical implementation details will matter enormously — what APIs get opened, what data can be accessed, and what the security implications are for WhatsApp's end-to-end encrypted architecture.</div>
+            <div class="story-source">BBC Technology</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-dev"></div>
+            <h2>Software & Dev Tools</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/security/2026/06/peoplesoft-0-day-affecting-hundreds-of-organizations-steals-gigabytes-of-data/" target="_blank" rel="noopener">Critical PeopleSoft Zero-Day Actively Exploited, Stealing Gigabytes of Data Across Hundreds of Organizations</a>
+            </div>
+            <div class="story-summary">A severe zero-day vulnerability in Oracle's PeopleSoft enterprise software is being actively exploited against hundreds of organizations, with attackers stealing gigabytes of data per victim. PeopleSoft is widely deployed in HR, finance, and student information systems at universities, government agencies, and large corporations — meaning the data being stolen is likely to be highly sensitive: employee records, payroll information, student data, financial records. Zero-days in enterprise ERP software are particularly nasty because the systems are often deeply integrated into organizational infrastructure, patches can be complex to deploy without disrupting operations, and many organizations run on extended patching cycles. The 'hundreds of organizations' scope suggests either a worm-like spreading mechanism or a coordinated campaign by a well-resourced threat actor. Oracle has historically had a complicated relationship with the security research community and patch disclosure, so it will be worth watching how quickly a patch is released and how transparent Oracle is about the vulnerability's details. If you're in a security or IT role at an organization running PeopleSoft, this is a drop-everything situation. The Ars article rates this as 'about as critical as they come,' which tracks given the combination of active exploitation, data sensitivity, and deployment breadth.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://depthfirst.com/research/21-zero-days-in-ffmpeg" target="_blank" rel="noopener">21 Zero-Days Discovered in FFmpeg</a>
+            </div>
+            <div class="story-summary">Security researchers at Depth First published findings documenting 21 zero-day vulnerabilities in FFmpeg, the ubiquitous open-source multimedia processing library. FFmpeg is embedded in an enormous range of software — video players, streaming platforms, browsers, video conferencing tools, mobile apps, and server-side media processing pipelines — making the attack surface here genuinely massive. The variety of vulnerabilities found (21 is a high number for a single research effort) suggests the codebase has accumulated security debt over years of development focused more on features and compatibility than on security hardening. The Hacker News score of 181 reflects how widely this matters to developers. For anyone running services that process user-submitted video or audio content — which is a huge category — this requires urgent attention. FFmpeg's C codebase is notoriously complex, and the kinds of vulnerabilities that typically show up in media processing code (buffer overflows, integer overflows, use-after-free in codec parsers) can often be exploited for remote code execution when processing attacker-controlled media files. This is the kind of finding that tends to ripple through the ecosystem for months as downstream software updates their FFmpeg dependencies.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.eff.org/deeplinks/2026/06/congress-just-rushed-through-disastrous-copyright-office-overhaul" target="_blank" rel="noopener">H.R. 6028 Rushed Through Congress, Fundamentally Restructuring the US Copyright Office</a>
+            </div>
+            <div class="story-summary">Congress passed H.R. 6028, a bill that according to the EFF would fundamentally change the structure and independence of the US Copyright Office — and it was done quickly and without extensive public debate, which is itself a concern. The Copyright Office is a key institution for the AI industry right now: it's been issuing guidance on whether AI-generated works can be copyrighted, whether training on copyrighted data constitutes infringement, and other questions that directly affect how AI companies operate and what they're legally permitted to build. Changes to how the Copyright Office is structured, staffed, or directed could significantly affect the trajectory of these policy questions. The EFF's framing as 'disastrous' signals that the changes are seen as weakening the office's independence or expertise. For developers and AI companies, copyright law is increasingly a first-order business concern — the outcome of ongoing litigation about training data could reshape what's legally permissible. Any institutional changes that affect how those questions get resolved in policy are worth tracking closely.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-science"></div>
+            <h2>Science & Research</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://innovativegenomics.org/news/crispr-technique-selectively-shreds-cancer-cells/" target="_blank" rel="noopener">CRISPR Technique Selectively Destroys Cancer Cells, Including 'Undruggable' Cancers</a>
+            </div>
+            <div class="story-summary">Researchers at the Innovative Genomics Institute published work on a CRISPR-based technique that can selectively destroy cancer cells — including cancers that have historically been resistant to conventional drug treatments because they lack targetable molecular vulnerabilities. The 'undruggable' category of cancers is a major unsolved problem in oncology: some cancers are driven by mutations that produce loss-of-function effects or affect proteins with no good small-molecule binding sites, making traditional drug development approaches ineffective. CRISPR-based approaches work differently — instead of blocking a protein, they can target the DNA itself, potentially working regardless of whether the resulting protein is conventionally druggable. The selectivity claim is crucial and will need rigorous independent replication: CRISPR cancer therapies have struggled historically with off-target effects that can damage healthy cells. The Hacker News score of 796 reflects genuine excitement in the technical community. This is clearly early-stage research rather than an imminent clinical advance, but it's the kind of foundational work that can eventually translate into real treatments. Worth keeping an eye on as it moves through peer review and replication.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.technologyreview.com/2026/06/12/1138829/reprogramming-buzziest-approach-reversing-aging-right-now/" target="_blank" rel="noopener">Why 'Reprogramming' Is the Hottest Approach to Reversing Aging Right Now</a>
+            </div>
+            <div class="story-summary">MIT Technology Review has a thorough piece on cellular reprogramming as an approach to reversing aging-related diseases, pegged to Life Biosciences dosing its first human volunteer with an experimental reprogramming treatment for glaucoma. The idea is to inject factors that can reset the epigenetic age of cells — essentially running the cellular aging clock backward — to regenerate healthy function in tissues affected by age-related disease. The glaucoma application involves injecting these factors directly into the eye to regenerate healthy optic nerve cells, which is a specific and tractable target compared to systemic aging reversal. The broader reprogramming field has attracted enormous investment from biotech and from tech-adjacent investors interested in longevity, including significant Google DeepMind involvement in using AI to accelerate identification of reprogramming factors. The Google DeepMind blog also has a related piece on using AI to fast-track genetic leads for cellular rejuvenation. The convergence of AI capabilities — particularly protein structure prediction and biological foundation models — with aging biology is accelerating the pace of discovery in this field in ways that weren't possible even five years ago. Still very early for clinical applications beyond specific targeted diseases, but the trajectory is interesting.</div>
+            <div class="story-source">MIT Technology Review</div>
+        </div>
+        
+    </div>
+    
+
+    
+
+    
+    <div class="previous-day">
+        <a href="2026-06-12.html">&larr; Previous day</a>
+    </div>
+    
+
+    <footer>
+        Generated 2026-06-13 07:45 UTC &middot; Tech Digest
+    </footer>
+</body>
+</html>
