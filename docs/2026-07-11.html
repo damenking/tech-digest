@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Digest - Saturday, July 11, 2026</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --accent-subtle: #1f6feb22;
+            --topic-ai: #da70d6;
+            --topic-industry: #58a6ff;
+            --topic-dev: #3fb950;
+            --topic-hardware: #f0883e;
+            --topic-science: #d29922;
+            --topic-policy: #f85149;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 0;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 24px 16px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        header .date {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-top: 4px;
+        }
+
+        .intro {
+            padding: 16px;
+            background: var(--accent-subtle);
+            border-left: 3px solid var(--accent);
+            margin: 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .section {
+            margin: 24px 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0 16px;
+            margin-bottom: 12px;
+        }
+
+        .topic-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+
+        .story {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .story:last-child {
+            border-bottom: none;
+        }
+
+        .story-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .story-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .story-title a:hover {
+            color: var(--accent);
+        }
+
+        .story-summary {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .story-source {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+            opacity: 0.7;
+        }
+
+        footer {
+            padding: 24px 16px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Topic colors */
+        .topic-ai { background: var(--topic-ai); }
+        .topic-industry { background: var(--topic-industry); }
+        .topic-dev { background: var(--topic-dev); }
+        .topic-hardware { background: var(--topic-hardware); }
+        .topic-science { background: var(--topic-science); }
+        .topic-policy { background: var(--topic-policy); }
+
+        .source-errors {
+            margin: 24px 16px;
+            padding: 12px 16px;
+            background: #f8514922;
+            border: 1px solid #f8514944;
+            border-radius: 8px;
+            font-size: 0.8rem;
+        }
+
+        .source-errors h3 {
+            color: #f85149;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .error-item {
+            color: var(--text-muted);
+            padding: 2px 0;
+        }
+
+        .previous-day {
+            padding: 20px 16px;
+            text-align: center;
+        }
+
+        .previous-day a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile touch targets */
+        @media (max-width: 640px) {
+            .story {
+                padding: 16px;
+            }
+            .story-title a {
+                display: block;
+                padding: 4px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tech Digest</h1>
+        <div class="date">Saturday, July 11, 2026</div>
+    </header>
+
+    <div class="intro">Apple is suing OpenAI over alleged trade secret theft, and OpenAI is simultaneously dealing with its head of safety walking out the door — a rough week for the AI giant that also just shipped GPT-5.6. Meanwhile, the EU is tightening the screws on Meta, and a major Linux kernel vulnerability just surfaced after 15 years in the wild.</div>
+
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-ai"></div>
+            <h2>AI & Machine Learning</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.wired.com/story/apple-sues-openai-allegedly-stealing-ip-hardware/" target="_blank" rel="noopener">Apple Sues OpenAI Over Alleged Hardware Trade Secret Theft</a>
+            </div>
+            <div class="story-summary">Apple filed a lawsuit against OpenAI on Friday, alleging that the company systematically encouraged former Apple employees to bring confidential materials with them when they jumped ship. According to the suit, this included secret hardware prototypes, internal presentations, and key supplier details — all related to Apple's hardware roadmap. Apple's complaint reportedly describes OpenAI's nascent hardware business as 'rotten to its core,' suggesting this is less about a rogue employee and more about alleged institutional misconduct. The lawsuit specifically claims senior OpenAI leadership directed or enabled the behavior, which significantly raises the legal stakes. This comes at a particularly awkward moment for OpenAI, which has been aggressively building out a hardware division, reportedly in collaboration with former Apple design chief Jony Ive. The timing also puts pressure on the broader Apple-OpenAI partnership, since the two companies have had a commercial relationship around Apple Intelligence features in iOS. For Apple, this is a rare aggressive legal move — the company typically settles IP disputes quietly. If the allegations are proven, this could expose OpenAI to substantial damages and potentially unwind parts of its hardware strategy. For engineers watching the AI hardware space, this is a reminder that the war for chip and device talent is now being fought in courtrooms as well as recruiting offices. Expect this to drag on for years, but the discovery process alone could produce some fascinating revelations about what OpenAI's hardware team has actually been building.</div>
+            <div class="story-source">Wired</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.wired.com/story/openai-head-of-safety-leaving/" target="_blank" rel="noopener">OpenAI's Head of Safety Is Leaving the Company</a>
+            </div>
+            <div class="story-summary">Johannes Heidecke, OpenAI's head of safety, is departing the company, according to a report from Wired. The timing is notable: OpenAI has been working to integrate its research and safety teams more closely, a reorganization that some safety-focused researchers have reportedly viewed with skepticism. This is not an isolated departure — OpenAI has seen a steady stream of senior safety talent leave over the past couple of years, including several co-founders and prominent researchers who have publicly expressed concerns about the company's direction. Heidecke's exit compounds an already difficult news cycle for OpenAI, which is simultaneously dealing with the Apple lawsuit and navigating the rollout of its latest model family. The safety team integration effort is itself controversial: critics argue it subordinates safety considerations to product velocity, while OpenAI maintains it makes safety more effective by embedding it deeper in the research process. For anyone tracking AI governance, the pattern of safety leadership turnover at the world's most prominent AI lab is genuinely concerning. It raises legitimate questions about whether commercial pressures are crowding out the kind of slow, deliberate safety work that frontier models arguably require. OpenAI has not yet publicly commented on the specifics of why Heidecke is leaving or who will take over his responsibilities.</div>
+            <div class="story-source">Wired</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://simonwillison.net/2026/Jul/9/gpt-5-6/#atom-everything" target="_blank" rel="noopener">GPT-5.6 Launches in Three Tiers: Luna, Terra, and Sol</a>
+            </div>
+            <div class="story-summary">OpenAI shipped GPT-5.6 this week, its latest flagship model family, available in three sizes named Luna, Terra, and Sol — small to large. Pricing runs at $1/$6, $2.50/$15, and $5/$30 per million input/output tokens respectively, putting Luna in particular at a competitive price point against comparable Claude and Gemini offerings. The models are now the preferred engine in Microsoft 365 Copilot, covering Word, Excel, PowerPoint, and the new Cowork collaboration feature. Perhaps the most eyebrow-raising claim attached to this release: GPT-5.6 Sol Ultra reportedly produced a proof of the Cycle Double Cover Conjecture, a long-standing open problem in graph theory, which hit Hacker News with over 400 points. If that proof holds up to peer review, it would be a genuinely significant mathematical result and one of the more concrete demonstrations of frontier AI doing real scientific work. The model family also powers the new ChatGPT Work product, an agentic system that can operate across apps and files over extended sessions. OpenAI also launched GPT-Live this week, a new voice model generation that finally upgrades the ChatGPT voice mode with the ability to delegate harder tasks to GPT-5.5 for deeper reasoning. The breadth of this week's OpenAI releases is striking — a new model family, a voice system, an agentic work product, and enterprise partnerships all dropped within days of each other. Whether the pace is sustainable, and whether the safety infrastructure is keeping up, is the more uncomfortable question hanging over all of it.</div>
+            <div class="story-source">Simon Willison's Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.technologyreview.com/2026/07/09/1140293/anthropic-found-a-hidden-space-where-claude-puzzles-over-concepts/" target="_blank" rel="noopener">Anthropic Finds a 'Hidden Space' Where Claude Puzzles Over Concepts</a>
+            </div>
+            <div class="story-summary">Anthropic published research this week describing a new interpretability technique called the Jacobian lens, which gives researchers what they describe as the clearest view yet into what's actually happening inside large language models as they process questions. The tool reveals an intermediate representational space where the model appears to 'deliberate' over concepts before committing to output tokens — a kind of internal scratch pad that wasn't clearly visible with prior interpretability methods. The findings range from reassuring to genuinely unsettling, according to Anthropic's own description, though the published details are still being digested by the research community. This matters because interpretability is foundational to AI safety: if you can't see what a model is actually doing internally, you can't reliably audit it for deceptive or dangerous behavior. Prior interpretability work, including Anthropic's own circuit-level analyses, has been valuable but limited in scope. The Jacobian lens approach appears to scale to more complex behaviors and larger models. For engineers building on top of Claude or similar models, this research is mostly background — it doesn't change the API — but it's the kind of foundational work that could eventually inform how we test and certify AI systems for high-stakes applications. Anthropic's consistent investment in interpretability research is one of the things that meaningfully differentiates its public posture from competitors. Whether the research translates into actual safety gains is a harder question.</div>
+            <div class="story-source">MIT Technology Review</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://simonwillison.net/2026/Jul/9/muse-spark-1-1/#atom-everything" target="_blank" rel="noopener">Meta Launches Muse Spark 1.1 With Its First Public API</a>
+            </div>
+            <div class="story-summary">Meta released Muse Spark 1.1 this week, the follow-up to the Spark model it launched in April, and crucially, this is the first version in the Spark family to offer a public API. That's a significant shift — it means developers can now build on top of Meta's most capable model rather than just using it through Meta's consumer products. Meta claims meaningful improvements in agentic tool calling and computer use benchmarks relative to the April release, putting it more directly in competition with Claude's computer use features and OpenAI's operator-style capabilities. Simon Willison quickly released an llm-meta-ai plugin (version 0.1) that lets you run prompts against Muse Spark 1.1 via the LLM command-line tool, which gives a sense of how quickly the developer ecosystem responds when a major model gains API access. The pricing and rate limit details are still being parsed by the community. Meta's strategy of releasing powerful models with permissive licensing and now API access is a meaningful counterweight to the more closed approaches of OpenAI and Anthropic. For developers who've been building on open-weight Meta models, having a hosted API option with the company's best model is a useful addition to the toolkit. The agentic improvements are worth watching — computer use is becoming a real capability battleground among frontier labs.</div>
+            <div class="story-source">Simon Willison's Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/science/2026/07/quantum-error-correction-can-constantly-recalibrate-a-processor/" target="_blank" rel="noopener">Quantum Error Correction Can Now Continuously Recalibrate a Processor</a>
+            </div>
+            <div class="story-summary">Researchers have demonstrated a technique where reinforcement learning uses the error information generated during quantum error correction to continuously adjust the control algorithms running on a quantum processor. This is a meaningful step because one of the practical headaches in quantum computing is drift — qubits and their control electronics don't stay perfectly calibrated over time, requiring periodic recalibration that takes the processor offline. By turning the error correction process itself into a feedback signal for continuous recalibration, the system essentially gets smarter and more stable the longer it runs. The reinforcement learning component is what's novel here: rather than relying on a human operator or a fixed recalibration schedule, the system learns to compensate for drift patterns autonomously. This has real implications for the path to practical quantum computing — hardware stability is one of the less glamorous but genuinely hard engineering problems in the field. The technique also points toward a future where quantum processors could maintain coherence for longer operational periods, which is necessary for running the deep circuits that would actually be useful for chemistry simulation, optimization, and cryptography. It's a good paper and worth flagging for anyone tracking quantum hardware maturity, though it's still early-stage research rather than a production-ready system.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-policy"></div>
+            <h2>Policy & Regulation</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/tech-policy/2026/07/disable-auto-play-and-infinite-scroll-or-risk-massive-fines-eu-tells-meta/" target="_blank" rel="noopener">EU Threatens Meta With Massive Fines Over Addictive Design Features</a>
+            </div>
+            <div class="story-summary">The European Union issued a formal warning to Meta this week under the Digital Services Act, demanding that it disable autoplay video and infinite scroll on Facebook and Instagram or face fines that could reach into the billions. The DSA enforcement action is based on regulators' determination that these features contribute to what they're calling 'compulsive use' and 'unhealthy habits,' particularly among younger users. This is one of the more aggressive applications of the DSA so far — previous enforcement actions have focused on content moderation and transparency, but this one goes directly at product design choices that are central to Meta's engagement and advertising model. Autoplay and infinite scroll aren't incidental features; they're core mechanisms that keep users on the platform longer and generate more ad impressions. If Meta is actually forced to remove or significantly modify them, it would represent a meaningful reduction in the platform's stickiness and, potentially, its ad revenue. Meta will almost certainly fight this, and the legal process could take years. But the precedent is significant: EU regulators are now willing to treat UX patterns themselves as regulatory targets, not just data practices or content policies. For product designers and engineers at any consumer platform operating in Europe, this is a signal that addictive-by-design features are increasingly in the regulatory crosshairs.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/07/10/meta-removes-controversial-ai-feature-on-instagram-after-backlash/" target="_blank" rel="noopener">Meta Pulls Controversial AI Image Feature from Instagram After Backlash</a>
+            </div>
+            <div class="story-summary">Meta launched and then quickly killed an AI feature on Instagram this week that allowed users to generate AI images using other people's public profile photos as reference material. The feature was framed as a creative tool with an opt-out mechanism, but privacy advocates immediately called it a 'recipe for disaster,' and the backlash was swift and loud enough that Meta pulled it within days. The company's public statement acknowledged that the feature 'missed the mark,' which is a rare admission from a company that typically defends its product decisions aggressively. The opt-out framing was the core problem — critics argued that making users responsible for protecting their own likeness from AI manipulation, rather than requiring affirmative consent, reversed the appropriate default. This comes in a week where Meta is already under EU pressure over addictive design features, compounding the sense that the company is having a rough regulatory and PR moment. For AI product teams, this is a useful case study in how quickly public sentiment can turn on features that involve other people's images, even when the underlying technology is technically sound. The episode also highlights the growing tension between AI creative tools and personal privacy rights — a tension that hasn't been resolved by any major platform yet.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/07/10/us-cyber-agency-cisa-had-to-build-its-incident-playbook-during-the-incident-agency-reveals/" target="_blank" rel="noopener">CISA Had to Build Its Incident Response Playbook During an Active Incident</a>
+            </div>
+            <div class="story-summary">The US Cybersecurity and Infrastructure Security Agency revealed this week that when a security breach occurred involving an exposed credentials repository — a CISA contractor uploaded reams of passwords to a public GitHub repo — the agency had to essentially write its incident response playbook in real time because it didn't have an adequate one ready. The original breach was reported in May by journalist Brian Krebs, who was tipped off by a researcher at GitGuardian after they found the exposed credentials in a publicly accessible repository. The revelation that CISA, the federal agency whose explicit job is to help other organizations respond to cybersecurity incidents, was winging its own incident response is the kind of institutional irony that writes itself. It raises serious questions about how prepared federal agencies actually are for security events, particularly involving third-party contractors who often have extensive access to sensitive systems. The contractor supply chain problem is well-documented in the private sector, but this case illustrates how badly it can manifest even at agencies that should know better. For security engineers, the lesson is depressingly familiar: having an incident response plan that you've actually practiced matters more than having a sophisticated threat detection system. CISA has since been working on formalizing its playbook, but the public disclosure of this gap is itself a useful accountability moment.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.theguardian.com/us-news/2026/jul/10/new-york-city-deceptive-subscriptions-ban" target="_blank" rel="noopener">New York City to Ban Deceptive Subscription Practices</a>
+            </div>
+            <div class="story-summary">New York City is moving to ban deceptive subscription practices, targeting the constellation of dark patterns that make it easy to sign up for a service and deliberately painful to cancel. This includes things like requiring a phone call to cancel a subscription that can be started with two clicks online, hiding cancellation options deep in menus, and using confusing language to obscure what you're actually agreeing to. NYC is acting somewhat independently here — there's been federal-level FTC action on 'click-to-cancel' rules, but local enforcement adds another layer of accountability for companies operating in one of the largest consumer markets in the US. For SaaS companies and subscription-based products, this is a regulatory trend that's clearly building momentum: regulators at multiple levels of government have identified subscription dark patterns as a priority consumer protection issue. The enforcement mechanism and penalties will matter a lot in determining how seriously companies take this — rules without teeth tend to get ignored. But the direction of travel is clear, and engineering teams that have built cancellation flows around friction should probably start thinking about what a compliant version looks like.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/tech-policy/2026/07/ransomware-negotiator-helped-attackers-extort-his-own-clients-gets-6-year-sentence/" target="_blank" rel="noopener">Ransomware Negotiator Secretly Worked for the Attackers, Gets Six Years</a>
+            </div>
+            <div class="story-summary">A ransomware negotiator who was hired by victims to help navigate ransom demands and minimize payments was secretly working for the attackers, helping them maximize extortion while appearing to advocate for his clients. He was sentenced to six years in prison this week in what prosecutors described as a profound betrayal of the victims he was supposed to represent. The case is a stark reminder of the trust problem at the heart of the ransomware response industry — when you're under attack, desperate, and not sure who to call, you're inherently vulnerable to someone who presents as an expert ally. The negotiator presumably had access to sensitive information about the victims' finances, insurance coverage, and decision-making processes, all of which he could have shared with attackers to calibrate ransom demands. This kind of insider threat is genuinely hard to defend against because the entire value proposition of a negotiator is that they have specialized relationships and knowledge that you don't. For organizations building incident response plans, this case argues for being very careful about how negotiators are vetted and what information they're given access to. It also illustrates why some security professionals argue for dealing with ransomware incidents through law enforcement channels rather than private negotiators.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-industry"></div>
+            <h2>Industry & Business</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/07/10/sk-hynix-raises-26-5b-in-the-biggest-foreign-ipo-in-us-history-is-urged-to-build-new-us-fabs/" target="_blank" rel="noopener">SK Hynix Raises $26.5B in Biggest Foreign IPO in US History</a>
+            </div>
+            <div class="story-summary">SK Hynix completed a $26.5 billion IPO on US markets this week, the largest foreign company IPO in American stock market history, riding the wave of demand for high-bandwidth memory chips that are essential for AI training and inference hardware. The AI chip boom has been a genuine boon for memory manufacturers — HBM3E, which SK Hynix supplies to Nvidia for its H100 and H200 chips, has become one of the most supply-constrained components in the AI infrastructure stack. The IPO also came with political strings attached: US officials are urging both SK Hynix and Samsung to use their new access to US capital markets as an opportunity to build domestic fabrication facilities, fitting neatly into the broader CHIPS Act strategy of onshoring semiconductor manufacturing. Whether either company actually commits to major US fab investment will depend on the economics, which are challenging — building advanced memory fabs in the US is significantly more expensive than doing so in Korea. For anyone tracking the AI infrastructure supply chain, the SK Hynix IPO is a signal of how central memory has become to the AI buildout. The market is essentially saying that whoever makes the memory that powers AI training is worth more than almost any foreign company that has ever listed in the US.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.wired.com/story/microsoft-25-percent-jump-in-carbon-emissions/" target="_blank" rel="noopener">Microsoft Reports a 25% Jump in Carbon Emissions Driven by Data Centers</a>
+            </div>
+            <div class="story-summary">Microsoft disclosed this week that its carbon emissions jumped 25% year-over-year, driven almost entirely by the explosive growth in data center construction and electricity consumption tied to AI workloads. This is a painful number for a company that has made very public commitments to be carbon negative by 2030 — the trajectory is moving sharply in the wrong direction. Microsoft has been on a massive AI infrastructure buildout, announcing multi-billion dollar data center investments across the US, Europe, and Asia over the past 18 months. The electricity demand from those facilities is enormous, and the grid in many locations is still substantially powered by fossil fuels. The company has invested in power purchase agreements and nuclear energy deals, but those supply chains move slowly compared to the pace of GPU cluster deployment. This tension between AI ambition and climate commitments is not unique to Microsoft — Google, Amazon, and Meta are all dealing with versions of the same problem. But Microsoft's 25% figure is a concrete data point that should inform how seriously we take tech company sustainability pledges when they're in conflict with AI revenue growth. For engineers and architects designing AI systems, this is a reminder that the carbon cost of compute is real and measurable, even if it's rarely surfaced in infrastructure decisions.</div>
+            <div class="story-source">Wired</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/07/10/blueskys-interim-ceo-toni-schneider-drops-the-interim/" target="_blank" rel="noopener">Bluesky's Interim CEO Toni Schneider Drops the 'Interim'</a>
+            </div>
+            <div class="story-summary">Toni Schneider, who has been serving as interim CEO of Bluesky since co-founder Jay Graber stepped back, has been officially confirmed as permanent CEO. Schneider previously led Automattic, the company behind WordPress.com, and is a partner at True Ventures, giving him both operator experience and venture capital connections that could be valuable for Bluesky's next phase. Bluesky has grown substantially over the past year and a half, benefiting from ongoing turbulence on X and a growing appetite for decentralized social media alternatives. The platform is built on the AT Protocol, which Bluesky developed and which allows for federated social networking somewhat analogous to ActivityPub and Mastodon, though with different architectural tradeoffs. Schneider describing himself as 'all in' suggests a genuine commitment rather than a caretaker role, which matters for the platform's ability to attract engineering talent and institutional partnerships. Bluesky remains substantially smaller than its competitors, but its technical credibility and the loyalty of its early adopter community — which skews heavily toward journalists, researchers, and tech professionals — give it a distinctive position. The leadership confirmation is a stabilizing signal after a period of transition.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/07/10/disney-is-considering-a-free-streaming-tier-report-says/" target="_blank" rel="noopener">Disney+ Considering a Free Ad-Supported Tier</a>
+            </div>
+            <div class="story-summary">Disney+ is reportedly exploring the launch of a free, ad-supported streaming tier to compete more directly with platforms like YouTube and Tubi that are capturing significant viewing time without charging a subscription fee. The streaming wars have evolved considerably since the launch era: the original race to acquire subscribers has given way to a more complex battle for watch time and advertising revenue, and free ad-supported TV (FAST) has emerged as a meaningful segment. Disney has already introduced a lower-cost ad-supported subscription tier, but a fully free offering would be a more significant strategic shift. It would allow Disney to monetize casual viewers who aren't willing to pay any subscription fee, and the Disney content library — which includes Marvel, Star Wars, Pixar, and classic Disney properties — is arguably strong enough to attract advertisers even in a free tier. The risk is cannibalization of paid subscribers who decide the free version is good enough. For the streaming industry more broadly, if Disney makes this move, it would add substantial credibility to the FAST model and likely accelerate similar decisions at other premium streamers.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-dev"></div>
+            <h2>Software & Dev Tools</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://nebusec.ai/research/ionstack-part-2/" target="_blank" rel="noopener">GhostLock: A Stack Use-After-Free Bug Has Lived in All Linux Distributions for 15 Years</a>
+            </div>
+            <div class="story-summary">Security researchers at Nebusec published details of a vulnerability they're calling GhostLock, a stack use-after-free bug that has apparently existed in every major Linux distribution for approximately 15 years. Stack UAF vulnerabilities are particularly dangerous because they can allow an attacker to corrupt stack memory in ways that enable privilege escalation or arbitrary code execution. The fact that this persisted for 15 years across all major distros — Debian, Ubuntu, Red Hat, Arch, and everything else — suggests it was either in very obscure code paths that weren't heavily audited, or in code that was trusted precisely because of its age and apparent stability, a classic Lindy Effect failure mode. The IO subsystem context (based on the nebusec.ai/research/ionstack-part-2 URL) suggests this is related to Linux's IO stack, which handles storage and network operations and is both performance-critical and complex enough that subtle bugs can hide for a long time. Patches are presumably in progress or already available, and this should be treated as a high-priority update for any Linux system. For security engineers, this is a good reminder that age is not a proxy for correctness in low-level systems code, and that use-after-free bugs in the kernel remain one of the most reliably exploitable vulnerability classes. The full technical writeup is worth reading if you're doing any kernel-level work.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://avi.press/posts/2026-07-10-after-7-years-in-production-scarf-has-reluctantly-moved-away-from-haskell.html" target="_blank" rel="noopener">Scarf Moves Away From Haskell After 7 Years in Production</a>
+            </div>
+            <div class="story-summary">Scarf, the open-source telemetry and distribution analytics company, published a detailed post-mortem this week explaining why it reluctantly migrated away from Haskell after seven years of running it in production. The word 'reluctantly' is doing real work in that headline — this isn't a screed against Haskell, but a candid account of the practical limits the team ran into as the company scaled. Common themes in Haskell production departures include: hiring difficulty, long compile times at scale, runtime memory behavior that's hard to predict, and a relatively small ecosystem of libraries for non-academic use cases. Scarf specifically describes the decision as painful, which suggests genuine affection for the language alongside pragmatic reasons to move on. The post is worth reading for anyone wrestling with exotic language choices in a startup context — it's one of the more honest accounts of what it's actually like to operate a non-mainstream language in production over a multi-year period. For the Haskell community, this is a useful piece of feedback, even if uncomfortable. The language has exceptional properties for certain problem domains, but the production operations story remains a real friction point.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/07/10/phia-accused-of-cookie-stuffing-taking-affiliate-credit-on-purchases-it-didnt-earn/" target="_blank" rel="noopener">Phia Shopping App Accused of Cookie Stuffing to Claim Affiliate Credit</a>
+            </div>
+            <div class="story-summary">Phia, the shopping startup co-founded by Phoebe Gates (Bill Gates' daughter) and Sophia Kianni, is under fire following a Bloomberg investigation alleging the company engaged in 'cookie stuffing' — a fraudulent affiliate marketing practice where a site places affiliate tracking cookies on users' browsers without their knowledge, claiming commission credit for purchases the site had no actual role in generating. Cookie stuffing is a well-documented form of affiliate fraud that the industry has been dealing with for decades, and it's explicitly prohibited by virtually every major affiliate network's terms of service. The allegations are particularly notable given Phia's high-profile founding team and its positioning as a consumer-friendly shopping tool. If the Bloomberg reporting is accurate, it suggests the company was generating revenue through a mechanism that deceives both users and the retailers whose affiliate programs were being exploited. For anyone building or investing in affiliate-adjacent consumer products, this is a reminder that affiliate fraud detection has gotten significantly more sophisticated, and the reputational cost of being caught is substantial. The story is also an interesting data point about how startup fundraising fame and founder pedigree don't necessarily correlate with clean business practices.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-dev"></div>
+            <h2>Hardware & Devices</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/space/2026/07/china-recovered-its-first-reusable-rocket-and-showed-a-new-way-to-do-it/" target="_blank" rel="noopener">China Recovers Its First Reusable Orbital Rocket Booster</a>
+            </div>
+            <div class="story-summary">China's state-owned space company successfully recovered the booster from an orbital rocket launch this week, marking the first time China has demonstrated reusable rocket technology at the orbital scale. The recovery method is described as novel — not identical to SpaceX's approach — suggesting Chinese engineers found a different engineering path to the same destination rather than simply copying the Falcon 9 landing technique. Observers quoted in the Ars Technica piece note the obvious SpaceX influence while acknowledging the genuine engineering achievement. Reusable rockets are important because they dramatically reduce the cost per kilogram to orbit; SpaceX has used Falcon 9 reusability to drop launch costs to a level that took the rest of the industry years to fully absorb. China achieving comparable capability means the global commercial launch market is about to get more competitive, which is generally good for satellite operators and bad for launch providers who've been coasting on the limited field of credible alternatives. SpaceX's Starship represents the next generation beyond current reusability — fully reusable second stage in addition to the booster — so China catching up to Falcon 9-era capability is significant but not quite at the frontier. The geopolitical implications for satellite deployment, particularly LEO constellations, are worth watching.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.jeffgeerling.com/blog/2026/quadrf-can-spot-drones-and-see-wifi-through-my-wall/" target="_blank" rel="noopener">QuadRF Can Spot Drones and See Wi-Fi Through Walls</a>
+            </div>
+            <div class="story-summary">Jeff Geerling published a detailed hands-on look at QuadRF, a software-defined radio device that can simultaneously monitor multiple frequency bands and is capable of detecting drone RF signatures and visualizing Wi-Fi activity through walls. The piece got significant traction on Hacker News with over 500 points, reflecting genuine interest in the intersection of SDR hardware and practical RF intelligence. QuadRF's ability to detect drones is particularly timely — drone detection has become a real operational concern for airports, events, and critical infrastructure, and purpose-built drone detection systems are typically expensive and proprietary. A device that can do this with an approachable SDR form factor is interesting for security researchers and enthusiasts. The see-through-wall Wi-Fi capability works by detecting the RF patterns of Wi-Fi signals as they propagate through building materials, not by decrypting or intercepting Wi-Fi traffic — it's essentially RF tomography rather than packet capture. Geerling's hands-on coverage is characteristically thorough, and the blog post is a good technical primer for anyone curious about what modern multi-band SDR hardware can do.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+
+    
+
+    
+    <div class="previous-day">
+        <a href="2026-07-10.html">&larr; Previous day</a>
+    </div>
+    
+
+    <footer>
+        Generated 2026-07-11 06:11 UTC &middot; Tech Digest
+    </footer>
+</body>
+</html>
