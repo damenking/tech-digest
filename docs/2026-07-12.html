@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Digest - Sunday, July 12, 2026</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --accent-subtle: #1f6feb22;
+            --topic-ai: #da70d6;
+            --topic-industry: #58a6ff;
+            --topic-dev: #3fb950;
+            --topic-hardware: #f0883e;
+            --topic-science: #d29922;
+            --topic-policy: #f85149;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 0;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 24px 16px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        header .date {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-top: 4px;
+        }
+
+        .intro {
+            padding: 16px;
+            background: var(--accent-subtle);
+            border-left: 3px solid var(--accent);
+            margin: 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .section {
+            margin: 24px 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0 16px;
+            margin-bottom: 12px;
+        }
+
+        .topic-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+
+        .story {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .story:last-child {
+            border-bottom: none;
+        }
+
+        .story-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .story-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .story-title a:hover {
+            color: var(--accent);
+        }
+
+        .story-summary {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .story-source {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+            opacity: 0.7;
+        }
+
+        footer {
+            padding: 24px 16px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Topic colors */
+        .topic-ai { background: var(--topic-ai); }
+        .topic-industry { background: var(--topic-industry); }
+        .topic-dev { background: var(--topic-dev); }
+        .topic-hardware { background: var(--topic-hardware); }
+        .topic-science { background: var(--topic-science); }
+        .topic-policy { background: var(--topic-policy); }
+
+        .source-errors {
+            margin: 24px 16px;
+            padding: 12px 16px;
+            background: #f8514922;
+            border: 1px solid #f8514944;
+            border-radius: 8px;
+            font-size: 0.8rem;
+        }
+
+        .source-errors h3 {
+            color: #f85149;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .error-item {
+            color: var(--text-muted);
+            padding: 2px 0;
+        }
+
+        .previous-day {
+            padding: 20px 16px;
+            text-align: center;
+        }
+
+        .previous-day a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile touch targets */
+        @media (max-width: 640px) {
+            .story {
+                padding: 16px;
+            }
+            .story-title a {
+                display: block;
+                padding: 4px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tech Digest</h1>
+        <div class="date">Sunday, July 12, 2026</div>
+    </header>
+
+    <div class="intro">It's been a big week for OpenAI — they're releasing new models, getting sued by Apple, and losing their head of safety, all at once. Meanwhile, the AI infrastructure story keeps getting stranger, with new reporting on how Nvidia, CoreWeave, and Nebius are financing each other in a way that deserves a closer look.</div>
+
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-ai"></div>
+            <h2>AI & Machine Learning</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://openai.com/index/gpt-5-6" target="_blank" rel="noopener">OpenAI launches GPT-5.6 family: Luna, Terra, and Sol</a>
+            </div>
+            <div class="story-summary">OpenAI shipped GPT-5.6 this week, a new flagship model family that comes in three tiers named Luna, Terra, and Sol — smallest to largest. Pricing is set at $1/$6, $2.50/$15, and $5/$30 per million input/output tokens respectively, which positions Luna as an aggressive competitor to mid-tier models and Sol as a serious contender against Anthropic's Claude Opus line (priced at $5/$25). The models emphasize 'more intelligence per token' and stronger performance per dollar, which suggests OpenAI is focusing on efficiency gains rather than just raw benchmark scores. GPT-5.6 is also now the preferred model powering Microsoft 365 Copilot across Word, Excel, PowerPoint, and their new Cowork product. Alongside the model release, OpenAI launched ChatGPT Work, an agent that can take action across your apps and files, sustain a project for hours, and turn a high-level goal into finished deliverables. They also introduced GPT-Live, a new generation of voice models that finally upgrade the underlying model for ChatGPT Voice — something that was long overdue given how stale that experience had gotten. GPT-Live can also delegate harder tasks to GPT-5.5 behind the scenes when it needs deeper reasoning or web search. For developers, the pricing tiers make Luna genuinely interesting as a high-volume inference option. The simultaneous launch of Work and Live alongside the model suggests OpenAI is pushing hard to be a full-stack AI platform, not just an API provider. Simon Willison notes that comparing price-per-token across providers is getting tricky now that reasoning token counts vary so much between models.</div>
+            <div class="story-source">OpenAI Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://simonwillison.net/2026/Jul/9/muse-spark-1-1/#atom-everything" target="_blank" rel="noopener">Meta releases Muse Spark 1.1 with its first public API</a>
+            </div>
+            <div class="story-summary">Meta dropped Muse Spark 1.1, the follow-up to its Muse Spark model from April, and this one is notable because it's the first version to offer a proper API for developers. Meta is claiming significant improvements in agentic tool calling and computer use over the original, which are two capability areas where models are actively competing right now. The evaluation report is available, though as always, independently verified benchmarks will matter more than Meta's self-reported numbers. Simon Willison promptly released llm-meta-ai 0.1, a plugin that lets his LLM command-line tool run prompts against Muse Spark 1.1, which is a good signal that the API is clean enough for third-party tooling immediately. Meta's strategy here seems to be staying in the conversation as a serious AI lab while Llama continues to anchor the open-weights ecosystem. Computer use capabilities — where a model can actually operate software interfaces — are becoming a key differentiator, and it's notable that Meta is competing in that space directly. Muse Spark 1.1 puts Meta more squarely against OpenAI's GPT-5.6 family and Anthropic's Claude series on the agentic front. The timing alongside OpenAI's GPT-5.6 launch in the same week makes for a crowded news cycle, but having API access is a meaningful step up from the prior model.</div>
+            <div class="story-source">Simon Willison's Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.technologyreview.com/2026/07/09/1140293/anthropic-found-a-hidden-space-where-claude-puzzles-over-concepts/" target="_blank" rel="noopener">Anthropic discovers a 'hidden space' where Claude puzzles through concepts before answering</a>
+            </div>
+            <div class="story-summary">Anthropic published research describing a new interpretability technique called the Jacobian lens, which gives them what they describe as the clearest view yet into what large language models are actually doing as they process a question. The tool surfaces what Anthropic researchers call a 'hidden space' — an intermediate representational layer where the model appears to work through concepts before generating output tokens. This is a significant advance in mechanistic interpretability, a field that has been trying for years to open the black box of how these models reason. The findings reportedly range from mundane (the model doing roughly what you'd expect) to genuinely unnerving (implications the researchers haven't fully characterized publicly yet). This matters because interpretability is one of the core unsolved problems in AI safety — if you can't understand what a model is doing internally, you can't reliably predict when it will fail or behave unexpectedly. Anthropic has been one of the more serious investors in interpretability research, and this feels like a real methodological step rather than a PR paper. The Jacobian lens approach is named after the mathematical object used to measure how changes in one layer affect outputs in another. For practitioners building on top of these models, this research is mostly background context for now, but it's the kind of foundational work that eventually informs how we audit and certify models for high-stakes deployments. MIT Technology Review covered this as one of the more significant AI research stories of the week.</div>
+            <div class="story-source">MIT Technology Review</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/science/2026/07/quantum-error-correction-can-constantly-recalibrate-a-processor/" target="_blank" rel="noopener">Quantum error correction can now continuously recalibrate a quantum processor</a>
+            </div>
+            <div class="story-summary">Researchers have demonstrated a technique that uses quantum error correction data to continuously recalibrate a quantum processor in real time, rather than requiring separate calibration runs that take the system offline. The approach uses reinforcement learning to extract useful information from the error correction process itself — essentially turning the error signals into a feedback loop that adjusts the control algorithms on the fly. This is meaningful because quantum processors drift out of calibration constantly due to environmental noise, and the overhead of recalibration has been one of the practical bottlenecks to running longer quantum circuits reliably. By folding calibration into the error correction process that you're already running, you eliminate a category of interruption. The reinforcement learning angle is interesting — it's an example of classical ML being used to improve quantum hardware operations rather than the often-hyped idea of quantum computing improving ML. For anyone tracking the path toward fault-tolerant quantum computing, this is exactly the kind of systems-level engineering progress that matters more than raw qubit count announcements. It doesn't make quantum computers useful tomorrow, but it removes a real operational obstacle. The work was published with enough detail for Ars Technica to cover the mechanism substantively, which suggests it's a solid result rather than a preliminary demonstration.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.wired.com/story/security-news-this-week-ai-found-a-root-bug-in-linux-that-everyone-missed-for-15-years/" target="_blank" rel="noopener">AI finds a root-level Linux bug that sat undetected for 15 years</a>
+            </div>
+            <div class="story-summary">An AI-assisted security research effort has uncovered a privilege escalation bug in the Linux kernel that had been sitting unnoticed for roughly 15 years. The bug is a root-level vulnerability, meaning exploitation could give an attacker full system control. This is notable because the Linux kernel has been scrutinized by thousands of skilled engineers and automated tools over that entire period, which says something real about the complementary angle AI brings to code auditing. It's not that human reviewers are incompetent — it's that AI can do exhaustive pattern-matching across enormous codebases in ways that are practically impossible manually. Wired's security roundup covered this alongside other stories, including the Pentagon training civilians as part of a hacker reserve program and a Flock license plate reader error that led to police surrounding an innocent car reviewer. The Linux bug story is the most technically significant of the batch. The discovery adds to a growing body of evidence that AI-assisted vulnerability research is going to reshape the security field — both offensively and defensively. Organizations running Linux in sensitive environments should be watching for the CVE and patch details. The find also raises the uncomfortable question of how many other long-lived bugs in critical open-source infrastructure are waiting to be discovered by the first AI system that looks carefully enough.</div>
+            <div class="story-source">Wired</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://io-fund.com/ai-stocks/nvidia-coreweave-nebius-circular-financing-gpu-boom" target="_blank" rel="noopener">Nvidia, CoreWeave, and Nebius: the circular financing structure powering the GPU boom</a>
+            </div>
+            <div class="story-summary">A detailed analysis from IO Fund examines the financial relationships between Nvidia, CoreWeave, and Nebius, raising serious questions about whether the current GPU infrastructure boom is built on genuinely independent demand or a set of interlocking financial arrangements that inflate the appearance of that demand. The argument is that Nvidia supplies GPUs to CoreWeave and Nebius on credit or with equity stakes, those companies then build data centers whose value is partly predicated on Nvidia's continued dominance and GPU prices, and Nvidia's own valuation is supported by the revenues those customers generate. This kind of circular structure isn't illegal, but it's the sort of thing that becomes fragile if any link in the chain weakens — say, if GPU prices fall, if a large cloud customer pulls back, or if a competitive chip alternative gains traction. The analysis scored 219 points on Hacker News, suggesting it's resonating with technically sophisticated readers who know how to read between the lines of earnings calls. For engineers and architects making infrastructure decisions, this background context matters: the 'GPU cloud' market may be less diversely financed than it looks. It's reminiscent of dynamics seen in other capital-intensive booms where vendor financing props up customers who then prop up the vendor. Worth reading the full piece if you're evaluating long-term infrastructure bets.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://spectrum.ieee.org/data-centers-grid-instability" target="_blank" rel="noopener">AI's volatile power draw is quietly stressing the electrical grid in ways utilities aren't ready for</a>
+            </div>
+            <div class="story-summary">IEEE Spectrum published a piece on a power grid problem that doesn't get nearly enough attention: it's not just that AI data centers consume a lot of electricity, it's that their power draw is highly volatile in ways that are difficult for grid operators to manage. Traditional large power consumers like factories draw relatively predictable loads; GPU clusters running inference and training can swing dramatically based on job scheduling, model serving patterns, and batch workloads. This volatility creates frequency regulation challenges for utilities that aren't accustomed to managing demand swings at that scale and speed. The piece notes that data centers are projected to consume a growing share of global electricity, but the stability implications are underappreciated compared to the raw consumption numbers. Grid operators are being asked to accommodate loads that behave more like industrial welding shops than like office buildings, at a scale and speed that existing demand-response infrastructure wasn't designed for. This is an infrastructure problem that will require both technical solutions (better demand-response APIs, smarter load scheduling in data centers) and regulatory ones (new interconnection rules, rate structures). For engineers building or operating large-scale AI infrastructure, this is increasingly a site selection and operational concern, not just an environmental one. The article is worth reading alongside the broader conversation about nuclear power and data center co-location that's been picking up steam.</div>
+            <div class="story-source">IEEE Spectrum</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547" target="_blank" rel="noopener">What xAI's Grok Build CLI is actually sending back to xAI</a>
+            </div>
+            <div class="story-summary">A researcher reverse-engineered xAI's Grok Build CLI tool and documented exactly what data it sends back to xAI's servers, publishing the findings as a GitHub Gist that scored 225 points on Hacker News. The details of what gets transmitted — beyond what users might reasonably expect from a coding assistant — are the kind of thing that enterprise security teams and individual developers should know before deploying the tool in sensitive environments. This follows a broader pattern of AI coding tools having data collection behaviors that aren't obvious from marketing materials or terms of service summaries. The fact that a security-minded community immediately upvoted this to the top of Hacker News suggests the findings are genuinely surprising, not just routine telemetry. For developers using any AI-assisted coding tool in a professional context, this is a reminder that 'what does this thing actually send home' is a question worth asking before you give it access to your codebase. xAI has been aggressive in releasing developer-facing products, and Grok Build specifically is aimed at agentic coding workflows. The full gist details are worth reading directly if you're evaluating the tool.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-industry"></div>
+            <h2>Industry & Business</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/07/10/apple-sues-openai-over-alleged-trade-secret-theft/" target="_blank" rel="noopener">Apple sues OpenAI, alleging trade secret theft directed by senior leadership</a>
+            </div>
+            <div class="story-summary">Apple filed a lawsuit against OpenAI on Friday alleging theft of trade secrets, with Apple claiming the misconduct was directed by OpenAI's senior leadership, including a longtime former Apple employee who moved to OpenAI. BBC's reporting includes the striking detail that Apple characterized OpenAI's nascent hardware business as 'rotten to its core,' suggesting the complaint goes beyond a disgruntled employee claim and implicates organizational conduct. This is an extraordinary development given that Apple and OpenAI have had a partnership — OpenAI powers Apple Intelligence features on Apple devices — making this simultaneously a legal dispute and a business relationship that presumably continues to exist in some form. The lawsuit puts that commercial arrangement in an uncomfortable position and raises questions about what happens to the Apple Intelligence integration if the dispute escalates. Trade secret cases in tech are common, but one between two of the highest-profile AI companies, where one is also a major distribution partner for the other, is unusual. The 'hardware business' reference is interesting — OpenAI has been building toward a consumer hardware play, reportedly involving former Apple design talent, which would put it in direct competition with Apple in a way the AI software partnership never did. This could be Apple using legal means to slow or complicate a competitive threat as much as it is a straightforward IP case. Covered by both TechCrunch and BBC, with both outlets noting the 'former employee' angle as central to the allegations.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.wired.com/story/openai-head-of-safety-leaving/" target="_blank" rel="noopener">OpenAI's Head of Safety Johannes Heidecke is leaving the company</a>
+            </div>
+            <div class="story-summary">OpenAI's Head of Safety, Johannes Heidecke, is departing the company as OpenAI works to further integrate its research and safety teams organizationally. This follows a pattern of high-profile safety-focused departures from OpenAI that has been a recurring story over the past couple of years, including several founding members and researchers who left citing concerns about the company's direction on safety. Heidecke's departure comes in the same week that OpenAI launched multiple new products and model tiers, which makes the timing notable — whether or not it's causally related. The stated reason — reorganization to integrate research and safety teams — could be read charitably as a structural evolution or less charitably as a reduction in the independence of safety functions. For anyone evaluating OpenAI's trustworthiness as an infrastructure dependency, the continued attrition of safety leadership is background context that's hard to ignore. OpenAI has maintained publicly that safety remains central to its mission, but the personnel record tells a more complicated story. This matters practically for enterprises and governments that are deploying OpenAI's models in consequential applications and need to make judgments about the company's institutional reliability. Wired broke the story.</div>
+            <div class="story-source">Wired</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/07/10/blueskys-interim-ceo-toni-schneider-drops-the-interim/" target="_blank" rel="noopener">Bluesky's interim CEO Toni Schneider makes the role permanent</a>
+            </div>
+            <div class="story-summary">Toni Schneider, who took over as Bluesky's interim CEO after Jack Dorsey's departure and the subsequent search for permanent leadership, has dropped the 'interim' and is now fully committed to the role. Schneider has a relevant background — he was previously CEO of Automattic, the company behind WordPress.com, which is itself an unusual open-source-adjacent tech company — and is a partner at True Ventures. His experience navigating a mission-driven, open-protocol-focused company is probably a better fit for Bluesky than a traditional growth-at-all-costs startup CEO would be. Bluesky has been growing steadily as a Twitter/X alternative, particularly among journalists, researchers, and technically minded users who care about decentralization and the AT Protocol. Making the CEO role permanent removes a distraction and signals some organizational stability after a period of leadership uncertainty. Whether Bluesky can build a sustainable business while staying true to its decentralized, user-controlled ethos remains the central open question — that's the same tension Automattic has managed for years, so Schneider at least understands the dynamics. For developers building on the AT Protocol, stable leadership is a positive signal for the ecosystem's longevity.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-dev"></div>
+            <h2>Software & Dev Tools</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://antjs.org" target="_blank" rel="noopener">Ant: A new JavaScript runtime and ecosystem is making noise on Hacker News</a>
+            </div>
+            <div class="story-summary">A project called Ant, billed as a new JavaScript runtime and ecosystem, surfaced on Hacker News with a score of 231, making it one of the top community-validated stories of the week. The project lives at antjs.org and positions itself as an alternative in the same space as Node.js, Deno, and Bun. The timing is interesting given that Bun just this week published a detailed blog post about its rewrite from Zig to Rust — a sign that the JavaScript runtime space is actively evolving and competitive. JavaScript runtimes have become a surprisingly dynamic area of developer infrastructure, driven by performance demands from AI inference workloads, edge computing, and serverless environments that have different requirements than traditional server-side Node applications. A score of 231 suggests the community is taking Ant seriously rather than dismissing it as redundant. Without more detail in the summary, it's worth visiting antjs.org directly to understand what differentiates it — whether that's performance, API compatibility, ecosystem design, or something else. For engineers evaluating JavaScript runtime choices for new projects, this is worth a look alongside the established alternatives.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://evanhahn.com/prefer-strict-tables-in-sqlite/" target="_blank" rel="noopener">Prefer strict tables in SQLite — a practical argument gaining traction</a>
+            </div>
+            <div class="story-summary">A blog post arguing for the use of SQLite's STRICT table mode scored 253 points on Hacker News this week, making it the highest-scoring community story in this digest. SQLite added STRICT tables as a feature to allow enforcing actual type constraints on columns — a significant departure from SQLite's traditional 'type affinity' system where you can store any type of data in any column. The argument for STRICT mode is essentially that SQLite's flexible typing is a footgun: it lets you insert a string into an integer column without error, which can cause subtle bugs that are hard to track down. For new projects, STRICT mode gives you the data integrity guarantees you'd expect from any other database. The high score suggests this resonates with a lot of developers who have either been bitten by SQLite's permissive typing or who appreciate having a clear best-practice recommendation. SQLite is increasingly used not just as a local database but as a primary production database for small-to-medium applications, embedded systems, and edge deployments — contexts where data integrity bugs can be especially painful. If you're starting a new SQLite project, this is worth reading before you create your first table. Simon Willison also released sqlite-utils 4.1 this week with new features, suggesting a productive week in the SQLite ecosystem generally.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://simonwillison.net/2026/Jul/8/rewriting-bun-in-rust/#atom-everything" target="_blank" rel="noopener">Rewriting Bun from Zig to Rust: a detailed account of an agentic engineering project</a>
+            </div>
+            <div class="story-summary">Jarred Sumner, creator of Bun, published a long-awaited blog post detailing the complete rewrite of Bun from Zig to Rust — a project that apparently took less time to complete than it took him to write the post about it. Simon Willison calls it 'a detailed description of an extremely sophisticated piece of agentic engineering,' which is the interesting angle here: the rewrite involved dynamic workflows, trial runs, and AI-assisted development at a scale that makes it a case study in how large codebases can be transformed with AI tooling today. The technical substance of why Rust over Zig is worth reading for anyone making systems programming language choices — Zig is a compelling language but Rust has a larger ecosystem, better tooling maturity, and broader hiring pool. Bun competes directly with Node.js and Deno as a JavaScript runtime, and a Rust codebase may make it easier to attract contributors and maintain long-term. The agentic engineering angle — using AI agents to handle parts of the rewrite systematically — is perhaps the more broadly generalizable story, as it gives a real-world data point on what this kind of AI-assisted large-scale refactoring actually looks like in practice. If you're working on or thinking about a large language migration or codebase rewrite, this post is concrete case study material.</div>
+            <div class="story-source">Simon Willison's Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://clickhouse.com/blog/pgbouncer-clickhouse-managed-postgres" target="_blank" rel="noopener">We scaled PgBouncer to 4x throughput — ClickHouse's managed Postgres team explains how</a>
+            </div>
+            <div class="story-summary">The team behind ClickHouse's managed Postgres offering published a detailed engineering post on how they achieved 4x throughput improvement on PgBouncer, the popular PostgreSQL connection pooler, scoring 197 points on Hacker News. PgBouncer is a critical piece of infrastructure for any high-traffic Postgres deployment — it multiplexes client connections to avoid the overhead of thousands of direct connections to the database. Getting 4x more throughput out of it without changing the underlying Postgres server is the kind of result that has immediate practical value for teams running at scale. The post presumably covers architectural changes, configuration tuning, and possibly code-level modifications, making it a useful reference for database platform teams. Postgres has seen significant growth in usage as a primary database for both traditional applications and increasingly as a backend for AI applications (via pgvector and similar extensions), which makes connection pooling efficiency more important than ever. For engineers running Postgres at scale, this is the kind of engineering deep-dive that's worth bookmarking and reading carefully.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-policy"></div>
+            <h2>Policy & Regulation</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/07/10/us-cyber-agency-cisa-had-to-build-its-incident-playbook-during-the-incident-agency-reveals/" target="_blank" rel="noopener">CISA had to build its incident response playbook during an actual incident</a>
+            </div>
+            <div class="story-summary">A TechCrunch report reveals that the US Cybersecurity and Infrastructure Security Agency (CISA) had no documented incident response playbook when it experienced its own security incident — and had to write the playbook while actively managing the breach. The incident originated when a CISA contractor employee uploaded reams of sensitive passwords to a publicly accessible GitHub repository, which security journalist Brian Krebs reported in May after being alerted by a researcher at GitGuardian. The irony of the nation's primary civilian cybersecurity agency failing to have incident response procedures formalized is significant and embarrassing. It suggests that CISA's focus on advising and protecting other organizations may have come at the expense of its own operational security maturity. For organizations that treat CISA guidance as authoritative best practice, this is a useful reminder that government agencies have the same organizational debt problems as anyone else. The password exposure itself was a straightforward but serious mistake — credentials in a public repo is the kind of thing that automated secret-scanning tools are specifically designed to catch. Whether CISA was using those tools internally (apparently not effectively) is a fair question. The broader implication is that even security-focused organizations need to regularly audit whether their internal practices match the guidance they publish for others.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/07/10/meta-removes-controversial-ai-feature-on-instagram-after-backlash/" target="_blank" rel="noopener">Meta pulls AI image feature from Instagram after backlash; EU separately threatens fines over addictive design</a>
+            </div>
+            <div class="story-summary">Meta had a rough week on the regulatory and public relations front. First, it launched a feature allowing users to generate AI images from public Instagram profile pictures — triggering immediate and widespread backlash from users and privacy advocates who called it a 'recipe for disaster.' The feature had an opt-out mechanism, but critics pointed out that making surveillance-enabling features opt-out rather than opt-in is itself the problem. Meta pulled the feature within days, saying it 'missed the mark.' Separately, the EU announced it is threatening Meta with fines over Facebook and Instagram's addictive design patterns — specifically calling out infinite scroll and other features regulators say contribute to 'compulsive use' and 'unhealthy habits.' The EU action is under the Digital Services Act, which gives regulators significant leverage, including fines of up to 6% of global annual revenue. The two stories together paint a picture of a company that is simultaneously pushing the boundaries of what it can deploy on its platforms and facing tightening regulatory constraints on multiple fronts. For developers and product managers working on consumer social or AI features, the Meta AI image story is a useful case study in the gap between what's technically possible and what users will accept without explicit consent. The opt-out default for features that involve using people's images without active permission is an increasingly untenable design choice in the current regulatory environment.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/tech-policy/2026/07/ransomware-negotiator-helped-attackers-extort-his-own-clients-gets-6-year-sentence/" target="_blank" rel="noopener">Ransomware negotiator who was secretly working for attackers gets six years in prison</a>
+            </div>
+            <div class="story-summary">A man who operated as a ransomware negotiator — hired by victim companies to manage communications with attackers and work toward a settlement — has been sentenced to six years in prison after it emerged he was secretly working for the ransomware groups themselves. The judge's language in sentencing was pointed: he 'sold out the very victims he was hired to represent.' The scheme worked by having him steer victims toward paying larger ransoms while taking a cut from the attackers, rather than genuinely trying to minimize the payout or recover data through other means. This is a serious breach of trust in a field where victim companies are already in a desperate position and have few ways to independently verify the advice they're getting. Ransomware negotiation has become a professional services niche as ransomware attacks have grown — there are now established firms that specialize in it. This case is a reminder that the field has essentially no formal credentialing, oversight, or fiduciary standard, making it vulnerable to exactly this kind of conflict of interest. For organizations that might face ransomware and are evaluating incident response retainers, this case is an argument for rigorous vetting of any negotiator and for involving legal counsel early who can structure the engagement with appropriate accountability.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-science"></div>
+            <h2>Science & Research</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.wired.com/story/chinas-tianwen-2-space-probe-earth-quasi-moon/" target="_blank" rel="noopener">China's Tianwen-2 probe reaches Earth's quasi-moon and sends back first images of asteroid Kamo'oalewa</a>
+            </div>
+            <div class="story-summary">China's Tianwen-2 space probe has successfully rendezvoused with Kamo'oalewa, the near-Earth asteroid that orbits in a quasi-synchronous pattern with Earth — sometimes called Earth's 'quasi-moon.' The probe sent back the first close-up images of the asteroid's surface, which is a significant milestone for planetary science since Kamo'oalewa is an unusual object whose origin is still debated, with some researchers suggesting it might be a fragment of the Moon. The next phase of the mission involves landing on the surface and collecting samples to return to Earth, which would make this China's second sample-return mission from a small body (following Tianwen-1's Mars work). Sample-return missions are scientifically valuable because they allow far more detailed laboratory analysis than remote sensing alone. This is another data point in China's steadily accelerating space science program, which has been delivering results at a pace that was underestimated by Western observers a decade ago. The timing alongside China's reusable rocket recovery news (also this week) paints a picture of a space program hitting multiple milestones simultaneously. For space and planetary science enthusiasts, Kamo'oalewa is a genuinely interesting target — its orbital dynamics and composition make it one of the more scientifically unusual near-Earth objects accessible to spacecraft.</div>
+            <div class="story-source">Wired</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/space/2026/07/china-recovered-its-first-reusable-rocket-and-showed-a-new-way-to-do-it/" target="_blank" rel="noopener">China recovers its first reusable rocket — and does it differently than SpaceX</a>
+            </div>
+            <div class="story-summary">China has successfully recovered its first reusable orbital rocket, marking a significant milestone in the country's commercial and government space launch capabilities. What makes this particularly interesting is the recovery method: rather than SpaceX's propulsive vertical landing approach, China appears to have demonstrated a different mechanical recovery technique, suggesting they're not simply replicating SpaceX's architecture. An industry observer quoted in the Ars Technica piece notes they 'clearly admire the work being done by SpaceX' but the novel recovery method — if it proves reliable and cost-effective — could offer an alternative approach to the reusability problem. SpaceX's reusable rocket program has given it a significant cost advantage in the launch market, and multiple competitors globally have been racing to close that gap. China joining the reusable rocket club is a geopolitically significant moment as well as a technical one — it changes the calculus for launch pricing and market competition in ways that will play out over years. For the satellite industry and commercial space customers, more reusable launch options generally mean lower prices and more scheduling flexibility over time. The novelty of the recovery approach is worth watching closely as more details emerge.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+    </div>
+    
+
+    
+
+    
+    <div class="previous-day">
+        <a href="2026-07-11.html">&larr; Previous day</a>
+    </div>
+    
+
+    <footer>
+        Generated 2026-07-12 06:31 UTC &middot; Tech Digest
+    </footer>
+</body>
+</html>
