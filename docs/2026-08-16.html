@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Digest - Sunday, August 16, 2026</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --accent-subtle: #1f6feb22;
+            --topic-ai: #da70d6;
+            --topic-industry: #58a6ff;
+            --topic-dev: #3fb950;
+            --topic-hardware: #f0883e;
+            --topic-science: #d29922;
+            --topic-policy: #f85149;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 0;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 24px 16px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        header .date {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-top: 4px;
+        }
+
+        .intro {
+            padding: 16px;
+            background: var(--accent-subtle);
+            border-left: 3px solid var(--accent);
+            margin: 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .section {
+            margin: 24px 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0 16px;
+            margin-bottom: 12px;
+        }
+
+        .topic-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+
+        .story {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .story:last-child {
+            border-bottom: none;
+        }
+
+        .story-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .story-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .story-title a:hover {
+            color: var(--accent);
+        }
+
+        .story-summary {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .story-source {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+            opacity: 0.7;
+        }
+
+        footer {
+            padding: 24px 16px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Topic colors */
+        .topic-ai { background: var(--topic-ai); }
+        .topic-industry { background: var(--topic-industry); }
+        .topic-dev { background: var(--topic-dev); }
+        .topic-hardware { background: var(--topic-hardware); }
+        .topic-science { background: var(--topic-science); }
+        .topic-policy { background: var(--topic-policy); }
+
+        .source-errors {
+            margin: 24px 16px;
+            padding: 12px 16px;
+            background: #f8514922;
+            border: 1px solid #f8514944;
+            border-radius: 8px;
+            font-size: 0.8rem;
+        }
+
+        .source-errors h3 {
+            color: #f85149;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .error-item {
+            color: var(--text-muted);
+            padding: 2px 0;
+        }
+
+        .previous-day {
+            padding: 20px 16px;
+            text-align: center;
+        }
+
+        .previous-day a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile touch targets */
+        @media (max-width: 640px) {
+            .story {
+                padding: 16px;
+            }
+            .story-title a {
+                display: block;
+                padding: 4px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tech Digest</h1>
+        <div class="date">Sunday, August 16, 2026</div>
+    </header>
+
+    <div class="intro">AI dominates the week on multiple fronts — from new model releases and alarming misuse cases to a major acquisition closing and the industry starting to wrestle seriously with its own hype. Meanwhile, a critical Mac vulnerability is being actively exploited, and the energy transition is quietly accelerating faster than most people realize.</div>
+
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-ai"></div>
+            <h2>AI & Machine Learning</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://deepmind.google/blog/introducing-gemini-3-7-flash/" target="_blank" rel="noopener">Google DeepMind introduces Gemini 3.7 Flash</a>
+            </div>
+            <div class="story-summary">Google DeepMind released Gemini 3.7 Flash this week, the latest in its growing family of Flash-tier models optimized for speed and cost efficiency. The Flash line has become Google's workhorse for developers who need capable models without paying frontier-model prices, and 3.7 represents another step up from the 3.6 Flash released just a few weeks ago. Simon Willison quickly shipped an updated llm-gemini plugin (version 0.33) to support the new model alongside 3.6 Flash and 3.5 Flash Lite, which gives you a sense of how fast this model cadence has gotten. Google has been shipping new Gemini variants at a pace that's almost hard to track — 3.5 Flash Cyber (a cybersecurity-focused lightweight model), 3.6 Flash, 3.5 Flash Lite, and now 3.7 Flash all within roughly a month. The Flash models are particularly important for agentic and high-throughput use cases where you're making many model calls and cost compounds quickly. What's notable is that Google appears to be competing on multiple axes simultaneously: raw capability at the frontier, speed, cost, and specialized variants for domains like cybersecurity. The rapid iteration cadence is real, even if it can feel overwhelming to keep up with. For developers building on Gemini APIs, it's worth checking whether 3.7 Flash offers meaningful gains for your specific workloads — the Flash family has improved substantially over the past few months.</div>
+            <div class="story-source">Google DeepMind Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://openai.com/index/previewing-ultrafast" target="_blank" rel="noopener">OpenAI previews Ultrafast mode: GPT-5.6 Sol at up to 14x the speed via Cerebras</a>
+            </div>
+            <div class="story-summary">OpenAI announced a new API service tier called Ultrafast, which runs GPT-5.6 Sol at up to 14 times normal speed, delivering up to 750 output tokens per second. The key technical detail here is the partnership with Cerebras — a chip company that has long argued its wafer-scale silicon architecture is purpose-built for inference at scale, and this appears to be one of the most high-profile real-world validations of that claim. 750 tokens per second is genuinely fast; for context, a typical conversational exchange of a few hundred tokens would complete in under a second, which opens up use cases that feel qualitatively different from standard chat latency. This matters most for applications where response latency is a bottleneck — think real-time coding assistants, interactive agents, or high-throughput document processing pipelines. The tradeoff is likely cost: faster inference tiers typically come at a premium, and Ultrafast is currently in preview for API customers. The OpenAI-Cerebras partnership is also interesting from an infrastructure standpoint — it signals that OpenAI is willing to route certain workloads through third-party silicon rather than exclusively through its own clusters or Microsoft Azure. This could be a sign that the compute market is maturing, with specialized inference hardware carving out real niches. For developers building latency-sensitive products, this is worth watching closely as it moves from preview to general availability.</div>
+            <div class="story-source">OpenAI Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://openai.com/index/testing-ads-in-chatgpt" target="_blank" rel="noopener">OpenAI begins testing ads in ChatGPT</a>
+            </div>
+            <div class="story-summary">OpenAI has started testing advertisements inside ChatGPT, framing it as a way to sustain free access to the product. The company says ads will be clearly labeled, that answers will remain independent of advertising relationships, and that users will have control with strong privacy protections in place — essentially the standard set of promises every platform makes when it introduces ads. This is a significant moment for OpenAI commercially: it signals the company is serious about diversifying revenue beyond API access and subscriptions, and that it's betting ChatGPT's free tier is valuable enough to monetize through attention rather than requiring everyone to pay. The interesting tension here is that ChatGPT's core value proposition is giving you a direct, unbiased answer — inserting commercial incentives into that relationship, even with guardrails, creates at least the perception of compromise. Users and enterprise customers will be watching to see whether ad adjacency starts to influence responses in subtle ways, even unintentionally. The move also puts OpenAI more squarely in competition with Google Search as an advertising platform, which is a remarkable position for a company that started as a safety-focused AI lab. For developers and businesses using the API, this appears to affect the consumer product rather than API access, but it's worth reading the fine print as the program expands. This is a pivotal commercial moment and will likely generate significant debate about the future of AI product monetization.</div>
+            <div class="story-source">OpenAI Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/08/15/anthropic-shares-more-details-about-how-claudes-new-watermarks-will-work/" target="_blank" rel="noopener">Anthropic details how Claude's new content watermarks will work</a>
+            </div>
+            <div class="story-summary">Anthropic shared more details about the watermarking system it's rolling out for Claude-generated content, addressing practical questions that developers and users will actually care about: Can the watermarks survive image editing? How does watermarking interact with generated code? What happens to watermarks when content is reformatted or compressed? Watermarking AI-generated content has been discussed as a solution to misinformation and attribution problems for years, but the technical challenges are substantial — watermarks in text are much harder to make robust than in images, because text can be trivially rephrased. Anthropic appears to be using a combination of statistical and structural embedding techniques, though the exact cryptographic approach hasn't been fully disclosed. The code watermarking question is particularly interesting for developers: if Claude writes code that gets committed to a repository, does the watermark persist through compilation or execution? The answers to these questions will determine whether this is a meaningful provenance tool or mostly a compliance checkbox. This comes at a moment when courts, regulators, and platforms are all trying to figure out how to handle AI-generated content, so having a credible watermarking story matters for Anthropic commercially and reputationally. The cynical read is that watermarks are easily stripped by anyone motivated to do so, but they may still be useful for casual attribution and platform-level moderation at scale.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/08/15/woman-claims-her-stepfather-used-grok-to-transform-childhood-photo-into-explicit-imagery/" target="_blank" rel="noopener">Woman alleges stepfather used Grok to generate CSAM from childhood photo</a>
+            </div>
+            <div class="story-summary">A woman has come forward alleging that her stepfather used xAI's Grok to transform a childhood photograph of her into explicit imagery, describing AI tools as 'taking everyday life and turning it into child sexual abuse.' This is an extremely serious allegation that highlights one of the most disturbing failure modes of image-generation AI: the ability to sexualize real people, including children, using relatively accessible tools. Grok, xAI's AI assistant, has faced scrutiny before for having comparatively loose content guardrails compared to competitors like ChatGPT and Claude. The fact that a consumer-facing product may have been used to generate child sexual abuse material from a real photograph is the kind of case that will almost certainly draw regulatory attention and may accelerate legislative action around AI-generated CSAM specifically. Most major jurisdictions already criminalize CSAM regardless of whether it's computer-generated, but enforcement and platform liability frameworks haven't fully caught up with the speed at which AI generation has advanced. This story is significant not because it's surprising — researchers and advocates have been warning about this for years — but because a specific, credible personal account like this has a way of cutting through abstract policy debates. For the AI industry broadly, this is another piece of evidence that content filtering is not a solved problem and that 'we have guardrails' is not sufficient when those guardrails can apparently be bypassed for the worst categories of content.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/tech-policy/2026/08/suspecting-court-of-using-ai-man-injected-prompts-in-filings-to-try-to-win-case/" target="_blank" rel="noopener">Man injected prompt attacks into court filings, suspecting the judge was using AI</a>
+            </div>
+            <div class="story-summary">In a story that reads like a near-future short story but is apparently real, a pro se litigant injected prompt injection attacks into his court filings on the theory that the judge was using an AI system to process documents and that he could influence its output in his favor. The judge issued a warning about the behavior, noting that pro se litigants are increasingly using chatbots in legal proceedings and often doing so in ways that backfire — filing AI-generated briefs with hallucinated citations being the more common problem. Prompt injection is a well-understood attack vector in AI systems, where specially crafted text in user-supplied input attempts to override the system's instructions — it's a real security concern for AI applications processing untrusted documents. The fact that an ordinary person tried to use this technique in a legal context shows how rapidly awareness of AI vulnerabilities has diffused into the broader population. It also raises a genuinely important systemic question: if courts are using AI tools to help process the enormous volume of filings they receive, what are the security and integrity implications? This case will likely be cited in discussions about AI use in the judiciary, which is a conversation that's happening in many jurisdictions right now. For developers building AI systems that process documents from untrusted sources, this is a useful reminder that prompt injection isn't just a theoretical research problem — it's something people are actively attempting in high-stakes contexts.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.wired.com/story/amazon-uses-your-twitch-content-to-train-its-ai-how-to-opt-out/" target="_blank" rel="noopener">Amazon using Twitch content to train AI by default — users can opt out</a>
+            </div>
+            <div class="story-summary">Amazon quietly updated Twitch's terms to allow the platform's content to be used for training generative AI models, with an opt-out mechanism for streamers who don't want their content used. The move drew immediate backlash from streamers, many of whom objected not just to the specific use of their content but to the opt-out framing — the default being that Amazon gets to use your data unless you explicitly say no. Wired and BBC both covered this, and Wired separately published a guide on how to actually complete the opt-out process, which itself is telling about how accessible Amazon made the option. This fits a pattern we've seen across the industry: platforms sitting on large libraries of user-generated content are quietly revising terms to extract AI training value from that content. The difference between opt-in and opt-out is enormous in practice because most users never read terms updates, and the vast majority of streamers will remain opted in by default. For Twitch specifically, the content in question is often real people's faces, voices, performances, and creative work — not anonymous text — which makes the consent question feel more acute. Amazon hasn't disclosed exactly which models will be trained on this data or what they'll be used for. Expect this to become a template for regulatory scrutiny around AI training data consent, particularly in the EU where GDPR frameworks may complicate the opt-out-only model.</div>
+            <div class="story-source">Wired</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://davidepiffer.com/p/ai-isnt-outthinking-mathematicians" target="_blank" rel="noopener">AI has access to vastly larger working memory than the human brain — and what that actually means</a>
+            </div>
+            <div class="story-summary">A Hacker News top story this weekend explores the working memory advantage AI systems have over humans, arguing that this architectural difference — not raw reasoning ability — explains many of the domains where AI is outperforming humans. The piece, which scored 447 points on HN, pushes back on framings that compare AI to human intelligence on reasoning alone, pointing out that the ability to hold and process millions of tokens simultaneously is a fundamentally different cognitive capability, not just a faster version of what humans do. This is actually an underappreciated point in public discourse about AI capabilities: much of what looks like 'intelligence' in AI systems is partly a function of context window size, retrieval, and the ability to simultaneously attend to far more information than any human expert could hold in mind at once. The practical implications are significant for how we should be deploying these systems — tasks that require synthesizing large amounts of information (legal document review, code auditing, scientific literature synthesis) are strong fits precisely because of this architectural advantage. The counterargument, which the piece apparently engages with, is that raw context capacity doesn't substitute for deep reasoning and that models can still fail badly on problems that humans solve reliably through structured thinking. For engineers deciding how to use AI tools in their workflows, understanding this distinction — 'big working memory' vs 'better reasoning' — helps clarify where AI genuinely helps versus where it's more likely to produce confident-sounding nonsense.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-industry"></div>
+            <h2>Industry & Business</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/08/15/spacex-officially-closes-its-cursor-acquisition/" target="_blank" rel="noopener">SpaceX officially closes its acquisition of Cursor</a>
+            </div>
+            <div class="story-summary">SpaceX has officially completed its acquisition of Cursor, the AI coding assistant startup that had become one of the most widely used developer tools in the industry. This deal is notable for several reasons: SpaceX is primarily a aerospace and defense company, not a software product company, so acquiring a developer-facing SaaS tool is an unusual strategic move. The most plausible explanation is that SpaceX intends to use Cursor internally to accelerate its own software development, rather than running it as a standalone commercial product — though there's been speculation about whether SpaceX could use it to build out internal coding infrastructure at scale. Cursor had achieved remarkable traction among professional developers who found it meaningfully more productive than GitHub Copilot for complex, multi-file codebases. The acquisition price hasn't been disclosed publicly. What's slightly concerning for existing Cursor users is the uncertainty about the product's future: when a general-purpose developer tool gets acquired by a company with a very specific internal focus, the roadmap can shift in ways that don't serve the broader user base. The deal also raises interesting questions about Elon Musk's broader software strategy across his companies — xAI, Tesla, SpaceX, and now an AI coding tool — and whether Cursor's technology might be shared or integrated across that ecosystem. Developers who have built workflows around Cursor should probably keep an eye on how the product strategy evolves over the next few quarters.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/08/14/talks-to-sell-paypal-to-stripe-and-advent-are-heating-up/" target="_blank" rel="noopener">Talks to sell PayPal to Stripe and Advent are heating up</a>
+            </div>
+            <div class="story-summary">Negotiations for a potential sale of PayPal to Stripe and private equity firm Advent International are reportedly intensifying, in what would be one of the largest fintech deals in history. PayPal's new CEO has been trying to execute a turnaround after years of the company losing ground to newer payment rails and struggling to articulate a coherent strategy in the age of embedded finance and AI-powered payments. Stripe acquiring PayPal would be a remarkable consolidation: Stripe is widely regarded as the developer-friendly modern payments infrastructure, while PayPal is the incumbent consumer brand with hundreds of millions of accounts globally but a reputation for friction and legacy complexity. The involvement of Advent, a major private equity firm, suggests the deal structure might involve a carve-out or restructuring component rather than a straight acquisition — PE firms typically don't participate in straightforward strategic acquisitions without getting a significant ownership stake and restructuring angle. Regulators would almost certainly scrutinize this deal heavily given the combined market power in online payments processing. For developers and businesses that use both platforms, a merger could eventually mean more integrated infrastructure but could also mean years of painful technical integration. This story is worth watching because it would reshape the competitive landscape for payments infrastructure, affecting millions of merchants and developers who depend on these platforms.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/08/14/thrives-joshua-kushner-chides-silicon-valley-vcs-over-ai-euphoria/" target="_blank" rel="noopener">Thrive's Joshua Kushner warns Silicon Valley VCs about AI investment euphoria</a>
+            </div>
+            <div class="story-summary">Joshua Kushner, founder of Thrive Capital, issued a rare public warning to Silicon Valley investors in his first-ever investment letter, cautioning that while the AI opportunity is genuinely large, 'it would also be a grave error in our minds to let excitement weaken our investment discipline.' Thrive is not a small player — it was an early backer of Stripe, GitHub, and several other major tech companies — so this isn't a contrarian outsider voice but someone deeply embedded in the industry sounding a note of caution from within. The letter comes against a backdrop of AI valuations that by many metrics look stretched: companies with minimal revenue commanding multi-billion dollar valuations, large rounds being raised by teams with little more than a demo, and infrastructure bets that assume AI adoption curves that may or may not materialize on the timelines being priced in. Kushner isn't saying AI isn't real or important — the letter apparently acknowledges the massive opportunity — but the warning about discipline is the kind of thing that tends to get said right before the part of the cycle where it really matters. This echoes similar notes of caution from a few other investors over recent months, though the chorus of optimists still vastly outnumbers the skeptics in dollar terms. For founders and engineers thinking about where to build, this is a useful data point: even the investors who believe in AI think some of the current pricing is detached from fundamentals. The ones who are being disciplined now will likely be the ones with dry powder when the valuation reset comes.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.bbc.co.uk/news/articles/cp3rprx2wl4o?at_medium=RSS&at_campaign=rss" target="_blank" rel="noopener">Secondhand book sales are booming — likely driven by AI training data demand</a>
+            </div>
+            <div class="story-summary">Secondhand booksellers are reporting mysterious bulk orders that don't match typical consumer behavior — large quantities of varied titles being purchased and apparently never resold on the secondary market. The working theory, and it's a credible one, is that these books are being acquired to scan and use as training data for AI models, then pulped. This is a remarkable economic side effect of the AI training data crunch: physical books are being vacuumed up from charity shops and used book stores by buyers who appear to be working on behalf of AI companies or data brokers. Books represent high-quality, long-form, human-authored text that is increasingly valuable as training data, and physical books often contain copyrighted material that can't be easily scraped from the web. The fact that the books are apparently being pulped after scanning suggests the buyers have no interest in the physical objects — they just want the text. This raises serious copyright questions: scanning and using copyrighted books for AI training without permission is legally contested in multiple ongoing lawsuits, and the physical acquisition loop may be an attempt to avoid leaving a digital paper trail. For the publishing industry, this is another dimension of the AI copyright fight playing out in the courts and in regulatory discussions. The secondhand market disruption is a strange, almost darkly comic manifestation of AI's appetite for human-generated text.</div>
+            <div class="story-source">BBC Technology</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-policy"></div>
+            <h2>Policy & Regulation</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/security/2026/08/vulnerability-giving-attackers-full-control-of-macs-is-under-active-exploitation/" target="_blank" rel="noopener">Critical Mac screen-sharing vulnerability under active exploitation</a>
+            </div>
+            <div class="story-summary">A serious vulnerability in macOS that allows remote attackers to log into a Mac without a password via the screen-sharing feature is being actively exploited in the wild. This is the kind of vulnerability that warrants immediate attention if you have screen sharing enabled on any Mac — which is common in enterprise environments, developer setups, and among people who remotely access their machines. The bug gives attackers full control of the affected system, meaning it's not just data exposure but complete system compromise. Active exploitation in the wild means this isn't a theoretical risk — there are real attacks happening right now, and the window between public disclosure and patching is always the most dangerous period. Apple has presumably issued or is issuing a patch, and if you haven't updated your macOS recently, this is a good reason to do so immediately. For IT and security teams managing Mac fleets, this should be treated as an emergency patch situation rather than a routine update cycle item. The screen-sharing attack surface is particularly concerning because many organizations enable it for helpdesk and remote work purposes, and it's often accessible from the network without additional authentication layers. The broader lesson here, as always, is that any remotely accessible service on a machine expands the attack surface significantly, and services that grant elevated access need particularly robust authentication.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/08/14/what-we-know-about-the-alleged-iranian-hacks-on-u-s-water-utilities/" target="_blank" rel="noopener">Alleged Iranian hackers breach US water utility systems</a>
+            </div>
+            <div class="story-summary">Iranian government-linked hackers have reportedly broken into the systems of several US water treatment and utility plants over the past couple of weeks, in what appears to be a coordinated campaign targeting critical infrastructure. TechCrunch has published a detailed summary of what's known and what remains uncertain about the attacks, which is a useful read given how much speculation tends to circulate in these situations. Water infrastructure is a particularly sensitive target because even minor disruptions to treatment processes can have public health consequences, and the psychological impact of an adversary demonstrating the ability to access these systems is significant regardless of whether they actually tamper with anything. The US water sector has historically been one of the weaker points in critical infrastructure cybersecurity — systems are often older, underfunded for security, and fragmented across thousands of local utilities with highly variable security practices. Attribution to Iran is consistent with past Iranian cyber campaigns that have targeted US infrastructure, often in response to geopolitical tensions. The specific techniques used in this wave of attacks haven't been fully disclosed, but water utility control systems often run older SCADA and ICS equipment that can be difficult to patch and frequently has known vulnerabilities. This is worth flagging for anyone working in operational technology security or critical infrastructure — the threat is real, ongoing, and the attacker calculus here isn't primarily about causing immediate damage but about establishing access and demonstrating capability.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.technologyreview.com/2026/08/13/1141904/flock-is-tightening-its-rules-in-response-to-a-growing-surveillance-backlash/" target="_blank" rel="noopener">Flock Safety tightens license plate reader access rules following surveillance backlash</a>
+            </div>
+            <div class="story-summary">Flock Safety, the police-tech company that operates a nationwide network of automated license plate readers (ALPRs), has announced changes to how law enforcement officers can access its system, following a growing backlash over surveillance abuses and the loss of several government contracts. The trigger for the policy change is a pattern of documented abuse: officers have been found using Flock's cameras to track romantic partners and conduct personal surveillance completely outside any legitimate law enforcement purpose. The Flock CEO has publicly admitted the company was too slow to act on these issues, which is a notable admission. The changes reportedly include restrictions on how broadly officers can search the database and enhanced logging to detect and deter misuse. Flock's network has become one of the most extensive private surveillance infrastructures in the US, with cameras in thousands of communities generating an enormous database of vehicle movements that can reconstruct where any vehicle has been over time. The civil liberties concerns here are structural, not just about individual officer abuse: the existence of a searchable, persistent record of vehicle locations creates surveillance capabilities that previous generations of law enforcement simply didn't have, and the legal frameworks governing its use haven't kept pace. MIT Technology Review covered this alongside the BBC, both noting that the company's response appears to be motivated significantly by the commercial pressure of lost contracts rather than pure ethical awakening. For engineers and product people working on surveillance-adjacent technologies, this is a useful case study in how the gap between technical capability and institutional governance can generate serious downstream harm.</div>
+            <div class="story-source">MIT Technology Review</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-dev"></div>
+            <h2>Software & Dev Tools</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/information-technology/2026/08/pbs-station-fears-losing-50tb-of-data-after-being-ghosted-by-cloud-storage-provider/" target="_blank" rel="noopener">PBS station risks losing 50TB of data after cloud provider goes dark</a>
+            </div>
+            <div class="story-summary">A PBS affiliate is facing the potential permanent loss of 50 terabytes of data after its cloud storage provider — Iron Mountain — went effectively silent and stopped providing access to the data stored on its servers. Iron Mountain told Ars Technica that the station 'doesn't have access to the data on the hardware/servers,' which is a remarkably unhelpful statement from a storage provider. This story is a stark reminder that cloud storage is not the same as having a backup strategy, and that even well-known enterprise storage providers can fail their customers in catastrophic ways. 50TB of PBS content likely represents years of archival footage, production assets, and irreplaceable historical material — exactly the kind of content where loss is permanent and devastating. The practical lesson here for any organization storing important data in the cloud is the old 3-2-1 backup rule: three copies, two different storage media, one offsite — and critically, at least one copy that you physically control and can access without depending on a third party's continued operation and cooperation. Iron Mountain is not a fly-by-night startup; it's a large company with an established reputation in records management, which makes this situation more alarming rather than less. The data access failure may relate to contractual or billing disputes rather than technical failure, but from the station's perspective, the outcome is the same: they can't get to their data. This case will likely be used as a cautionary tale in discussions about data governance, vendor contracts, and backup strategies for media organizations.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://allen.bargi.org/notes/working-with-ai-feels-like-leadership/" target="_blank" rel="noopener">Working with AI feels more like leadership than coding</a>
+            </div>
+            <div class="story-summary">A highly upvoted Hacker News post (285 points) makes the observation that the experience of working with AI coding assistants has fundamentally shifted what the job feels like — from writing code directly to directing, reviewing, and steering an AI that writes most of the code. The author draws an analogy to management or leadership: you're setting direction, evaluating output, providing feedback, catching mistakes, and maintaining overall coherence of a system you didn't personally construct line by line. This resonates with a lot of senior engineers who have been trying to articulate why AI-assisted development feels both powerful and subtly uncomfortable — you're productive in a new way, but the skills that made you good at the old way aren't always the most valuable ones in the new workflow. There's a related piece floating around from Florian Herrengt that Simon Willison quoted, about a team repeatedly asking AI to fix a bug and not knowing where the data actually comes from, because no one built it themselves — which illustrates the knowledge debt that can accumulate when AI writes code nobody deeply understands. The 'leadership not coding' framing is useful but incomplete: good leaders still need deep domain expertise to evaluate what their team produces, and the same applies here. Engineers who lose touch with the underlying systems because AI handles the implementation may find themselves unable to catch the subtle errors that AI systems produce confidently and plausibly. The ideal is probably more like being a highly technical architect who can both direct the AI and dive into the details when needed.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-science"></div>
+            <h2>Science & Research</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/science/2026/08/so-much-solar-digging-into-the-list-of-every-us-power-plant-that-went-online-this-year/" target="_blank" rel="noopener">US utility-scale solar and battery storage is dominating new power plant construction</a>
+            </div>
+            <div class="story-summary">A detailed breakdown of every US power plant that went online this year shows utility-scale solar leading new capacity additions by a substantial margin, with battery storage in second place. Fossil fuel additions are barely registering in comparison. This is a structural shift, not a blip: the economics of solar plus storage have now crossed the threshold where they beat new gas peakers on cost in most US markets, and the permitting pipeline for future years is similarly skewed toward renewables. The data is useful context for anyone thinking about energy infrastructure, AI compute power demands, or climate trajectories — the electricity grid is changing faster than public discourse about it often suggests. For the AI industry specifically, this matters because data centers and GPU clusters are among the fastest-growing electricity consumers in the country, and the question of whether that demand gets met with clean or fossil power has significant implications. Battery storage capacity is particularly important for the reliability argument: one of the traditional objections to solar was intermittency, and the rapid buildout of grid-scale batteries is directly addressing that. The geographic distribution of new solar also matters — utility-scale projects are concentrated in the Sun Belt, while load growth from AI data centers is somewhat more dispersed. This doesn't mean the energy transition is problem-free, but the direction and velocity of change are clearer than they were even two or three years ago.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://alz-journals.onlinelibrary.wiley.com/doi/10.1002/dad2.70432" target="_blank" rel="noopener">Semaglutide linked to lower predicted dementia risk</a>
+            </div>
+            <div class="story-summary">A new study published in a peer-reviewed journal has found an association between semaglutide use — the active ingredient in Ozempic and Wegovy — and lower predicted dementia risk, adding to a growing body of research suggesting GLP-1 receptor agonists may have benefits far beyond their original indications of diabetes management and weight loss. This is a significant finding given the enormous public health burden of dementia and the current lack of effective preventive treatments. The mechanism is not fully established, but researchers hypothesize that semaglutide's effects on inflammation, metabolic health, and possibly direct neuroprotective pathways could explain the association. It's worth being clear that this is associational data — people taking semaglutide may differ from non-users in other ways that affect dementia risk — and the Hacker News thread (382 points) will likely include useful discussion about the study's methodology. GLP-1 drugs have now shown associations with reduced risk of cardiovascular events, kidney disease progression, alcohol use, and now potentially dementia, which is an extraordinary profile for a single drug class. The pharmaceutical and clinical research community is scrambling to understand which of these effects are real, which are causal, and which might be secondary to weight loss. For anyone with a family history of dementia or personal risk factors, this is worth discussing with a physician, while understanding that the evidence is still developing and randomized controlled trial data on dementia outcomes specifically is not yet available.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/gadgets/2026/08/first-test-flight-of-largest-all-electric-aircraft-used-just-5-of-electricity/" target="_blank" rel="noopener">First test flight of largest all-electric aircraft completed on $5 of electricity</a>
+            </div>
+            <div class="story-summary">An airline-backed venture completed the first test flight of what it's claiming is the largest all-electric aircraft, and the total electricity cost for the flight was approximately five dollars. That number is a useful illustration of the energy economics of electric aviation at small scale, though it shouldn't be taken to imply that commercial electric aviation is cost-competitive at scale — the real challenges are energy density, battery weight, range, and the enormous capital cost of developing certified aircraft. The venture's actual roadmap is for a hybrid-electric commercial aircraft rather than a purely electric one, which is a more realistic near-term path: hybrid systems allow range extension via conventional fuel while capturing efficiency gains from electric propulsion in certain flight phases. The test flight milestone is genuine and meaningful for a program at this stage, but the gap between a test flight and a certified commercial aircraft that airlines can actually operate is measured in years and billions of dollars. Pure electric aviation for short regional hops (under 50 miles or so) is more tractable in the near term; longer routes require energy density improvements in batteries that are not yet on a clear roadmap. This is still worth following — the direction of travel is correct and the eventual economics of electric or hybrid aviation could be transformative for regional connectivity and emissions — but tempered expectations about timeline are warranted.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+    </div>
+    
+
+    
+
+    
+    <div class="previous-day">
+        <a href="2026-08-15.html">&larr; Previous day</a>
+    </div>
+    
+
+    <footer>
+        Generated 2026-08-16 04:32 UTC &middot; Tech Digest
+    </footer>
+</body>
+</html>
