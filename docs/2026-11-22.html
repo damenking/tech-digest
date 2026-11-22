@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Digest - Sunday, November 22, 2026</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --accent-subtle: #1f6feb22;
+            --topic-ai: #da70d6;
+            --topic-industry: #58a6ff;
+            --topic-dev: #3fb950;
+            --topic-hardware: #f0883e;
+            --topic-science: #d29922;
+            --topic-policy: #f85149;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 0;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 24px 16px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        header .date {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-top: 4px;
+        }
+
+        .intro {
+            padding: 16px;
+            background: var(--accent-subtle);
+            border-left: 3px solid var(--accent);
+            margin: 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .section {
+            margin: 24px 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0 16px;
+            margin-bottom: 12px;
+        }
+
+        .topic-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+
+        .story {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .story:last-child {
+            border-bottom: none;
+        }
+
+        .story-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .story-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .story-title a:hover {
+            color: var(--accent);
+        }
+
+        .story-summary {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .story-source {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+            opacity: 0.7;
+        }
+
+        footer {
+            padding: 24px 16px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Topic colors */
+        .topic-ai { background: var(--topic-ai); }
+        .topic-industry { background: var(--topic-industry); }
+        .topic-dev { background: var(--topic-dev); }
+        .topic-hardware { background: var(--topic-hardware); }
+        .topic-science { background: var(--topic-science); }
+        .topic-policy { background: var(--topic-policy); }
+
+        .source-errors {
+            margin: 24px 16px;
+            padding: 12px 16px;
+            background: #f8514922;
+            border: 1px solid #f8514944;
+            border-radius: 8px;
+            font-size: 0.8rem;
+        }
+
+        .source-errors h3 {
+            color: #f85149;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .error-item {
+            color: var(--text-muted);
+            padding: 2px 0;
+        }
+
+        .previous-day {
+            padding: 20px 16px;
+            text-align: center;
+        }
+
+        .previous-day a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile touch targets */
+        @media (max-width: 640px) {
+            .story {
+                padding: 16px;
+            }
+            .story-title a {
+                display: block;
+                padding: 4px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tech Digest</h1>
+        <div class="date">Sunday, November 22, 2026</div>
+    </header>
+
+    <div class="intro">The biggest story of the week is unambiguously the apparent proof of the Riemann Hypothesis — not once, but twice, with both a human mathematician and an AI-assisted researcher claiming independent solutions to one of math's oldest open problems. Meanwhile, Anthropic's stock market debut turned rocky fast, GTA 6 shattered every entertainment record in existence, and AI's environmental costs continue to mount.</div>
+
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-ai"></div>
+            <h2>AI & Machine Learning</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://simonwillison.net/2026/Nov/20/levent-alpoge/" target="_blank" rel="noopener">The Riemann Hypothesis appears to have been proven — twice, simultaneously</a>
+            </div>
+            <div class="story-summary">In what may be the most significant mathematical event in living memory, two independent proofs of the 167-year-old Riemann Hypothesis emerged within days of each other. Levent Alpöge, working with Anthropic's Claude, claims a proof that also resolves the Generalized and Extended Riemann Hypothesis. Separately, Alessandro Masullo — a human mathematician with no AI assistance — has been quietly working on the Generalized Riemann Hypothesis for months, with Stanford's Ravi Vakil reporting that Brian Conrad has been scrutinizing it closely and it's 'so far looking good.' The Riemann Hypothesis concerns the distribution of prime numbers and is one of the seven Millennium Prize Problems, carrying a $1 million prize. It underpins much of modern number theory and has implications for cryptography, physics, and pure mathematics. The AI-assisted proof has already been partially formalized in the Lean proof assistant, adding a layer of machine-verifiable confidence unusual for a result this new. The Hacker News discussion on Vakil's hurried announcement was the most upvoted story of the week by a wide margin (score: 2426), reflecting how significant the community considers this. Mathematicians are understandably cautious — extraordinary claims require extraordinary scrutiny — and full verification will take months. But the fact that two independent routes appear to converge on the same result is an encouraging signal. If confirmed, this would be the most consequential mathematical proof since Fermat's Last Theorem, and it would represent a genuine landmark for AI-assisted mathematical reasoning.</div>
+            <div class="story-source">Simon Willison's Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate/" target="_blank" rel="noopener">Researcher plants 2 million canaries into the AI supply chain, exposing a massive privacy disaster</a>
+            </div>
+            <div class="story-summary">A security researcher seeded 2 million unique, trackable 'canary' prompts — strings of text designed to be memorable and identifiable — into AI pipelines across the supply chain, then monitored whether those secrets leaked into other users' outputs. They did, at an alarming rate. The experiment proves definitively that data passed through many AI inference providers does not stay private in the way users assume. The implications are significant: enterprises sending proprietary documents, source code, or sensitive business data through third-party AI APIs may be inadvertently exposing that information to other customers. This is partly a caching problem, partly a context contamination issue, and partly a question of how inference providers handle multi-tenant workloads. OpenRouter separately disclosed data processing incidents on inference providers this same week, suggesting this is not an isolated finding. The canary methodology is clever because it doesn't require the researcher to identify specific leaked content — the unique identifiers are self-reporting. This kind of supply-chain privacy audit is exactly what the AI industry has needed but largely avoided doing. For engineers building production systems on top of LLM APIs, this should trigger an immediate review of what data is actually being sent to external providers. The researcher's framing of this as a 'leaky AI supply chain' is apt — the problem isn't any single vendor but the ecosystem of proxies, caches, and routing layers that have grown up around LLM inference.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/ai/2026/11/googles-latest-search-page-redesign-drops-the-search-button-adds-ai-sidebar/" target="_blank" rel="noopener">Google rolls out a redesigned search homepage that buries the search button and leads with AI</a>
+            </div>
+            <div class="story-summary">Google has pushed a significant redesign of its search homepage that removes the classic 'Google Search' button from the main interface and instead surfaces AI chat history and an AI sidebar as primary features. This is a meaningful UX shift that signals where Google sees the product heading — away from the traditional ten-blue-links paradigm and toward an AI-first query interface. The timing is notable given that Google has acknowledged AI Overviews cost the company billions in lost ad revenue, yet they're doubling down rather than retreating. For regular users, the change makes AI tools the path of least resistance, which will accelerate adoption but also deepen concerns about accuracy and over-reliance. For Google's business model, the bet is that AI-generated answers will eventually monetize better than traditional search ads, though that case is still unproven at scale. The redesign also removes friction for accessing prior AI conversations, suggesting Google is trying to build habitual AI usage rather than one-off queries. Competitors like Perplexity and Microsoft's Copilot-integrated Bing have been chipping away at search market share, and this redesign looks like a defensive response. Engineers and developers who rely on precise search results for technical queries may find the AI-first interface more frustrating than helpful. The 'no search button' decision is particularly aggressive — it assumes users either know to press Enter or are happy to let AI interpret their query before it's even submitted. Watch for user backlash, but also watch for this to become the new normal faster than critics expect.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.technologyreview.com/2026/11/20/1149399/the-most-misunderstood-graph-in-ai-just-got-a-major-update/" target="_blank" rel="noopener">METR updates its AI capability 'time horizon' plot — coding improves exponentially, judgment lags</a>
+            </div>
+            <div class="story-summary">METR, the AI evaluation nonprofit, released a significant update to its 'time horizon' plot — the graph tracking how long AI agents can sustain autonomous work on real tasks. The findings are nuanced: coding-related capabilities continue on a near-exponential improvement trajectory, with AI agents now reliably completing tasks that would take a skilled human engineer multiple hours. However, tasks requiring judgment, ambiguity resolution, or contextual reasoning in non-coding domains improve much more slowly. This divergence matters enormously for how we should think about AI deployment: coding assistants and automated software engineering are genuinely transforming rapidly, while 'general AI agent' narratives may be ahead of the actual capability curve. METR's time horizon framing has been widely cited but also widely misunderstood — people often read it as predicting AGI timelines when it's really measuring task completion windows under specific conditions. The update attempts to clarify this, distinguishing between capability in structured environments versus open-ended real-world settings. For engineers, the practical takeaway is that AI coding tools are going to get dramatically more capable in the near term, while AI agents tasked with complex business decisions or interpersonal tasks should be treated with much more skepticism. The report adds empirical weight to the view that current AI progress is domain-specific rather than uniformly general. METR's methodology involves running the same benchmark tasks over time against frontier models, making it one of the more rigorous longitudinal capability tracking efforts available. This is worth reading in full if you're making infrastructure or tooling decisions based on AI capability assumptions.</div>
+            <div class="story-source">MIT Technology Review</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://deepmind.google/blog/introducing-gemini-4-neon/" target="_blank" rel="noopener">Google DeepMind introduces Gemini 4 Neon and makes Genie 4 available</a>
+            </div>
+            <div class="story-summary">Google DeepMind had a busy week, releasing Gemini 4 Neon — the latest addition to the Gemini 4 model family — alongside making Genie 4 generally available. The Gemini 4 lineup has become genuinely confusing: there's Carbon (the base efficient tier), Hydrogen (a mid-range reasoning model), and now Neon, with pricing and capability distinctions that even developers closely following the space find hard to track. Simon Willison noted in his llm-gemini plugin update that Neon and Hydrogen both support an 'xhigh' reasoning level unavailable in Carbon, which hints at a meaningful capability tier separation. Genie 4, DeepMind's world-simulation and interactive environment model, being made broadly available is separately significant for game development, simulation research, and potentially robotics training. The pace of Gemini releases — multiple models within a single month — reflects Google's effort to hold ground against OpenAI's GPT-6 family and Anthropic's Claude. For developers choosing which model family to build on, the proliferation of tiers creates real decision fatigue and integration complexity. The 'xhigh' reasoning mode on Hydrogen and Neon is worth evaluating if you're doing tasks that benefit from extended chain-of-thought — early reports suggest meaningful quality gains on complex reasoning tasks. DeepMind has also recently shipped Gemini Robotics 2.5 and AlphaProof Code, suggesting the organization is operating at an unusually high output velocity. Keep an eye on Genie 4 specifically — its applications in synthetic data generation for training other models could be a sleeper story with big downstream implications.</div>
+            <div class="story-source">Google DeepMind Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://openai.com/business/customer-stories/hebbia" target="_blank" rel="noopener">OpenAI's GPT-6 Astra shows meaningful gains on financial research tasks at Hebbia</a>
+            </div>
+            <div class="story-summary">OpenAI published a customer story showing that Hebbia — a startup focused on AI-assisted financial research — ran prerelease evaluations of GPT-6 Astra and found measurable improvements in source coverage, citation relevance, and presentation quality compared to prior models. Hebbia's use case involves processing dense financial documents: earnings transcripts, regulatory filings, analyst reports, and similar materials where accuracy and citation quality matter enormously. The fact that GPT-6 Astra shows gains specifically in citation relevance is notable, since hallucinated or misattributed sources have been one of the most persistent failure modes of LLMs in professional research contexts. Financial services is one of the highest-value domains for AI deployment, and improvements here have direct revenue implications for firms adopting the technology. OpenAI's choice to highlight this customer story — rather than a consumer use case — reflects a deliberate push toward enterprise credibility. GPT-6 Astra appears to be a specialized or fine-tuned variant rather than the base GPT-6 model, though OpenAI's naming conventions across this generation have been inconsistent. For engineers building retrieval-augmented generation systems in financial or legal contexts, the specific gains in citation relevance and source coverage are the most actionable details here. The prerelease framing suggests Astra may not yet be broadly available, but enterprises with existing OpenAI relationships may be able to get access. This kind of real-world domain-specific evaluation is more useful than benchmark leaderboard numbers for assessing whether a model is ready for production deployment in specialized fields.</div>
+            <div class="story-source">OpenAI Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/11/21/signal-restricts-mobile-screenshots-as-it-confronts-existential-threat-of-ai-surveillance/" target="_blank" rel="noopener">Signal restricts mobile screenshots to fight AI surveillance — calls it an 'existential threat'</a>
+            </div>
+            <div class="story-summary">Signal has pushed an update restricting users' ability to take screenshots within the app on both Android and iOS, framing the move as a response to what it calls the 'existential threat' of AI-powered surveillance. The concern is specific: AI tools that can silently process screenshots — either through malware, compromised apps, or cloud backup scanning — can effectively reconstruct private conversation histories at scale, breaking the privacy guarantees Signal is built to provide. This is a meaningful threat model shift. For years, endpoint security was about preventing network interception; now the attack surface includes passive visual capture of what's on screen. Signal's screenshot restriction is a blunt instrument — it'll frustrate users who have legitimate reasons to capture conversations — but the underlying concern is valid. AI-powered OCR and image analysis have become cheap and fast enough that screenshots stored in cloud photo libraries are effectively searchable and analyzable by any party with access to those libraries. The move reflects a broader reckoning in the privacy space about how AI capabilities change the threat landscape for data that was previously considered 'safe enough' because it was inconvenient to process at scale. For engineers building privacy-sensitive applications, this is worth thinking about: what data in your app was implicitly protected by the friction of processing it, and how does that change as AI lowers that friction to near zero? Signal's credibility on privacy issues means this warning carries weight — they're not prone to alarmism. Expect other privacy-focused apps to follow with similar restrictions, and expect this to become a point of contention with platform providers like Apple and Google who control screenshot APIs.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.wired.com/story/banks-are-cracking-down-on-ai-agents/" target="_blank" rel="noopener">Major US banks crack down on AI agents accessing financial accounts</a>
+            </div>
+            <div class="story-summary">Several major US financial institutions are now actively blocking third-party AI bots from logging into customer accounts, citing fraud risk, liability concerns, and terms-of-service violations. The banks are also issuing explicit warnings that any financial losses or errors caused by an AI agent acting on a customer's behalf are strictly the customer's problem, not the bank's. This puts a significant damper on the growing ecosystem of AI financial agents — tools that promise to automatically optimize your spending, pay bills, negotiate rates, or manage investments. The liability question is genuinely unresolved: when an AI agent makes a transaction that the user didn't intend or understand, who bears responsibility? Banks are answering that question preemptively and unilaterally in their own favor. This creates an interesting tension with the broader 'AI agents in your text messages' trend, where multiple startups are building assistants that promise to handle financial tasks on your behalf. The technical mechanism banks are using varies — some are deploying bot detection, others are revoking API access or changing credential requirements — but the intent is consistent: they want human-initiated transactions, full stop. For developers building agentic financial tools, this is a serious headwind that will likely force a pivot toward official bank API partnerships (where they exist) rather than credential-based access. The regulatory dimension is also murky: banking regulators haven't yet weighed in clearly on AI agent authorization, leaving a gap that individual banks are filling with restrictive policies. This story will develop as AI agents become more capable and consumer demand for autonomous financial management grows.</div>
+            <div class="story-source">Wired</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/ai/2026/11/meta-reconsiders-2030-net-zero-goal-amid-record-emissions-from-ai-data-centers/" target="_blank" rel="noopener">Meta walks back its 2030 net-zero goal as AI data center emissions hit record highs</a>
+            </div>
+            <div class="story-summary">Meta has announced it is 're-evaluating' its 2030 net-zero sustainability commitments, citing record-high emissions driven by the explosive growth of its AI data center infrastructure. This is a significant moment: Meta was one of the more credible corporate voices on climate commitments in tech, and walking back a 2030 target with only four years to go is not a minor course correction. The underlying math is brutal — training and running large AI models is enormously energy-intensive, and the demand for AI compute has outpaced any efficiency gains from hardware improvements or renewable energy procurement. Meta isn't alone: Microsoft and Google have both quietly revised their emissions trajectories upward in recent quarters, though neither has been as explicit about abandoning near-term targets. The question posed by the article — 'will others follow?' — seems almost rhetorical at this point; the AI infrastructure buildout is on a collision course with corporate sustainability pledges across the industry. For engineers and technical decision-makers, this surfaces a real tension: the tools that are making software development faster and more powerful are also generating significant environmental costs that are increasingly visible and quantified. The data center power draw from AI inference alone — not just training — has become a material factor in energy planning for regions hosting large clusters. There's a credibility problem forming for the industry: promising net-zero while simultaneously accelerating the energy-hungriest compute buildout in history is a contradiction that investors, regulators, and the public are starting to notice. Watch for this to become a regulatory and PR pressure point in 2027.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-industry"></div>
+            <h2>Industry & Business</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.bbc.co.uk/news/articles/c3x29ggenz12o" target="_blank" rel="noopener">Anthropic goes public — becomes one of the world's most valuable companies, then slides immediately</a>
+            </div>
+            <div class="story-summary">Anthropic made history this week as the first purely AI company to list on a public stock exchange, briefly becoming one of the most valuable public companies in the world by market cap. The IPO was treated as a bellwether for the entire AI industry — if Anthropic could sustain its valuation in public markets, it would validate the enormous private valuations assigned to AI labs broadly. It didn't hold: within days, Anthropic shares began sliding, contributing to a broader tech sector sell-off that pushed the S&P 500 and Dow Jones into correction territory. The slide reflects legitimate investor uncertainty — Anthropic is a company spending billions to train models it then makes available via API, in a market where pricing power is constrained by fierce competition from OpenAI, Google, and open-source alternatives. The IPO also crystallized the energy and emissions question: reporting surfaced that Anthropic's power mix in 2028 is projected to be 87% natural gas and 11% coal, which is a difficult number to defend publicly as a company that markets itself partly on responsible AI development. For the broader AI industry, the correction-territory market reaction is a signal that public market investors are applying more skepticism than the late-stage private funding rounds implied. The Riemann Hypothesis claim from an Anthropic employee, landing the same week as the IPO, was a genuinely unusual juxtaposition — the kind of thing that could boost or undermine confidence depending on how the proof holds up under scrutiny. Anthropic's Claude models remain technically competitive and commercially successful, but the gap between private valuation and public market reality is now on display. This will be a stress test for the entire category of frontier AI lab business models.</div>
+            <div class="story-source">BBC Technology</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.bbc.co.uk/news/articles/c9zr5nyv5dj2o" target="_blank" rel="noopener">GTA 6 launches to $3.8 billion in a single day — the biggest entertainment launch in history</a>
+            </div>
+            <div class="story-summary">Grand Theft Auto 6 launched this week and generated $3.8 billion in first-day sales, surpassing every previous single-day record in entertainment history — including every video game, film, and music release on record. For context, previous record-holders like GTA 5 and Call of Duty titles generated hundreds of millions in launch-day revenue; a nearly $4 billion day is an entirely different scale of event. The numbers reflect both the size of the global gaming market in 2026 and the extraordinary pent-up demand from a fanbase that waited years for this release. Take-Two Interactive's stock will have benefited enormously, and the success validates the company's long development cycle and substantial investment. From a tech angle, the infrastructure required to serve millions of simultaneous players and digital downloads on launch day is a serious engineering achievement — these launches routinely stress-test the limits of content delivery networks and game server infrastructure globally. The cultural weight of GTA as a franchise means this release got mainstream media attention unusual for a video game, amplifying its commercial reach beyond the core gaming audience. The $3.8 billion figure also illustrates why publishers pour resources into major franchise sequels rather than new IP — the brand recognition multiplier is extraordinary. For engineers working in gaming infrastructure, online services, or CDN technology, launch-day post-mortems from events like this are some of the most instructive case studies available. This story sits slightly outside core tech news but is genuinely historically notable as a data point about the scale of digital entertainment markets.</div>
+            <div class="story-source">BBC Technology</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/11/21/a-tale-of-two-nvidias/" target="_blank" rel="noopener">A tale of two Nvidias: strong earnings meet calls for Jensen Huang's return</a>
+            </div>
+            <div class="story-summary">Nvidia's latest earnings report painted a picture of a company still generating staggering revenue from AI chip demand, but the week also saw a notable undercurrent: tech executives publicly calling for Jensen Huang to return to a more hands-on role, suggesting concerns about strategic drift or execution at the top. The juxtaposition is telling — Nvidia's financial performance remains exceptional by almost any metric, driven by sustained hyperscaler demand for H100 and B-series GPUs, yet the people closest to the industry are signaling something feels off at the leadership level. Jensen Huang has been CEO since Nvidia's founding in 1993 and is closely identified with the company's culture and technical vision, so calls for his 'return' are ambiguous — it's unclear whether he's been less engaged, or whether this reflects concern about succession planning, or strategic disagreements about Nvidia's direction as competition from custom silicon accelerates. The earnings-versus-sentiment gap is worth watching: when insiders express concern even as the numbers look strong, it often precedes a transition period. Nvidia faces real competitive pressure from AMD, Intel's accelerator efforts, and increasingly capable custom silicon from Google (TPUs), Amazon (Trainium), and Microsoft (Maia). The AI chip market is not a winner-take-all situation in the long run, even if Nvidia currently dominates. For engineers and architects making infrastructure decisions, Nvidia's near-term position is secure, but the medium-term picture is more competitive than the current market share implies. This is worth monitoring as a signal of whether Nvidia can maintain its pace of innovation as the market matures.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.theguardian.com/society/2026/nov/20/pill-pancreatic-cancer-breakthrough-daraxonrasib" target="_blank" rel="noopener">Pancreatic cancer pill hailed as 'biggest breakthrough in decades' — daraxonrasib shows remarkable results</a>
+            </div>
+            <div class="story-summary">A new oral pill called daraxonrasib has produced results in pancreatic cancer trials that researchers are calling the most significant therapeutic advance in the disease in decades. Pancreatic cancer has historically been one of the deadliest malignancies precisely because it's difficult to detect early and has responded poorly to most treatments — five-year survival rates have remained stubbornly low for years. A pill-based treatment that shows meaningful efficacy would represent a genuine step change in how the disease is managed, potentially shifting it from a near-death sentence to a treatable condition for more patients. The drug targets specific molecular pathways relevant to pancreatic tumor growth, though the specific mechanism and trial data details are pending fuller publication. The 'biggest breakthrough in decades' framing comes from oncologists and researchers, not just the drug's developers, which adds credibility — that community is typically conservative about such claims. This story was the highest-scoring item on Hacker News this week among non-AI topics (score: 1077), reflecting how broadly significant the community considers medical breakthroughs. Pancreatic cancer affects roughly 60,000 Americans annually with a median survival of less than a year after diagnosis, so even a partial improvement in outcomes affects a large number of people. While this is not a 'tech' story in the traditional sense, the drug discovery pipeline increasingly involves AI-assisted molecular design and screening, making it adjacent to the AI-in-science stories that are reshaping research. The regulatory path from trial results to approved treatment will take years, but this is the kind of early signal that changes research funding and clinical priority across the oncology field.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-policy"></div>
+            <h2>Policy & Regulation</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/tech-policy/2026/11/fcc-orders-california-to-stop-enforcing-phone-service-rules-against-att/" target="_blank" rel="noopener">Trump FCC tells California it cannot enforce phone service rules, preempting state telecom authority</a>
+            </div>
+            <div class="story-summary">The FCC under the Trump administration has issued a preemption order telling California it cannot enforce its own rules requiring AT&T to continue offering home telephone service to customers who rely on it. California had been using state-level regulations to maintain basic phone service availability, particularly for older and lower-income residents who depend on landlines. The FCC's preemption argument is that federal telecommunications law supersedes state authority in this domain — a legal position that has been contested for years. The practical effect is that AT&T can accelerate its wind-down of copper landline infrastructure in California without state regulatory interference. For consumers, particularly in rural or underserved areas, this removes a layer of protection that the state had provided. This is part of a broader Trump FCC agenda of reducing regulatory obligations on carriers, consistent with positions the administration has taken on net neutrality and infrastructure requirements. California has historically been the most aggressive state regulator of telecommunications, and this confrontation was predictable given the administration's deregulatory stance. The preemption also sets a precedent that could affect other state-level telecom rules across the country, with implications for broadband deployment obligations and consumer protection rules in states that have passed their own regulations. Expect California to challenge this legally — the state has successfully pushed back against federal preemption in other regulatory domains. This is a significant policy move that will affect millions of people who still rely on landline service, often because it's their most reliable option.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.bbc.co.uk/news/articles/cmde1lw9y54ko" target="_blank" rel="noopener">Trump threatens to ban US firms from building AI data centers overseas</a>
+            </div>
+            <div class="story-summary">President Trump floated a potential policy that would prohibit US companies from constructing AI data centers in foreign countries, though he offered little policy detail and reportedly surprised some of his own advisors with the announcement. The stated rationale appears to be keeping AI infrastructure — and the economic benefits and national security implications that come with it — within US borders. If implemented, this would be a significant constraint on hyperscalers like Microsoft, Google, Amazon, and Oracle, all of which have massive international data center expansion plans driven by both customer proximity requirements and energy cost arbitrage. The policy is in very early stages and may never materialize in enforceable form, given the complexity of international trade law and the contractual commitments these companies have already made globally. However, even as a threat, it creates uncertainty for data center planning with lead times of 18-36 months. There's a legitimate national security argument buried in here — AI training clusters represent significant sovereign capability, and concentration of that capability in jurisdictions with different regulatory environments is a real concern. But a blanket overseas ban would also harm US companies competing for international cloud customers who need local data residency for regulatory compliance. The policy proposal appears consistent with a broader administration theme of economic nationalism applied to tech infrastructure. Developers and infrastructure architects at companies with international footprints should monitor this closely, as it could affect where they're permitted to deploy AI workloads.</div>
+            <div class="story-source">BBC Technology</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/space/2026/11/incoming-house-chair-threatens-spacex-funding-over-ukraine-controversy/" target="_blank" rel="noopener">SpaceX's Starshield troubles in Ukraine could threaten broader military contracts</a>
+            </div>
+            <div class="story-summary">Congressional scrutiny is intensifying around SpaceX's Starshield program — the military variant of Starlink — after changes to the service in Ukraine in October 2026 raised serious questions about reliability and terms of access in active conflict zones. An incoming House committee chair has formally demanded that SpaceX explain what changes were made to Starshield service in October, suggesting the modifications may have affected Ukrainian military operations in ways that weren't authorized or disclosed to contracting parties. This is a significant moment for SpaceX's military business, which has grown substantially and represents a major revenue stream and strategic asset. The Starlink-in-Ukraine saga has been fraught from the beginning — Elon Musk's public comments about restricting service near Crimea previously created diplomatic and military fallout. If Starshield's military-grade service is subject to unilateral modifications by SpaceX without clear contractual protections, that's a fundamental problem for any military customer. Defense procurement depends on predictable, reliable service under conditions the contractor cannot unilaterally change. Congressional pressure of this kind can directly affect future contract awards — if the Armed Services or oversight committees conclude Starshield's service terms are unreliable, competing satellite communication providers could benefit significantly. For the broader space and defense-tech sector, this raises questions about the wisdom of critical military infrastructure dependence on a single commercial provider controlled by an individual with his own geopolitical views. This story will develop as the House investigation proceeds.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.bbc.co.uk/news/articles/cwz0k3nn5p5mo" target="_blank" rel="noopener">White House fires cybersecurity chief following a series of major tech outages</a>
+            </div>
+            <div class="story-summary">The White House cybersecurity director has been removed from his position after losing the confidence of Chief of Staff Stephen Miller, with the firing coming in the wake of a series of significant tech infrastructure outages affecting government and private sector systems. The timing connects the dismissal directly to the outage incidents, suggesting the administration views cybersecurity leadership as responsible for failures that may have had multiple causes. Separately, the FBI is investigating a reported hack of the National Crime Information Center — a major federal database containing criminal records, missing persons data, and other sensitive law enforcement information — which Trump described only as 'not good,' offering little substantive response. Losing a cybersecurity chief during an active period of infrastructure stress and an ongoing federal database breach is a concerning sequence. The NCIC breach, if confirmed at the scale being reported, would be a serious national security incident — the database is used by law enforcement agencies across the country for real-time queries. Wired's reporting this week that 'the outages are just getting started' — driven by AI accelerating both the attack surface and the patching cycle — provides relevant context: this may be the beginning of a prolonged period of infrastructure instability rather than an isolated event. The removal of a senior cybersecurity official in this environment sends a signal about administration priorities that the security community will interpret carefully. For engineers working on government systems or critical infrastructure, this week's events are a reminder that the threat environment is genuinely intensifying.</div>
+            <div class="story-source">BBC Technology</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-dev"></div>
+            <h2>Software & Dev Tools</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://simonwillison.net/2026/Nov/19/postgresql-19/" target="_blank" rel="noopener">PostgreSQL 19 released — two months late, partly because AI found too many bugs</a>
+            </div>
+            <div class="story-summary">PostgreSQL 19 has shipped, arriving about two months later than the typical September release schedule. The delay is attributed in significant part to the 'ongoing AI-reported vulnerability apocalypse' — a phrase used by Robert Haas in his blog post on the topic — meaning that AI-assisted security scanning tools have been finding bugs in PostgreSQL's codebase faster than the team can triage, fix, and validate them. This is a genuinely new dynamic in open source maintenance: AI code analysis tools are surfacing vulnerabilities at a rate that exceeds human capacity to process them, potentially creating a backlog that slows releases or forces triage decisions about which bugs to defer. PostgreSQL is one of the most widely deployed and thoroughly reviewed open source databases in the world, so if this is happening there, it's happening across the open source ecosystem. The release ultimately merged over 300 commits and around 200 bugfixes during the extended development period — meaning the delay did result in a meaningfully more stable release, even if the cause was unusual. For database administrators and developers depending on PostgreSQL in production, the late release is a minor inconvenience offset by the additional hardening. The broader implication for the software industry is significant: AI security analysis is about to fundamentally change the cadence and nature of software maintenance, potentially creating a 'vulnerability debt' across codebases that were considered stable. Organizations running any long-lived open source software should be thinking about how to allocate engineering time to handle AI-surfaced findings at higher volumes than they've historically managed.</div>
+            <div class="story-source">Simon Willison's Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://openai.com/index/combatting-adversarial-distillation" target="_blank" rel="noopener">OpenAI combats 'adversarial distillation' — model capability theft through prompt engineering</a>
+            </div>
+            <div class="story-summary">OpenAI published details of its layered approach to combating adversarial distillation — the practice of using carefully crafted prompts to extract model capabilities and use them to train competing models, essentially stealing the learned behaviors of a frontier model without paying for the training compute. This has become a real commercial and strategic threat: sophisticated actors can query a model systematically, collect input-output pairs, and use that data to fine-tune smaller, cheaper models that approximate the frontier model's behavior in specific domains. OpenAI's defense combines model training (making models resistant to extraction), safeguards (detecting and blocking distillation-pattern queries), detection (identifying suspicious query patterns at scale), and enforcement (legal and contractual action against violators). The technical challenge is significant — there's no clean bright line between legitimate API use and adversarial distillation, and over-aggressive blocking would harm legitimate customers. The fact that OpenAI is publishing this approach is itself strategic: it signals to potential distillers that they're being watched and signals to customers that their licensing fees are going toward genuine capability protection. For developers building on OpenAI's APIs, this is relevant background — it explains some of the rate limiting and usage pattern restrictions that may seem arbitrary. The adversarial distillation problem is likely to intensify as frontier models become more capable and the value of their learned behaviors increases. This is an underappreciated dimension of the AI industry's competitive dynamics.</div>
+            <div class="story-source">OpenAI Blog</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-science"></div>
+            <h2>Science & Research</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/health/2026/11/glp-1-drugs-could-have-a-surprisingly-large-environmental-payoff/" target="_blank" rel="noopener">GLP-1 drugs could free farmland larger than Italy through reduced food demand</a>
+            </div>
+            <div class="story-summary">A new analysis suggests that the widespread adoption of GLP-1 weight-loss drugs like semaglutide could reduce global food demand enough to free up agricultural land equivalent in area to all of Italy. The mechanism is straightforward: GLP-1 drugs significantly reduce caloric intake and appetite, and at the population scale being projected for these medications — hundreds of millions of users globally within a decade — the aggregate reduction in food consumption becomes large enough to measurably shift agricultural demand. The land-use implications are substantial: freed farmland could be rewilded, converted to carbon sequestration uses, or repurposed for less intensive agriculture. This represents an unexpected environmental dividend from a drug class developed entirely for health reasons. The analysis is speculative and depends on optimistic assumptions about adoption rates and drug persistence, but even conservative scenarios produce meaningful land-area numbers. For the food and agriculture sector, this is a potential structural demand shock that is not yet priced into long-term planning. For climate policy, it represents a possible tool — though one that works through individual health decisions rather than top-down policy. The interaction between GLP-1 adoption and food system economics is genuinely complex: reduced demand would lower food prices, which could benefit food-insecure populations, but would also reduce income for agricultural producers in ways that require adjustment. This is the kind of second-order effect from a major technology adoption that tends to be underestimated until it's already underway.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+    </div>
+    
+
+    
+
+    
+    <div class="previous-day">
+        <a href="2026-11-21.html">&larr; Previous day</a>
+    </div>
+    
+
+    <footer>
+        Generated 2026-11-22 12:16 UTC &middot; Tech Digest
+    </footer>
+</body>
+</html>
