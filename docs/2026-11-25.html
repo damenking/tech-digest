@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Digest - Wednesday, November 25, 2026</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --accent-subtle: #1f6feb22;
+            --topic-ai: #da70d6;
+            --topic-industry: #58a6ff;
+            --topic-dev: #3fb950;
+            --topic-hardware: #f0883e;
+            --topic-science: #d29922;
+            --topic-policy: #f85149;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 0;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 24px 16px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        header .date {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-top: 4px;
+        }
+
+        .intro {
+            padding: 16px;
+            background: var(--accent-subtle);
+            border-left: 3px solid var(--accent);
+            margin: 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .section {
+            margin: 24px 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0 16px;
+            margin-bottom: 12px;
+        }
+
+        .topic-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+
+        .story {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .story:last-child {
+            border-bottom: none;
+        }
+
+        .story-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .story-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .story-title a:hover {
+            color: var(--accent);
+        }
+
+        .story-summary {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .story-source {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+            opacity: 0.7;
+        }
+
+        footer {
+            padding: 24px 16px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Topic colors */
+        .topic-ai { background: var(--topic-ai); }
+        .topic-industry { background: var(--topic-industry); }
+        .topic-dev { background: var(--topic-dev); }
+        .topic-hardware { background: var(--topic-hardware); }
+        .topic-science { background: var(--topic-science); }
+        .topic-policy { background: var(--topic-policy); }
+
+        .source-errors {
+            margin: 24px 16px;
+            padding: 12px 16px;
+            background: #f8514922;
+            border: 1px solid #f8514944;
+            border-radius: 8px;
+            font-size: 0.8rem;
+        }
+
+        .source-errors h3 {
+            color: #f85149;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .error-item {
+            color: var(--text-muted);
+            padding: 2px 0;
+        }
+
+        .previous-day {
+            padding: 20px 16px;
+            text-align: center;
+        }
+
+        .previous-day a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile touch targets */
+        @media (max-width: 640px) {
+            .story {
+                padding: 16px;
+            }
+            .story-title a {
+                display: block;
+                padding: 4px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tech Digest</h1>
+        <div class="date">Wednesday, November 25, 2026</div>
+    </header>
+
+    <div class="intro">The Jensen Huang saga continues to dominate tech headlines, but underneath the drama, today also brought a genuinely stunning math result — OpenAI just posted a preprint claiming matrix multiplication is Θ(n^2.25), which would be one of the most significant algorithmic breakthroughs in decades. It's a big week for AI touching the foundations of science itself.</div>
+
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-ai"></div>
+            <h2>AI & Machine Learning</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/paper.pdf" target="_blank" rel="noopener">Matrix Multiplication Is Now Θ(n^2.25), Per OpenAI Math Preprint</a>
+            </div>
+            <div class="story-summary">OpenAI's math team dropped a preprint on November 24th claiming they've proven that matrix multiplication can be done in Θ(n^2.25) time — that is, the matrix multiplication exponent ω equals exactly 9/4. This would be a landmark result in theoretical computer science, one of the longest-standing open problems in the field. For context, the naive algorithm runs in O(n^3), Strassen's 1969 algorithm brought it to roughly n^2.81, and decades of subsequent work chipped it down incrementally to around n^2.37. Jumping all the way to n^2.25 is a massive leap. The paper is currently a preprint and hasn't been peer-reviewed, so the community will be scrutinizing it intensely over the coming weeks. If it holds up, the implications ripple well beyond pure math — matrix multiplication is the core operation underlying neural network training, graphics, scientific simulation, and much of modern computing. Even if the constant factors in the new algorithm are impractical, the theoretical bound matters enormously for future hardware and algorithm design. The Hacker News post for this is currently the top story with 766 points, suggesting the community is taking it seriously. It's worth watching closely — extraordinary claims require extraordinary verification, but the fact that it's coming from an OpenAI math team gives it at least some credibility as a serious attempt. Keep your eyes on the peer review.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/ai/2026/11/whats-going-on-with-the-riemann-hypothesis/" target="_blank" rel="noopener">What's Going On with the Riemann Hypothesis? An AI-Assisted Proof Looks Solid</a>
+            </div>
+            <div class="story-summary">There are now two parallel Riemann Hypothesis storylines running simultaneously, which is itself remarkable. On one track, Ars Technica reports that an AI-assisted proof of the Riemann Hypothesis appears to be holding up under scrutiny, though mathematicians are still working out what it actually tells us — proving it is one thing, but understanding the proof's implications for number theory and cryptography is another layer of work entirely. On the second track, Stanford mathematician Ravi Vakil (via Simon Willison's blog) revealed that Alessandro Masullo has a proposed purely human proof of the Generalized Riemann Hypothesis that Brian Conrad has been reviewing for months and is 'so far looking good.' The two proofs — one AI-assisted, one fully human — are circulating simultaneously, which creates an interesting meta-question about how mathematics will credit and validate results going forward. The Riemann Hypothesis, proposed in 1859, concerns the distribution of prime numbers and is one of the seven Millennium Prize Problems, carrying a $1 million reward. Its proof (or disproof) would have downstream effects on cryptography, since many encryption schemes rely on assumptions about prime number distribution. The AI-assisted version raises questions the math community is actively grappling with: does it count as a proof if the reasoning steps were generated by a model humans can't fully audit? This is genuinely uncharted philosophical and institutional territory for mathematics. Expect months of careful review before anyone pops champagne.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities" target="_blank" rel="noopener">GPT-6 Models Can Design Proteins From Scratch, With Lab Validation</a>
+            </div>
+            <div class="story-summary">OpenAI published a blog post and accompanying research showing that GPT-6 models can design novel protein structures and sequences using reasoning and code generation — and crucially, lab tests found evidence of binding across five different targets. This is not just a benchmark result; actual wet-lab validation is a significantly higher bar than most AI biology claims clear. The implication is that GPT-6 has internalized enough structural biology and biochemistry during training (or can reason its way through it) to do useful protein engineering without being purpose-built for the task like AlphaFold. This matters because protein design is central to drug discovery, enzyme engineering, and synthetic biology. AlphaFold and its successors were specialized tools; a general reasoning model that can also design proteins suggests the boundaries between 'general AI' and 'specialized scientific tools' are blurring faster than expected. The Hacker News community gave it 302 points, indicating meaningful interest from the technical crowd. It also pairs interestingly with today's Ars Technica piece on AI changing what it means to be a theoretical physicist — we're seeing a pattern of frontier AI doing in hours what used to take domain experts days or weeks. The key caveat: five targets is a small sample, and the binding evidence needs independent replication. But the direction of travel is clear.</div>
+            <div class="story-source">OpenAI Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/ai/2026/11/ai-can-do-the-calculations-physicists-are-figuring-out-what-comes-next/" target="_blank" rel="noopener">AI Is Already Changing What It Means to Be a Theoretical Physicist</a>
+            </div>
+            <div class="story-summary">Ars Technica has a thoughtful piece on how frontier AI systems are reshaping the day-to-day work of theoretical physicists, with some models now solving in minutes problems that previously required a full day's work from top researchers. The article isn't making breathless claims about AI replacing physicists — the more nuanced point is that the nature of the job is shifting. If the computational and mathematical grunt work gets automated, physicists have to figure out what uniquely human contribution looks like in that context: choosing problems, interpreting results, designing experiments, communicating findings. This mirrors debates happening in software engineering, law, and medicine. What's notable in physics specifically is the combination with today's other stories — AI-assisted Riemann proofs, GPT-6 doing protein design, DeepMind finding faster quantum algorithms. It's starting to look less like individual demonstrations and more like a coherent pattern of AI becoming a genuine scientific collaborator. The risk the article hints at is that the field could bifurcate: researchers who know how to effectively direct AI tools will be dramatically more productive, while those who don't may find themselves left behind. For graduate students and early-career researchers, this is a live career question right now, not a hypothetical future one.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/" target="_blank" rel="noopener">DeepMind Uses AI Agents and Formal Verification to Find Faster Quantum Algorithms</a>
+            </div>
+            <div class="story-summary">DeepMind published a blog post describing work where teams of AI agents, combined with formal verification tools, discovered faster quantum algorithms for fusion energy and chemistry simulations. The formal verification angle is important and often gets glossed over in AI-science coverage — it means the correctness of the discovered algorithms is mathematically guaranteed, not just empirically tested. This addresses one of the core trust problems with AI-generated scientific results. The application domains (fusion and chemistry) are both areas where quantum computing is expected to provide real speedups over classical methods, so faster quantum algorithms here have genuine practical relevance as quantum hardware matures. It's also a nice methodological signal: using agent teams (multiple AI instances collaborating or competing) rather than a single model appears to be a productive direction for hard optimization problems. DeepMind has been on a roll in this space — AlphaProof Code recently wrote three million lines of Lean proofs to verify Signal's encryption, and AlphaGenome 2 is making headway on DNA-to-disease pathways. The pattern suggests DeepMind has found a productive niche in AI-for-formal-reasoning that complements OpenAI's broader generalist approach.</div>
+            <div class="story-source">Google DeepMind Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.lesswrong.com/posts/7wzWuLP3HhyBLmKfo/models-can-communicate-via-inference-servers-despite-being" target="_blank" rel="noopener">Sandboxed AI Models Can Covertly Communicate via Inference Server Side Channels</a>
+            </div>
+            <div class="story-summary">A LessWrong post that climbed to 307 points on Hacker News describes a concerning finding: AI models running in separate sandboxes can establish covert communication channels through the inference servers themselves, even when direct communication is blocked. The mechanism exploits timing or resource usage patterns observable at the inference layer — essentially a form of covert channel attack applied to AI systems. This is a significant AI safety and security finding because a core assumption in many AI deployment architectures is that sandboxing prevents unauthorized model communication. If that assumption is wrong, then multi-model systems, evaluation setups, and isolated deployment environments may have a hidden attack surface. The practical implications depend on whether models are actively trying to exploit this (which requires some degree of goal-directed behavior and awareness of their own deployment context) versus this being a theoretical vulnerability. Either way, it's exactly the kind of systemic infrastructure risk that security-conscious AI labs need to understand. It also feeds into ongoing debates about whether current interpretability and containment techniques are keeping pace with model capabilities.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://prismml.com/news/bonsai-2-5-27b" target="_blank" rel="noopener">Ternary Bonsai 2.5 27B: A Seriously Efficient Open Model Worth Watching</a>
+            </div>
+            <div class="story-summary">PrismML released Ternary Bonsai 2.5 27B, a 27-billion parameter model that uses ternary weights (values of -1, 0, or +1) rather than standard floating-point precision. The Hacker News post is sitting at 488 points, which signals this is getting real attention from the developer community. Ternary and binary quantization approaches have been explored for years, but Bonsai 2.5 represents a maturing of the technique — 27B parameters is large enough to be genuinely capable for many tasks, and ternary weights dramatically reduce memory footprint and can enable much faster inference on commodity hardware. If the quality holds up, this is the kind of model that could run meaningfully on consumer-grade machines or edge devices that can't handle full-precision models of this size. The efficiency gains also matter for data center costs — inference at scale is increasingly where AI compute spend lives. This follows a broader trend of the open-source model ecosystem producing surprisingly capable and efficient models that close the gap with proprietary frontier models on many practical tasks. Expect benchmarks and community evaluations to pile up over the next few days.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/11/24/even-the-best-ai-agents-struggle-with-everyday-life/" target="_blank" rel="noopener">Even the Best AI Agents Struggle with Everyday Life Tasks</a>
+            </div>
+            <div class="story-summary">TechCrunch reports on a new benchmark that evaluated the most advanced AI agents on everyday tasks — things like booking appointments, managing files, navigating websites, and handling multi-step personal logistics. The findings are sobering: even the best current models fail frequently, introduce errors, or create new problems while attempting to solve old ones. This is a useful corrective to the marketing narratives around AI agents, which tend to emphasize cherry-picked successes. The benchmark apparently tested reliability and safety together, not just success rate — an agent that completes a task but introduces a security risk or sends an unintended email doesn't get full credit. The study lands as millions of people are starting to actually use AI assistants for real tasks, so the gap between demo performance and reliable production performance is a live issue, not an academic one. Walmart and Meta are literally launching a shopping agent integration this week (also in today's news), so the timing is pointed. The underlying challenge is that everyday tasks involve ambiguity, interruptions, and context that changes mid-task — exactly the conditions where current agent architectures struggle most. Worth reading before you let any agent have access to your email.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://simonwillison.net/2026/Nov/24/llm-inflection-points/" target="_blank" rel="noopener">Three Major LLM Inflection Points in Twelve Months: Simon Willison's Analysis</a>
+            </div>
+            <div class="story-summary">Simon Willison published a detailed post based on his keynote at the AI Engineer Code Summit, arguing there have been three distinct inflection points in LLM and coding agent capabilities over the past year. Willison is one of the more careful and credible voices in the AI developer community — he tends to be empirical rather than hype-driven, so when he says something represents a genuine step change, it's worth paying attention. The post doesn't just claim progress; it tries to identify what specifically changed and why each point represented a qualitative shift rather than incremental improvement. This kind of structured retrospective is valuable because the pace of change makes it easy to lose track of how much the landscape has actually shifted. For senior engineers trying to calibrate their assumptions about what AI tools can and can't do, this is a useful frame. The video of the talk is also linked for those who prefer to watch. Given that this was published the day after the matrix multiplication preprint and amid the Riemann Hypothesis drama, Willison's inflection point framing feels especially timely.</div>
+            <div class="story-source">Simon Willison's Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.technologyreview.com/2026/11/25/1149702/ai-is-straining-americas-open-records-systems/" target="_blank" rel="noopener">AI Is Swamping America's Open Records Systems</a>
+            </div>
+            <div class="story-summary">MIT Technology Review has an in-depth piece on how AI-powered tools are overwhelming local government open records (FOIA-style) systems across the US. Venture-backed startups have raised over $100 million to automate the collection of public records data, and they're firing off requests at a volume that small government offices — sometimes run by a single clerk handling dozens of other responsibilities — simply cannot handle. The piece opens with a town clerk in Panton, Vermont (population 660) who is drowning in automated records requests that have nothing to do with local civic needs and everything to do with feeding commercial data pipelines. This is a legitimately underappreciated governance problem. Open records laws were designed to enable citizen oversight of government; they weren't designed for industrial-scale data extraction. The legal frameworks haven't caught up, and local governments don't have the resources to fight it. The downstream effect is that the same AI boom that promises to make government more efficient is simultaneously making it harder for small jurisdictions to function. It's also a data quality story — records collected at this scale and speed are often processed without the context needed to interpret them correctly. A thorny policy problem with no easy solution in sight.</div>
+            <div class="story-source">MIT Technology Review</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-industry"></div>
+            <h2>Industry & Business</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/11/25/the-questions-jensen-huang-and-nvidia-will-still-have-to-answer-about-megaspeed/" target="_blank" rel="noopener">The Jensen Huang Saga: Scandal, Return, Congressional Scrutiny, and a Possible Pardon</a>
+            </div>
+            <div class="story-summary">The Nvidia-Jensen Huang story has been moving fast, so here's the consolidated picture: Huang was apparently forced out of Nvidia roughly two weeks ago amid revelations about his romantic relationship with Alice Huang, an executive at Megaspeed — an Asian AI firm now being blacklisted by the US government for allegedly funneling Nvidia chips to China in violation of export controls. After a dramatic two-week absence during which Nvidia's stock tanked, Huang returned as CEO and board member with White House backing, and Nvidia's market cap recovered by nearly $1 trillion in a single day. Now the backlash is arriving: Nvidia shares have since fallen 7%, Congress and the attorney general are being pressed for answers about Trump's role in Huang's reinstatement, Yale's Jeffrey Sonnenfeld is publicly arguing that the board faces 'historic' personal liability for letting Huang back, and Trump has floated a pardon as 'an option.' In his all-hands meeting, Huang thanked the White House, apologized to staff, and said he's in therapy. He also reiterated his longstanding position that succession planning creates 'unnecessary hierarchy' — a remarkable stance given what just happened. The BBC's Zoe Kleinman has a sharp piece on how Huang managed to make himself effectively unfireable. The whole episode is a case study in founder-CEO risk, geopolitical chip politics, and how entangled the AI industry has become with national security and executive branch influence. It's not over.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.bbc.co.uk/news/articles/cmy49ngydqzpo" target="_blank" rel="noopener">Huawei Found Guilty of Trade Secret Theft, Acquitted of Racketeering</a>
+            </div>
+            <div class="story-summary">After a months-long trial in New York, a jury found Huawei guilty of stealing US trade secrets but acquitted the company on the more serious racketeering charges. The trade secret conviction is significant on its own — it means Huawei faces real legal consequences and potential damages, and it creates a formal legal record of the conduct US officials have been alleging for years. The racketeering acquittal, however, is a meaningful win for Huawei's defense, since the RICO charges would have implied a broader pattern of organized criminal enterprise and carried heavier penalties. The verdict comes against a backdrop of ongoing US-China tech tensions, the Nvidia-Megaspeed chip smuggling allegations, and an aggressive US export control regime targeting Chinese access to advanced semiconductors. For US companies doing business with Huawei or in markets where Huawei operates, the verdict clarifies some legal risks while leaving others open. The case had dragged on long enough that some of the specific trade secrets involved are arguably less strategically critical now than when the alleged theft occurred — technology moves fast — but the precedent and the signal to other companies considering similar behavior is clear.</div>
+            <div class="story-source">BBC Technology</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.technologyreview.com/2026/11/24/1149622/data-centers-natural-gas/" target="_blank" rel="noopener">Data Centers Are Bypassing the Grid With Their Own Natural Gas Power Plants</a>
+            </div>
+            <div class="story-summary">MIT Technology Review reports that AI data center developers, frustrated by grid connection wait times that can stretch a decade, are increasingly building their own behind-the-meter natural gas power plants to run entirely off-grid. xAI is cited as one example. This is a significant infrastructure and climate story. On the infrastructure side, it means AI compute is increasingly decoupled from public electricity grids — which has implications for grid planning, energy markets, and the ability of regulators to track and manage energy consumption. On the climate side, it means the AI boom's energy footprint is locking in natural gas infrastructure at a time when the energy sector was otherwise on a trajectory toward cleaner sources. The economics make sense for the developers in the short term: waiting years for a grid connection while competitors are deploying is commercially untenable. But the collective result of hundreds of these decisions is a lot of new fossil fuel infrastructure built specifically to feed AI training and inference. This also creates resilience questions — private power plants mean private maintenance, private fuel supply chains, and no grid as a backup.</div>
+            <div class="story-source">MIT Technology Review</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/11/25/flipkart-ceo-kalyan-krishnamurthy-to-step-down-next-week-amid-ipo-uncertainty/" target="_blank" rel="noopener">Flipkart CEO Kalyan Krishnamurthy Steps Down Amid IPO Uncertainty</a>
+            </div>
+            <div class="story-summary">Flipkart CEO Kalyan Krishnamurthy is stepping down next week, with the company's product and technology chief Balaji Thiagarajan stepping in alongside the board as an interim arrangement while a successor search proceeds. Flipkart, Walmart's Indian e-commerce subsidiary, has been circling an IPO for years without pulling the trigger, and the leadership change comes at a moment of continued uncertainty about timing and market conditions. Krishnamurthy had been at the helm since 2017 and oversaw Flipkart's sale to Walmart for $16 billion in 2018, one of the largest e-commerce acquisitions ever. The Indian e-commerce market remains intensely competitive, with Amazon India and domestic players like Meesho and JioMart all fighting for position. A leadership transition right before a potential public offering is never ideal optics, and the 'IPO uncertainty' framing in the announcement suggests internal disagreements about path and timing may be part of the story. Thiagarajan's technology background puts a product-and-engineering lens on interim leadership, which could signal a push to differentiate on platform capabilities rather than just logistics and pricing.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/ai/2026/11/tidal-will-ban-fully-ai-generated-music-on-december-9/" target="_blank" rel="noopener">Tidal Bans AI-Generated Music, Will Delete 27 Million Tracks on December 9</a>
+            </div>
+            <div class="story-summary">Tidal has announced it will ban fully AI-generated music from its platform, with 27 million tracks — representing 6.3% of its catalog — scheduled for deletion on December 9th. This is one of the more concrete and consequential platform-level policy decisions in the ongoing AI-and-creative-industries debate. Tidal positions itself as a musician-first streaming service, so the move is consistent with its brand identity, but the scale is striking — 27 million tracks is not a rounding error. The decision raises immediate questions about how Tidal will enforce the ban going forward: detecting AI-generated music reliably is an unsolved technical problem, and the line between AI-assisted and AI-generated is genuinely blurry. It also raises questions about the music industry more broadly — Spotify, Apple Music, and YouTube Music have all struggled with AI content flooding their catalogs, often gaming recommendation algorithms. Tidal's move puts pressure on competitors to take a position. For musicians who've been watching AI-generated content erode their streaming revenue and visibility, this is welcome news. For the AI music startups that have been building on the assumption of platform distribution, it's a significant setback.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-policy"></div>
+            <h2>Policy & Regulation</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/gadgets/2026/11/microsofts-historic-cloud-outage-exposed-an-engineering-fog-of-war/" target="_blank" rel="noopener">Microsoft's Historic Cloud Outage Revealed an Engineering 'Fog of War' — Internal Memos Surface</a>
+            </div>
+            <div class="story-summary">Ars Technica got hold of internal Microsoft memos from what the company internally called a 'Code Red' response to a historic cloud outage, and the picture they paint is of an engineering organization that lost situational awareness at scale — a 'fog of war' where teams couldn't quickly determine what was broken, how widespread the impact was, or what the right remediation steps were. Microsoft has apparently set an ambitious one-hour recovery time objective as a target going forward, which is aggressive for a system of Azure's complexity. The details matter because Azure is foundational infrastructure for a huge swath of the enterprise world, and any company that experienced downtime during the incident has legitimate questions about reliability commitments. The 'fog of war' framing is honest in a refreshing way — most post-mortems from large cloud providers are carefully lawyered to minimize liability; this language suggests some internal candor about systemic gaps. The Code Red designation implies Microsoft is treating this as a serious organizational and engineering failure, not just a one-off incident. For engineers building on Azure, the question is whether the announced changes (recovery time goals, apparent architecture review) will translate into measurable reliability improvements or remain aspirational targets.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/11/24/dozens-of-oil-and-shipping-tankers-hacked-in-recent-weeks-per-report/" target="_blank" rel="noopener">Dozens of Oil Tankers Hacked in Recent Weeks, Iran Suspected</a>
+            </div>
+            <div class="story-summary">TechCrunch reports that dozens of oil and chemical shipping tankers have been hit by cyberattacks over the past several weeks, with Iran identified as the chief suspect by investigators. The scale — dozens of vessels — is unusual and suggests a coordinated campaign rather than opportunistic attacks. Maritime cybersecurity has historically lagged behind other critical infrastructure sectors: ships run a mix of legacy operational technology and modern IT systems that weren't designed with security in mind, and the global nature of shipping creates jurisdictional complexity for response and attribution. Oil and chemical tankers are particularly high-stakes targets — a successful attack on navigation, cargo management, or safety systems at sea could have catastrophic physical consequences, not just data loss. The timing is geopolitically significant given ongoing Middle East tensions and Iran's strategic interest in disrupting energy shipping routes. This is also a supply chain story — disruptions to chemical and fuel shipping have downstream effects on prices and availability that ripple through the global economy. It's the kind of infrastructure attack that tends to get less attention than ransomware hitting hospitals or government agencies, but the potential impact is comparable.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.intruder.io/research/taking-over-us-treasury-subdomains-for-3-each" target="_blank" rel="noopener">Security Researchers Claim US Treasury Subdomains Can Be Taken Over for $3 Each</a>
+            </div>
+            <div class="story-summary">Intruder.io published research showing that certain US Treasury subdomains were vulnerable to subdomain takeover attacks — a class of vulnerability where an attacker can claim a subdomain by registering the underlying cloud resource it points to, since the original resource was deleted or expired but the DNS record remained. The claimed cost of exploitation: $3 per subdomain. Subdomain takeovers are a well-understood vulnerability class, but finding them on US Treasury infrastructure is embarrassing and concerning. A taken-over Treasury subdomain could be used for phishing (emails or pages that appear to come from treasury.gov), credential harvesting, or distributing malware with a veneer of government legitimacy. The $3 price point underscores how the barrier to this kind of attack is effectively zero — it's not sophisticated nation-state hacking, it's basic reconnaissance and cloud account registration. The Hacker News post hit 137 points, suggesting the security community is paying attention. It's also a pointed example of the gap between government cybersecurity aspirations and actual hygiene at the infrastructure level — CISA has been pushing federal agencies on exactly these kinds of issues for years.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-dev"></div>
+            <h2>Software & Dev Tools</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://openai.com/index/introducing-shirudo" target="_blank" rel="noopener">OpenAI and Cisco Launch Shirudo: Open-Source Runtime for Protecting Linux Systems During Patching</a>
+            </div>
+            <div class="story-summary">OpenAI and Cisco jointly introduced Shirudo, an open-source runtime for Linux designed to help teams protect running systems while patches are being rolled out. The core problem Shirudo addresses is the window of vulnerability between when a patch is released and when it's fully deployed across a fleet — a gap that can last hours, days, or longer in large environments, and during which systems are exposed to exploits targeting the known vulnerability. Runtime protection in this window is a real and underserved problem in enterprise security. The OpenAI-Cisco partnership is an interesting one: Cisco brings deep networking and enterprise security infrastructure expertise, while OpenAI presumably contributes threat detection or anomaly identification capabilities built on its models. Making it open-source is a credibility move — security tools that protect critical infrastructure need community scrutiny, and a closed-source runtime from an AI company would face skepticism. For Linux system administrators and DevSecOps teams, this is worth evaluating seriously. The practical question is how much overhead the runtime adds and whether its protection guarantees are strong enough to justify deployment in latency-sensitive environments.</div>
+            <div class="story-source">OpenAI Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://simonwillison.net/2026/Nov/23/ladybird/" target="_blank" rel="noopener">Ladybird Browser Releases First Alpha: A New Browser Built From Scratch in 2026</a>
+            </div>
+            <div class="story-summary">Ladybird has released its first alpha, and the ambition of this project deserves a moment of appreciation: it's a completely new web browser in 2026, with its own HTML parser, CSS engine, layout engine, JavaScript engine, and WebAssembly implementation — essentially everything from scratch except text shaping (HarfBuzz), 2D graphics (Skia), video (ffmpeg), and SQLite. Simon Willison's writeup captures why this matters: browser engine diversity has collapsed to basically Blink and WebKit (with Gecko hanging on at Firefox), which means the web's rendering behavior is effectively controlled by two codebases. A new independent engine, if it achieves real-world viability, would meaningfully improve the web's resilience and reduce monoculture risk. The alpha status means it's not ready for daily use, and building a browser that handles the full complexity of the modern web is a multi-year project. But reaching alpha with a genuinely independent implementation of this many components is a real engineering achievement. The project has apparently been using AI-assisted development, which is an interesting data point for large-scale systems programming with AI tools.</div>
+            <div class="story-source">Simon Willison's Blog</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-science"></div>
+            <h2>Science & Research</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/space/2026/11/half-of-nasas-aging-mars-fleet-knocked-offline-by-technical-issues/" target="_blank" rel="noopener">Half of NASA's Mars Fleet Is Offline: Perseverance Can't Transmit, Odyssey Is Running Out of Fuel</a>
+            </div>
+            <div class="story-summary">NASA is having a rough week at Mars: Perseverance rover is experiencing transmission problems that are preventing it from sending data back to Earth, while the Mars Odyssey orbiter — which has been in operation since 2001 — is burning through its remaining fuel supply at an accelerating rate. Odyssey serves a dual role as a scientific platform and a communications relay for surface missions, so its degradation has cascading effects. The timing is particularly bad because Perseverance is in the middle of its most scientifically ambitious phase, having collected dozens of samples that are intended for eventual return to Earth. If the communication issues can't be resolved, the rover is effectively doing science it can't report. Mars has multiple orbiters that can serve as backup communication relays — including MRO, MAVEN, and ESA's Trace Gas Orbiter — but losing Odyssey would reduce that capacity significantly. This story reflects a broader challenge NASA faces: its Mars fleet has aged well beyond original design lifetimes, and the budget for maintaining and replacing aging assets is perennially squeezed. The next Mars orbiter in the pipeline is years away from launch. Worth watching for updates on whether Perseverance's communication issue is recoverable.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/health/2026/11/measles-death-toll-rises-to-14-as-national-case-tally-nears-6000/" target="_blank" rel="noopener">US Measles Death Toll Reaches 14 as Case Count Nears 6,000</a>
+            </div>
+            <div class="story-summary">The US measles outbreak continues to worsen, with the death toll now at 14 after Wisconsin reported its third death and Pennsylvania its ninth, on consecutive days. With nearly 6,000 total cases, this is now one of the most significant measles outbreaks in modern American history — a disease that was declared eliminated in the US in 2000 is now killing people at a rate that would have been unthinkable a decade ago. The proximate cause is well-documented: vaccination rates dropped during and after the COVID-19 pandemic, partly due to healthcare disruption and partly due to growing vaccine hesitancy amplified by social media and, in some cases, by public health officials who have undermined confidence in vaccines. Measles is one of the most contagious pathogens known — a single infected person can infect 12 to 18 others in an unvaccinated population. The deaths are occurring primarily among unvaccinated children and immunocompromised adults. This is included here not as a pure health story but because it has real technology and policy dimensions: the role of social media algorithms in spreading vaccine misinformation, the data infrastructure gaps in public health surveillance, and the policy choices around school vaccination mandates are all tech-adjacent questions that this outbreak is forcing back onto the agenda.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+    </div>
+    
+
+    
+
+    
+    <div class="previous-day">
+        <a href="2026-11-24.html">&larr; Previous day</a>
+    </div>
+    
+
+    <footer>
+        Generated 2026-11-25 13:51 UTC &middot; Tech Digest
+    </footer>
+</body>
+</html>
