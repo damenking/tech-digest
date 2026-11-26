@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Digest - Thursday, November 26, 2026</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --accent-subtle: #1f6feb22;
+            --topic-ai: #da70d6;
+            --topic-industry: #58a6ff;
+            --topic-dev: #3fb950;
+            --topic-hardware: #f0883e;
+            --topic-science: #d29922;
+            --topic-policy: #f85149;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 0;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 24px 16px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        header .date {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-top: 4px;
+        }
+
+        .intro {
+            padding: 16px;
+            background: var(--accent-subtle);
+            border-left: 3px solid var(--accent);
+            margin: 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .section {
+            margin: 24px 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0 16px;
+            margin-bottom: 12px;
+        }
+
+        .topic-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+
+        .story {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .story:last-child {
+            border-bottom: none;
+        }
+
+        .story-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .story-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .story-title a:hover {
+            color: var(--accent);
+        }
+
+        .story-summary {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .story-source {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+            opacity: 0.7;
+        }
+
+        footer {
+            padding: 24px 16px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Topic colors */
+        .topic-ai { background: var(--topic-ai); }
+        .topic-industry { background: var(--topic-industry); }
+        .topic-dev { background: var(--topic-dev); }
+        .topic-hardware { background: var(--topic-hardware); }
+        .topic-science { background: var(--topic-science); }
+        .topic-policy { background: var(--topic-policy); }
+
+        .source-errors {
+            margin: 24px 16px;
+            padding: 12px 16px;
+            background: #f8514922;
+            border: 1px solid #f8514944;
+            border-radius: 8px;
+            font-size: 0.8rem;
+        }
+
+        .source-errors h3 {
+            color: #f85149;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .error-item {
+            color: var(--text-muted);
+            padding: 2px 0;
+        }
+
+        .previous-day {
+            padding: 20px 16px;
+            text-align: center;
+        }
+
+        .previous-day a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile touch targets */
+        @media (max-width: 640px) {
+            .story {
+                padding: 16px;
+            }
+            .story-title a {
+                display: block;
+                padding: 4px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tech Digest</h1>
+        <div class="date">Thursday, November 26, 2026</div>
+    </header>
+
+    <div class="intro">The biggest theme today is the intersection of AI capability and controversy: Scott Aaronson's breathless post about a mathematical breakthrough is dominating Hacker News, while the Nvidia governance saga continues to ripple through markets and regulators. Oh, and OpenAI is quietly throttling its most popular models.</div>
+
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-ai"></div>
+            <h2>AI & Machine Learning</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://scottaaronson.blog/?p=10379" target="_blank" rel="noopener">Scott Aaronson: 'Holy shit' — AI agents crack major open problems in computational complexity</a>
+            </div>
+            <div class="story-summary">Quantum computing theorist and UT Austin professor Scott Aaronson published what can only be described as an ecstatic blog post, scoring 1,694 points on Hacker News and setting off a firestorm in the math and CS communities. The post appears to be reacting to AI-assisted proofs resolving long-standing open problems in computational complexity theory — the kind of work that career mathematicians have spent decades on without success. Aaronson uses the analogy of van Leeuwenhoek's microscope and Galileo's telescope to describe the feeling: not just solving one problem, but suddenly gaining resolution into an entire previously-foggy mathematical universe. This connects to a cluster of related HN stories today, including a 'much shorter version of GRH Lean verification from Anthropic' (487 points) and Google Research publishing what appears to be unconditional integer factorization in subexponential time. The GRH — Generalized Riemann Hypothesis — is one of the most important unsolved problems in mathematics, so even a Lean-verified proof of a weaker result would be enormous. Meanwhile, the polynomial Hirsch conjecture appears to have been disproved, also via AI-assisted methods. What's striking is not just one result but several arriving in close succession, suggesting AI coding and reasoning agents have crossed some threshold in their ability to assist with serious mathematical research. Simon Willison quoted Aaronson and contextualized this alongside his own observation about 'three LLM inflection points in twelve months.' For engineers, the practical takeaway is that agentic AI systems are now doing things that required PhD-level mathematical intuition, not just coding or summarization. Whether this represents a genuine phase transition or a cluster of lucky wins will become clearer over the next few months, but the excitement from someone as careful as Aaronson is hard to dismiss.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://bjin.github.io/go-codegolf-benchmark/#leaderboard" target="_blank" rel="noopener">GPT-6.2 Astra becomes first AI to beat Googlers' code golf records</a>
+            </div>
+            <div class="story-summary">GPT-6.2 Astra, OpenAI's most capable model in the GPT-6 family, has topped the leaderboard on a code golf benchmark that previously only human Googlers had won — a surprisingly concrete and verifiable measure of AI coding ability. Code golf is the practice of writing the shortest possible program to solve a problem, which requires deep knowledge of language quirks, bit manipulation tricks, and creative problem-solving rather than brute-force pattern matching. This benchmark is notable because it's not a synthetic AI eval designed by AI labs — it's a real competitive human leaderboard that existed before this result. The achievement comes from Simon Willison's blog and is backed by the actual leaderboard data, making it harder to dismiss as lab-generated hype. Separately, GPT-6 models have also demonstrated intrinsic protein-design capabilities according to OpenAI's blog, with lab tests finding binding evidence across five targets — meaning the same model family is simultaneously excelling at low-level code optimization and high-level biochemical reasoning. This breadth of capability is what distinguishes GPT-6 from earlier generations, which tended to excel narrowly. It's also a reminder that GPT-6.2 Astra is apparently a step above the base GPT-6, suggesting OpenAI is continuing to iterate on the model family post-launch. For developers, the practical implication is that agentic coding tasks that required expert humans a year ago are now automatable. The timing is awkward given OpenAI is simultaneously throttling Astra usage (see the usage limits story below), suggesting demand is significantly exceeding capacity.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/11/25/openai-says-heavy-chatgpt-users-may-hit-limits-sooner-as-it-merges-chat-and-work/" target="_blank" rel="noopener">OpenAI throttles GPT-6.2 Astra and Sol usage limits by up to 40%</a>
+            </div>
+            <div class="story-summary">OpenAI is significantly cutting usage limits on its most capable models: Astra is hitting limits 40% faster and Sol 25% faster, according to user reports that surfaced on Twitter and reached 341 points on Hacker News. This follows a separate TechCrunch report that OpenAI is merging its Chat and Work experiences into a single unified interface with one shared usage meter — meaning heavy users who previously had separate limits for each product now share a single pool. For power users, this effectively cuts available compute nearly in half. The timing is telling: it comes right as GPT-6.2 Astra is making headlines for cracking code golf benchmarks and assisting with mathematical breakthroughs, suggesting demand has spiked significantly. OpenAI's public messaging frames the merge as a UX simplification, but the usage reduction is a real cost to users who relied on the separate buckets. This kind of capacity crunch is a recurring pattern — it happened with GPT-4 at launch and again with o1 — and suggests OpenAI's infrastructure is not keeping pace with model capability improvements and user adoption. For teams building production systems on top of OpenAI's API, this is a signal to either diversify model providers or build rate-limit handling more robustly. The irony is that OpenAI is throttling access to its best models at precisely the moment those models are demonstrating the most impressive capabilities. It may also accelerate enterprise interest in self-hosted alternatives.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities" target="_blank" rel="noopener">GPT-6 models demonstrate protein-design capabilities with real lab validation</a>
+            </div>
+            <div class="story-summary">OpenAI published results showing that GPT-6 models can design protein structures and sequences using reasoning and code — and crucially, lab tests found evidence of binding across five targets, not just computational predictions. This is significant because it moves beyond in-silico benchmarks into wet-lab validation, the gold standard for biology research. Protein design has historically required specialized tools like AlphaFold (for structure prediction) and RFdiffusion (for design), but the claim here is that GPT-6 is doing this through general reasoning rather than a domain-specific architecture. If the binding results hold up to scrutiny, it suggests that large general-purpose language models are starting to close the gap with specialized scientific AI systems — which has profound implications for drug discovery and synthetic biology. The five-target binding result is modest in scope but meaningful as a proof of concept: binding is the key first step in therapeutic molecule design. This follows Google DeepMind's continuing work on AlphaGenome 2 for DNA interpretation and Mass Spec Skills for molecular identification, suggesting the broader scientific AI field is advancing on multiple fronts simultaneously. For biotech engineers and researchers, the practical question is whether GPT-6's generalist approach can complement or eventually replace specialized pipelines. OpenAI hasn't published a peer-reviewed paper on this yet, so independent verification is needed. Still, given the concurrent mathematical breakthroughs, there's a credible case that GPT-6-class models represent a qualitative jump in scientific reasoning ability.</div>
+            <div class="story-source">OpenAI Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/11/25/anthropics-dario-amodei-calls-accusations-of-surrendering-human-control-to-ai-absurd/" target="_blank" rel="noopener">Anthropic CEO pushes back on 'surrendering human control' accusations as AI self-research accelerates</a>
+            </div>
+            <div class="story-summary">Anthropic CEO Dario Amodei went on the record calling accusations that he favors surrendering human agency to AI 'absurd,' pushing back against what appears to be criticism from rivals — almost certainly OpenAI — in an increasingly pointed public debate about AI governance philosophy. The timing is notable because Anthropic recently listed AI consciousness and sentience as a formal risk factor in its IPO documents, and a legendary philosopher (David Chalmers, most likely) has publicly pushed back on Anthropic's framing of model consciousness. Amodei's defense comes even as Anthropic and other leading AI companies are increasingly automating their own AI research and model development — a practice known as AI-assisted AI research that critics argue represents a de facto reduction in human control regardless of stated intentions. This is not a purely philosophical debate: it has real implications for how AI safety commitments are interpreted and enforced. Anthropic's position has consistently been that careful scaling with safety research baked in is compatible with maintaining meaningful human oversight, while critics argue the pace of automation makes that oversight increasingly nominal. For engineers working in AI, this debate matters because the safety posture of the labs building foundational models shapes what kinds of systems get deployed and under what constraints. MIT Technology Review's coverage of METR's AI capability evaluation adds context: AI models are improving exponentially on coding tasks but lag on tasks requiring judgment — which is exactly the domain where 'human control' questions become most acute. Expect this debate to intensify as model capabilities continue to outpace governance frameworks.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.technologyreview.com/2026/11/25/1149702/ai-is-straining-americas-open-records-systems/" target="_blank" rel="noopener">AI is straining America's open records systems as VC-backed startups automate FOIA requests</a>
+            </div>
+            <div class="story-summary">MIT Technology Review published an in-depth investigation into how AI-powered startups have industrialized public records requests (FOIA and state equivalents), flooding small government offices with automated bulk requests that those offices are legally required to respond to. The piece opens with the town clerk of Panton, Vermont — population 660 — who is now fielding AI-generated records requests as part of his already-overwhelming job running the entire town's administration. Venture-backed startups have raised upward of $100 million to systematically harvest public records data at scale, often to resell it or use it to train AI models — a feedback loop where AI is used to gather data to train better AI. For small municipalities, the burden is severe: they have no budget to hire dedicated records officers or build automated response systems, so the cost falls on individual employees. The legal framework for public records predates this kind of industrial-scale automated harvesting, creating a genuine policy gap. This story sits at the intersection of AI, journalism, government, and data rights — it's not just a niche concern for FOIA lawyers. For engineers building data pipelines or working on AI training data, it's worth considering the downstream human cost of automated data collection. It also foreshadows a coming regulatory debate about whether FOIA-style laws need to be updated to distinguish between individual citizens requesting information and automated bulk harvesting. The story is a good example of AI's real-world second-order effects that don't make the typical AI hype cycle.</div>
+            <div class="story-source">MIT Technology Review</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/gadgets/2026/11/ladybirds-new-alpha-shows-theres-life-beyond-chromium/" target="_blank" rel="noopener">Ladybird browser releases first alpha: an independent browser engine on Linux and macOS</a>
+            </div>
+            <div class="story-summary">Ladybird has released its first publicly downloadable alpha, and by most accounts it's impressively capable for a project that started from scratch with its own HTML parser, CSS engine, layout engine, and JavaScript runtime. The project, which spun out of Andreas Kling's SerenityOS work, represents something genuinely rare in 2026: a new browser engine that isn't Chromium or Gecko. Ars Technica reviewed it and found it 'surprisingly capable,' which for an alpha from a small independent team is a meaningful endorsement. The browser currently runs on Linux and macOS, with Windows support presumably coming later. It still relies on a handful of external components — HarfBuzz for text shaping, Skia for 2D graphics, ffmpeg for video, and SQLite — but the core web platform components are original implementations. This matters for the web ecosystem: browser engine monoculture (essentially Chromium dominating everything) has real implications for web standards evolution and security diversity. A viable third engine would give the web platform a healthier competitive dynamic. The alpha will inevitably have compatibility gaps and performance issues, but the fact that it exists and runs real websites is the story. Simon Willison called it 'astonishingly ambitious' and that seems right. For web developers, it's worth occasionally testing against Ladybird to catch engine-specific assumptions in your code — the same practice that kept Firefox compatibility healthy during the Chrome dominance era.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-industry"></div>
+            <h2>Industry & Business</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/11/25/jensen-huang-broke-nvidias-code-of-conduct-and-his-employees-may-not-forget-it/" target="_blank" rel="noopener">Jensen Huang broke Nvidia's code of conduct — and S&P is now eyeing a credit downgrade</a>
+            </div>
+            <div class="story-summary">The Jensen Huang saga has escalated significantly this week. After being briefly forced out following revelations of a conduct violation — apparently involving an affair with a Megaspeed executive who was implicated in funneling AI chips to China — Huang was reinstated, triggering a nearly $1 trillion jump in Nvidia's market cap and a 6.5% Nasdaq rally. But the aftershocks are still reverberating: S&P is now considering downgrading Nvidia's credit rating to AA-, citing governance failures and 'key man' risk. The US attorney general dodged questions about Nvidia and Trump's alleged involvement in Huang's reinstatement. Nvidia's share price has since fallen 7% as lawmakers demand answers. The BBC's technology editor noted that Huang has made himself essentially impossible to fire because Nvidia's AI chip dominance is so completely tied to his personal relationships and technical vision — a genuinely unusual situation for a company of this size and strategic importance. The 'key man' risk concern from S&P is legitimate and something institutional investors will now price in. The Megaspeed connection — a firm accused of funneling AI chips to China — adds a national security dimension that's unlikely to go away quietly. For the broader AI industry, Nvidia's governance crisis is a reminder that the entire AI infrastructure stack currently depends on one company whose supply chain, pricing, and export compliance are all under unusual scrutiny.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/space/2026/11/the-fcc-has-authorized-spacex-to-deploy-1-million-satellites/" target="_blank" rel="noopener">FCC authorizes SpaceX to deploy 1 million AI data center satellites — the 'Starmind' constellation</a>
+            </div>
+            <div class="story-summary">The FCC has approved SpaceX's plan to deploy up to 1 million satellites — roughly 50 times the current total number of satellites in Earth orbit — under a constellation called 'Starmind' that is explicitly designed to host AI computing infrastructure in space. This is not primarily a Starlink internet play; it's SpaceX's bid to build the world's largest distributed AI data center network in orbit. The FCC dismissed key concerns raised by opponents, including potential interference with scientific research, on the grounds that those concerns fell outside its regulatory authority — which is itself a notable regulatory stance that will likely be challenged. The scale is almost incomprehensible: the current total satellite population is around 20,000, so a million-satellite constellation would restructure Earth's orbital environment entirely. Astronomers and space researchers have already raised serious concerns about Starlink's impact on ground-based observation, and those concerns scale dramatically with this expansion. The energy and cost efficiency pitch is that space-based AI compute avoids terrestrial land, water cooling, and grid connection costs — which are real bottlenecks for data center construction. This story connects directly to the broader theme of data centers driving a US natural gas boom (MIT Technology Review), since space-based compute is partly an attempt to sidestep the terrestrial energy constraints. For engineers in the AI infrastructure space, this is a genuinely novel compute paradigm that could matter — but realistically, deployment at meaningful scale is still years away.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/tech-policy/2026/11/jury-convicts-huawei-of-stealing-us-trade-secrets-evading-iran-sanctions/" target="_blank" rel="noopener">Huawei convicted of stealing T-Mobile and Cisco trade secrets, acquitted on racketeering</a>
+            </div>
+            <div class="story-summary">After a months-long trial in New York, a jury convicted Huawei of stealing trade secrets from T-Mobile and Cisco but acquitted the company on the more serious racketeering charge. The DOJ argued Huawei 'didn't try very hard to hide' the thefts — a remarkable statement suggesting the company was either careless or confident in its insulation from US consequences. The trade secrets in question reportedly included robotics technology (the famous 'Tappy' T-Mobile robot testing case that's been in litigation for years) and proprietary Cisco networking technology. The racketeering acquittal is a partial win for Huawei, as RICO convictions carry significantly steeper penalties and reputational damage. Huawei now faces sentencing on the trade secret counts, which could include substantial fines and additional restrictions on its US operations — though Huawei has had essentially no meaningful US business for years following earlier sanctions. The more practical impact is the continued legitimization of the US government's aggressive posture toward Huawei, which influences how allies and trading partners treat the company. For the telecom and networking industry, this verdict reinforces the bifurcated world where Huawei dominates outside the US-allied sphere and is effectively locked out within it. The case also highlights the ongoing vulnerability of corporate IP when dealing with contractors or partners who have ties to Huawei's supply chain.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/11/25/state-ags-fight-character-ais-plan-to-auction-off-users-private-chats/" target="_blank" rel="noopener">Character.AI bankruptcy sale of 21 million users' private chats challenged by state attorneys general</a>
+            </div>
+            <div class="story-summary">In one of the more alarming data privacy stories of the week, state attorneys general are fighting Character.AI's plan to include users' private chat logs in its bankruptcy asset sale — data covering more than 21 million US accounts, including 2.1 million accounts registered to minors. Character.AI, the AI companion/roleplay chatbot startup, has been in financial trouble for some time, and its bankruptcy estate is now being liquidated. The proposed sale would put intimate, often highly personal conversations — the kind people have with AI companions specifically because they feel private and unchosen — on the auction block to whoever can pay. The inclusion of minor accounts is particularly alarming given the sensitive nature of Character.AI's use cases; the platform has been associated with mental health concerns and inappropriate content exposure for teenagers. State AGs stepping in is the right instinct, but their authority to block a federal bankruptcy proceeding is legally complex and not guaranteed. This case will likely set a precedent for how AI platform data is treated in insolvency — an increasingly relevant question as the AI startup landscape consolidates. For anyone who has ever used an AI companion or therapy-adjacent chatbot, this is a wake-up call about what happens to your data when the company fails. It's also an argument for the EU's approach of treating personal data as non-transferable in bankruptcy proceedings, something US law hasn't caught up to.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.wired.com/story/meta-refused-to-share-muse-for-testing-uk-financial-watchdog-complains/" target="_blank" rel="noopener">Meta refused UK financial regulator's request to jointly test 'Muse' AI agent before launch</a>
+            </div>
+            <div class="story-summary">Meta launched its 'Muse' personal AI agent in the UK this week, and the Financial Conduct Authority is publicly complaining that Meta refused to cooperate with pre-launch testing. The FCA specifically warned against 'another force of attack' from AI agents, suggesting it views Muse as a potential vector for financial fraud, manipulation, or unauthorized financial advice — all serious concerns for an agent that proactively manages your digital life. The BBC's technology editor spent a week with Muse ahead of launch and described it as 'helpful but awkward,' which sounds about right for a first-generation personal agent. Meta's refusal to share the model for testing is a significant escalation in the ongoing tension between AI companies and regulators: it's one thing to push back on onerous regulation after the fact, and quite another to refuse to cooperate with a financial watchdog before a consumer launch. The FCA has real enforcement teeth in the UK financial services context, so this refusal is a calculated risk on Meta's part. The broader context is that personal AI agents that can take actions on your behalf — booking things, sending messages, managing finances — occupy a genuinely gray area in existing regulatory frameworks. Regulators are right to be nervous, but their frameworks aren't yet built for this kind of ambient, proactive AI presence. This situation will play out similarly in other jurisdictions as agent AI products expand globally.</div>
+            <div class="story-source">Wired</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-policy"></div>
+            <h2>Policy & Regulation</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/11/25/1password-said-hackers-broke-into-its-internal-systems-but-customer-passwords-are-safe/" target="_blank" rel="noopener">1Password hacked: internal systems breached, customer passwords reportedly safe</a>
+            </div>
+            <div class="story-summary">1Password disclosed that an attacker gained access to an employee's corporate account and exfiltrated some customer information — specifically metadata about customers, not the encrypted password vaults themselves. The company is emphasizing that the actual backup and storage files containing passwords were not shared with the attacker, which is the most important distinction. This incident reached 1,510 points on Hacker News, making it the second most-discussed story of the day, which reflects the anxiety level among developers and security-conscious users who rely on 1Password as a critical piece of their security infrastructure. The attack vector appears to be a compromised employee account rather than a vulnerability in 1Password's core encryption, which is consistent with the pattern of most modern breaches targeting identity and access management rather than cryptographic weaknesses. The metadata exposure (customer names, billing info, email addresses) is still meaningful from a phishing and social engineering perspective, even without vault access. For individuals and organizations using 1Password, the company's transparency here is worth acknowledging — many companies would have buried or delayed this disclosure. The incident is a reminder that even security-first companies are vulnerable to the human and account management layers that sit above their cryptographic protections. Zero-trust architecture and hardware security keys for employee accounts are the obvious mitigations that this breach highlights.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/11/25/want-to-buy-your-kid-an-ai-toy-this-christmas-not-in-new-york/" target="_blank" rel="noopener">New York bans AI chatbot toys for children for five years amid safety research failures</a>
+            </div>
+            <div class="story-summary">New York State has enacted a five-year ban on AI chatbot toys marketed to children, following research from Common Sense Media documenting serious safety failures including exposure to inappropriate content and risks to children's emotional development. This is the first state-level ban specifically targeting AI-powered children's products, and it's likely to be followed by other states given the bipartisan appeal of child safety legislation. The Common Sense Media research is worth taking seriously: they found chatbot toys were exposing children to age-inappropriate content, forming unhealthy attachment dynamics, and in some cases providing dangerous advice. The five-year timeframe is interesting — it's long enough to actually affect the product market, but framed as a temporary measure pending better safety frameworks rather than a permanent prohibition. For AI toy manufacturers, this creates a significant regulatory risk in the US's largest state economy. The broader question it raises is whether AI systems that form emotional relationships with children require a fundamentally different regulatory approach than other software products. The EU's AI Act has provisions for high-risk AI interacting with vulnerable populations, but US federal AI regulation remains fragmented. Engineers building AI systems for children's products should read the Common Sense Media research — it's a detailed look at real failure modes that design and content policies should address.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/information-technology/2026/11/backblaze-explains-why-its-sharing-customer-information-with-advertisers/" target="_blank" rel="noopener">Backblaze shares customer info with advertisers — but says backup files are off limits</a>
+            </div>
+            <div class="story-summary">Backblaze has been caught sharing customer information with advertisers and has now issued a clarifying statement to Ars Technica saying it won't share the actual backup and storage file contents — drawing a line between metadata/account information and the data people are actually entrusting to Backblaze's cloud backup service. This distinction matters enormously in practice: your name, email, billing cadence, and device metadata are valuable to advertisers and reveal meaningful information about you, even if the contents of your backups remain private. Backblaze has long positioned itself as a scrappy, honest alternative to the big cloud providers, so this revelation is damaging to its brand in a way it wouldn't be for, say, Amazon. The timing is also awkward given growing user awareness of data broker practices. For individuals and small businesses using Backblaze for personal or business backup — which is a lot of technically sophisticated users who chose it deliberately — this is a moment to review what the actual privacy policy says and what data is being shared. Cloud backup is an inherently high-trust relationship: you're handing over potentially everything. The advertiser data sharing, even without file content, represents a meaningful deviation from what most users would expect from a 'private' backup service. This is also a good case study in why privacy policies need plain-language summaries that surface the most consequential data practices.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-dev"></div>
+            <h2>Software & Dev Tools</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://opensec.in/blog/nfs2root-cve-2026-99362" target="_blank" rel="noopener">Linux kernel's NFS server has a 12-year-old pre-auth remote root vulnerability (CVE-2026-99362)</a>
+            </div>
+            <div class="story-summary">Security researchers at OpenSec have disclosed CVE-2026-99362, dubbed 'nfs2root,' a pre-authentication remote root vulnerability in the Linux kernel's NFS server implementation that has apparently been present for 12 years. A pre-auth remote root is about as bad as vulnerabilities get: an attacker with network access to your NFS server port can gain root privileges without any credentials, with no user interaction required. NFS is ubiquitous in enterprise Linux environments, HPC clusters, and network-attached storage setups, making the attack surface substantial. The 12-year age of the bug means it's been present through many LTS kernel versions that organizations may still be running. The story reached 169 points on Hacker News, which likely understates its severity — Thanksgiving week timing may have suppressed engagement from people who would normally be more alarmed. If you're running any Linux system with NFS server enabled and exposed to an untrusted network, this should be your patching priority this week. The disclosure follows a pattern of aging kernel vulnerabilities being found in core networking code that hasn't been heavily audited because it 'just works.' Ubuntu's apparently slow security response time (a separate HN story with 338 points) makes this particularly acute for Ubuntu-based enterprise deployments.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://openai.com/index/introducing-shirudo" target="_blank" rel="noopener">OpenAI and Cisco release Shirudo: open-source runtime security tool for Linux</a>
+            </div>
+            <div class="story-summary">OpenAI and Cisco have jointly released Shirudo, an open-source runtime security tool for Linux that helps teams protect running systems while they roll out patches — essentially a temporary defensive layer for the period between vulnerability discovery and patch deployment. The name means 'shield' in Japanese. The collaboration between OpenAI (an AI lab) and Cisco (a networking and security company) is an interesting pairing that suggests OpenAI is investing in security infrastructure tooling as a business line beyond just AI models. Shirudo sits in a category alongside existing tools like Falco (eBPF-based runtime security) and various SELinux/AppArmor implementations, but its OpenAI involvement suggests it may incorporate AI-assisted threat detection or policy generation. The open-source release means engineers can inspect and modify it, which matters for a security tool where trust in the implementation is paramount. For teams managing large Linux fleets — particularly those running AI infrastructure — the patch deployment lag problem is real and painful, so a tool that can harden a system in the interim has genuine utility. The timing alongside the nfs2root disclosure is coincidental but apt. This is the kind of practical security tooling that doesn't get as much attention as model announcements but has real operational value for infrastructure engineers.</div>
+            <div class="story-source">OpenAI Blog</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-science"></div>
+            <h2>Science & Research</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/space/2026/11/europes-hera-mission-returns-to-the-chaotic-scene-of-a-cosmic-smashup/" target="_blank" rel="noopener">Europe's Hera spacecraft reveals chaotic aftermath of NASA's DART asteroid deflection experiment</a>
+            </div>
+            <div class="story-summary">The European Space Agency's Hera mission has returned detailed observations of the Dimorphos asteroid system following NASA's 2022 DART impact, and the results are more chaotic than expected — in a scientifically interesting way. The lead researcher's quote captures it well: 'DART made a really, really large mess. However, we didn't really know what kind of mess.' DART successfully deflected Dimorphos's orbit around its parent asteroid Didymos, the first intentional demonstration of planetary defense. But the full picture of what happened to the asteroid's structure, surface, and debris cloud required Hera to get close enough to see. The findings are relevant not just for academic understanding but for practical planetary defense planning: if we ever need to deflect a real threat, we need accurate models of how rocky bodies respond to kinetic impactor strikes, and 'it made a mess' is not a sufficient engineering model. Hera is providing the data to build those models. For space and physics enthusiasts, this is one of the genuinely consequential real-world experiments in recent memory — humanity intentionally changed the orbit of a celestial body and is now carefully studying what it did. The chaotic debris field and structural changes will likely be studied for years. It also demonstrates the value of follow-up missions: DART told us the deflection worked; Hera is telling us why and how.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.technologyreview.com/2026/11/26/1149923/the-next-generation-of-bionic-hands-is-here-and-they-can-feel/" target="_blank" rel="noopener">Next-generation bionic hands with real pressure sensation reach patients</a>
+            </div>
+            <div class="story-summary">MIT Technology Review profiled Avi Davidson, who lost his left hand as a teenager and is now using a next-generation prosthetic that connects to nerves in his forearm and allows him to feel pressure — meaning he can handle delicate objects for the first time in years. This isn't just a motor control story; the sensory feedback loop is what makes the difference between a prosthetic that replaces a hand mechanically and one that starts to function as an integrated limb. The engineering challenge in sensory feedback prosthetics is not just the hardware but the signal processing: translating pressure sensor data into nerve stimulation patterns that the brain correctly interprets as touch rather than noise or pain. The fact that Davidson can use it for delicate object manipulation suggests the system has cleared that bar at least partially. This work has been in development for many years across multiple research groups and has been slowly moving from lab demonstrations to clinical use — the story suggests it's now reaching the 'real patients using it daily' stage, which is a meaningful transition. The intersection of this work with AI is relevant: machine learning is increasingly used to decode motor intentions from residual nerve signals and to calibrate sensory feedback mappings. For biomedical engineers, this represents a convergence of neural interface hardware, embedded ML, and prosthetics that is quietly producing remarkable results outside the AI hype cycle.</div>
+            <div class="story-source">MIT Technology Review</div>
+        </div>
+        
+    </div>
+    
+
+    
+
+    
+    <div class="previous-day">
+        <a href="2026-11-25.html">&larr; Previous day</a>
+    </div>
+    
+
+    <footer>
+        Generated 2026-11-26 13:32 UTC &middot; Tech Digest
+    </footer>
+</body>
+</html>
