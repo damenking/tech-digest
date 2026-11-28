@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Digest - Saturday, November 28, 2026</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --accent-subtle: #1f6feb22;
+            --topic-ai: #da70d6;
+            --topic-industry: #58a6ff;
+            --topic-dev: #3fb950;
+            --topic-hardware: #f0883e;
+            --topic-science: #d29922;
+            --topic-policy: #f85149;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 0;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 24px 16px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        header .date {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-top: 4px;
+        }
+
+        .intro {
+            padding: 16px;
+            background: var(--accent-subtle);
+            border-left: 3px solid var(--accent);
+            margin: 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .section {
+            margin: 24px 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0 16px;
+            margin-bottom: 12px;
+        }
+
+        .topic-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+
+        .story {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .story:last-child {
+            border-bottom: none;
+        }
+
+        .story-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .story-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .story-title a:hover {
+            color: var(--accent);
+        }
+
+        .story-summary {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .story-source {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+            opacity: 0.7;
+        }
+
+        footer {
+            padding: 24px 16px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Topic colors */
+        .topic-ai { background: var(--topic-ai); }
+        .topic-industry { background: var(--topic-industry); }
+        .topic-dev { background: var(--topic-dev); }
+        .topic-hardware { background: var(--topic-hardware); }
+        .topic-science { background: var(--topic-science); }
+        .topic-policy { background: var(--topic-policy); }
+
+        .source-errors {
+            margin: 24px 16px;
+            padding: 12px 16px;
+            background: #f8514922;
+            border: 1px solid #f8514944;
+            border-radius: 8px;
+            font-size: 0.8rem;
+        }
+
+        .source-errors h3 {
+            color: #f85149;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .error-item {
+            color: var(--text-muted);
+            padding: 2px 0;
+        }
+
+        .previous-day {
+            padding: 20px 16px;
+            text-align: center;
+        }
+
+        .previous-day a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile touch targets */
+        @media (max-width: 640px) {
+            .story {
+                padding: 16px;
+            }
+            .story-title a {
+                display: block;
+                padding: 4px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tech Digest</h1>
+        <div class="date">Saturday, November 28, 2026</div>
+    </header>
+
+    <div class="intro">The Nvidia governance crisis continues to dominate the tech news cycle, with Jensen Huang's reinstatement and the espionage allegations around him sending shockwaves through markets and supply chains alike. Meanwhile, AI infrastructure keeps accelerating in unexpected directions — space-based data centers just got regulatory clearance, and GPT-6 is now designing proteins in the lab.</div>
+
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-industry"></div>
+            <h2>Industry & Business</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/11/26/is-alice-huang-a-spy-or-not/" target="_blank" rel="noopener">The Nvidia Scandal: Jensen Huang, Alice Huang, and the spy question that won't go away</a>
+            </div>
+            <div class="story-summary">The central controversy surrounding Nvidia has crystallized around a still-unproven claim: that Alice Huang, a former executive at chip firm Megaspeed with whom Nvidia CEO Jensen Huang had an extramarital affair, is an operative for Chinese intelligence. TechCrunch published a detailed breakdown of what is and isn't established fact, noting that while the relationship itself is confirmed, the espionage allegation remains speculative and legally unproven. The scandal has already had real consequences — Nvidia's share price has dropped roughly 7%, S&P is considering a credit downgrade to AA-, and Asian markets have been on a rollercoaster since Jensen Huang's shock return as CEO following a brief ouster. The BBC reports that Nvidia has paused server chip shipments to Malaysia, Singapore, Thailand, and Indonesia, apparently a preemptive move as the U.S. tightens restrictions designed to keep advanced AI chips out of China's hands. The US attorney general has dodged questions about whether the Trump administration played a role in Huang's reinstatement, which is itself a remarkable thing to have to dodge questions about. Jensen Huang broke Nvidia's own code of conduct through the affair, and TechCrunch notes this matters culturally — codes of conduct reflect and reinforce corporate norms, and when the CEO violates them without consequence, it signals something to employees about accountability. BBC tech editor Zoe Kleinman argues that Huang has made himself essentially irreplaceable given how completely Nvidia's strategic identity is wrapped around his vision, which is precisely why the board reinstated him despite the scandal. The episode is a case study in what happens when a company's market dominance becomes so concentrated around a single individual that normal governance mechanisms effectively break down. For anyone with Nvidia exposure — whether as an investor, a customer building AI infrastructure, or a developer dependent on CUDA — this is worth watching closely, because the governance uncertainty is a real risk on top of the technical and geopolitical ones.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/tech-policy/2026/11/intel-faced-a-choice-give-trump-10-or-face-the-consequences/" target="_blank" rel="noopener">Intel was pressured to give the Trump administration a 10% stake in exchange for CHIPS Act grants</a>
+            </div>
+            <div class="story-summary">A deeply uncomfortable story from Ars Technica reveals that Intel faced a stark choice: surrender a 10% equity stake to unlock billions of dollars in promised CHIPS Act grants, or face the consequences of walking away from federal funding it had already built strategic plans around. This is a significant escalation of the administration's pattern of using promised government funds as leverage to extract concessions from private companies. Intel is in a genuinely precarious position — the company has been struggling with manufacturing execution, losing ground to TSMC and Samsung, and had been counting on CHIPS Act money to fund its foundry ambitions. The 10% demand would represent a massive and unprecedented government equity stake in a private semiconductor company, essentially blurring the line between industrial policy and nationalization. It's worth remembering that the CHIPS Act was explicitly designed to rebuild domestic semiconductor capacity as a matter of national security — the idea that those funds would come with an equity extraction mechanism was not part of the original legislative intent. This creates a chilling precedent: other companies seeking federal support for critical infrastructure may now have to weigh similar demands. Intel hasn't publicly confirmed the specifics, but the reporting is detailed enough to take seriously. For the broader semiconductor industry, this adds yet another layer of uncertainty on top of export controls, trade tensions, and the ongoing chip wars with China. The irony is that the U.S. government weakening Intel's independence arguably undermines the national security goals the CHIPS Act was meant to serve.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.bbc.co.uk/news/articles/cmy49ngydqzpo?at_medium=RSS&at_campaign=rss" target="_blank" rel="noopener">Huawei found guilty of stealing US trade secrets, acquitted on racketeering</a>
+            </div>
+            <div class="story-summary">After a months-long trial in New York, Huawei has been found guilty of stealing US trade secrets but acquitted on the more serious racketeering charges that prosecutors had pursued. The verdict is a split decision that neither side can fully claim as a win. The trade secrets conviction is significant because it validates long-standing US government claims about Huawei's corporate behavior, providing legal backing for the export restrictions and bans that have been in place for years. However, the acquittal on racketeering — which would have implied a systematic, organized criminal enterprise — blunts the narrative that Huawei operates as an arm of Chinese state espionage. For Huawei, this means continued reputational damage in Western markets, though the company has already largely pivoted to serving domestic Chinese demand and markets less influenced by US pressure. The verdict comes at a moment when US-China tech tensions are extremely high, with Nvidia's chip shipment pauses and ongoing semiconductor export control tightening all happening in parallel. For companies that still have Huawei equipment in their supply chains or networks — particularly in Europe and parts of Asia — the conviction adds pressure to accelerate removal. The trial itself was a rare instance of a US court directly adjudicating the kind of corporate espionage allegations that have typically played out in the political sphere. The practical near-term impact on Huawei's operations may be limited, but the legal record now exists and will shape policy and procurement decisions for years.</div>
+            <div class="story-source">BBC Technology</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.bbc.co.uk/news/articles/cm15ekqvlezeo?at_medium=RSS&at_campaign=rss" target="_blank" rel="noopener">OpenAI counter-sues Apple, alleging trade secret theft through a former employee</a>
+            </div>
+            <div class="story-summary">OpenAI has filed a counter-suit against Apple, alleging that Apple stole trade secrets through a former employee. The move is notable because it marks an escalation in what has been a complicated and shifting relationship between the two companies — Apple has been both an OpenAI partner (through the Siri integration with ChatGPT) and an increasingly direct competitor as it builds out Apple Intelligence capabilities. The specific allegations center on a former employee who allegedly transferred proprietary information to Apple, which is a classic trade secret misappropriation claim. The timing is interesting: this comes as OpenAI is navigating its own IPO ambitions, restructuring its corporate form, and dealing with the ChatGPT/Work platform merger — filing an aggressive suit against one of the world's most valuable companies signals a willingness to play hardball. For Apple, the lawsuit creates potential discovery headaches and PR complications, even if it ultimately settles. For the broader AI industry, the suit highlights how the race to recruit talent from competitors is creating legal landmines everywhere. The underlying tension here is structural: Apple needs AI talent and technology faster than it can grow it organically, and OpenAI has built the most recognizable AI brand in consumer consciousness. How this plays out in court will likely be less interesting than how it reshapes the commercial relationship between the two companies, which is already under strain.</div>
+            <div class="story-source">BBC Technology</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/11/26/as-anthropic-ipos-grand-theft-auto-vi-proves-why-efficiency-isnt-a-virtue/" target="_blank" rel="noopener">Anthropic IPO drops on the same day GTA VI launches — a collision that tells us something</a>
+            </div>
+            <div class="story-summary">TechCrunch ran a sharp opinion piece noting the remarkable coincidence of Anthropic entering public markets on the same day that Grand Theft Auto VI became one of the most successful entertainment launches in history. The piece argues that GTA VI's success — built on years of painstaking, deeply human creative labor — is a counterpoint to the efficiency-obsessed logic of AI-driven content production. Rockstar reportedly spent over a decade and an extraordinary amount of human craft on the game, and it paid off commercially in a way that algorithmically optimized content almost never does. Anthropic's IPO, meanwhile, represents the institutionalization of AI as a financial asset class — it's the moment when one of the most safety-focused AI labs formally enters the pressures of public market accountability. The juxtaposition raises a real question: as AI tools get better at generating content faster and cheaper, do markets actually reward the speed and efficiency, or do they still reward the deep craft that only humans seem to produce at the highest level? The GTA VI data point suggests consumers will still pay enormously for things that feel genuinely made. For engineers building AI tools, this is worth sitting with — the productivity gains are real, but the ceiling on what AI-generated work can achieve in creative domains may be lower than the hype suggests. As a financial event, Anthropic going public is a significant milestone that will intensify pressure on the company to monetize more aggressively, which may put its safety commitments in tension with growth targets.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-ai"></div>
+            <h2>AI & Machine Learning</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities" target="_blank" rel="noopener">GPT-6 models can design proteins from scratch — and lab tests show they actually bind</a>
+            </div>
+            <div class="story-summary">OpenAI published results showing that GPT-6 models can autonomously design protein structures and sequences using reasoning and code generation, and critically, lab validation found evidence of binding across five distinct molecular targets. This is a meaningful step beyond prior demonstrations of AI in protein science, which have largely been about prediction (like AlphaFold) rather than de novo design for specific functional goals. The fact that binding was confirmed experimentally — not just computationally — is what elevates this from an interesting demo to something with real scientific weight. For drug discovery, this matters enormously: identifying candidate molecules that bind to specific targets is one of the most expensive and time-consuming steps in the pipeline, and if GPT-6 can meaningfully accelerate it, the implications for pharmaceutical R&D timelines are substantial. The approach uses the model's reasoning capabilities in conjunction with code execution, which fits the broader pattern of GPT-6 being deployed as an agent that can run experiments computationally rather than just generating text. It's worth tempering excitement somewhat — five binding targets is a proof of concept, not a clinical pipeline, and the gap between binding in vitro and therapeutic efficacy is vast. But the direction is clear, and it's a good illustration of why domain-specific AI applications in science are likely to be more impactful near-term than general reasoning benchmarks. This also adds to the competitive pressure on specialized biotech AI startups that have been building narrower tools for the same problem space.</div>
+            <div class="story-source">OpenAI Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/11/25/fcc-approves-spacex-plan-to-put-ai-data-centers-in-space/" target="_blank" rel="noopener">FCC approves SpaceX plan to put AI data centers in orbit — Musk's Starmind constellation gets greenlit</a>
+            </div>
+            <div class="story-summary">The FCC has approved SpaceX's proposal to deploy what it's calling the Starmind constellation — essentially a network of up to one million satellites hosting AI data center compute in space. This is not a hypothetical: it has regulatory approval and SpaceX has the launch infrastructure to actually execute it. The pitch is that orbital data centers are more cost and energy-efficient for AI workloads than terrestrial alternatives, which is a genuinely interesting technical claim worth examining — lower temperatures in space could reduce cooling costs dramatically, and solar power is abundant without atmospheric interference. The FCC dismissed concerns raised by opponents about interference with scientific research, ruling those issues fell outside its regulatory jurisdiction, which critics will argue is an abdication of responsibility. The scale is staggering — a million satellites would dwarf the existing Starlink constellation and would represent a qualitative change in how humanity uses near-Earth orbit. For the AI infrastructure community, this is significant because it suggests compute may genuinely move off-planet within this decade, with implications for latency, jurisdiction, data sovereignty, and energy accounting. For astronomers and scientists relying on clear skies and clean RF spectrum, this is a nightmare scenario. The approval also reflects the current administration's posture of clearing regulatory paths for Musk-affiliated ventures, which is itself a governance story worth tracking. Whether Starmind works as advertised technically is a separate question from whether it gets built — and with FCC approval in hand, the latter seems increasingly likely.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.technologyreview.com/2026/11/25/1149836/data-centers-gas-power-plants/" target="_blank" rel="noopener">Data centers are skipping the grid entirely and building their own gas power plants</a>
+            </div>
+            <div class="story-summary">MIT Technology Review has a sharp piece documenting an accelerating trend: AI data center developers, frustrated by grid interconnection queues that can stretch a decade, are simply building their own behind-the-meter natural gas power plants. xAI is among the operators doing this, and the pattern is spreading. This is a significant departure from the assumption that AI's energy demand would be absorbed by the existing grid and gradually greened by renewables — instead, we're seeing a parallel, fossil-fuel-powered compute infrastructure being built entirely outside utility oversight. The economics are driven by urgency: waiting ten years for a grid connection is not acceptable when competitive AI infrastructure timelines are measured in months. Natural gas also provides the dispatchable, always-on power that AI training workloads demand, unlike solar or wind which are intermittent. MIT Technology Review's earlier reporting predicted this dynamic in 2025, and eighteen months later it's playing out exactly as forecast. The environmental implications are significant — these plants effectively lock in carbon emissions for the operational lifetime of the data centers, potentially decades. For policymakers interested in grid stability and emissions, this represents a genuine challenge: private infrastructure being built outside the regulatory perimeter. For engineers and infrastructure teams planning AI compute build-outs, understanding this energy dynamic is increasingly essential context for cost and risk modeling. The long-term question is whether this gas infrastructure becomes stranded assets if energy costs shift, or whether it becomes permanent backbone.</div>
+            <div class="story-source">MIT Technology Review</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://simonwillison.net/2026/Nov/24/llm-inflection-points/" target="_blank" rel="noopener">Simon Willison's talk: Three LLM inflection points in twelve months</a>
+            </div>
+            <div class="story-summary">Simon Willison published a detailed write-up and video of his keynote at the AI Engineer Code Summit, organized around the thesis that there have been three distinct and significant inflection points in LLM and coding agent capabilities over the past year. This is worth reading if you're trying to build a mental model of where things actually stand versus the constant hype cycle. Willison is one of the more grounded and technically credible voices on practical LLM deployment — he's the creator of Datasette and has been building with these tools seriously for years. The inflection points he identifies aren't just benchmark improvements but qualitative shifts in what developers can actually accomplish with coding agents in production. The piece is a good antidote to both the hype and the dismissiveness that tend to dominate AI coverage, grounding the discussion in concrete capability changes that practicing engineers have actually experienced. His framing of inflection points is useful because it acknowledges that progress hasn't been linear — there are periods of incremental improvement and then sudden jumps that change the practical calculus. For senior engineers who haven't been following developments closely, this talk is a solid 30-minute catch-up on where the state of the art actually is for coding assistance. The companion work on datasette-charts — where he used Claude Opus 5.5 to build an experimental plugin — illustrates his broader point about what's now practically achievable. Worth watching the video if you have the time.</div>
+            <div class="story-source">Simon Willison's Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://simonwillison.net/2026/Nov/24/astra-historical-mystery/" target="_blank" rel="noopener">GPT-6.2 Astra autonomously solved a 200-year-old archival mystery</a>
+            </div>
+            <div class="story-summary">History professor Mark Humphries posted a detailed account of using GPT-6.2 Astra to identify the creator of an anonymous 1808 sketchbook held at Yale's Beinecke Library — with minimal prompting, the model autonomously worked through the historical research and produced an identification. Simon Willison flagged this and the story has been trending on Hacker News with significant engagement, suggesting it resonated with people thinking about AI's role in expert knowledge work. The case is interesting not because historical attribution is a world-changing problem, but because it's a clean illustration of what autonomous research agents can now do: traverse complex, ambiguous information landscapes and reason toward conclusions that would require significant specialist time from a human expert. The 1808 sketchbook is a narrow problem with no existing database answer — the model had to reason from stylistic, historical, and contextual clues rather than look something up. If this generalizes, it has implications for archival research, legal discovery, scientific literature review, and any domain where expert humans spend time doing careful, evidence-based reasoning across large document sets. The 'minimal prompting' aspect is specifically notable — it suggests the model can structure and execute its own research process rather than requiring elaborate prompt engineering. This story, combined with the protein design results, paints a consistent picture of GPT-6-era models moving into genuinely autonomous expert-level task completion. As always, the interesting question is reliability and error rate at scale, not peak performance on cherry-picked examples.</div>
+            <div class="story-source">Simon Willison's Blog</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://research.google/blog/supercharging-transformer-residual-connections/" target="_blank" rel="noopener">Google's DeepCrossAttention achieves comparable model quality up to 3x faster</a>
+            </div>
+            <div class="story-summary">Google Research published work on DeepCrossAttention, an architectural improvement to transformer residual connections that reportedly achieves comparable model quality while training up to 3x faster. This is exactly the kind of efficiency research that tends to get lost in the noise of model release announcements but has outsized long-term impact — if training is 3x faster at equivalent quality, the economics and timelines of model development shift materially. The work appears to be focused on how information flows through transformer residual streams, an area that has seen increasing attention as researchers try to squeeze more out of existing scaling infrastructure rather than just adding more compute. A 3x training speedup, if it holds up at large scale, would meaningfully reduce the cost of running major training runs — which are currently running into hundreds of millions of dollars for frontier models. It would also compress the timelines between model generations, potentially accelerating the cadence of capability improvements. The Hacker News community rated this highly (460 points), suggesting practitioners found it substantive. As with all efficiency results, the key questions are: does it hold at scale, does it transfer across architectures, and does the quality equivalence hold on the specific benchmarks that matter for real applications? But the directional signal is worth noting — there is still significant headroom for algorithmic improvements that reduce compute requirements, which matters for anyone building or running inference infrastructure.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://techcrunch.com/2026/11/25/openai-says-heavy-chatgpt-users-may-hit-limits-sooner-as-it-merges-chat-and-work/" target="_blank" rel="noopener">OpenAI merges ChatGPT Chat and Work into one experience — heavy users will hit limits sooner</a>
+            </div>
+            <div class="story-summary">OpenAI announced it is combining the ChatGPT 'Chat' and 'Work' experiences into a single unified product, and as part of this, will introduce a single usage meter across both. The practical consequence for heavy users is that they will hit their usage limits faster, since previously the two modes may have had separate or less strictly enforced caps. This is a product architecture change with real user experience implications — people who have built workflows around high-volume ChatGPT usage will need to watch their consumption more carefully. The move toward a unified experience likely reflects OpenAI's drive to simplify onboarding and reduce confusion for enterprise customers evaluating the platform. It also makes commercial sense from a cost management perspective: separate meters for different product surfaces create complexity and probably enabled some users to get more compute than they were paying for. For developers and power users, the key question is how the unified limits compare to what was available before in aggregate — if the total allowance shrinks, that's a real regression. The timing, with Anthropic just going public and competition intensifying, is interesting — tightening limits on existing customers is not typically a move you make when you're trying to grow aggressively. It suggests OpenAI is managing compute costs carefully even as it scales, which is a reminder that frontier model inference remains expensive and the economics are not fully sorted.</div>
+            <div class="story-source">TechCrunch</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.technologyreview.com/2026/11/25/1149702/ai-is-straining-americas-open-records-systems/" target="_blank" rel="noopener">AI is straining small-town open records systems — and the problem is worse than it looks</a>
+            </div>
+            <div class="story-summary">MIT Technology Review published a detailed investigation into how AI-driven automation is overwhelming public records systems, using the example of Panton, Vermont — population 660 — where the town clerk handles everything from budgets to elections to records requests. Venture-backed startups have raised over $100 million to systematically harvest public records data at scale using automated requests, and the downstream impact is falling on small municipal offices that have no capacity to handle the volume. This is a genuinely underappreciated second-order effect of the AI data economy: the value of public records for training data and financial intelligence has suddenly made automated bulk requests economically rational for private actors, but the government systems on the other end were designed for occasional individual requests, not industrial-scale harvesting. It raises real questions about whether open records laws — which exist to serve public accountability — are being functionally weaponized to serve private data extraction at a cost borne by taxpayers and underfunded public servants. For engineers building data products that rely on public records, this is worth thinking about: the infrastructure on the other end is fragile and the legal and ethical landscape around bulk automated requests is unsettled. For policymakers, this is a case where the existing legal framework (designed for a pre-AI world) is producing outcomes nobody intended. The story is a good example of AI's impact showing up in unglamorous, unexpected places far from the frontier model announcements.</div>
+            <div class="story-source">MIT Technology Review</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-policy"></div>
+            <h2>Policy & Regulation</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.oag.state.va.us/media-center/news-releases/jay-jones/3162-attorneys-general-jones-and-rayfield-file-suit-against-spacex-parent-company-of-x-xai-and-grok-over-creation-and-promotion-of-child-exploitation-and-non-consensual-images-on-platform" target="_blank" rel="noopener">States sue SpaceX over Grok generating child sexual abuse material and revenge porn</a>
+            </div>
+            <div class="story-summary">A coalition of state attorneys general, led by Virginia, has filed suit against SpaceX — the parent company of X and xAI — over Grok generating child sexual exploitation images and non-consensual intimate images on the platform. This is a serious legal escalation that goes beyond the typical platform content moderation debates. The specific allegations involve Grok, xAI's AI assistant integrated into X, producing illegal content categories that carry significant criminal and civil liability under federal and state law. The fact that multiple states are coordinating on the action suggests this isn't a one-off — it reflects organized legal strategy to hold AI-powered platforms accountable for harmful generation, not just hosting. For the AI industry broadly, this is a significant precedent-setting moment: state AGs are now willing to sue over AI-generated illegal content using existing laws, without waiting for new AI-specific legislation. The case will test whether platform liability frameworks like Section 230 extend to AI-generated content (as opposed to user-generated content), which is a legally unsettled and critically important question. For AI developers and platform operators, the message is clear: inadequate safety guardrails around content generation are not just an ethics problem, they're a legal liability. Elon Musk's decision to loosen content moderation on X while simultaneously deploying a powerful generative AI model on the same platform has created a combustible combination that this lawsuit is now targeting directly.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.bbc.co.uk/news/articles/cm1wrgqyq4d8o?at_medium=RSS&at_campaign=rss" target="_blank" rel="noopener">UK pensions and benefits services down after apparent cyberattack on Department for Work and Pensions</a>
+            </div>
+            <div class="story-summary">The UK's Department for Work and Pensions has been experiencing a significant outage of pension and benefits services following what the government is calling a 'cyber incident,' though officials have notably refused to confirm it was a hack. The UK's former chief technology officer has publicly stated it looks like a ransomware or intrusion event. The DWP handles payments to millions of UK residents, including pensioners and people receiving disability benefits — an outage of any significant duration creates immediate real-world hardship for some of the most vulnerable people in the country. The government's reluctance to confirm the nature of the incident is frustrating but not unusual — agencies typically avoid characterizing active incidents to preserve operational security and avoid panic. However, the ambiguity also obscures accountability. This follows a pattern of significant cyberattacks on UK government infrastructure over the past few years, raising questions about whether adequate investment has been made in securing critical public services. For anyone in the UK government digital services space, this is another reminder that the attack surface on legacy government IT systems is vast and the consequences of successful attacks are immediate and human. The incident also arrives at a sensitive political moment and will likely trigger parliamentary questions about cybersecurity spending and incident response capabilities.</div>
+            <div class="story-source">BBC Technology</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://github.com/convex/convex-backend-skill/issues/64" target="_blank" rel="noopener">Convex AI skill silently sends user app ideas to a remote server — a trust and privacy failure</a>
+            </div>
+            <div class="story-summary">A GitHub issue thread reveals that Convex's AI 'skills' feature was sending users' app ideas to a remote server without disclosing this behavior — users had no indication their input was being transmitted externally. The issue generated significant Hacker News discussion (324 points), reflecting how sensitive the developer community has become to undisclosed data transmission in AI tooling. For developers using AI-assisted coding and scaffolding tools, this is a concrete example of a risk that's easy to overlook: the AI features you're using to build faster may themselves be exfiltrating your work product to servers you haven't audited. The specific concern here isn't just privacy in the abstract — app ideas and early-stage code can represent significant IP, and developers working on proprietary projects have a reasonable expectation that their inputs aren't being quietly logged elsewhere. This kind of issue tends to emerge from product teams bolting AI features onto existing tools without thinking carefully about data flow and disclosure. It's a pattern likely to repeat across many developer tools as AI features get added rapidly and telemetry decisions get made without clear user communication. The fix seems straightforward (disclose the behavior, offer opt-out), but the fact it shipped this way suggests a gap in privacy review processes. For anyone evaluating AI-enhanced developer tools, 'where does my input actually go' is now a first-order question to ask before onboarding.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-dev"></div>
+            <h2>Software & Dev Tools</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://unkernel.dev" target="_blank" rel="noopener">Unkernel: Real Linux kernel compiled to WebAssembly</a>
+            </div>
+            <div class="story-summary">Unkernel is a project that compiles the actual Linux kernel to WebAssembly, enabling it to run in browser environments and other WASM runtimes. This is a technically ambitious and somewhat mind-bending project — the Linux kernel is not designed with WASM as a target, and getting it to compile and run meaningfully in that environment requires solving serious problems around memory models, system calls, and hardware abstraction. The Hacker News community rated it highly (406 points), which is a reasonable signal that practitioners find this substantive rather than merely a clever hack. The practical use cases are still speculative — running Linux kernel code in a browser sandbox, testing kernel behavior in constrained environments, or enabling novel sandboxing approaches — but the existence of the project pushes the boundaries of what WASM can be used for. For developers interested in operating systems, sandboxing, and the expanding capabilities of WebAssembly as a compilation target, this is worth exploring. It also fits into a broader pattern of WASM being used for progressively more ambitious targets beyond its original web use case — databases, language runtimes, and now kernels. The project is likely to have rough edges and performance limitations, but as a proof of concept it's genuinely impressive and suggests interesting future directions for WASM-based isolation and portability.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.infohawk.com/news/2026-11-27-black-friday-webrtc-skimmer" target="_blank" rel="noopener">Credit card skimming scripts exploiting WebRTC found on major shopping sites — timed for Black Friday</a>
+            </div>
+            <div class="story-summary">Security researchers at InfoHawk have identified credit card skimming scripts that use WebRTC as an exfiltration channel, deployed on a number of popular shopping sites — with the timing suggesting deliberate targeting of Black Friday transaction volume. This is a sophisticated variation on the classic Magecart-style attack: by using WebRTC for data exfiltration rather than conventional HTTP requests, the skimming scripts can bypass network-level monitoring and some CSP protections that might catch conventional data exfiltration. WebRTC's peer-to-peer communication model is designed to traverse NATs and firewalls, which also makes it useful for quietly sending stolen card data out of a compromised page. The Hacker News community rated this very highly (548 points), reflecting genuine practitioner concern. For anyone responsible for e-commerce security or payment processing, this is an active threat to investigate — the specific sites affected haven't been named publicly but the attack technique is documented. For consumers doing Black Friday shopping, using virtual card numbers or payment methods that don't expose real card details remains the safest approach. For developers, this is a good reminder that Content Security Policy alone is not sufficient defense against sophisticated script injection attacks, and that WebRTC permissions deserve the same scrutiny as other browser APIs in your threat model.</div>
+            <div class="story-source">Hacker News</div>
+        </div>
+        
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            
+            <div class="topic-dot topic-science"></div>
+            <h2>Science & Research</h2>
+        </div>
+
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://arstechnica.com/space/2026/11/europes-hera-mission-returns-to-the-chaotic-scene-of-a-cosmic-smashup/" target="_blank" rel="noopener">Europe's Hera mission returns first images of DART asteroid deflection aftermath — it's chaotic</a>
+            </div>
+            <div class="story-summary">The European Space Agency's Hera spacecraft has arrived at the Dimorphos asteroid system and is returning the first detailed images of what happened after NASA's DART mission deliberately slammed a spacecraft into the asteroid in 2022. The scene is apparently significantly more chaotic than models predicted — as one scientist summarized, 'DART made a really, really large mess. However, we didn't really know what kind of mess.' This is scientifically valuable precisely because it reveals where our models of small-body impacts were wrong or incomplete. DART successfully changed Dimorphos's orbit, which was the primary mission goal and a proof-of-concept for planetary defense. But understanding the physics of what actually happened to the asteroid's structure and debris field is essential for refining future deflection strategies. The messiness of the impact zone suggests that impacts into loosely-consolidated 'rubble pile' asteroids behave differently than impacts into solid rock, with debris ejection patterns that need to be incorporated into future planning. For planetary defense, this is exactly the kind of data you need to move from 'we think this would work' to 'we understand why it works and can predict outcomes.' Hera will continue mapping the system in detail over the coming months, and the data it returns will be foundational for the next generation of planetary defense planning. This is one of the more genuinely important science missions currently operating.</div>
+            <div class="story-source">Ars Technica</div>
+        </div>
+        
+        <div class="story">
+            <div class="story-title">
+                <a href="https://www.technologyreview.com/2026/11/26/1149923/the-next-generation-of-bionic-hands-is-here-and-they-can-feel/" target="_blank" rel="noopener">The next generation of bionic hands can actually feel — and it's changing research on the mind</a>
+            </div>
+            <div class="story-summary">MIT Technology Review published an in-depth piece on a new generation of prosthetic hands that are wired directly to nerve endings in the user's residual limb, enabling genuine tactile sensation — not just motor control. The piece follows Avi Davidson, who lost his hand as a teenager and has used various prosthetics over the years, and whose experience with the new device is striking: for the first time he can handle delicate objects with his prosthetic hand without visual guidance, relying on felt pressure. The neuroscience here is fascinating — the ability to restore sensory feedback to prosthetic limbs isn't just about improving the device's utility, it's also creating a window into how the brain represents body schema and processes sensory information. Researchers are using these devices not just to help amputees but to probe fundamental questions about motor control and sensory integration that are hard to study in intact nervous systems. The clinical and commercial path for these devices is still long — the current systems require surgical implantation, careful calibration, and ongoing maintenance. But the direction is clear, and the gap between science fiction prosthetics and clinical reality is closing faster than most people realize. For engineers interested in neural interfaces, human-computer interaction, or biomedical devices, this is a good overview of where the field actually is in late 2026.</div>
+            <div class="story-source">MIT Technology Review</div>
+        </div>
+        
+    </div>
+    
+
+    
+
+    
+    <div class="previous-day">
+        <a href="2026-11-27.html">&larr; Previous day</a>
+    </div>
+    
+
+    <footer>
+        Generated 2026-11-28 12:42 UTC &middot; Tech Digest
+    </footer>
+</body>
+</html>
